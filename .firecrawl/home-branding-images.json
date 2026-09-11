@@ -1,0 +1,202 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Open Sans Condensed",
+        "role": "body"
+      }
+    ],
+    "colors": {
+      "primary": "#7AB157",
+      "secondary": "#E5CBA6",
+      "accent": "#7AB157",
+      "background": "#F3EDE7",
+      "textPrimary": "#000000",
+      "link": "#79BB59"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Open Sans Condensed",
+        "heading": "Open Sans Condensed"
+      },
+      "fontStacks": {
+        "heading": [
+          "Open Sans Condensed",
+          "sans-serif"
+        ],
+        "body": [
+          "Open Sans Condensed",
+          "sans-serif"
+        ],
+        "paragraph": [
+          "Open Sans Condensed",
+          "sans-serif"
+        ]
+      },
+      "fontSizes": {
+        "h1": "48px",
+        "h2": "48px",
+        "body": "14px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "5px"
+    },
+    "components": {
+      "buttonPrimary": {
+        "background": "#7AB157",
+        "textColor": "#FFFFFF",
+        "borderColor": "#7AB157",
+        "borderRadius": "7px",
+        "borderRadiusCorners": {
+          "topLeft": "7px",
+          "topRight": "7px",
+          "bottomRight": "7px",
+          "bottomLeft": "7px"
+        },
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "logo": null,
+      "favicon": "https://www.bambukogrindys.lt/uploads/userfiles/icons/favicon.png",
+      "ogImage": "https://www.bambukogrindys.lt/uploads/skin/st_119.png"
+    },
+    "__llm_button_reasoning": {
+      "primary": {
+        "index": 0,
+        "text": "Užsisakyti",
+        "reasoning": "Button #0 with text 'Užsisakyti' is likely the primary CTA due to its action-oriented text meaning 'Order' in Lithuanian, combined with the vibrant green color, which is a strong indicator of a primary action."
+      },
+      "secondary": {
+        "index": -1,
+        "text": "N/A",
+        "reasoning": "All buttons share the same vibrant green color, making it impossible to select a secondary button with a different background color."
+      },
+      "confidence": 0.9
+    },
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "targetAudience": "homeowners and interior designers"
+    },
+    "designSystem": {
+      "framework": "bootstrap",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0.9,
+      "colors": 0.95,
+      "overall": 0.925
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": false,
+        "llmSucceeded": false,
+        "finalSource": "none"
+      },
+      "buttonClassification": {
+        "llmCalled": true,
+        "llmSucceeded": true
+      }
+    },
+    "brandName": "bambukogrindys.lt"
+  },
+  "metadata": {
+    "og:url": "https://www.bambukogrindys.lt/",
+    "verify-paysera": "8a20389676e9b265ae161364d4c53d54",
+    "ogUrl": "https://www.bambukogrindys.lt/",
+    "og:type": "website",
+    "bingbot": "noarchive",
+    "og:title": "bambukogrindys.lt",
+    "ogImage": "https://www.bambukogrindys.lt/uploads/skin/st_119.png",
+    "title": "bambukogrindys.lt",
+    "keywords": "bambuko grindys, bambukų grindys, bambuku grindys, bambuko vidaus grindys, bambuko dekoras, bambuko terasinės grindys, bambuko terasines grindys, bambuko lauko dailylentės, bambuko lauko dailylentes, bambuko stalviršiai, bambuko laiptai",
+    "description": "",
+    "og:image": "https://www.bambukogrindys.lt/uploads/skin/st_119.png",
+    "language": "lt",
+    "viewport": "width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1",
+    "ogTitle": "bambukogrindys.lt",
+    "referrer": "origin-when-crossorigin",
+    "favicon": "https://www.bambukogrindys.lt/uploads/userfiles/icons/favicon.png",
+    "scrapeId": "01a08d69-102a-77dd-923b-78f7a175d0f1",
+    "sourceURL": "https://www.bambukogrindys.lt/",
+    "url": "https://www.bambukogrindys.lt/",
+    "statusCode": 200,
+    "contentType": "text/html",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "ad6551ed-e432-4d8c-8824-82d1f48a2504",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  },
+  "images": [
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-15/797903911_17986527924024014_7663655737472813961_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=rQz1bRg2k0MQ7kNvwFuy1gH&_nc_oc=AdojTwopIjZ_GY1yNzz7rVIUmXpH4Njvn9lF28fCD8Pik8GqEg9rxTXPgsy3hD7owMo&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQJzodhSWUKqa4_Qi7fCoNL5Bjhu3VfZKujtnWiOe_l1rA&oe=6AA8F005",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/779728997_17983994295024014_2893779675701461431_n.jpg?stp=dst-jpg_p110x80_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=57gk65nCqScQ7kNvwE6aASX&_nc_oc=AdpuV3i5t0pyf82ooL1FWlh-xf-iZQoit-CN-CDOvyEB2Ccc-OB4FTTKzEbVdKyzUZI&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKuUI7Mhgd0wXvBRFgtCW9Pz2kp9XvBtiibI9IWMjUjmQ&oe=6AA901A9",
+    "https://static.xx.fbcdn.net/images/emoji.php/v9/t34/1/16/1f914.png",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_3_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/product_532_1.jpg?1782989083",
+    "https://www.bambukogrindys.lt/uploads/it0160/slide_23.png",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_311m.jpg?1505118791",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/793027932_17985968187024014_5955553037279438277_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=kkLb4R4GtlEQ7kNvwFF11Nn&_nc_oc=AdqvIrl-yStKrl6fnYAQaSlS0dCIKGukJhn22pth0CLO7XIMNxPzlxFA5xPrRSyqOqg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKN0bxc8j_NYVBNvoSllM4ZOFuQSrqF1LSViHkEEZxBxw&oe=6AA90A21",
+    "https://www.bambukogrindys.lt/https/3a%20//scontent-lax7-1.xx.fbcdn.net/v/t51.82787-10/780238045_17983994361024014_8800230616547436388_n.jpg?stp\\3d%20dst-jpg_s206x206_tt6\\26%20_nc_cat\\3d%20105\\26%20ccb\\3d%201-7\\26%20_nc_sid\\3d%20b696e2\\26%20_nc_ohc\\3d%2093rJaW7ncf0Q7kNvwEeNK-k\\26%20_nc_oc\\3d%20AdoqCk57os7fmlGvVi7bstBbhxz0Z55MgKKh6JDnJaaFqRSdnW6qbxuxDmUXkfKnVsI\\26%20_nc_zt\\3d%2023\\26%20_nc_ht\\3d%20scontent-lax7-1.xx\\26%20_nc_gid\\3d%20T1VqrnFOZN3A3kNDaOcjGw\\26%20_nc_ss\\3d%207b289\\26%20oh\\3d%2000_AQIIicWtYwjrytm0OTpxVnUWy9eN8ah59bImyAGP4_T1hw\\26%20oe\\3d%206AA9195E",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/774797097_17983323570024014_5911892959278621794_n.jpg?stp=dst-jpg_p160x160_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=jtNd4XErCcAQ7kNvwGZyHVH&_nc_oc=AdrG-Hc27Ssd_OFXOHP7xuICcF0VTQpe-mry_-LXEfll9Fzy3_ugKResZYcyvMA8oNo&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQLgMtrnaOBK6v2qRQQ56TGqJ94swe-OpZef0cPOeKLbyA&oe=6AA90763",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/product_114_1.jpg?1775673134",
+    "https://bambukogrindys.lt/uploads/userfiles/icons/instagram.png",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/product_53_1.jpg?1782979353",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/792157894_17985968199024014_4081332353570641651_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=p9JAzZm4l_cQ7kNvwFgAsPi&_nc_oc=AdrX8dmTxIN84Zu3Pqb6PD9UaRY_w6Z4fcmEmAbfLO0qZ43oBenIPbZz6x0yTtrXr6Q&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQLtuptynD6j4nM9ut2u4E4caS5UTmZnkRIunxv76vnZaA&oe=6AA91831",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/775727213_17983323579024014_3217027471194027418_n.jpg?stp=dst-jpg_p160x160_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=11nu3oAMvuUQ7kNvwHM3f2s&_nc_oc=Ado2B_0c9AbTGe1BKgAiOlNrDOi_0rQNYAJWP1w48p6V1Rh3DNH7TH2fEwGte3kaSaU&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQLrZXj9QLI6SLCnobl31GQXQAqC1JLH_8oP3hApt472QQ&oe=6AA91095",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_312m.jpg?1505118795",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_7_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_21_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_17s.jpg",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/779527545_17983994313024014_7652850621952706594_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=DW1pll4nl5AQ7kNvwFfIJXq&_nc_oc=Ado4ducQtIgyUJ8Sg7uIKG2SWbYOESGo6gfY8uT50oH9V8jc9Y4RKUwmM0gP9AEGTz8&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKUd2OKpt-G8VTQtV1bHmf7fpezsV0r6498RHamvoj35A&oe=6AA91B66",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_37s.jpg",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_40s.jpg",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/779669340_17983994310024014_6644035448944828978_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=100&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=ERkA73U_BJAQ7kNvwF-ld2o&_nc_oc=Adou-qguDAG6K-oylVI_IpWaeo7XjxnPVsj3gsWdEsX5nUz9YPb_hN6xqhB6yhQZtfM&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKP6IHoo9hGtRc5oK5MAFOzXveikKjkVREzJqg6f3MvdA&oe=6AA8E749",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_339m.jpg?1519992484",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_147m.jpg?1500578447",
+    "https://bambukogrindys.lt/uploads/userfiles/EBM++_2018-2022_ECO_800x660.gif",
+    "https://www.bambukogrindys.lt/uploads/skin/st_119.png",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/759477796_17980649895024014_3244118401417785466_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=Ssy9PVk3HHEQ7kNvwFA2xSQ&_nc_oc=AdoLC2RHnBhWDBfcjx7GNjNrFie509EMdm-_r39W1_JHU4j9G3lEIgNJEOzq2vgr-2I&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKVRPZu1CvzKlq1DJGrnaRSwqlN4p_cMBVRPCiOxzJjmA&oe=6AA9197A",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_148m.jpg?1500578497",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_149m.jpg?1500578511",
+    "https://www.bambukogrindys.lt/uploads/userfiles/icons/googleplus.png",
+    "https://bank.paysera.com/quality-sign/quality-sign-image?projectId=100014&host=www.bambukogrindys.lt",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_36s.jpg",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_6_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/it0025/gal_31_1m.jpg?1683048788",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_5_1s150.jpg",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/797840867_17986527960024014_3784514053720002452_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=B16uo2yvkpAQ7kNvwEKQb2S&_nc_oc=Adp-AmfBavlG9ou23zVACqEoyFZBKfYBSguqnPrRqM158vLgVl8eUs6RDarKNo1nMaw&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQLox7RwbueMNOLQNPky17XIevnZmDPv8ae1_KN2u58p9A&oe=6AA90F03",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_38s.jpg",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-1/419204433_940766417455320_3007797380051462471_n.jpg?stp=c56.56.968.968a_cp0_dst-jpg_s50x50_tt6&_nc_cat=107&ccb=1-7&_nc_sid=f907e8&_nc_ohc=3Gpz2rsbJmoQ7kNvwEldxny&_nc_oc=AdquT_JpwdRH0t-yHLIHYPMedMsxtBZ8Zj6VgbeLONiWgxKZ4PrNfJG2Y40YESaDLeY&_nc_zt=24&_nc_ht=scontent-lax3-2.xx&edm=ADwHzz8EAAAA&_nc_gid=Bk5QPTf8w3YMQ6NHf0baGA&oh=00_AQLz3uCG16cnOG_FxvCYtRB13DfnyKCdHYybEwY6GC-GYw&oe=6AA906C0",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-15/798017661_17986527915024014_5062870437830355578_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=zdGwp0bgLg4Q7kNvwEQbnm7&_nc_oc=Ado7zw6JOjpz2uhKG2wD4L1YDQvW9bNEiSrZBxdAcdufBRI5Xe9ZFFTVY5SNEtjWZCQ&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKLDiTCQnZG5Pe7eWNBndHQhUdrFz-EwPbkBhADrWi2BQ&oe=6AA8F132",
+    "https://www.bambukogrindys.lt/uploads/it0160/slide_44.png",
+    "https://www.bambukogrindys.lt/uploads/it0025/news_5_39s.jpg",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-15/759232361_17980649904024014_1803312294495183531_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=Yy_73UcRKacQ7kNvwHL4EWw&_nc_oc=AdrLY2Ro6xAXW19xcc15YYqYtJkg59xYw9d4Tu6vdUeC0jUnANdhapv_inOh0PjcdPA&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKP__G9VMUpFDq0drlUJT7GzLvc7ocaGSZGOjiMDx3O8Q&oe=6AA8FDD9",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/791721110_17985968169024014_1482848789007514969_n.jpg?stp=dst-jpg_p160x160_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=4DM0oPqlUdQQ7kNvwH7U8Td&_nc_oc=Adr58o2NtKA4qs41TnS7c3whkwZ_Nn2FJoSq8-UXbRKe58uO6ch46cP32tuP-6gvF3M&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQLglJZtOvGFntb_2K8qrAdrQraSKzsKx7QmJwGC5ZIrJg&oe=6AA8FA57",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t39.30808-1/419204433_940766417455320_3007797380051462471_n.jpg?stp=c56.56.968.968a_cp0_dst-jpg_s50x50_tt6&_nc_cat=107&ccb=1-7&_nc_sid=f907e8&_nc_ohc=3Gpz2rsbJmoQ7kNvwEldxny&_nc_oc=AdquT_JpwdRH0t-yHLIHYPMedMsxtBZ8Zj6VgbeLONiWgxKZ4PrNfJG2Y40YESaDLeY&_nc_zt=24&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQIfDLP2q61aQbC_AWltD3N-JodU-h1pXP__eQs3ubZ1Lg&oe=6AA906C0",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-10/780238045_17983994361024014_8800230616547436388_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5fad0e&_nc_ohc=93rJaW7ncf0Q7kNvwEeNK-k&_nc_oc=AdoqCk57os7fmlGvVi7bstBbhxz0Z55MgKKh6JDnJaaFqRSdnW6qbxuxDmUXkfKnVsI&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKw3F3DdcYeWYRgr_hhJeL-5FtOW3FvDxfS2qUjppeisg&oe=6AA9195E",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_333m.jpg?1519992457",
+    "https://www.bambukogrindys.lt/uploads/it0160/slide_18.png",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/797204851_17986527912024014_232846422199730003_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=100&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=Ie5Q6gTQFBMQ7kNvwEOhQBs&_nc_oc=AdpL7_ahSeB_4u9FjY0vDc2c8ZSWIKP0TtAV4t8T1Exzm_N1NZ9m2o-WdwxFXCQDYys&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQL_vcKj23Dy5HoJljWbsW3s1zAhtr-nNAi525mHPGxj-w&oe=6AA90E71",
+    "https://static.xx.fbcdn.net/rsrc.php/v4/y4/r/-PAXP-deijE.gif",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-15/759078181_17980649883024014_6998579576792423080_n.jpg?stp=dst-jpg_p160x160_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=ouillP8ylXoQ7kNvwEAvK8N&_nc_oc=AdrwtEIyTPJYSp9YyjdS0qnhnYDbrAeLsha3qDk8mBq8MmvQtvtuV2YYAbLN3sFQU8w&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKvywURIUBioGbZdBHRMDZnkXlM4g5iZR5Bls1QO4xBfQ&oe=6AA8F17E",
+    "https://www.bambukogrindys.lt/uploads/userfiles/icons/twitter.png",
+    "https://static.xx.fbcdn.net/images/emoji.php/v9/t94/1/16/1f49a.png",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/798017671_17986527888024014_274391510065331769_n.jpg?stp=dst-jpg_p110x80_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=6NRfEefUXWoQ7kNvwHYLWlw&_nc_oc=Adrl8EZ-DvunRms0A7Xs85r5A3SiWmXnjN6UL-WEMVhTZX7Gxyx2tvOaONz6nL_M0Vs&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKzmyT-hpp2CQVxopGZvSw_czAeJbW8FCrZX9i_9CrkUQ&oe=6AA91289",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/792157871_17985968178024014_6282677386607142041_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=RILymNU8tooQ7kNvwHj-48t&_nc_oc=Adp0RCbKfKdf7vTq-h4orhvxrK1_FcypBhKHoKAY2bH6Tr_-MrvvAbdOStp9K9h_Mtg&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQIlCM7h_uQ8i2C-d5093CiQeg7SKUVwxZ-WaT-_ra9qpQ&oe=6AA8FD62",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/759281163_17980649859024014_7218409868242449307_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=aYn6wr4ulh4Q7kNvwEMa9Sl&_nc_oc=AdpcbImoNcZwc4ziEqGBTBASelvgGMdl5XhimIXpFyhf3EsyAYs3LAjhQ25KMVVQBu4&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKnUz_3Sz7m9Hj8uZFD0SBUVjsm_Ecb0JtIG0-Oq9vP0w&oe=6AA8FD5B",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_2_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/userfiles/icons/facebook.png",
+    "https://scontent-lax7-1.xx.fbcdn.net/v/t51.82787-15/792053335_17985968154024014_7189258185469335091_n.jpg?stp=dst-jpg_s206x206_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=rBM43zabgJ4Q7kNvwEiDpW4&_nc_oc=AdqOePrvSQguLmWo-Uyo1aZr9MtPFuwWHZvxd45801omZtDb2DnAtBEjF6H2O3eaR8s&_nc_zt=23&_nc_ht=scontent-lax7-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQKwYaAj6fzhO3oyCdElnO7YNBpXlf1G1GJdznDV_cLTaw&oe=6AA8F870",
+    "https://www.bambukogrindys.lt/uploads/it0160/slide_50.png",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/catalog_26_1s150.jpg",
+    "https://www.bambukogrindys.lt/uploads/it0003/gal_7_330m.jpg?1516725252",
+    "https://scontent-lax3-2.xx.fbcdn.net/v/t51.82787-15/779669188_17983994286024014_7233749719638309747_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=LMIW_jurEVkQ7kNvwHMmzPw&_nc_oc=AdraKFYMOiS962AmQZJh7zftStnUU_FLVovV-je4zYOwXnpWqHRxhRf1Zl6kL3fb9tg&_nc_zt=23&_nc_ht=scontent-lax3-2.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQICmM1Sh8FpeDLh06-zZg15e2l-NY_OiBz1Odr4NjAi0w&oe=6AA908B5",
+    "https://scontent-lax3-1.xx.fbcdn.net/v/t51.82787-15/759034333_17980649892024014_7824521634228539148_n.jpg?stp=dst-jpg_s133x133_tt6&_nc_cat=102&ccb=1-7&_nc_sid=e5c1b6&_nc_ohc=8o0h3MbNNgkQ7kNvwE-fpnF&_nc_oc=Adr-KgHA_nuzOE6ukb-pEJ2pU0tquOY0FfkRacK9pdJi_Zln2vfm5pyu265xH7JPpro&_nc_zt=23&_nc_ht=scontent-lax3-1.xx&_nc_gid=T1VqrnFOZN3A3kNDaOcjGw&_nc_ss=7b289&oh=00_AQL9CzZ-NPKFSFGGbefdlw446AHXm3DuAQcrz2rVI4Dlug&oe=6AA8FF72",
+    "https://www.bambukogrindys.lt/uploads/e_catalog/product_678_1.jpg?1782989849"
+  ]
+}

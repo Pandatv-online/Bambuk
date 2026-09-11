@@ -1,0 +1,1863 @@
+{
+  "success": true,
+  "data": {
+    "links": [
+      {
+        "url": "https://www.bambukogrindys.lt/sitemap.xml"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt",
+        "title": "bambukogrindys.lt"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-grindu-ir-terasu-privalumai",
+        "title": "Bambuko grindų ir terasų privalumai - bambukogrindys.lt",
+        "description": "- Termiškai apdorotas, presuotas bambukas itin atsparus puvimo ar dūlėjimo procesams, nedegus. - Plieno tvirtumui prilyginama egzotinė mediena. - Kietesnė už ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/sildomos-grindys",
+        "title": "Šildomos grindys - bambukogrindys.lt",
+        "description": "Grindinio šildymo atveju skirtingai nuo tradicinio šildymo metodo yra būtina atkreipti dėmesį į klojamų grindų tipą bei medienos rūšį."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/apie-mus"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grindu-klojimo--prieziuros-instrukcija",
+        "title": "Grindų klojimo / priežiūros instrukcija - bambukogrindys.lt",
+        "description": "1. Klojant bambuko grindis šildomo betoninio pagrindo drėgnumas neturi viršyti 1,5 % (klojant ant nešildomo pagrindo betono drėgnumas gali siekti 2,8 %). 2."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-grindu-gamybos-procesas",
+        "title": "Bambuko grindų gamybos procesas - bambukogrindys.lt",
+        "description": "Apie mus · Katalogas · Vidaus grindys · Bambuko grindų kolekcija \"Klasika\" · Grindų kolekcija \"Spalvų harmonija\" · Bambuko grindų kolekcija \"Antika\" ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/2/vidaus-grindys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/32/bambuko-terasos-grindys",
+        "title": "Bambuko terasos grindys - bambukogrindys.lt",
+        "description": "Bambuko terasinės grindys yra pagamintos iš apdoroto pluošto bambuko žaliavos, naudojant tik išorės aplinkos poveikiams atsparias aliejines medžiagas."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/443/bambuko-terasines-grindys-dassoxtr-r137-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/463/bambuko-terasines-grindys-dassoxtr-v137-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/461/bambuko-terasines-grindys-dassoxtr-r155-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/464/bambuko-terasines-grindys-dassoxtr-v155-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/462/bambuko-terasines-grindys-dassoxtr-r178-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/465/bambuko-terasines-grindys-dassoxtr-v178-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/466/bambuko-terasines-grindys-dassoctech-r137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/467/bambuko-terasines-grindys-dassoctech-v137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/469/bambuko-terasines-grindys-dassoctech-r155-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/468/bambuko-terasines-grindys-dassoctech-v155-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/735/bambuko-terasines-grindys-dassoctech-plus-v137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/471/bambuko-terasines-grindys-dassoctech-r178-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/470/bambuko-terasines-grindys-dassoctech-v178-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/540/pradzios-uzbaigimo-terasine-lenta-dassoxtr-r137-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/541/pradzios-uzbaigimo-terasine-lenta-dassoctech-v137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/567/bambuko-stogines-verandos-grindys-dassoxtr-porch-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/568/bambuko-stogines-verandos-grindys-dassoctech-porch-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/43/bambuko-baldines-plokstes",
+        "title": "Bambuko baldinės plokštės - bambukogrindys.lt",
+        "description": "Tradicinio (vertikalaus ir horizontalaus) bei presuoto bambuko baldinės plokštės - ilgaamžiai, natūralumu išsiskiriantys, egzotinės išvaizdos apdailos ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/682/vertikalaus-soninio-presavimo-bambuko-plokste-3-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/683/vertikalaus-soninio-presavimo-bambuko-plokste-3-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/173/vertikalaus-soninio-presavimo-bambuko-plokste-3-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/174/vertikalaus-soninio-presavimo-bambuko-plokste-3-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/450/vertikalaus-soninio-presavimo-bambuko-plokste-5-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/452/vertikalaus-soninio-presavimo-bambuko-plokste-5-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/684/vertikalaus-soninio-presavimo-bambuko-plokste-7-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/685/vertikalaus-soninio-presavimo-bambuko-plokste-9-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/688/vertikalaus-soninio-presavimo-bambuko-plokste-9-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/686/vertikalaus-soninio-presavimo-bambuko-plokste-7-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/689/vertikalaus-soninio-presavimo-bambuko-plokste-plus-7-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/687/vertikalaus-soninio-presavimo-bambuko-plokste-9-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/690/vertikalaus-soninio-presavimo-bambuko-plokste-plus-9-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/169/horizontalaus-plokscio-presavimo-bambuko-plokste-3-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/691/horizontalaus-plokscio-presavimo-bambuko-plokste-5-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/692/horizontalaus-plokscio-presavimo-bambuko-plokste-7-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/693/horizontalaus-plokscio-presavimo-bambuko-plokste-plus-7-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/696/presuoto-bambuko-plokste-5-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/178/presuoto-bambuko-plokste-5-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/697/presuoto-bambuko-plokste-7-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/694/presuoto-bambuko-plokste-7-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/698/presuoto-bambuko-plokste-9-sluoksniai-naturali-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/695/presuoto-bambuko-plokste-9-sluoksniai-karbonizuota-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/47/bambuko-skersiniai",
+        "title": "Bambuko skersiniai - bambukogrindys.lt",
+        "description": "Moso bambuko skersiniai - Natūrali spalva. Ilgis: 2900 mm. Plotis: 50 mm. Storis: 10 mm. 4.30 €/vnt. Moso bambuko skersiniai - Karbonizuota spalva ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/180/moso-bambuko-skersiniai-naturali-spalva-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/185/moso-bambuko-skersiniai-karbonizuota-spalva-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/55/bambuko-grindu-kolekcija-klasika",
+        "title": "Bambuko grindų kolekcija \"Klasika\" - bambukogrindys.lt",
+        "description": "Kolekcijos \"Classic\" grindys turi subtilų dizainą, natūralias spalvas, būdingas kieto pluošto apdorotam bambukui, taip pat plokščią paviršiaus tekstūrą."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/47/naturalios-bambuko-masyvo-grindys-naturali-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/70/naturalios-bambuko-masyvo-grindys-sviesiai-karbonizuota-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/53/naturalios-bambuko-masyvo-grindys-karbonizuota-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/73/naturalios-bambuko-masyvo-grindys-sviesiai-karbonizuota-spalva-bona-natural-lakas-39-80-m2-1830-mm-135-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/619/naturalios-bambuko-masyvo-grindys-karbonizuota-spalva-bona-matinis-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/166/naturalios-bambuko-masyvo-grindys-tamsiai-karbonizuota-spalva-bona-natural-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/337/naturalios-bambuko-masyvo-grindys-merbau-spalva-bona-natural-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/272/naturalios-bambuko-masyvo-grindys-naturali-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/274/naturalios-bambuko-masyvo-grindys-karbonizuota-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/278/naturalios-bambuko-masyvo-grindys-tamsiai-karbonizuota-spalva-bona-natural-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/338/naturalios-bambuko-masyvo-grindys-merbau-spalva-bona-natural-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/677/naturalios-bambuko-masyvo-grindys-karbonizuota-spalva-bona-matinis-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/21/lauko-gaminiai"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/38/grindu-kolekcija-spalvu-harmonija",
+        "title": "Grindų kolekcija \"Spalvų harmonija\" - bambukogrindys.lt",
+        "description": "Tai kolekcija padėsianti sukurti Jūsų spalvos, šiuolaikiškus svajonių namus. 54.90 €/m². Dažytos šukuotos bambuko masyvo grindys - Vanilla spalva - UV Treffert ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/59/dazytos-sukuotos-bambuko-masyvo-grindys-vanilla-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/532/dazytos-sukuotos-bambuko-masyvo-grindys-sedona-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/57/dazytos-sukuotos-bambuko-masyvo-grindys-balinta-kakavos-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/62/dazytos-sukuotos-bambuko-masyvo-grindys-tamsi-viskio-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/279/dazytos-bambuko-masyvo-grindys-vanilla-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/282/sukuotos-bambuko-masyvo-grindys-balinta-kakavos-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/307/dazytos-sukuotos-bambuko-masyvo-grindys-tamsi-viskio-spalva-uv-treffert-lakas-40-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/561/dazytos-sukuotos-bambuko-masyvo-grindys-sedona-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/789/dazytos-sukuotos-bambuko-masyvo-grindys-sand-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/675/dazytos-bambuko-masyvo-grindys-sviesi-vanilla-spalva-bona-matinis-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/621/dazytos-bambuko-masyvo-grindys-sviesi-vanilla-spalva-bona-matinis-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/59/bambuko-sieneles"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/322/moso-bambuku-sienele-juodinta-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/61/bambuko-dailylentes-pakalimai",
+        "title": "Bambuko dailylentės / pakalimai - bambukogrindys.lt",
+        "description": "Informacija ruošiama. 80.90 €/m². Bambuko dailylentės - dassoXTR' 137 - Espresso spalva. Ilgis: 1850 mm. Plotis: 137 mm. Storis: 18 mm. 88.90 €/m²."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/585/bambuko-dailylentes-dassoxtr-137-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/473/bambuko-dailylentes-dassoctech-137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/475/bambuko-dailylentes-dassoxtr-100-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/476/bambuko-dailylentes-dassoctech-100-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/569/bambuko-pakalimai-stogui-dassoxtr-soffit-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/581/bambuko-pakalimai-stogui-dassoctech-soffit-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/5/grindjuostes-ir-laiptu-briaunos"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/51/bambuko-masyvo-grindjuoste-naturali-spalva-uv-treffert-lakas-13-00-vnt-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/145/bambuko-masyvo-grindjuoste-karbonizuota-spalva-uv-treffert-lakas-13-00-vnt-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/146/bambuko-masyvo-grindjuoste-dazyta-spalva-uv-treffert-lakas-14-00-vnt-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/150/bambuko-masyvo-grindjuoste-naturali-spalva-bona-naturals-lakas-13-00-vnt-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/151/bambuko-masyvo-grindjuoste-karbonizuota-spalva-bona-naturals-lakas-13-00-vnt-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/152/bambuko-masyvo-grindjuoste-sviesiai-karbonizuota-spalva-bona-naturals-lakas-13-00-vnt-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/160/bambuko-masyvo-laiptu-briauna-naturali-spalva-uv-treffert-lakas-28-00-vnt-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/161/bambuko-masyvo-laiptu-briauna-karbonizuota-spalva-uv-treffert-lakas-28-00-vnt-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/162/bambuko-masyvo-laiptu-briauna-karbonizuota-spalva-uv-treffert-lakas-29-00-vnt-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/40/bambuko-grindu-kolekcija-antika"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/678/grandytos-sukuotos-bambuko-masyvo-grindys-915-mm-antikos-perlo-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/408/grandytos-sukuotos-bambuko-masyvo-grindys-1850-mm-antikos-perlo-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/106/grandytos-sukuotos-bambuko-masyvo-grindys-karbonizuota-antikos-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/311/grandytos-sukuotos-bambuko-masyvo-grindys-karbonizuota-antikos-spalva-uv-treffert-lakas-43-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/313/grandytos-sukuotos-bambuko-masyvo-grindys-1-is-2-misko-spalva-uv-treffert-lakas-46-80-m2-1850-mm-130-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/314/lengvos-pjuklo-apdailos-bambuko-masyvo-grindys-2-is-2-pozicija-misko-spalva-uv-treffert-lakas-46-80-m2-1850-mm-96-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/409/grandytos-sukuotos-bambuko-masyvo-grindys-antikos-perlo-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/117/grandytos-sukuotos-bambuko-masyvo-grindys-1-is-2-misko-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/125/lengvos-pjuklo-apdailos-bambuko-masyvo-grindys-2-is-2-pozicija-misko-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/679/grandytos-sukuotos-bambuko-masyvo-grindys-antikos-perlo-spalva-uv-treffert-lakas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/48/bambuko-tapetai",
+        "title": "Bambuko tapetai - bambukogrindys.lt",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. „cookies“). Jie gali identifikuoti prisijungusius vartotojus, rinkti statistikos duomenis ir padėti pagerinti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/326/bambuko-tapetai-karbonizuota-spalva-pavirsius-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/325/bambuko-tapetai-deginta-zalsva-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/327/bambuko-tapetai-naturali-zalia-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/3/bambuko-plokstes"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/41/bambuko-grindu-kolekcija-bambukas",
+        "title": "Bambuko grindų kolekcija \"Bambukas\" - bambukogrindys.lt",
+        "description": "Skirtingai nuo apdoroto pluošto bambuko grindų, „Bambukas“ grindų kolekcijos gamyboje, bambuko stiebas yra pjaunamas išilgai per visą bambuką ir specialiai ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/646/bambuko-trisluoksnes-parketlentes-12597mm-bambuko-spalva-vaskas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/676/bambuko-trisluoksnes-parketlentes-12597mm-bambuko-spalva-vaskas-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/34/terasos-montavimo-reikmenys",
+        "title": "Terasos montavimo reikmenys - bambukogrindys.lt",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. „cookies“). Jie gali identifikuoti prisijungusius vartotojus, rinkti statistikos duomenis ir padėti pagerinti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/499/terasos-tvirtinimo-elementas-pagrindinis-elementas_1var"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/538/terasos-tvirtinimo-elementas-pagrindinis-elementas_2var"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/200/terasos-tvirtinimo-elementas-pradzios-pabaigos-elementas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/209/xtr-presuoto-bambuko-lages"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/583/pakalimu-tvirtinimo-elementas-pagrindinis-elementas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/7/bambuko-dekoras",
+        "title": "Bambuko dekoras - bambukogrindys.lt",
+        "description": "Bambuko stiebo juostelės (skersiniai), įvairaus diametro bambuko poliai, bambuko tvorelės, žaliuzės iš bambuko bei daug kitų interjero bei eksterjero ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/36/terasos-prieziuros-priemones",
+        "title": "Terasos priežiūros priemonės - bambukogrindys.lt",
+        "description": "FAXE terasos valiklis - 2.5l. | 32.00 €/pak. Į krepšelį. 65.00 €/vnt. FAXE pigmentinė terasos alyva - Espresso spalva - 2.5l ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/717/faxe-terasos-valiklis-2-5l-32-00-pak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/715/faxe-pigmentine-terasos-alyva-espresso-spalva-2-5l-64-00-pak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/716/faxe-pigmentine-terasos-alyva-coffee-spalva-2-5l-64-00-pak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/536/woca-terasos-alyva-bespalve-2-5l-70-00-pak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/592/osmo-vaskas-skersgaliu-sandarinimui-0-375-l-50-00-pak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/6/grindu-klojimo-priemones",
+        "title": "Grindų klojimo priemonės - bambukogrindys.lt",
+        "description": "ADESIVER 2K PREMIUM - Epoksidiniai poliuretaniniai klijai grindims | 12.5 kg. 280.00 €/vnt. WAKOL PU 280 - Hidroizoliacinis, poliuretaninis gruntas | 11 kg."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/187/adesiver-2k-premium-epoksidiniai-poliuretaniniai-klijai-grindims-12-5-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/559/wakol-pu-280-hidroizoliacinis-poliuretaninis-gruntas-11-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/190/chimiver-kliju-sukos-n-5"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/614/wakol-pu-280-hidroizoliacinis-poliuretaninis-gruntas-5kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/39/grindu-kolekcija-paliesta-gamtos"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/595/naturalios-bambuko-masyvo-grindys-1850-mm-alyvuojamos-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/612/naturalios-bambuko-masyvo-grindys-alyvuojamos-be-padengimo-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/500/karbonizuotos-bambuko-masyvo-grindys-1850-mm-alyvuojamos-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/415/grandytos-sukuotos-bambuko-masyvo-grindys-alyvuojamos-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/502/karbonizuotos-bambuko-masyvo-grindys-alyvuojamos-be-padengimo-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/417/grandytos-sukuotos-bambuko-masyvo-grindys-karbonizuota-spalva-be-padengimo-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/478/grandytos-bambuko-masyvo-grindys-1-is-2-alyvuojamos-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/480/lengvos-pjuklo-apdailos-bambuko-masyvo-grindys-2-is-2-pozicija-alyvuojamos-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/518/grandytos-bambuko-masyvo-grindys-1-is-2-alyvuojamos-be-padengimo-nemokamas-pavyzdys"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/26/grindu-prieziuros-priemones"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/256/retusavimo-piestukas-ko-210"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/257/spalvos-retusavimo-piestukas-ko-210_126"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/258/spalvos-retusavimo-piestukas-ko-210_104"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/259/spalvos-retusavimo-piestukas-ko-210_164"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/637/spalvos-retusavimo-piestukas-ko-210_203"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/260/universalus-lakuotu-mediniu-grindu-ploviklis"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/65/bambuko-grindu-kolekcija-eglute"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/607/naturalios-bambuko-masyvo-grindys-eglute-karbonizuota-spalva-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/615/grandytos-sukuotos-bambuko-masyvo-grindys-eglute-karbonizuota-spalva-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/710/naturalios-bambuko-masyvo-grindys-eglute-naturali-spalva-be-padengimo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/600/naturalios-bambuko-masyvo-grindys-eglute-naturali-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/product/743/naturalios-bambuko-masyvo-grindys-eglute-karbonizuota-spalva-uv-treffert-lakas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grindu-kliju-naudojimo-instrukcija",
+        "title": "Grindų klijų naudojimo instrukcija - bambukogrindys.lt",
+        "description": "Grunto naudoti nebūtina! Klijų džiūvimo laikas. Suklijuotos grindys atsparios vaikščiojimui ir apkrovoms praėjus 72 valandoms, nesvarbu, kokia klijų išeiga."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grindu-siluminis-laidumas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/janka-kietumo-skale",
+        "title": "Janka kietumo skalė - bambukogrindys.lt",
+        "description": "Janka kietumo skalė naudojama matuoti bambuko ar kitų medžio grindų medžiagos kietumui ir tankiui. Kuo aukštesnis medžiagos vertinimas pagal Janka skalę, ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grunto-naudojimo-instrukcija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-masyvo-grindu-spalvos"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-grindu-rastai-ir-struktura",
+        "title": "Bambuko grindų raštai ir struktūra - bambukogrindys.lt",
+        "description": "Bambuko grindų raštai ir struktūra - natūralus, išskirtinio dizaino ir ilgaamžis sprendimas jūsų gyvenamajai erdvei."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-grindu-lentu-briaunos"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/galerija",
+        "title": "Galerija - bambukogrindys.lt",
+        "description": "Apdoroto pluošto bambuko lauko gaminiai Jūsų lauko terasai, fasadui ar kitiems individualiems lauko projektams, siekiant aukšto atsparumo oro sąlygoms bei ilgo ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/konstrukcija",
+        "title": "Konstrukcija - bambukogrindys.lt",
+        "description": "Spragtuko / užrakto sistemos tipo bambuko grindys – atskiros bambuko grindų lentelės, kurios, jungiamos kartu, spragteli tikrąja to žodžio prasme."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grindu-risikliai-ir-klijai",
+        "title": "Grindų rišikliai ir klijai - bambukogrindys.lt",
+        "description": "Ieškote grindų rišiklių ar klijų? Tuomet kviečiame apsilankyti ir apžiūrėti mūsų siūlomo asortimento profesionalams."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/apdailos-medziagos-ir-lakas",
+        "title": "Apdailos medžiagos ir lakas - bambukogrindys.lt",
+        "description": "Apdailos medžiagos ir lakas ... Siekdami apsaugoti bambuko grindis, daugumą jų tiekiame jau nulakuotas ar apdorotas aliejais pagal griežčiausius Europos kokybės ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/kontaktai"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/grindu-dangos-klojimo-budai",
+        "title": "Grindų dangos klojimo būdai - bambukogrindys.lt",
+        "description": "Kaip ir bet kuri kita grindų rūšis, bambuko grindų danga gali būti klojama kaip plūdriosios grindys, prikalama arba priklijuojama prie pagrindo. Nesvarbu, kokį ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/bambuko-grindys-spaudoje-2",
+        "title": "Bambuko grindys spaudoje - bambukogrindys.lt",
+        "description": "Presuoto bambuko grindys yra įvairių raštų bei spalvų, yra itin patvarios gaminamos iš atsinaujinančio resurso bei saugios žmogui. Taip pat pasižymi itin ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/duk"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en",
+        "title": "dassoXTR Fused bamboo decking - durability for 25 years",
+        "description": "Bamboo is a perennial, naturally growing, evergreen grass. It is one of the most resistant and fast-growing plants"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/the-benefits-of-bamboo-flooring--decking"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/heated-floor",
+        "title": "Heated floor - Bambuko grindys",
+        "description": "In case of underfloor heating, unlike the traditional heating method, it is necessary to pay attention to the type of flooring and the type of wood."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/about-us"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/flooring-installation--maintenance-instruction"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/bamboo-flooring-manufacturing-process",
+        "title": "Bamboo flooring manufacturing process - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/2/indoor-flooring"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/32/fused-bamboo-decking"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/443/fused-bamboo-decking-dassoxtr-r137-espresso-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/463/bamboo-decking-boards-dassoxtr-v137-espresso-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/461/bamboo-decking-boards-dassoxtr-r155-espresso-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/464/bamboo-decking-boards-dassoxtr-v155-espresso-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/462/bamboo-decking-boards-dassoxtr-r178-espresso-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/465/bamboo-decking-boards-dassoxtr-v178-espresso-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/466/fused-bamboo-decking-dassoctech-r137-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/467/bamboo-decking-boards-dassoctech-v137-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/469/bamboo-decking-boards-dassoctech-r155-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/468/bamboo-decking-boards-dassoctech-v155-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/735/bamboo-decking-boards-dassoctech-plus-v137-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/471/bamboo-decking-boards-dassoctech-r178-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/470/bamboo-decking-boards-dassoctech-v178-coffee-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/540/start-end-bamboo-decking-plank-dassoxtr-r137-espresso-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/541/start-end-bamboo-decking-plank-dassoctech-rv137-coffee-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/567/fused-bamboo-porch-flooring-dassoxtr-porch-espresso-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/568/fused-bamboo-porch-flooring-dassoctech-porch-coffee-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/43/bamboo-panels",
+        "title": "Bamboo panels - Bambuko grindys",
+        "description": "Search · Newsletter · Catalog · Product lines · Trademarks · Offer. Strand woven bamboo skirting - Carbonized color - Bona naturals lacquer. Category: Flooring ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/682/bamboo-plywood-3-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/683/bamboo-plywood-3-ply-vertical-side-pressed-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/173/bamboo-plywood-3-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/174/bamboo-plywood-3-ply-vertical-side-pressed-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/450/bamboo-plywood-5-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/452/bamboo-plywood-5-ply-vertical-side-pressed-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/684/bamboo-plywood-5-ply-vertical-side-pressed-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/685/bamboo-plywood-9-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/688/bamboo-plywood-9-ply-vertical-side-pressed-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/686/bamboo-plywood-7-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/689/bamboo-plywood-7-ply-vertical-side-pressed-plus-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/687/bamboo-plywood-9-ply-vertical-side-pressed-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/690/bamboo-plywood-9-ply-vertical-side-pressed-plus-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/169/3-ply-horizontal-plain-pressed-bamboo-panel-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/691/5-ply-horizontal-plain-pressed-bamboo-panel-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/692/7-ply-horizontal-plain-pressed-bamboo-panel-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/693/bamboo-plywood-7-ply-horizontal-plain-pressed-plus-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/696/strand-woven-bamboo-plywood-5-ply-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/178/strand-woven-bamboo-plywood-5-ply-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/697/strand-woven-bamboo-plywood-7-ply-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/694/strand-woven-bamboo-plywood-7-ply-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/698/strand-woven-bamboo-plywood-9-ply-natural-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/695/strand-woven-bamboo-plywood-9-ply-carbonized-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/47/bamboo-slats"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/180/moso-bamboo-slats-natural-colour-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/185/moso-bamboo-slats-carbonized-colour-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/55/classic-collection",
+        "title": "\"Classic\" Collection - Bambuko grindys",
+        "description": "What makes this flooring exceptional is that the color of flooring is the same through all tickness of material. Because of that the main color stays the ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/47/natural-strand-woven-bamboo-flooring-natural-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/70/natural-strand-woven-bamboo-flooring-lightly-carbonized-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/53/natural-strand-woven-bamboo-flooring-carbonized-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/73/natural-strand-woven-bamboo-flooring-light-carbonized-color-bona-natural-lacquer-39-80-m2-1830-mm-135-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/619/natural-strand-woven-bamboo-flooring-carbonized-color-bona-matt-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/166/natural-strand-woven-bamboo-flooring-dark-carbonized-color-bona-natural-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/337/natural-strand-woven-bamboo-flooring-merbau-color-bona-natural-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/272/natural-strand-woven-bamboo-flooring-natural-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/274/natural-strand-woven-bamboo-flooring-carbonized-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/278/natural-strand-woven-bamboo-flooring-dark-carbonized-color-bona-natural-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/338/natural-strand-woven-bamboo-flooring-merbau-color-bona-natural-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/677/natural-strand-woven-bamboo-flooring-carbonized-color-bona-matt-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/21/outdoor-products"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/38/harmony-of-colors-collection"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/59/stained-lightly-brushed-strand-woven-bamboo-flooring-vanilla-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/532/stained-lightly-brushed-strand-woven-bamboo-flooring-sedona-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/57/stained-lightly-brushed-strand-woven-bamboo-flooring-cacao-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/62/stained-brushed-strand-woven-bamboo-flooring-dark-wiskey-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/279/stained-strand-woven-bamboo-flooring-vanilla-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/282/lightly-brushed-strand-woven-bamboo-flooring-cacao-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/307/stained-brushed-strand-woven-bamboo-flooring-dark-wiskey-color-uv-treffert-lacquer-40-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/561/stained-lightly-brushed-strand-woven-bamboo-flooring-sedona-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/789/stained-lightly-brushed-strand-woven-bamboo-flooring-sand-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/675/stained-strand-woven-bamboo-flooring-light-vanilla-color-bona-matt-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/621/stained-strand-woven-bamboo-flooring-light-vanilla-color-bona-matt-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/59/bamboo-screen",
+        "title": "Bamboo screen - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/322/moso-bamboo-fence-panel-black-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/61/fused-bamboo-cladding-soffit"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/585/fused-bamboo-cladding-dassoxtr-137-espresso-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/473/fused-bamboo-cladding-dassoctech-137-coffee-spalva"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/475/fused-bamboo-cladding-dassoxtr-100-espresso-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/476/fused-bamboo-cladding-dassoctech-100-coffee-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/569/fused-bamboo-soffit-dassoxtr-soffit-espresso-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/581/fused-bamboo-soffit-dassoctech-soffit-coffee-color"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/5/flooring-accessories"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/51/strand-woven-bamboo-skirting-natural-color-uv-treffert-lacquer-13-00-pc-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/145/strand-woven-bamboo-skirting-carbonized-color-uv-treffert-lacquer-13-00-pc-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/146/strand-woven-bamboo-skirting-stained-color-uv-treffert-lacquer-14-00-pc-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/150/strand-woven-bamboo-skirting-natural-color-bona-naturals-lacquer-13-00-pc-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/151/strand-woven-bamboo-skirting-carbonized-color-bona-naturals-lacquer-13-00-pc-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/152/strand-woven-bamboo-skirting-light-carbonized-color-bona-naturals-lacquer-13-00-pc-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/160/strand-woven-bamboo-stair-nosing-natural-color-uv-treffert-lacquer-28-00-pc-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/161/strand-woven-bamboo-stair-nosing-carbonized-color-uv-treffert-lacquer-28-00-pc-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/162/strand-woven-bamboo-stair-nosing-carbonized-color-uv-treffert-lacquer-29-00-pc-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/40/collection-antique",
+        "title": "Collection \"Antique\" - Bambuko grindys",
+        "description": "It features two dominating natural colors, handscraped and deep brushed – antique natural (aged surface of natural bamboo color) and antique carbonized ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/678/handscraped-brushed-strand-woven-bamboo-flooring-915-mm-antique-pearl-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/408/handscraped-brushed-strand-woven-bamboo-flooring-1850-mm-antique-pearl-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/106/handscraped-brushed-solid-strand-woven-bamboo-flooring-carbonized-antique-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/311/handscraped-brushed-solid-strand-woven-bamboo-flooring-carbonized-antique-color-uv-treffert-lacquer-43-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/313/handscraped-brushed-solid-strand-woven-bamboo-flooring-1-of-2-red-forest-color-uv-treffert-lacquer-46-80-m2-1850-mm-130-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/314/light-sawn-mark-solid-strand-woven-bamboo-flooring-2-of-2-position-red-forest-color-uv-treffert-lacquer-46-80-m2-1850-mm-96-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/409/handscraped-brushed-solid-strand-woven-bamboo-flooring-antique-pearl-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/117/handscraped-brushed-solid-strand-woven-bamboo-flooring-1-of-2-red-forest-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/125/light-sawn-mark-solid-strand-woven-bamboo-flooring-2-of-2-position-red-forest-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/679/handscraped-brushed-strand-woven-bamboo-flooring-antique-pearl-color-uv-treffert-lacquer-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/48/bamboo-wallpaper"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/326/bamboo-wallpaper-carbonized-colour-surface-without-coating"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/325/bamboo-wallpaper-burned-green-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/327/bamboo-wallpaper-natural-green-colour"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/3/bamboo-panels"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/41/collection-bamboo",
+        "title": "Collection \"Bamboo\" - Bambuko grindys",
+        "description": "Different from solid strand woven bamboo flooring, Eco solid flooring from collection „Bamboo” is made by flattened bamboo stem during a special process ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/646/3-ply-eco-solid-bamboo-flooring-12597mm-bamboo-color-waxed"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/676/3-ply-eco-solid-bamboo-flooring-12597mm-bamboo-color-waxed-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/34/installation-accessories"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/499/decking-fastening-element-main-clip_1option"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/538/decking-fastening-element-main-clip_2option"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/200/decking-fastening-element-start-end-clip"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/209/xtr-support-beam-bamboo"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/583/soffit-boards-mounting-set-main-clip"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/7/bamboo-decor",
+        "title": "Bamboo decor - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/36/maintenance-products"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/717/faxe-decking-cleaner-2-5l-32-00-pc"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/715/faxe-decking-coloured-oil-espresso-colour-2-5l-64-00box"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/716/faxe-decking-coloured-oil-coffee-colour-2-5l-64-00box"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/536/woca-exterior-oil-colorless-2-5l-70-00box"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/592/osmo-end-seal-wax-0-375-l-50-00-pc"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/6/installation-products"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/187/adesiver-2k-premium-epoxy-polyurethane-adhesive-12-5-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/559/wakol-pu-280-moisture-barrier-polyurethane-primer-11-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/190/chimiver-notched-trowel-n-5"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/614/wakol-pu-280-moisture-barrier-polyurethane-primer-5kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/39/touched-by-nature-collection"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/595/natural-strand-woven-bamboo-flooring-1850-mm-ready-for-oiling-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/612/natural-strand-woven-bamboo-flooring-ready-for-oiling-unfinished-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/500/carbonized-strand-woven-bamboo-flooring-1850-mm-ready-for-oiling-uncoated"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/415/handscraped-brushed-strand-woven-bamboo-flooring-ready-for-oiling-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/502/carbonized-strand-woven-bamboo-flooring-ready-for-oiling-uncoated-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/417/handscraped-brushed-solid-strand-woven-bamboo-flooring-carbonized-color-unfinish-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/478/handscraped-strand-woven-bamboo-flooring-1-of-2-ready-for-oiling-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/480/light-saw-mark-surface-solid-strand-woven-bamboo-flooring-2-of-2-position-for-oiling-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/518/handscraped-strand-woven-bamboo-flooring-1-of-2-ready-for-oiling-uncoated-free-sample"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/26/floor-care-items"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/256/retouch-pencil-ko-210"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/257/retouch-pencil-ko-210_126"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/258/retouch-pencil-ko-210_104"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/259/retouch-pencil-ko-210_164"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/637/retouch-pencil-ko-210_203"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/260/sanitizing-multiuse-cleaner-for-wooden-floors"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/category/65/collection-herringbone",
+        "title": "Collection \"Herringbone\" - Bambuko grindys",
+        "description": "Herringbone flooring – planks of bamboo floor boards with the same length, which are stacked at 90° angle to each other. Fixed length of the plank allows to ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/607/natural-strand-woven-bamboo-flooring-herringbone-carbonized-color-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/615/handscraped-brushed-strand-woven-bamboo-flooring-herringbone-carbonized-color-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/710/natural-strand-woven-bamboo-flooring-herringbone-natural-color-unfinished"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/600/natural-strand-woven-bamboo-flooring-herringbone-natural-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/product/743/natural-strand-woven-bamboo-flooring-herringbone-carbonized-color-uv-treffert-lacquer"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/thermal-conductivity-of-floors",
+        "title": "Thermal conductivity of floors - Bambuko grindys",
+        "description": "Thermal conductivity - is the property of the material to waste heat, it is thermal insulation material properties. This property is described by the thermal ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/user-manual-of-floor-adhesive"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/janka-hardness-scale",
+        "title": "Janka hardness scale - Bambuko grindys",
+        "description": "If you are considering buying a bamboo or other hardwood floor, Janka's hardness scale can be a very useful and insightful tool. The hardness scale of Janka is ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/colors",
+        "title": "Colors - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/structure-and-patterns"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/gallery",
+        "title": "Gallery - Bambuko grindys",
+        "description": "Processed bamboo outdoor products for your outdoor terraces, facade or other individual outdoor outdoor projects to achieve high weather resistance and long ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/the-edges",
+        "title": "The edges - Bambuko grindys",
+        "description": "The edges of the bamboo floor table are cut at 90 °, then the individual floor tables are combined together to give a smooth transition, without grooves between ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/primer-user-manual"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/construction"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/binders-and-glues",
+        "title": "Binders and glues - Bambuko grindys",
+        "description": "Additionally, fiber reinforcement with Norwegian organic adhesive Dynea (very low volatile organic compounds (VOCs) with Dynea firm adhesives) with an emission ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/finishing-materials-and-varnishes"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/contacts",
+        "title": "\"Bambuko grindys\", UAB",
+        "description": "CONTACTS: Company address / Exposition: Rugių str. 9, Paplanskai, Alytaus raj. Zip - 64393, Lithuania. Warehouse address: Pramonės str. 31C, Alytus."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/floor-laying-methods",
+        "title": "Floor laying methods - Bambuko grindys",
+        "description": "Bamboo flooring, like any other floor covering, is advisable to be laid in queues, from the largest source of natural light. Floating floors. If you are lined ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/bamboo-flooring-in-the-press"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/faq"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru",
+        "title": "Бамбуковые террасные доски dassoXTR - Bambuko grindys",
+        "description": "Бамбук – это многолетнее естественно произрастающее вечнозеленое травянистое растение. Оно является одним из найболее устойчивых и быстро возобновляющихся ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/preimushestva-bambukovyh-polov"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/podogrevaemyj-pol"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/o-nas"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/instrukcii-po-ukladke-pola",
+        "title": "Инструкции по укладке пола - Bambuko grindys",
+        "description": "Ввиду того факта, что бамбуковый паркет является натуральным продуктом, который необходимо \"аклиматизировать\", рекомендуется пол перед укладкой занести в ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/process-izgotovlenija-pola"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/2/vnutrennij-parket",
+        "title": "Внутренний паркет - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/32/bambukovye-terrasy"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/443/terrasnye-poly-dassoxtr-r137-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/463/terrasnye-poly-dassoxtr-v137-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/461/terrasnye-poly-dassoxtr-r155-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/464/terrasnye-poly-dassoxtr-v155-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/462/terrasnye-poly-dassoxtr-r178-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/465/terrasnye-poly-dassoxtr-v178-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/466/terrasnye-poly-dassoctech-r137-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/467/terrasnye-poly-dassoctech-v137-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/469/terrasnye-poly-dassoctech-r155-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/468/terrasnye-poly-dassoctech-v155-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/735/terrasnye-poly-dassoctech-plus-v137-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/471/terrasnye-poly-dassoctech-r178-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/470/terrasnye-poly-dassoctech-v178-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/540/nachalo-konec-terrasnoj-doski-dassoxtr-r137-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/541/nachalo-konec-terrasnoj-doski-dassoctech-v137-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/567/bambukovye-poly-dlja-krylca-dassoxtr-porch-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/568/bambukovye-poly-dlja-krylca-dassoctech-porch-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/43/bambukovye-paneli"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/682/bambukovaja-panel-3-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/683/bambukovaja-panel-3-slojnaja-press-storona-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/173/bambukovaja-panel-3-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/174/bambukovaja-panel-3-slojnaja-press-storona-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/450/bambukovaja-panel-5-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/452/bambukovaja-panel-5-slojnaja-press-storona-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/684/bambukovaja-panel-5-slojnaja-press-storona-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/685/bambukovaja-panel-9-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/688/bambukovaja-panel-9-slojnaja-press-storona-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/686/bambukovaja-panel-7-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/689/bambukovaja-panel-7-slojnaja-press-storona-pljus-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/687/bambukovaja-panel-9-slojnaja-press-storona-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/690/bambukovaja-panel-9-slojnaja-press-storona-pljus-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/169/3-slojnaja-prostaja-pressa-bambukovaja-panel-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/691/5-slojnaja-prostaja-pressa-bambukovaja-panel-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/692/7-slojnaja-prostaja-pressa-bambukovaja-panel-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/693/bambukovaja-panel-7-slojnaja-prostaja-pressa-pljus-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/696/pressovannaja-bambukovaja-panel-5-slojnaja-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/178/pressovannaja-bambukovaja-panel-5-slojnaja-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/697/pressovannaja-bambukovaja-panel-7-slojnaja-haturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/694/pressovannaja-bambukovaja-panel-7-slojnaja-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/698/pressovannaja-bambukovaja-panel-9-slojnaja-naturalnyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/695/pressovannaja-bambukovaja-panel-9-slojnaja-karbonizirovannyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/47/bambukovye-lameli"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/180/moso-bambukovye-lameli-haturalnyj-cvet-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/185/moso-bambukovye-lameli-obuglennye-cvet-o-50-x-2800-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/55/kollekcija-klassika"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/47/haturalnyj-bambukovyj-parket-haturalnyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/70/bambukovyj-parket-karbonizirovannyj-svetlyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/53/bambukovyj-parket-karbonizirovannyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/73/bambukovyj-parket-legko-obuglennye-cvet-bona-naturalnyj-lak-39-80-m2-1830-mm-135-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/619/bambukovyj-parket-karbonizirovannyj-cvet-bona-matovyj-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/166/bambukovyj-parket-karbonizirovannyj-temnyj-cvet-bona-naturalnyj-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/337/bambukovyj-parket-merbau-cvet-bona-naturalnyj-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/272/haturalnyj-bambukovyj-parket-haturalnyj-cvet-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/274/bambukovyj-parket-karbonizirovannyj-cvet-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/278/bambukovyj-parket-karbonizirovannyj-temnyj-cvet-bona-naturalnyj-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/338/bambukovyj-parket-merbau-cvet-bona-naturalnyj-lak-39-80-m2-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/677/bambukovyj-parket-karbonizirovannyj-cvet-bona-matovyj-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/21/naruzhnaja-produkcija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/38/kollekcija-garmonija-cvetov"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/59/bambukovyj-parket-cvet-vanili-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/532/bambukovyj-parket-cvet-sedona-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/57/bambukovyj-parket-cvet-kakao-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/62/bambukovyj-parket-cvet-temnyj-viski-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/279/bambukovyj-parket-cvet-vanili-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/282/bambukovyj-parket-kakao-cvet-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/307/bambukovyj-parket-cvet-temnyj-viski-uf-treffert-lak-40-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/561/bambukovyj-parket-cvet-sedona-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/789/bambukovyj-parket-cvet-peska-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/675/bambukovyj-parket-svetlyj-vanilnyj-cvet-bona-matovyj-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/621/bambukovyj-parket-svetlyj-vanilnyj-cvet-bona-matovyj-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/59/bambukovye-steny"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/322/moso-bambukovaja-stena-chernyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/61/bambukovyj-sajding-sofit"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/585/bambukovaja-sajding-dassoxtr-137-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/473/bambukovaja-sajding-dassoctech-137-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/475/bambukovaja-sajding-dassoxtr-100-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/476/bambukovaja-sajding-dassoctech-100-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/569/bambukovaja-sajding-sofit-dassoxtr-soffit-espresso-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/581/bambukovaja-sajding-sofit-dassoctech-soffit-coffee-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/5/nastil-aksessuary"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/51/bambukovyj-plintus-haturalnyj-cvet-uv-treffert-lak-13-00-sht-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/145/bambukovyj-plintus-obuglennye-cvet-uv-treffert-lak-13-00-sht-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/146/bambukovyj-plintus-okrashennyj-cvet-uv-treffert-lak-14-00-sht-1830-mm-80-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/150/bambukovyj-plintus-haturalnyj-cvet-bona-naturals-lak-13-00-sht-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/151/bambukovyj-plintus-obuglennye-cvet-bona-naturals-lak-13-00-sht-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/152/bambukovyj-plintus-legko-obuglennye-cvet-bona-naturals-lak-13-00-sht-1830-mm-78-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/160/bambukovyj-lestnichnyj-kraj-haturalnyj-cvet-uv-treffert-lak-28-00-sht-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/161/bambukovyj-lestnichnyj-kraj-obuglennye-cvet-uv-treffert-lak-28-00-sht-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/162/bambukovyj-lestnichnyj-kraj-obuglennye-cvet-uv-treffert-lak-29-00-sht-1820-mm-110-mm-1424-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/40/kollekcija-antichnaja"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/678/ruka-carapiny-matovyj-bambukovyj-parket-915-mm-antichnyj-perl-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/408/ruka-carapiny-matovyj-bambukovyj-parket-1850-mm-antichnyj-perl-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/106/ruka-carapiny-matovyj-bambukovyj-parket-karbonizirovannyj-antichnyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/311/ruka-carapiny-matovyj-bambukovyj-parket-karbonizirovannyj-antichnyj-cvet-uf-treffert-lak-43-80-m2-1850-mm-125-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/313/ruka-carapiny-matovyj-bambukovyj-parket-1-iz-2-cvet-krasnogo-lesa-uf-treffert-lak-46-80-m2-1850-mm-130-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/314/legkij-saw-mark-bambukovyj-parket-2-iz-2-pozicija-cvet-krasnogo-lesa-uf-treffert-lak-46-80-m2-1850-mm-96-mm-14-mm"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/409/ruka-carapiny-matovyj-bambukovyj-parket-antichnyj-perl-cvet-uf-treffert-lak-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/117/ruka-carapiny-matovyj-bambukovyj-parket-1-iz-2-cvet-krasnogo-lesa-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/125/legkij-saw-mark-bambukovyj-parket-2-iz-2-pozicija-cvet-krasnogo-lesa-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/679/ruka-carapiny-matovyj-bambukovyj-parket-antichnyj-perl-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/48/bambukovye-oboi",
+        "title": "Бамбуковые обои - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/326/bambukovye-oboi-karbonizirovannyj-cvet-poverhnost-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/325/bambukovye-oboi-zelenyj-chernenyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/327/bambukovye-oboi-naturalnyj-zelenyj-cvet"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/3/bambukovye-paneli",
+        "title": "Бамбуковые панели - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/41/kollekcija-bambuk",
+        "title": "Коллекция - \"Бамбук \" - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/646/3-sl-bambukovyj-parket-12597mm-cvet-bambuka-voskovoj"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/676/3-sl-bambukovyj-parket-12597mm-cvet-bambuka-voskovoj-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/34/montazhnye-aksessuary"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/499/terrasy-kreplenie-osnovnoj-klips_1variant"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/538/terrasy-kreplenie-osnovnoj-klips_2variant"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/200/terrasy-kreplenie-nachalo-konec-klips"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/209/xtr-bambukovye-lagi"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/583/cajding-sofit-kreplenie-osnovnoj-klips"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/7/bambukovyj-dekor"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/36/produkty-dlja-uhoda"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/717/faxe-ochistitel-dlja-terrasa-2-5l-32-00-sht"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/715/faxe-cvetnoe-maslo-dlja-terrasnoj-doski-espresso-cvet-2-5l-64-00-upakovka"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/716/faxe-cvetnoe-maslo-dlja-terrasnoj-doski-coffee-cvet-2-5l-64-00-upakovka"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/536/woca-maslo-dlja-terrasa-bescvetnyj-2-5l-70-00-upakovka"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/592/osmo-vosk-dlja-torcov-0-375-l-50-00-sht"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/6/produkty-dlja-ustanovki"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/187/adesiver-2k-premium-dvuhkomponentnyj-poliuretanovyj-klej-12-5-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/559/wakol-pu-280-vlagobarer-poliuretanovaja-gruntovka-11-kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/190/chimiver-parketnyj-zubchatyj-shpatel"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/614/wakol-pu-280-vlagobarer-poliuretanovaja-gruntovka-5kg"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/39/kollekcija-tronutyj-prirodoj"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/595/haturalnyj-bambukovyj-parket-1850-mm-podgotovlen-dlja-masla-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/612/haturalnyj-bambukovyj-parket-podgotovlen-dlja-masla-bez-pokrytija-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/500/karbonizirovannyj-bambukovyj-parket-1850-mm-podgotovlen-dlja-masla-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/415/ruka-carapiny-matovyj-bambukovyj-parket-podgotovlen-dlja-masla-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/502/karbonizirovannyj-bambukovyj-parket-podgotovlen-dlja-masla-bez-pokrytija-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/417/ruka-carapiny-matovyj-bambukovyj-parket-karbonizirovannyj-cvet-bez-pokrytija-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/478/ruka-carapiny-bambukovyj-parket-1-iz-2-podgotovlen-dlja-masla-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/480/legkaja-otdelka-piloj-bambukovyj-parket-2-iz-2-pozicija-podgotovlen-dlja-masla-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/518/ruka-carapiny-bambukovyj-parket-1-iz-2-podgotovlen-dlja-masla-bez-pokrytija-besplatnyj-obrazec"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/26/predmety-uhoda-za-polom"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/256/petushirujushij-karandash-ko-210"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/257/petushirujushij-karandash-ko-210_126"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/258/petushirujushij-karandash-ko-210_104"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/259/petushirujushij-karandash-ko-210_164"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/637/petushirujushij-karandash-ko-210_203"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/260/sredstvo-po-uhodu"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/65/kollekcija-anglijskaja-elka"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/607/bambukovyj-parket-anglijskaja-elka-karbonizirovannyj-cvet-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/615/ruka-carapiny-matovyj-bambukovyj-parket-anglijskaja-elka-karbonizirovannyj-cvet-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/710/bambukovyj-parket-anglijskaja-elka-naturalnyj-cvet-bez-pokrytija"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/600/bambukovyj-parket-anglijskaja-elka-haturalnyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/product/743/bambukovyj-parket-anglijskaja-elka-karbonizirovannyj-cvet-uf-treffert-lak"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/teploprovodnost-polov",
+        "title": "Теплопроводность полов - Bambuko grindys",
+        "description": "Теплопроводность - это свойство вещества пропускать тепло, т.е. теплоизоляционное свойство материала. Эту функцияю описывает коэффициент теплопроводности λ. Чем ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/instrukcija-po-ispolzovaniju-kleev"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/shkala-tverdosti-po-janke",
+        "title": "Шкала твердости по Янке - Bambuko grindys",
+        "description": "Если Вы думаете о покупке бамбукового или другого пола из твердых пород дерева, шкала твердости Янка может быть очень полезным и проницательным инструментом."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/instrukcija-po-ispolzovaniju-grunta",
+        "title": "Инструкция по использованию грунта - Bambuko grindys",
+        "description": "Основание и климатические условия помещения должны соответствовать требованиям действующих стандартов и информационных листов. Исключение составляет только ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/cveta",
+        "title": "Цвета - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/struktura-i-modeli"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/galereja",
+        "title": "Галерея - Bambuko grindys",
+        "description": "Обработанные бамбуковые наружные изделия для ваших открытых террас, фасадов или других индивидуальных наружных проектов на открытом воздухе для достижения ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/kraja",
+        "title": "Края - Bambuko grindys",
+        "description": "Кромки бамбуковых напольных покрытий слегка наклонены под небольшим углом, что соединяя отдельные доски пола, приводит к образованию небольшой канавки или шва."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/konstrukcija-2",
+        "title": "Конструкция - Bambuko grindys",
+        "description": "Для напольных покрытий мы предлагаем два типа конструкций: заслонки / шторки и системы шпунт / паз. Система заслонки / шторки (Click). Бамбуковый паркет типа ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/svjazujushie-i-klei",
+        "title": "Связующие и клеи - Bambuko grindys",
+        "description": "Прессованный бамбук на самом деле можно назвать \"зеленым\" напольным покрытием, поскольку при его производстве образуется очень мало отходов."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/kontakty",
+        "title": "контакты - Bambuko grindys",
+        "description": "КОНТАКТЫ: Адрес компании / Экспозиция: Rugių ул. 9, Paplanskų дер. Alytaus район. LT-64393. Литва. Адрес склада: Pramonės ул. 31C, г. Alytus. LT-62175."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/otdelochnye-materialy-i-laki",
+        "title": "Отделочные материалы и лаки - Bambuko grindys",
+        "description": "Наш бамбуковый паркет обрабатывается с использованием 7-фазного немецкого акрилового отделочного лака (на водной основе). Treffert GmbH - это всемирно ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/bambukovyj-parket-v-presse",
+        "title": "Бамбуковый паркет в прессе - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/chzv"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/novosti",
+        "title": "Новости - Bambuko grindys",
+        "description": "Профессиональный бамбук и другие деревянные полы, установка террас и т. Д. Предпроектные работы ... Читать далее · ЛЕГКО ВЫБОР, где большинство из них уже ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/epriminti",
+        "title": "Password reminder - Bambuko grindys",
+        "description": "Enter your Surname and email address that you used to register. Surname *. Email *. Captcha*. code image, * required fields. ↑, ←. smart foreash."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/aktualijos",
+        "title": "Aktualijos - bambukogrindys.lt",
+        "description": "Plačiausia bambuko vidaus grindų ekspozicija, profesionalūs patarimai bei konsultacijos Jums iš bambuko specialistų skaičiuojančių jau 11 metus rinkoje su viena ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/eregister",
+        "title": "Регистрация - Bambuko grindys",
+        "description": "После заполнения регистрационной формы, на указанный вами адрес эл. почты, будет выслано письмо с ссылкой для подтверждения."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/eregister",
+        "title": "Registration - Bambuko grindys",
+        "description": "After this step of registration, you will receive a confirmation letter to the email address you have provided. Please, enter (or click) the received link ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/eregister",
+        "title": "Registracija - bambukogrindys.lt",
+        "description": "Užsiregistravus sistemoje, Jūs gausite patvirtinimo laišką į nurodytą el.pašto dėžutę. Paspaudus nuorodą aktyvuosite savo prisijungimus ir galėsite pradėti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/epriminti",
+        "title": "Напоминание пароля - Bambuko grindys",
+        "description": "Для напоминания пароля, введите регистрированный адрес эл. почты и имя пользователя. Фамилия *. Эл. почта *. Код подтверждения *. code image"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/news",
+        "title": "News - Bambuko grindys",
+        "description": "SB leasing for BAMBOO FLOOR customers. Hire purchase only in the best conditions. More details. ↑, ←. smart foreash. LT · EN · RU. Search. Newsletter ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/58/specialus-pasiulymai",
+        "title": "Specialūs pasiūlymai - bambukogrindys.lt",
+        "description": "Šiuo metu taikome išskirtines kainas žemiau įvardintoms bambuko vidaus grindų pozicijoms. Pasinaudokite išskirtine galimybe įsigyti natūralias, ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/privacy-policy",
+        "title": "Privacy Policy - Bambuko grindys",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. cookies). Tai mažos tekstinės bylos (arba panaši technologija), kurios yra įrašomos ir nuskaitomos kas kartą ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/gipso-dekoras",
+        "title": "Gipso dekoras - bambukogrindys.lt",
+        "description": "Mūsų siūlomi gipso lipdiniai yra natūralios baltos spalvos, ją galite lengvai dažyti bet kuria kita spalva pagal savo skonį ar pasirinktą interjero stilių."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/line/5",
+        "title": "Holse & Wibroe - bambukogrindys.lt",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. „cookies“). Jie gali identifikuoti prisijungusius vartotojus, rinkti statistikos duomenis ir padėti pagerinti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/line/5",
+        "title": "Holse & Wibroe - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/trademark/7",
+        "title": "DZIURSKIP - bambukogrindys.lt",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. „cookies“). Jie gali identifikuoti prisijungusius vartotojus, rinkti statistikos duomenis ir padėti pagerinti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/trademark/7",
+        "title": "DZIURSKIP - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/trademark/4",
+        "title": "BAMBUKO GRINDYS",
+        "description": "Легкий \"saw mark\" бамбуковый паркет - 2 из 2 позиция - Цвет красного леса - УФ Treffert лак. 81.38. Рельеф дуба - бамбуковый паркет - Цвет ирландского крема ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/trademark/8",
+        "title": "Barth & co - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/trademark/13",
+        "title": "FAXE - Bambuko grindys",
+        "description": "Catalogue > FAXE. FAXE. ←. 65.00. FAXE decking coloured oil - Espresso colour - 2.5l. | 64.00€/box. Add to cart. 65.00. FAXE decking coloured oil - Coffee ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/trademark/7",
+        "title": "DZIURSKIP - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/trademark/12",
+        "title": "Holse & Wibroe - bambukogrindys.lt",
+        "description": "Holse & Wibroe. ←. 110.68. Natūralios bambuko masyvo grindys - Tamsiai karbonizuota spalva - Bona natural lakas. 250.00."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/line/4",
+        "title": "Woca - bambukogrindys.lt",
+        "description": "Šioje svetainėje yra naudojami slapukai (angl. „cookies“). Jie gali identifikuoti prisijungusius vartotojus, rinkti statistikos duomenis ir padėti pagerinti ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/line/5",
+        "title": "Holse & Wibroe - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/line/4",
+        "title": "Woca - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/novosti/i/25/",
+        "title": "Установка внутренних напольных и открытых террас",
+        "description": "Монтаж OSB на основание. 2,50 €/m² ; Установка под полом (отсеки OSB +). 11,00 €/m² ; Монтаж досок / паркетных досок (успокаивающий). из 6,00 в 8, ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/line/2",
+        "title": "BAMBUKO GRINDYS ir ne tik... - bambukogrindys.lt",
+        "description": "BAMBUKO GRINDYS ir ne tik... 60.50. Natūralios bambuko masyvo grindys - Karbonizuota spalva - UV Treffert lakas. 22.00."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/line/4",
+        "title": "Woca - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/gallery/item/11",
+        "title": "Bamboo Terrace - aMbooo bamboo - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/novosti/i/23/",
+        "title": "ЛЕГКО ВЫБОР, где большинство из них уже выбрали",
+        "description": "Условия финансирования лизинга UAB SB для наших клиентов в рассрочку: Только рекламная плата 1. Условия действия - согласованы;"
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/trademark/5",
+        "title": "CHIMIVER - Bambuko grindys",
+        "description": "Зарегистрируйтесь прямо сейчас, и начните пользоваться всеми услугами предоставлеными системой amberwares.com. Регистрация. Корзина обновлена. Нет возможности ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/gallery/item/9",
+        "title": "Bamboo flooring indoor - Bambuko grindys",
+        "description": "This site uses cookies. They can identify logged-in users, collect statistics, and help to improve browsing experience for each visitor individually. Learn more ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/en/catalogue/line/3",
+        "title": "Dasso - Bambuko grindys",
+        "description": "Search · Newsletter · Catalog · Product lines · Trademarks · Offer. Retouch pencil Ko 210_160. Category: Floor care items · Catalogue > Bamboo panels > Dasso ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/trademark/9",
+        "title": "Dasso - Bambuko grindys",
+        "description": "Террасы крепление - Начало / Конец клипс. 20.00. XTR бамбуковые лаги. 76.90. Террасные полы - dassoXTR' R137 - Espresso цвет."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/ru/katalog/category/44/lestnica",
+        "title": "Лестница - Bambuko grindys",
+        "description": "Этот сайт использует файлы cookie. Они могут идентифицировать зарегистрированных пользователей, собирать статистику и помогать улучшить работу в браузере для ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/aktualijos/i/35/viesinimas",
+        "title": "Viešinimas - bambukogrindys.lt",
+        "description": "Jungtinio projekto projektas įgyvendinamas pagal ekonomikos gaivinimo ir atsparumo didinimo planą „Naujos kartos Lietuva“, finansuojamą Europos ..."
+      },
+      {
+        "url": "https://www.bambukogrindys.lt/lt/katalogas/category/44/laiptai",
+        "title": "Laiptai - bambukogrindys.lt",
+        "description": "Dėl konkrečios sąmatos laiptams ar jų ruošiniams pagal individualius jų išmatavimus prašome teirautis telefonu.: +370 673 47779 arba el. paštu."
+      }
+    ]
+  }
+}

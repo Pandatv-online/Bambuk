@@ -1,0 +1,165 @@
+export type SiteLocale = "fi";
+
+export type FeatureFlags = Readonly<{
+  account: boolean;
+  availability: boolean;
+  calculator: boolean;
+  cart: boolean;
+  checkout: boolean;
+  newsletter: boolean;
+  price: boolean;
+  samples: boolean;
+}>;
+
+export type SiteConfig = Readonly<{
+  locale: SiteLocale;
+  siteUrl: string | null;
+  company: Readonly<{
+    displayName: string | null;
+    legalName: string | null;
+    businessId: string | null;
+    vatId: string | null;
+    address: string | null;
+  }>;
+  manufacturer: Readonly<{
+    displayName: string | null;
+    legalName: string | null;
+    relationshipWording: string | null;
+    logoUsageRules: string | null;
+  }>;
+  contact: Readonly<{
+    email: string | null;
+    phone: string | null;
+    hours: string | null;
+  }>;
+  legal: Readonly<{
+    privacyNotice: string | null;
+    cookieNotice: string | null;
+    deliveryTerms: string | null;
+  }>;
+  service: Readonly<{
+    installationScope: string | null;
+    serviceArea: string | null;
+  }>;
+  formDestination: string | null;
+  featureFlags: FeatureFlags;
+}>;
+
+export type RequiredSiteConfigField =
+  | "siteUrl"
+  | "company.displayName"
+  | "company.legalName"
+  | "company.businessId"
+  | "company.vatId"
+  | "company.address"
+  | "manufacturer.displayName"
+  | "manufacturer.legalName"
+  | "manufacturer.relationshipWording"
+  | "contact.email"
+  | "contact.phone"
+  | "contact.hours"
+  | "legal.privacyNotice"
+  | "formDestination";
+
+export type ReleaseReadiness = Readonly<{
+  environment: "development" | "production";
+  ready: boolean;
+  unresolvedFields: readonly RequiredSiteConfigField[];
+}>;
+
+const normalizePublicUrl = (value: string | undefined): string | null => {
+  if (!value) return null;
+
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:"
+      ? url.origin
+      : null;
+  } catch {
+    return null;
+  }
+};
+
+export const siteConfig: SiteConfig = {
+  locale: "fi",
+  siteUrl: normalizePublicUrl(process.env.NEXT_PUBLIC_SITE_URL),
+  company: {
+    displayName: null,
+    legalName: null,
+    businessId: null,
+    vatId: null,
+    address: null,
+  },
+  manufacturer: {
+    displayName: null,
+    legalName: null,
+    relationshipWording: null,
+    logoUsageRules: null,
+  },
+  contact: {
+    email: null,
+    phone: null,
+    hours: null,
+  },
+  legal: {
+    privacyNotice: null,
+    cookieNotice: null,
+    deliveryTerms: null,
+  },
+  service: {
+    installationScope: null,
+    serviceArea: null,
+  },
+  formDestination: null,
+  featureFlags: {
+    account: false,
+    availability: false,
+    calculator: false,
+    cart: false,
+    checkout: false,
+    newsletter: false,
+    price: false,
+    samples: false,
+  },
+};
+
+const releaseFieldReaders: Readonly<
+  Record<RequiredSiteConfigField, (config: SiteConfig) => string | null>
+> = {
+  siteUrl: (config) => config.siteUrl,
+  "company.displayName": (config) => config.company.displayName,
+  "company.legalName": (config) => config.company.legalName,
+  "company.businessId": (config) => config.company.businessId,
+  "company.vatId": (config) => config.company.vatId,
+  "company.address": (config) => config.company.address,
+  "manufacturer.displayName": (config) => config.manufacturer.displayName,
+  "manufacturer.legalName": (config) => config.manufacturer.legalName,
+  "manufacturer.relationshipWording": (config) =>
+    config.manufacturer.relationshipWording,
+  "contact.email": (config) => config.contact.email,
+  "contact.phone": (config) => config.contact.phone,
+  "contact.hours": (config) => config.contact.hours,
+  "legal.privacyNotice": (config) => config.legal.privacyNotice,
+  formDestination: (config) => config.formDestination,
+};
+
+export function getReleaseReadiness(
+  config: SiteConfig = siteConfig,
+  environment: "development" | "production" =
+    process.env.NODE_ENV === "production" ? "production" : "development",
+): ReleaseReadiness {
+  const unresolvedFields = (
+    Object.entries(releaseFieldReaders) as [
+      RequiredSiteConfigField,
+      (candidate: SiteConfig) => string | null,
+    ][]
+  )
+    .filter(([, read]) => !read(config)?.trim())
+    .map(([field]) => field);
+
+  return {
+    environment,
+    ready: environment === "development" || unresolvedFields.length === 0,
+    unresolvedFields,
+  };
+}

@@ -5,6 +5,7 @@ export { createDefaultCommercialState, getPublishedProducts, products } from "./
 export type {
   Category,
   HomepageContent,
+  LocalPath,
   NavigationItem,
   Product,
   ProductAvailability,

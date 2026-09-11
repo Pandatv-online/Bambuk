@@ -37,10 +37,21 @@ Primary test seams: `getReleaseReadiness()`, shared content registries, and the 
 - Runtime: Node 22.22.3 via `.nvmrc`; Next.js 16.3.4; npm lockfile.
 - Commands: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`; run after `nvm use`.
 - `siteConfig: SiteConfig` and `getReleaseReadiness(config?, environment?): ReleaseReadiness` are the only public configuration/readiness seam.
+- `SiteConfig.manufacturer.legalName` is nullable and release-blocking; `contact.hours` is also required for production readiness.
 - `createPageMetadata(input: PageMetadataInput, config?: SiteConfig): Metadata` builds canonical and Open Graph metadata without unsupported entity/product data.
 - `navigation: readonly NavigationItem[]`, `homepageContent: HomepageContent`, `categories: Category[]`, and `products: readonly Product[]` are the shared content registries.
+- `HomepageContent` includes `title`, `metaDescription`, and a `featuredProducts` pending-state model consumed by later homepage composition.
 - `getPublishedProducts(): readonly Product[]` is the catalog selection seam; it currently returns no unverified products.
 - `createDefaultCommercialState(): ProductCommercialState` returns quote/unknown defaults; a published price or known availability requires sourced details.
 - Missing launch inputs and their release impact are registered in `docs/implementation-inputs.md`.
 - ESLint 9.39.1 is intentionally pinned because the Next.js 16.3.4 React plugin crashes under ESLint 10.
 - Production build uses webpack in this environment because Turbopack cannot bind its internal worker port.
+
+## From ticket 02 — global UI
+
+- Shared UI exports: `Button`, `CallToAction`, `Container`, `Section`, `Heading`, `Eyebrow`, and `Notice`.
+- Shared navigation exports: site header, desktop navigation, accessible mobile navigation, footer, and breadcrumbs; all consume the controlled navigation registry.
+- Shared catalog/media exports: category and product cards/grids plus responsive media and gallery components with local-image, quote-only, and pending states.
+- Mobile navigation owns nested disclosure state, focus trap/return, Escape and backdrop closure, scroll lock, accessible names, and 44 px targets.
+- `ResponsiveImage` uses the current Next.js `preload` API rather than deprecated `priority`.
+- The root layout supplies a transparent development favicon placeholder until verified brand identity assets are provided.

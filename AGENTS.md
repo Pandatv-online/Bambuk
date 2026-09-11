@@ -91,5 +91,28 @@ No implementation code existed when these rules were created. Preserve unrelated
 
 The current increment builds the Next.js foundation, reusable global UI, and Finnish homepage. Requirements, specification, and work tracking live in `.autopilot/`; progress is shown in `.autopilot/dashboard.html`.
 
+## Verified commands
+
+Run `nvm use` first; this project pins Node 22.22.3 in `.nvmrc`.
+
+- `npm install` — install the locked dependencies.
+- `npm run dev` — start local development.
+- `npm test` — run Vitest.
+- `npm run typecheck` — run strict TypeScript checks.
+- `npm run lint` — run ESLint.
+- `npm run build` — create the production build.
+
+ESLint 9.39.1 is intentionally pinned because the Next.js 16.3.4 React plugin crashes under ESLint 10. The production script uses supported webpack mode because Turbopack cannot bind its worker port in this environment.
+
 If work is interrupted, resume from `.autopilot/state.js` and the active run directory rather than restarting or re-asking resolved questions.
 <!-- autopilot:end -->
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

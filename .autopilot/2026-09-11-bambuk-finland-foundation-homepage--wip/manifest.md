@@ -4,19 +4,19 @@
 
 | ID | Из брифа (дословно) | Статус | Основание | Где |
 |---|---|---|---|---|
-| R01 | «Read ALL of the following files before doing anything» | in-ticket | Preconditions completed and preserved in verification | spec § Verification |
+| R01 | «Read ALL of the following files before doing anything» | done | Preconditions read before implementation | commit dc648c3 |
 | R02 | «The reference-site materials under .firecrawl/ are also available for visual and structural reference.» | in-ticket | Reference is a required QA input | spec § Images, Verification |
-| R03 | «Do not start by generating all pages.» | in-ticket | Only `/fi` plus development-safe CTA destinations may exist | spec § Route and locale |
-| R04 | «First, inspect the repository and determine what implementation inputs are still missing.» | in-ticket | Empty application repository confirmed; input register required | spec § Problem, Open items |
+| R03 | «Do not start by generating all pages.» | done | Only root redirect and `/fi` are generated | commit dc648c3 |
+| R04 | «First, inspect the repository and determine what implementation inputs are still missing.» | done | Repository inspected and input register written | commit dc648c3 |
 | R05 | «The following information must NOT be invented» | placeholder | All listed user/business facts are absent and release-blocking | spec § Placeholder behavior, Open items |
 | R06 | «If something is missing, create a clearly marked placeholder and document it in: docs/implementation-inputs.md» | placeholder | Missing-input register is a required build artifact | spec § Story 10, Open items |
 | R07 | «Build the website incrementally.» | in-ticket | Current increment ends after homepage | spec § Outside scope |
-| R08 | «Next.js / TypeScript / Tailwind CSS» | in-ticket | Required stack | spec § Stack |
-| R09 | «Finnish /fi route structure» | in-ticket | Root redirects to Finnish route | spec § Route and locale |
+| R08 | «Next.js / TypeScript / Tailwind CSS» | done | Strict required stack builds | commit dc648c3 |
+| R09 | «Finnish /fi route structure» | done | Root redirects to Finnish route | commit dc648c3 |
 | R10 | «reusable layout / typography / design tokens / responsive breakpoints / image handling / SEO foundation» | in-ticket | Foundation boundaries specified | spec § Stack, Responsive, SEO |
 | R11 | «Do not introduce a different visual identity. Follow docs/design-system.md.» | in-ticket | Reference-derived token and QA gate | spec § Story 2, Homepage content |
-| R12 | «Implement the reusable global components first» | in-ticket | Shared component boundary defined | spec § Story 3, Boundaries |
-| R13 | «The components should be reusable rather than duplicated between pages.» | in-ticket | Component ownership defined | spec § Boundaries |
+| R12 | «Implement the reusable global components first» | done | Shared global UI, navigation, catalog and media components implemented | ticket 02 checkpoint |
+| R13 | «The components should be reusable rather than duplicated between pages.» | done | Public component barrels and registry-driven composition verified | ticket 02 checkpoint |
 | R14 | «Implement the Finnish homepage according to: docs/finland-site-architecture.md and docs/content-map.md» | in-ticket | Homepage sequence specified | spec § Homepage content |
 | R15 | «The homepage should be concise.» | in-ticket | Ten focused sections with short neutral copy | spec § Homepage content |
 | R16 | «Prioritize: Brand / Bamboo flooring / Product categories / Main benefits / Featured products / Installation service / References / CTA» | in-ticket | All required topics mapped | spec § Homepage content |
@@ -24,11 +24,11 @@
 | R18 | «Secondary actions may include: Tutustu tuotteisiin / Pyydä näyte / Asennuspalvelu» | in-ticket | Approved labels only | spec § Story 5, Homepage content |
 | R19 | «Implement the catalog architecture.» | deferred | Full catalog is the next dictated stage | spec § Outside scope |
 | R20 | «Create a reusable product page template.» | deferred | Follows catalog stage | spec § Outside scope |
-| R21 | «Product information must come from structured data. Do NOT hard-code individual product information into JSX.» | in-ticket | Empty typed data boundary established now; full data later | spec § Data boundaries |
-| R22 | «Use typed flexible specifications.» | in-ticket | Type contract prepared without product facts | spec § Data boundaries |
-| R23 | «Do NOT copy manufacturer prices.» | in-ticket | No price data or rendering in visitor content | spec § Placeholder behavior |
-| R24 | «if prices are not yet supplied: hide price; show \"Pyydä tarjous\"; or use a clearly documented placeholder state.» | in-ticket | Quote-only presenter default | spec § Stories 6–7 |
-| R25 | «The same applies to stock and availability.» | in-ticket | Availability absent/hidden | spec § Stories 6–7 |
+| R21 | «Product information must come from structured data. Do NOT hard-code individual product information into JSX.» | done | Empty typed data registry and selector established | commit dc648c3 |
+| R22 | «Use typed flexible specifications.» | done | Flexible specification and product contracts established | commit dc648c3 |
+| R23 | «Do NOT copy manufacturer prices.» | done | No price data copied or rendered | commit dc648c3 |
+| R24 | «if prices are not yet supplied: hide price; show \"Pyydä tarjous\"; or use a clearly documented placeholder state.» | done | Commercial state defaults to quote-only | commit dc648c3 |
+| R25 | «The same applies to stock and availability.» | done | Availability defaults to unknown and requires source data | commit dc648c3 |
 | R26 | «Implement: /fi/asennus» | deferred | Detailed page is its dictated later stage | spec § Outside scope |
 | R27 | «Installation is a primary service, not an informational footnote.» | in-ticket | First-class homepage installation section | spec § Homepage content item 8 |
 | R28 | «Only use confirmed information. Unknown information should remain a placeholder.» | placeholder | Service/business facts remain null and documented | spec § Placeholder behavior, Open items |

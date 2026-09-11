@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-11T02:03:54+03:00",
-  "updatedAt": "2026-09-11T06:57:49+03:00",
+  "updatedAt": "2026-09-11T14:54:30+03:00",
   "finishedAt": null,
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-09-11T02:03:54+03:00", "finishedAt": "2026-09-11T02:06:40+03:00" },
@@ -19,14 +19,14 @@ window.STATE =
     { "id": "briefing", "status": "skipped", "startedAt": "2026-09-11T02:08:27+03:00", "finishedAt": "2026-09-11T02:09:23+03:00", "note": "вопросов не потребовалось — неизвестные бизнес-данные явно направлены в placeholders" },
     { "id": "spec", "status": "done", "startedAt": "2026-09-11T02:09:23+03:00", "finishedAt": "2026-09-11T02:16:36+03:00" },
     { "id": "plan", "status": "done", "startedAt": "2026-09-11T02:16:36+03:00", "finishedAt": "2026-09-11T02:19:08+03:00", "note": "3 таска, ярус T1" },
-    { "id": "build", "status": "active", "startedAt": "2026-09-11T02:19:08+03:00", "note": "0 из 3 тасков готовы" },
-    { "id": "review", "status": "active", "startedAt": "2026-09-11T06:46:30+03:00", "note": "проверяется таск 01" },
+    { "id": "build", "status": "active", "startedAt": "2026-09-11T02:19:08+03:00", "note": "2 из 3 тасков готовы" },
+    { "id": "review", "status": "active", "startedAt": "2026-09-11T06:46:30+03:00", "note": "проверены 2 из 3 тасков" },
     { "id": "final", "status": "pending" }
   ],
   "requirements": {
     "total": 47,
-    "done": 0,
-    "inTicket": 35,
+    "done": 12,
+    "inTicket": 23,
     "inSpec": 0,
     "placeholder": 4,
     "deferred": 8,
@@ -40,7 +40,7 @@ window.STATE =
       "blockedBy": [],
       "wave": 1,
       "zone": ["project configuration", "app/", "data/", "lib/", "styles/", "docs/implementation-inputs.md"],
-      "status": "review",
+      "status": "done",
       "startedAt": "2026-09-11T02:19:57+03:00",
       "retries": 1,
       "repairs": 1,
@@ -51,6 +51,11 @@ window.STATE =
         "Render the required featured-product pending state with quote action on /fi"
       ],
       "handoffs": 0
+      ,"finishedAt": "2026-09-11T07:02:26+03:00"
+      ,"files": [".env.example", ".gitignore", ".nvmrc", "app/", "data/", "docs/implementation-inputs.md", "eslint.config.mjs", "lib/", "next.config.ts", "package-lock.json", "package.json", "postcss.config.mjs", "public/fonts/", "styles/", "tests/", "tsconfig.json", "vitest.config.ts"]
+      ,"tests": { "passed": 4, "failed": 0 }
+      ,"commit": "dc648c3"
+      ,"concerns": ["ESLint 9.39.1 pinned for eslint-config-next compatibility", "Webpack build mode used because Turbopack cannot bind its worker port in this environment"]
     },
     {
       "id": "02",
@@ -59,10 +64,25 @@ window.STATE =
       "blockedBy": ["01"],
       "wave": 2,
       "zone": ["components/", "shared layout composition", "global component tests"],
-      "status": "pending",
-      "retries": 0,
-      "repairs": 0,
-      "handoffs": 0
+      "status": "done",
+      "startedAt": "2026-09-11T07:03:01+03:00",
+      "retries": 1,
+      "repairs": 1,
+      "repairFindings": [
+        "Use an AA-compliant primary action color pairing",
+        "Close and unlock an open mobile drawer when crossing to the desktop breakpoint",
+        "Test agreed public barrel exports and complete focus-trap behavior",
+        "Keep product-card commercial rendering honest and complete",
+        "Require media rights/provenance at the public gallery boundary",
+        "Keep breadcrumb derivation private",
+        "Deliver the specified condensed display typography",
+        "Provide 44px minimum touch targets for breadcrumb, footer, and brand links"
+      ],
+      "handoffs": 0,
+      "finishedAt": "2026-09-11T14:54:30+03:00",
+      "files": ["app/layout.tsx", "app/fi/layout.tsx", "components/", "data/index.ts", "styles/globals.css", "tests/global-components.test.tsx", "tests/global-navigation.test.tsx", "tests/mobile-navigation.test.tsx", "package.json", "package-lock.json", "vitest.config.ts"],
+      "tests": { "passed": 9, "failed": 0 },
+      "concerns": ["Published-price test does not yet assert formatted amount, basis, and visible freshness date; non-blocking for the quote-only current catalog"]
     },
     {
       "id": "03",

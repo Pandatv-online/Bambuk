@@ -14,6 +14,10 @@ const openSans = localFont({
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
+  icons: {
+    icon:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiLz4=",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

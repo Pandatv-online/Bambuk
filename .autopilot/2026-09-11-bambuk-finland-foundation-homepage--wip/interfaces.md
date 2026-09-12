@@ -55,3 +55,11 @@ Primary test seams: `getReleaseReadiness()`, shared content registries, and the 
 - Mobile navigation owns nested disclosure state, focus trap/return, Escape and backdrop closure, scroll lock, accessible names, and 44 px targets.
 - `ResponsiveImage` uses the current Next.js `preload` API rather than deprecated `priority`.
 - The root layout supplies a transparent development favicon placeholder until verified brand identity assets are provided.
+
+## From ticket 03 — Finnish homepage
+
+- `/fi` composes the documented homepage sequence from the shared UI and data registries: hero, introduction, categories, references, decision topics, featured-product pending state, installation, guides, and closing quotation CTA.
+- Homepage category and gallery records use typed `MediaAsset` values with local `src`, Finnish `alt`, and mandatory `rightsId`; their internal provenance register is documented in `docs/implementation-inputs.md`.
+- Categories and featured products remain honest pending states until verified catalog records exist; commercial facts remain absent rather than inferred from reference snapshots.
+- The page metadata is created through `createPageMetadata`; launch-blocking inputs keep `/fi` non-indexable and no unsupported entity, offer, review, or rating data is emitted.
+- `scripts/browser-qa.mjs` is the reusable local viewport/content/link/console QA harness for the implemented route.

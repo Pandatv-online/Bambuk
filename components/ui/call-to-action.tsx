@@ -9,7 +9,9 @@ import { Heading } from "./typography";
 export type CallToActionProps = Readonly<{
   title: string;
   children?: ReactNode;
-  action: Readonly<{ href: LocalPath; label: string }>;
+  action:
+    | Readonly<{ href: LocalPath; label: string; disabled?: false }>
+    | Readonly<{ label: string; disabled: true }>;
   secondaryAction?: Readonly<{ href: LocalPath; label: string }>;
 }>;
 
@@ -29,7 +31,13 @@ export function CallToAction({
           {children}
         </div>
         <div className="call-to-action__actions">
-          <Button href={action.href}>{action.label}</Button>
+          {action.disabled ? (
+            <Button disabled aria-disabled="true">
+              {action.label}
+            </Button>
+          ) : (
+            <Button href={action.href}>{action.label}</Button>
+          )}
           {secondaryAction ? (
             <Button href={secondaryAction.href} variant="secondary">
               {secondaryAction.label}

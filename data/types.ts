@@ -87,13 +87,74 @@ export type Product = Readonly<{
 
 export type HomepageContent = Readonly<{
   locale: "fi";
-  status: "foundation" | "published";
+  status: "foundation" | "review" | "published";
   title: string;
   metaDescription: string;
   primaryCta: Readonly<{ label: "Pyydä tarjous"; href: LocalPath }>;
+  secondaryCta: Readonly<{ label: "Tutustu tuotteisiin"; href: LocalPath }>;
+  hero: Readonly<{
+    eyebrow: string;
+    summary: string;
+    image: NonNullable<Category["image"]>;
+  }>;
+  introduction: Readonly<{
+    heading: string;
+    body: string;
+    link: Readonly<{ label: string; href: LocalPath }>;
+  }>;
+  categorySection: Readonly<{
+    eyebrow: string;
+    heading: string;
+    introduction: string;
+  }>;
+  gallery: Readonly<{
+    eyebrow: string;
+    heading: string;
+    introduction: string;
+    items: readonly Readonly<{
+      id: string;
+      alt: string;
+      image: NonNullable<Category["image"]>;
+    }>[];
+  }>;
+  decisionTopics: Readonly<{
+    eyebrow: string;
+    heading: string;
+    introduction: string;
+    items: readonly Readonly<{
+      title: string;
+      body: string;
+    }>[];
+  }>;
   featuredProducts: Readonly<{
+    eyebrow: string;
     heading: string;
     pendingMessage: string;
+  }>;
+  installation: Readonly<{
+    eyebrow: string;
+    heading: string;
+    body: string;
+    pendingMessage: string;
+    image: NonNullable<Category["image"]>;
+    action: Readonly<{ label: "Pyydä tarjous"; href: LocalPath }>;
+  }>;
+  guides: Readonly<{
+    eyebrow: string;
+    heading: string;
+    items: readonly Readonly<{
+      title: string;
+      body: string;
+      link?: Readonly<{
+        label: "Tutustu tuotteisiin" | "Pyydä näyte" | "Asennuspalvelu";
+        href: LocalPath;
+      }>;
+    }>[];
+  }>;
+  finalCta: Readonly<{
+    title: string;
+    body: string;
+    action: Readonly<{ label: "Pyydä tarjous"; status: "pending" }>;
   }>;
   developmentNotice: string;
 }>;

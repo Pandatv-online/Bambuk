@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-11T02:03:54+03:00",
-  "updatedAt": "2026-09-11T14:54:30+03:00",
+  "updatedAt": "2026-09-12T13:40:26+03:00",
   "finishedAt": null,
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-09-11T02:03:54+03:00", "finishedAt": "2026-09-11T02:06:40+03:00" },
@@ -19,14 +19,14 @@ window.STATE =
     { "id": "briefing", "status": "skipped", "startedAt": "2026-09-11T02:08:27+03:00", "finishedAt": "2026-09-11T02:09:23+03:00", "note": "вопросов не потребовалось — неизвестные бизнес-данные явно направлены в placeholders" },
     { "id": "spec", "status": "done", "startedAt": "2026-09-11T02:09:23+03:00", "finishedAt": "2026-09-11T02:16:36+03:00" },
     { "id": "plan", "status": "done", "startedAt": "2026-09-11T02:16:36+03:00", "finishedAt": "2026-09-11T02:19:08+03:00", "note": "3 таска, ярус T1" },
-    { "id": "build", "status": "active", "startedAt": "2026-09-11T02:19:08+03:00", "note": "2 из 3 тасков готовы" },
-    { "id": "review", "status": "active", "startedAt": "2026-09-11T06:46:30+03:00", "note": "проверены 2 из 3 тасков" },
-    { "id": "final", "status": "pending" }
+    { "id": "build", "status": "done", "startedAt": "2026-09-11T02:19:08+03:00", "finishedAt": "2026-09-12T13:40:26+03:00", "note": "3 из 3 тасков готовы" },
+    { "id": "review", "status": "done", "startedAt": "2026-09-11T06:46:30+03:00", "finishedAt": "2026-09-12T13:40:26+03:00", "note": "3 из 3 тасков проверены; блокирующих замечаний нет" },
+    { "id": "final", "status": "active", "startedAt": "2026-09-12T13:40:26+03:00" }
   ],
   "requirements": {
     "total": 47,
-    "done": 12,
-    "inTicket": 23,
+    "done": 35,
+    "inTicket": 0,
     "inSpec": 0,
     "placeholder": 4,
     "deferred": 8,
@@ -82,7 +82,8 @@ window.STATE =
       "finishedAt": "2026-09-11T14:54:30+03:00",
       "files": ["app/layout.tsx", "app/fi/layout.tsx", "components/", "data/index.ts", "styles/globals.css", "tests/global-components.test.tsx", "tests/global-navigation.test.tsx", "tests/mobile-navigation.test.tsx", "package.json", "package-lock.json", "vitest.config.ts"],
       "tests": { "passed": 9, "failed": 0 },
-      "concerns": ["Published-price test does not yet assert formatted amount, basis, and visible freshness date; non-blocking for the quote-only current catalog"]
+      "concerns": ["Published-price test does not yet assert formatted amount, basis, and visible freshness date; non-blocking for the quote-only current catalog"],
+      "commit": "8022776"
     },
     {
       "id": "03",
@@ -91,10 +92,28 @@ window.STATE =
       "blockedBy": ["02"],
       "wave": 3,
       "zone": ["/fi homepage", "homepage content", "local homepage imagery", "homepage QA"],
-      "status": "pending",
-      "retries": 0,
-      "repairs": 0,
-      "handoffs": 0
+      "status": "done",
+      "startedAt": "2026-09-11T14:55:12+03:00",
+      "retries": 1,
+      "repairs": 2,
+      "repairFindings": [
+        "Remove unsourced Finnish offering and installation-service promises",
+        "Frame gallery imagery neutrally without unverified bamboo-project attribution",
+        "Correct the category image and alt-text mismatch",
+        "Register or remove every shipped public image",
+        "Make pending category cards noninteractive and eliminate terminal no-op CTA",
+        "Derive noindex from the shared release-readiness seam",
+        "Make browser QA fail closed on navigation and detected violations with bounded cleanup",
+        "Test section order through semantic outcomes and assert route metadata",
+        "Expand the introduction to the documented 80–140 words in idiomatic Finnish",
+        "Use only approved secondary CTA wording",
+        "Keep the unavailable terminal CTA visually disabled on hover"
+      ],
+      "handoffs": 0,
+      "finishedAt": "2026-09-12T13:40:26+03:00",
+      "files": ["app/fi/page.tsx", "components/catalog/category-card.tsx", "components/ui/button.tsx", "data/categories.ts", "data/homepage.ts", "data/types.ts", "docs/implementation-inputs.md", "public/images/home/", "scripts/browser-qa.mjs", "styles/globals.css", "tests/foundation-route.test.ts"],
+      "tests": { "passed": 11, "failed": 0 },
+      "concerns": []
     }
   ],
   "singlePass": null,

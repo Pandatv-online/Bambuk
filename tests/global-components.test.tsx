@@ -61,6 +61,7 @@ describe("global catalog and media presenters", () => {
     expect(product).toContain("Hinta pyynnöstä");
     expect(product).toContain("Pyydä tarjous");
     expect(category).toContain("Valikoima vahvistetaan");
+    expect(category).not.toMatch(/<a(?:\s|>)/);
     expect(gallery).toContain('role="img"');
     expect(publishedPrice).toContain("Sisältää arvonlisäveron");
     expect(publishedPrice).toContain("Päivitetty");

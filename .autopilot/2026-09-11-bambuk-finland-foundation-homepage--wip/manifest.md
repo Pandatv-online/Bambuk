@@ -5,23 +5,23 @@
 | ID | Из брифа (дословно) | Статус | Основание | Где |
 |---|---|---|---|---|
 | R01 | «Read ALL of the following files before doing anything» | done | Preconditions read before implementation | commit dc648c3 |
-| R02 | «The reference-site materials under .firecrawl/ are also available for visual and structural reference.» | in-ticket | Reference is a required QA input | spec § Images, Verification |
+| R02 | «The reference-site materials under .firecrawl/ are also available for visual and structural reference.» | done | Desktop/mobile hierarchy compared against retained reference evidence | ticket 03 checkpoint |
 | R03 | «Do not start by generating all pages.» | done | Only root redirect and `/fi` are generated | commit dc648c3 |
 | R04 | «First, inspect the repository and determine what implementation inputs are still missing.» | done | Repository inspected and input register written | commit dc648c3 |
 | R05 | «The following information must NOT be invented» | placeholder | All listed user/business facts are absent and release-blocking | spec § Placeholder behavior, Open items |
 | R06 | «If something is missing, create a clearly marked placeholder and document it in: docs/implementation-inputs.md» | placeholder | Missing-input register is a required build artifact | spec § Story 10, Open items |
-| R07 | «Build the website incrementally.» | in-ticket | Current increment ends after homepage | spec § Outside scope |
+| R07 | «Build the website incrementally.» | done | Foundation, global UI and homepage delivered as three reviewed checkpoints | tickets 01–03 |
 | R08 | «Next.js / TypeScript / Tailwind CSS» | done | Strict required stack builds | commit dc648c3 |
 | R09 | «Finnish /fi route structure» | done | Root redirects to Finnish route | commit dc648c3 |
-| R10 | «reusable layout / typography / design tokens / responsive breakpoints / image handling / SEO foundation» | in-ticket | Foundation boundaries specified | spec § Stack, Responsive, SEO |
-| R11 | «Do not introduce a different visual identity. Follow docs/design-system.md.» | in-ticket | Reference-derived token and QA gate | spec § Story 2, Homepage content |
-| R12 | «Implement the reusable global components first» | done | Shared global UI, navigation, catalog and media components implemented | ticket 02 checkpoint |
-| R13 | «The components should be reusable rather than duplicated between pages.» | done | Public component barrels and registry-driven composition verified | ticket 02 checkpoint |
-| R14 | «Implement the Finnish homepage according to: docs/finland-site-architecture.md and docs/content-map.md» | in-ticket | Homepage sequence specified | spec § Homepage content |
-| R15 | «The homepage should be concise.» | in-ticket | Ten focused sections with short neutral copy | spec § Homepage content |
-| R16 | «Prioritize: Brand / Bamboo flooring / Product categories / Main benefits / Featured products / Installation service / References / CTA» | in-ticket | All required topics mapped | spec § Homepage content |
-| R17 | «Primary CTA: Pyydä tarjous» | in-ticket | Primary action in header, hero, installation and closing CTA | spec § Homepage content |
-| R18 | «Secondary actions may include: Tutustu tuotteisiin / Pyydä näyte / Asennuspalvelu» | in-ticket | Approved labels only | spec § Story 5, Homepage content |
+| R10 | «reusable layout / typography / design tokens / responsive breakpoints / image handling / SEO foundation» | done | Shared shell, tokens, media and metadata foundations build successfully | tickets 01–03 |
+| R11 | «Do not introduce a different visual identity. Follow docs/design-system.md.» | done | Warm reference-aligned hierarchy verified at responsive viewports | ticket 03 checkpoint |
+| R12 | «Implement the reusable global components first» | done | Shared global UI, navigation, catalog and media components implemented | commit 8022776 |
+| R13 | «The components should be reusable rather than duplicated between pages.» | done | Public component barrels and registry-driven composition verified | commit 8022776 |
+| R14 | «Implement the Finnish homepage according to: docs/finland-site-architecture.md and docs/content-map.md» | done | Documented homepage sequence and content rules implemented | ticket 03 checkpoint |
+| R15 | «The homepage should be concise.» | done | Focused Finnish section copy passed content review | ticket 03 checkpoint |
+| R16 | «Prioritize: Brand / Bamboo flooring / Product categories / Main benefits / Featured products / Installation service / References / CTA» | done | Required homepage topics are represented in the documented order | ticket 03 checkpoint |
+| R17 | «Primary CTA: Pyydä tarjous» | done | Primary label is consistent; unavailable submission remains honestly disabled | ticket 03 checkpoint |
+| R18 | «Secondary actions may include: Tutustu tuotteisiin / Pyydä näyte / Asennuspalvelu» | done | Only approved secondary action wording remains | ticket 03 checkpoint |
 | R19 | «Implement the catalog architecture.» | deferred | Full catalog is the next dictated stage | spec § Outside scope |
 | R20 | «Create a reusable product page template.» | deferred | Follows catalog stage | spec § Outside scope |
 | R21 | «Product information must come from structured data. Do NOT hard-code individual product information into JSX.» | done | Empty typed data registry and selector established | commit dc648c3 |
@@ -30,7 +30,7 @@
 | R24 | «if prices are not yet supplied: hide price; show \"Pyydä tarjous\"; or use a clearly documented placeholder state.» | done | Commercial state defaults to quote-only | commit dc648c3 |
 | R25 | «The same applies to stock and availability.» | done | Availability defaults to unknown and requires source data | commit dc648c3 |
 | R26 | «Implement: /fi/asennus» | deferred | Detailed page is its dictated later stage | spec § Outside scope |
-| R27 | «Installation is a primary service, not an informational footnote.» | in-ticket | First-class homepage installation section | spec § Homepage content item 8 |
+| R27 | «Installation is a primary service, not an informational footnote.» | done | Installation has a first-class homepage section without invented scope or pricing | ticket 03 checkpoint |
 | R28 | «Only use confirmed information. Unknown information should remain a placeholder.» | placeholder | Service/business facts remain null and documented | spec § Placeholder behavior, Open items |
 | R29 | «Implement the simplified information architecture from the documentation. Do NOT recreate all 555 reference URLs.» | deferred | Later information stage; no bulk route generation now | spec § Outside scope |
 | R30 | «Consolidate repetitive SEO content.» | deferred | Applies when information routes are implemented | spec § Outside scope |
@@ -38,19 +38,19 @@
 | R32 | «Implement: contact page / quotation form / sample request flow where applicable / installation enquiry» | deferred | No endpoint/privacy/business inputs; later form stage | spec § Outside scope |
 | R33 | «Forms must be componentized. Do not invent form endpoints.» | deferred | Form layer is not built in current increment | spec § Outside scope |
 | R34 | «use a development-safe placeholder and document it» | placeholder | CTA destination cannot submit and is registered | spec § Placeholder behavior, Outside scope |
-| R35 | «Implement SEO for actual commercial pages.» | in-ticket | Foundation metadata for actual `/fi`; full stage deferred | spec § SEO foundation |
-| R36 | «Do NOT create SEO filler. Do NOT generate hundreds of thin pages.» | in-ticket | Only actual homepage is indexable | spec § Route and locale, SEO foundation |
-| R37 | «The site must work properly on: mobile / tablet / desktop» | in-ticket | Responsive acceptance specified | spec § Responsive behavior |
-| R38 | «Do not simply shrink the desktop layout.» | in-ticket | Structural mobile navigation/grid changes specified | spec § Responsive behavior |
-| R39 | «Use the retained .firecrawl/ screenshots and captures as reference.» | in-ticket | Visual comparison required | spec § Verification |
-| R40 | «same brand language, simpler Finnish UX.» | in-ticket | Core design acceptance | spec § Stories 2, 9 |
-| R41 | «pixel-perfect reproduction of every legacy behavior.» | in-ticket | Explicitly excluded by the brief’s “Not:” | spec § Solution |
-| R42 | «Content QA» | in-ticket | Rendered-content audit required | spec § Homepage content, Verification |
-| R43 | «A phase is complete only when» | in-ticket | Acceptance commands and content/design checks | spec § Verification |
-| R44 | «Implement in this order» | in-ticket | Current increment honors the first three stages; rest deferred in order | spec § Outside scope |
-| R45 | «Do not attempt to implement everything in one huge operation.» | in-ticket | Flight is explicitly bounded | spec § Outside scope |
-| R46 | «After completing each major stage, run the appropriate checks and fix problems before moving on.» | in-ticket | Per-ticket checks and final suite required | spec § Verification |
-| R47 | «Start with Foundation + Global UI + Homepage.» | in-ticket | Defines entire current build scope | spec § Solution |
+| R35 | «Implement SEO for actual commercial pages.» | done | `/fi` has Finnish canonical/OG metadata and readiness-driven noindex | ticket 03 checkpoint |
+| R36 | «Do NOT create SEO filler. Do NOT generate hundreds of thin pages.» | done | Only the useful implemented route exists; no thin route generation | ticket 03 checkpoint |
+| R37 | «The site must work properly on: mobile / tablet / desktop» | done | Browser QA passed at 390, 768, 1200 and 1440 px | ticket 03 checkpoint |
+| R38 | «Do not simply shrink the desktop layout.» | done | Navigation and grids change structure across responsive breakpoints | tickets 02–03 |
+| R39 | «Use the retained .firecrawl/ screenshots and captures as reference.» | done | Retained screenshots/CSS informed hierarchy, spacing and imagery QA | ticket 03 checkpoint |
+| R40 | «same brand language, simpler Finnish UX.» | done | Warm visual language and simplified quote journey passed review | ticket 03 checkpoint |
+| R41 | «pixel-perfect reproduction of every legacy behavior.» | done | Legacy behavior was intentionally not reproduced; documented design boundaries were followed | ticket 03 checkpoint |
+| R42 | «Content QA» | done | Claims, Finnish, repetition, links and leaked business details were reviewed and repaired | ticket 03 checkpoint |
+| R43 | «A phase is complete only when» | done | Acceptance suite and dual reviews are clean | tickets 01–03 |
+| R44 | «Implement in this order» | done | Current increment followed Foundation → Global UI → Homepage | tickets 01–03 |
+| R45 | «Do not attempt to implement everything in one huge operation.» | done | Work was split into three reviewed tickets | tickets 01–03 |
+| R46 | «After completing each major stage, run the appropriate checks and fix problems before moving on.» | done | Each ticket received tests, build checks and repair review | tickets 01–03 |
+| R47 | «Start with Foundation + Global UI + Homepage.» | done | Requested three-stage increment is implemented | tickets 01–03 |
 
 ## Ticket mapping
 

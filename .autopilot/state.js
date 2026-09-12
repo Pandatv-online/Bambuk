@@ -1,7 +1,7 @@
 window.STATE =
 {
   "slug": "bambuk-finland-foundation-homepage",
-  "dir": "2026-09-11-bambuk-finland-foundation-homepage--wip",
+  "dir": "2026-09-11-bambuk-finland-foundation-homepage",
   "title": "Bambuk Finland — perusta, globaali UI ja etusivu",
   "mode": "semi",
   "depth": "normal",
@@ -11,8 +11,8 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-11T02:03:54+03:00",
-  "updatedAt": "2026-09-12T13:40:26+03:00",
-  "finishedAt": null,
+  "updatedAt": "2026-09-12T13:59:54+03:00",
+  "finishedAt": "2026-09-12T13:59:54+03:00",
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-09-11T02:03:54+03:00", "finishedAt": "2026-09-11T02:06:40+03:00" },
     { "id": "manifest", "status": "done", "startedAt": "2026-09-11T02:06:40+03:00", "finishedAt": "2026-09-11T02:08:27+03:00" },
@@ -21,7 +21,7 @@ window.STATE =
     { "id": "plan", "status": "done", "startedAt": "2026-09-11T02:16:36+03:00", "finishedAt": "2026-09-11T02:19:08+03:00", "note": "3 таска, ярус T1" },
     { "id": "build", "status": "done", "startedAt": "2026-09-11T02:19:08+03:00", "finishedAt": "2026-09-12T13:40:26+03:00", "note": "3 из 3 тасков готовы" },
     { "id": "review", "status": "done", "startedAt": "2026-09-11T06:46:30+03:00", "finishedAt": "2026-09-12T13:40:26+03:00", "note": "3 из 3 тасков проверены; блокирующих замечаний нет" },
-    { "id": "final", "status": "active", "startedAt": "2026-09-12T13:40:26+03:00" }
+    { "id": "final", "status": "done", "startedAt": "2026-09-12T13:40:26+03:00", "finishedAt": "2026-09-12T13:59:54+03:00", "note": "слепая приёмка совпала с манифестом текущего инкремента; финальный suite зелёный" }
   ],
   "requirements": {
     "total": 47,
@@ -113,12 +113,26 @@ window.STATE =
       "finishedAt": "2026-09-12T13:40:26+03:00",
       "files": ["app/fi/page.tsx", "components/catalog/category-card.tsx", "components/ui/button.tsx", "data/categories.ts", "data/homepage.ts", "data/types.ts", "docs/implementation-inputs.md", "public/images/home/", "scripts/browser-qa.mjs", "styles/globals.css", "tests/foundation-route.test.ts"],
       "tests": { "passed": 11, "failed": 0 },
-      "concerns": []
+      "concerns": [],
+      "commit": "19e3512"
     }
   ],
   "singlePass": null,
-  "tests": null,
-  "debt": { "placeholders": [], "assumptions": [], "emptyEnv": [] },
+  "tests": { "passed": 11, "failed": 0, "typecheck": "passed", "lint": "passed", "build": "passed", "browserQa": "passed at 390, 768, 1200 and 1440 px" },
+  "debt": {
+    "placeholders": [
+      "Finnish distributor identity, Business ID/VAT, address, contact details and hours",
+      "Manufacturer identity, approved distributor wording and final logo assets",
+      "Final public domain, legal/privacy text and form destination/process",
+      "Confirmed Finnish assortment, products, specifications, documents and product media",
+      "Finnish prices, VAT basis, availability, lead times and sample policy",
+      "Installation provider, methods, inclusions, preparation, service area and pricing",
+      "Delivery/return terms, warranties, certifications and any environmental/performance claims",
+      "Confirmed project/gallery relations, permissions and any required credits"
+    ],
+    "assumptions": [],
+    "emptyEnv": ["NEXT_PUBLIC_SITE_URL"]
+  },
   "additions": [],
   "coverage": {
     "findings": 1,
@@ -126,12 +140,29 @@ window.STATE =
     "recheck": "PASS"
   },
   "concerns": [
-    "lib/seo.ts: keep URL joining behind the createPageMetadata interface",
-    "tests/seo.test.ts: assert all contracted metadata fields with structurally valid SiteConfig fixtures",
-    "tests/site-config.test.ts: prove a fully supplied production configuration becomes ready",
-    "tests/content-registries.test.ts: exercise getPublishedProducts and observable route behavior",
-    "styles/globals.css: consume the single font token instead of duplicating fallback stack"
+    "DROP (resolved): canonical URL joining remains behind createPageMetadata",
+    "DROP (resolved): route metadata now asserts canonical, Open Graph and readiness-derived noindex",
+    "REPORT: the positive fully supplied production-readiness fixture remains for the launch-data stage",
+    "DROP (resolved): the homepage test exercises the observable empty published-product state",
+    "DROP (superseded): the display typography was reworked during the global-UI review",
+    "DROP (deferred with catalog): published-price formatting needs deeper assertions when verified Finnish prices activate that path"
   ],
   "reviewers": { "manifestSpec": "/root/review_manifest_spec", "craft": "/root/review_craft" },
-  "blind": null
+  "blind": {
+    "verdict": "accepted-with-expected-placeholders-and-deferred-stages",
+    "drifts": [],
+    "notes": [
+      "Foundation, reusable global UI and the Finnish homepage work when launched",
+      "Missing identity, catalog, installation and form facts are visible as pending states rather than invented",
+      "Catalog, product pages, installation route, information pages, gallery route, contact/forms, sitemap and robots remain in the user's later implementation order",
+      "The mandatory-reading process cannot be independently proven from runtime artifacts"
+    ],
+    "commands": [
+      "npm test: 7 files / 11 tests passed",
+      "npm run typecheck: passed",
+      "npm run lint: passed",
+      "npm run build: passed",
+      "npm run dev: / redirects to /fi and /fi returns 200"
+    ]
+  }
 }

@@ -18,5 +18,4 @@
 
 | Начат | Папка | Статус | Итог |
 |---|---|---|---|
-| 2026-09-11 | `2026-09-11-bambuk-finland-foundation-homepage--wip` | в работе | — |
-
+| 2026-09-11 | `2026-09-11-bambuk-finland-foundation-homepage` | сдан | Next.js-перusta, переиспользуемый global UI и финская главная `/fi` с честными pending-состояниями |

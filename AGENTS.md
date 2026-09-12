@@ -87,24 +87,58 @@ Work in the twelve stages defined in `docs/finland-site-architecture.md`. After 
 No implementation code existed when these rules were created. Preserve unrelated user changes in any future working tree.
 
 <!-- autopilot:start -->
-## Current Autopilot run
+## Durable project memory (T1)
 
-The current increment builds the Next.js foundation, reusable global UI, and Finnish homepage. Requirements, specification, and work tracking live in `.autopilot/`; progress is shown in `.autopilot/dashboard.html`.
+This repository implements the Finnish, quote-led distributor site for customers comparing bamboo flooring, decking, related products and installation. It is a Next.js 16.3.4 App Router application with React 19.3, strict TypeScript and Tailwind CSS 4. The Finnish distributor is the future seller/site operator; the manufacturer remains a separate entity. The current `/fi` homepage is a review-state foundation, not a launch-ready catalog or commerce site.
 
-## Verified commands
+### Commands and verified baseline
 
-Run `nvm use` first; this project pins Node 22.22.3 in `.nvmrc`.
+Run `nvm use` first; `.nvmrc` pins Node 22.22.3.
 
-- `npm install` — install the locked dependencies.
-- `npm run dev` — start local development.
-- `npm test` — run Vitest.
-- `npm run typecheck` — run strict TypeScript checks.
-- `npm run lint` — run ESLint.
-- `npm run build` — create the production build.
+- `npm install` — install the npm-lockfile dependency set.
+- `npm run dev` — run the local Next.js server.
+- `npm test` — run Vitest; verified: 7 files, 11 tests passing.
+- `npm run typecheck` — run strict `tsc --noEmit`; verified passing.
+- `npm run lint` — run ESLint; verified passing.
+- `npm run build` — production build via webpack; verified passing.
 
-ESLint 9.39.1 is intentionally pinned because the Next.js 16.3.4 React plugin crashes under ESLint 10. The production script uses supported webpack mode because Turbopack cannot bind its worker port in this environment.
+### Working tree map
 
-If work is interrupted, resume from `.autopilot/state.js` and the active run directory rather than restarting or re-asking resolved questions.
+```text
+app/                    root redirect, Finnish layout, and composed `/fi` homepage
+components/ui/          reusable Button, CTA, layout, notice, and typography primitives
+components/navigation/  shared header/footer, desktop disclosures, mobile dialog, breadcrumbs
+components/catalog/     category and product cards/grids with pending and quote states
+components/media/, gallery/  local responsive media and gallery presenters
+data/                   typed navigation, homepage, category, and empty product registries
+lib/                    nullable site configuration, release readiness, and metadata helpers
+public/                 self-hosted font and registered local homepage images
+styles/                 global tokens, layout, responsive, focus, and reduced-motion CSS
+tests/                  Vitest seams for config, SEO, registries, route, presenters, and navigation
+scripts/                Chrome DevTools browser QA harness for `/fi`
+docs/                   governing audit/architecture/design/content and input provenance
+```
+
+### Public boundaries to preserve
+
+- Configuration: `siteConfig`, `getReleaseReadiness(config?, environment?)`, and their exported types in `lib/site-config.ts`.
+- Content: `navigation`, `homepageContent`, `categories`, `products`, `getPublishedProducts()`, `createDefaultCommercialState()`, and exported models from `data/index.ts`.
+- SEO: `createPageMetadata(input, config?)` in `lib/seo.ts`; `/fi` composes data through this boundary.
+- UI barrels expose shared primitives, navigation, category/product presenters, responsive media, and gallery components. Keep facts and route registries outside JSX.
+
+### Sharp edges and release guards
+
+- Development readiness is deliberately permissive, but production readiness is false while required Finnish identity, contact, legal, domain, manufacturer and form inputs are null. The homepage is also `status: "review"`, so `/fi` emits `noindex, nofollow`.
+- `/` permanently redirects to `/fi`. Unbuilt journeys resolve to meaningful `/fi` anchors; pending categories are not links and the closing quote action is disabled because no form destination exists.
+- `categories` are all `pendingAssortment`; `products` is empty. Default commerce is `price: "quote"` plus `availability: "unknown"`; published price/availability requires sourced values and timestamps.
+- No organization, product, offer, review or rating JSON-LD exists. Do not turn reference-site snapshots, slugs, claims or Lithuanian business facts into live Finnish data.
+- Remote image patterns are empty. Visitor media is local and typed with a `rightsId`; `ResponsiveMedia` uses Next.js `preload`, not deprecated `priority`. The brand lockup and transparent favicon remain development placeholders.
+- ESLint 9.39.1 is pinned because the Next.js plugin fails under ESLint 10. `npm run build` intentionally uses webpack because Turbopack cannot bind its worker port in this environment.
+- `scripts/browser-qa.mjs` needs both the running site and a Chrome DevTools endpoint; it checks four viewports, local links/media, console errors and overflow, then writes screenshots under `/tmp`.
+
+### Autopilot handoff
+
+Continue incrementally from this existing skeleton; do not re-scaffold it. Before code/content/style/config/route/asset changes, read the five mandatory docs above, then inspect the current code and tests. The completed run is archived at `.autopilot/2026-09-11-bambuk-finland-foundation-homepage/`; its artifacts are historical rather than active instructions or project memory. Preserve unrelated working-tree changes and re-run checks proportional to the edited surface.
 <!-- autopilot:end -->
 
 <!-- BEGIN:nextjs-agent-rules -->

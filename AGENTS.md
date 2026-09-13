@@ -138,7 +138,7 @@ docs/                   governing audit/architecture/design/content and input pr
 
 ### Autopilot handoff
 
-Continue incrementally from this existing skeleton; do not re-scaffold it. Before code/content/style/config/route/asset changes, read the five mandatory docs above, then inspect the current code and tests. The completed run is archived at `.autopilot/2026-09-11-bambuk-finland-foundation-homepage/`; its artifacts are historical rather than active instructions or project memory. Preserve unrelated working-tree changes and re-run checks proportional to the edited surface.
+Continue incrementally from this existing skeleton; do not re-scaffold it. Before code/content/style/config/route/asset changes, read the five mandatory docs above, then inspect the current code and tests. The active catalog/content/forms run is tracked under `.autopilot/2026-09-12-catalog-content-telegram-forms--wip/`; the completed foundation run is archived under `.autopilot/2026-09-11-bambuk-finland-foundation-homepage/`. Working code is authoritative and prior run artifacts are historical. Preserve unrelated working-tree changes and re-run checks proportional to the edited surface.
 <!-- autopilot:end -->
 
 <!-- BEGIN:nextjs-agent-rules -->

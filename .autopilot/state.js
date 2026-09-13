@@ -11,7 +11,7 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-12T16:56:46+03:00",
-  "updatedAt": "2026-09-13T16:14:00+03:00",
+  "updatedAt": "2026-09-13T22:08:47+03:00",
   "finishedAt": null,
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-09-12T16:56:46+03:00", "finishedAt": "2026-09-12T16:58:00+03:00", "note": "configured repository; previous run archived; existing next-env.d.ts change preserved" },
@@ -19,8 +19,8 @@ window.STATE =
     { "id": "briefing", "status": "skipped", "startedAt": "2026-09-12T17:00:35+03:00", "finishedAt": "2026-09-12T17:00:35+03:00", "note": "вопросов не потребовалось — пользователь прямо отложил недостающую информацию; безопасные placeholders определены" },
     { "id": "spec", "status": "done", "startedAt": "2026-09-12T17:00:35+03:00", "finishedAt": "2026-09-12T17:12:00+03:00" },
     { "id": "plan", "status": "done", "startedAt": "2026-09-12T17:12:00+03:00", "finishedAt": "2026-09-12T17:20:00+03:00", "note": "9 тасков, ярус T3, 5 волн" },
-    { "id": "build", "status": "active", "startedAt": "2026-09-12T17:20:00+03:00", "note": "ремонт документации таска 02" },
-    { "id": "review", "status": "active", "startedAt": "2026-09-12T23:42:00+03:00", "note": "таск 02: один блокер" },
+    { "id": "build", "status": "active", "startedAt": "2026-09-12T17:20:00+03:00", "note": "3 из 9 готово; тикет 03 прошёл повторное ревью" },
+    { "id": "review", "status": "active", "startedAt": "2026-09-12T23:42:00+03:00", "note": "тикет 03 принят; далее проверка тикета 04" },
     { "id": "final", "status": "pending" }
   ],
   "requirements": {
@@ -29,17 +29,17 @@ window.STATE =
   },
   "tickets": [
     { "id": "01", "title": "Каталог как проверяемые данные", "requirements": ["R07", "R08", "R09", "R10", "R11", "R12", "R13", "R16", "R17", "R27i"], "blockedBy": [], "wave": 1, "zone": ["data/catalog/", "lib/catalog/", "scripts/catalog/", "public/images/products/", "public/documents/products/", "tests/catalog-import*", "docs/catalog-import-report.md"], "status": "done", "startedAt": "2026-09-12T17:23:00+03:00", "finishedAt": "2026-09-13T11:10:00+03:00", "retries": 2, "repairs": 2, "repairFindings": ["Unsourced reconciliation invented missing names/URLs/categories and false provenance", "Brand was inferred from coating tokens", "Required duplicate-slug/unit/orphan-category validation was absent", "Pricing provenance used checkedAt instead of extractedAt", "NotReady records entered the public quote-eligible selector", "Published price accepted missing source URL or fallback extraction date", "Normalized slug collision invalidated only the later record", "Published pricing public type allowed nullable provenance despite runtime invariant"], "handoffs": 1, "files": [".firecrawl/catalog-products-2026-09-12.json", "data/catalog/", "lib/catalog/", "scripts/catalog/", "public/images/products/", "tests/catalog-import.test.ts", "tests/catalog-import-registry.test.ts", "docs/catalog-import-report.md"], "tests": { "passed": 27, "failed": 0 }, "commit": "1e56166", "concerns": ["42 incomplete source records remain internal/report-only; 66 are active", "0 source documents were discovered"] },
-    { "id": "02", "title": "Osaühing IKB в общей оболочке", "requirements": ["R01", "R02", "R03", "R04", "R05", "R06", "R14", "R29i", "R30i"], "blockedBy": ["01"], "wave": 2, "zone": ["lib/site-config.ts", "data/navigation.ts", "components/navigation/", "app/fi/layout.tsx", "docs/implementation-inputs.md", "tests/site-config*", "tests/global-navigation*"], "status": "repair", "startedAt": "2026-09-13T11:10:00+03:00", "retries": 1, "repairs": 2, "repairFindings": ["implementation-inputs register described an empty catalog and marked confirmed stock/samples/warranty facts missing", "sample applicability was still marked pending despite confirmation for every active imported product"], "handoffs": 0 },
-    { "id": "03", "title": "Каталог, категории и фильтры", "requirements": ["R19", "R07", "R11", "R12", "R13"], "blockedBy": ["01"], "wave": 2, "zone": ["app/fi/tuotteet/", "components/catalog/listing/", "lib/catalog/query*", "tests/catalog-query*", "tests/catalog-routes*"], "status": "in-progress", "startedAt": "2026-09-13T11:10:00+03:00", "retries": 1, "repairs": 0, "handoffs": 0 },
+    { "id": "02", "title": "Osaühing IKB в общей оболочке", "requirements": ["R01", "R02", "R03", "R04", "R05", "R06", "R14", "R29i", "R30i"], "blockedBy": ["01"], "wave": 2, "zone": ["lib/site-config.ts", "data/navigation.ts", "components/navigation/", "app/fi/layout.tsx", "docs/implementation-inputs.md", "tests/site-config*", "tests/global-navigation*"], "status": "done", "startedAt": "2026-09-13T11:10:00+03:00", "finishedAt": "2026-09-13T16:28:00+03:00", "retries": 1, "repairs": 2, "repairFindings": ["implementation-inputs register described an empty catalog and marked confirmed stock/samples/warranty facts missing", "sample applicability was still marked pending despite confirmation for every active imported product"], "handoffs": 0, "files": ["lib/site-config.ts", "components/navigation/", "docs/implementation-inputs.md", "tests/site-config.test.ts", "tests/global-navigation.test.tsx", "tests/mobile-navigation.test.tsx"], "tests": { "passed": 45, "failed": 0 }, "commit": "f3b471d", "concerns": [] },
+    { "id": "03", "title": "Каталог, категории и фильтры", "requirements": ["R19", "R07", "R11", "R12", "R13", "D01"], "blockedBy": ["01"], "wave": 2, "zone": ["app/fi/tuotteet/", "components/catalog/listing/", "lib/catalog/query*", "tests/catalog-query*", "tests/catalog-routes*"], "status": "done", "startedAt": "2026-09-13T11:10:00+03:00", "finishedAt": "2026-09-13T22:08:47+03:00", "retries": 1, "repairs": 1, "repairFindings": ["Unmapped LT facet values were visitor-visible", "Metadata used unconfirmed Bambuk Finland public name", "Default order claimed recommendation without ranking source"], "handoffs": 0, "files": ["app/fi/tuotteet/", "components/catalog/listing/", "lib/catalog/query.ts", "lib/catalog/query-facet-labels.ts", "tests/catalog-query.test.ts", "tests/catalog-routes.test.tsx"], "tests": { "passed": 46, "failed": 0 } },
     { "id": "04", "title": "Безопасная доставка заявок в Telegram", "requirements": ["R18", "R28i", "R23", "R24", "R25"], "blockedBy": ["01"], "wave": 2, "zone": ["app/api/inquiries/", "lib/inquiries/", "tests/inquiries*", ".env.example"], "status": "in-progress", "startedAt": "2026-09-13T11:10:00+03:00", "retries": 1, "repairs": 0, "handoffs": 0 },
-    { "id": "05", "title": "Универсальные страницы товаров", "requirements": ["R20", "R08", "R09", "R10", "R11", "R12", "R13", "R16", "R17"], "blockedBy": ["01", "03"], "wave": 3, "zone": ["app/fi/tuotteet/[...segments]/", "components/catalog/product/", "tests/product-pages*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
+    { "id": "05", "title": "Универсальные страницы товаров", "requirements": ["R20", "R19", "D01", "R08", "R09", "R10", "R11", "R12", "R13", "R16", "R17"], "blockedBy": ["01", "03"], "wave": 3, "zone": ["app/fi/tuotteet/[...segments]/", "components/catalog/product/", "tests/product-pages*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
     { "id": "06", "title": "Полезные страницы о бамбуке", "requirements": ["R21", "R15", "R27i"], "blockedBy": ["01"], "wave": 3, "zone": ["app/fi/tietoa-bambusta/", "data/content/", "components/content/", "tests/information-pages*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
     { "id": "07", "title": "Отдельная галерея", "requirements": ["R22", "R10"], "blockedBy": ["01"], "wave": 3, "zone": ["app/fi/galleria/", "data/gallery/", "components/gallery/", "tests/gallery*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
     { "id": "08", "title": "Контакты, предложение и образец", "requirements": ["R14", "R18", "R23", "R24", "R25", "R29i", "R30i"], "blockedBy": ["02", "04", "05"], "wave": 4, "zone": ["app/fi/yhteystiedot/", "app/fi/pyyda-tarjous/", "app/fi/tilaa-mallipala/", "components/forms/", "tests/inquiry-forms*"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 },
     { "id": "09", "title": "Интеграция, SEO и итоговая проверка", "requirements": ["R01-R25", "R27i-R30i"], "blockedBy": ["02", "03", "04", "05", "06", "07", "08"], "wave": 5, "zone": ["app/fi/page.tsx", "data/homepage.ts", "data/navigation.ts", "lib/seo.ts", "styles/globals.css", "tests/integration*", "scripts/browser-qa.mjs", "docs/implementation-inputs.md"], "status": "pending", "retries": 0, "repairs": 0, "handoffs": 0 }
   ],
   "singlePass": null,
-  "tests": null,
+  "tests": { "passed": 46, "failed": 0, "typecheck": "passed", "lint": "passed", "build": "passed", "at": "2026-09-13T22:08:47+03:00" },
   "debt": {
     "placeholders": ["R06 — финальный домен", "R15 — содержание, территория и условия монтажа", "R29i — адрес для визита", "R30i — Business ID/VAT/address/email/legal fields", "VAT scope, delivery geography and warranty terms"],
     "assumptions": ["Текущий live LT catalog snapshot от 2026-09-12 является рабочим источником до передачи master data"],
@@ -65,7 +65,12 @@ window.STATE =
     ,"ticket 02 · components/navigation/site-footer.tsx:16 — market wording duplicates siteConfig servedMarkets"
     ,"ticket 02 · lib/site-config.ts:105 — display phone and phoneHref are independently mutable"
     ,"ticket 02 · tests/site-config.test.ts:25 — readiness test does not assert exact unresolved set and ready transition"
+    ,"ticket 03 · lib/catalog/query.ts:101 — category facets and collection facets may overlap"
+    ,"ticket 03 · components/catalog/listing/catalog-shell.tsx:63 — active-filter React key omits facet identity"
+    ,"ticket 03 · app/fi/tuotteet/page.tsx:30 — breadcrumb is rebuilt outside the shared presenter"
+    ,"ticket 03 · tests/catalog-routes.test.tsx:19 — mobile modal lifecycle lacks interaction coverage"
+    ,"ticket 03 · tests/catalog-query.test.ts:43 — sort assertions do not independently cover every direction"
   ],
-  "reviewers": { "manifestSpec": "/root/coverage_check_2", "craft": "/root/craft_reviewer" },
+  "reviewers": { "manifestSpec": "/root/review_ticket03_spec", "craft": "/root/review_ticket03_craft" },
   "blind": null
 }

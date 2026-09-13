@@ -34,3 +34,4 @@
 | R28i | *(подразумевается)* Telegram-интеграция должна безопасно работать без опубликованных credentials | in-ticket | `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID` остаются пустыми env; секреты не логируются | ticket 04 |
 | R29i | *(подразумевается)* визит «посмотреть» требует адреса или честного способа договориться | placeholder | Публикуется только «sovi käynti puhelimitse» до передачи адреса | spec § Company and contact |
 | R30i | *(подразумевается)* полные реквизиты требуют Business ID/VAT, юридического/визитного адреса и email | placeholder | Эти поля остаются null и перечисляются в implementation-inputs | spec § Company and release state |
+| D01 → R19/R20 | Next.js route ownership: category, collection and product outcomes share one catch-all owner | in-ticket | Ticket 03 owns controlled path/query links; ticket 05 owns the single `[...segments]` renderer | tickets 03, 05; spec § Routes and catalog UX |

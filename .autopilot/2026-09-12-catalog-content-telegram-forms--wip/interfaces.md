@@ -54,3 +54,13 @@ Primary test seams: `importReferenceCatalog`, `queryProducts`, product/content s
 - `siteConfig.contact.phoneHref: tel:${string} | null` and `visitWording: string | null` are the shared public contact values.
 - `getReleaseReadiness(config?, environment?) -> ReleaseReadiness` keeps domain/address/IDs/email/privacy/form configuration as blockers; relationship wording is intentionally not required or public.
 - Shared header, mobile navigation and footer render Osaühing IKB, `+358 50 508 0808`, `ma–pe 8.00–18.00` and visit-by-phone wording from config.
+
+## Из таска 03 — каталог и фильтры
+
+- `parseCatalogQuery(searchParams, source?) -> ParsedCatalogQuery` normalizes known repeated facets, sort and page values.
+- `queryProducts(query, source?) -> CatalogQueryResult` is the only public filtering/sorting/pagination seam and defaults to the 66 active quote-eligible records.
+- `getCatalogFacets(source?) -> CatalogFacets` derives available filters from the provided active source.
+- `createCatalogUrl(query, patch?) -> /fi/tuotteet${string}` preserves/canonicalizes URL state.
+- `getCatalogCategoryPath(id, categories?)` and `getCatalogProductPath(product, categories?)` return a controlled local path or null.
+- `CatalogShell`, `CatalogFilters`, `CatalogProductCard` own the responsive listing UI; product detail rendering remains ticket 05.
+- `getCatalogAttributeLabel(facet, sourceValue) -> string | null`; unmapped source-locale values return null and are excluded from public facets.

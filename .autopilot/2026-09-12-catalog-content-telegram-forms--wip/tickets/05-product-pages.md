@@ -1,6 +1,6 @@
 # 05 — Универсальные страницы товаров
 
-**Требования:** R20, R08, R09, R10, R11, R12, R13, R16, R17
+**Требования:** R20, R19, D01, R08, R09, R10, R11, R12, R13, R16, R17
 **Blocked by:** 01, 03
 **Зона:** `app/fi/tuotteet/[...segments]/`, `components/catalog/product/`, `tests/product-pages*`
 **Волна:** 3
@@ -17,11 +17,10 @@
 
 ## Критерии приёмки
 
-- [ ] Controlled resolver distinguishes category/collection/product and returns notFound for unknown routes
+- [ ] Controlled resolver renders category, collection and product outcomes through one catch-all owner and returns notFound for unknown routes
 - [ ] Template renders only populated category-specific spec groups and never borrows values
 - [ ] Gallery supports thumbnail keyboard interaction and meaningful local alt text
 - [ ] Price snapshot date, VAT pending wording, stock/sample/delivery/warranty guardrails match spec
 - [ ] Only locally available applicable documents are downloadable; missing-document product cannot appear ready
 - [ ] Quote and sample CTAs carry product context; metadata has one H1/canonical/OG/noindex and no Offer JSON-LD
 - [ ] Representative category tests and full generated-route build pass
-

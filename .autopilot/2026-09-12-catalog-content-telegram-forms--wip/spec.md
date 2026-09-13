@@ -108,6 +108,7 @@ Product type remains flexible: floors, decking, skirting/stairs, panels, décor,
 
 - `/fi/tuotteet` — catalog hub, category overview, filter summary and paginated product grid.
 - `/fi/tuotteet/[...segments]` — category/collection or product resolution through controlled registries; canonical slugs come from data, never from raw LT slugs.
+- **D01 (ticket 03):** Next.js route ownership proved that category, collection and product outcomes must share one `[...segments]` owner. Ticket 03 exposes controlled paths and links; ticket 05 renders every nested outcome so two agents do not create competing route trees.
 - Filter query: `kategoria`, `mallisto`, `vari`, `pinta`, `viimeistely`, `saatavuus`, `sivu`. Multiple values within a facet use repeated params; invalid values are ignored and canonicalized.
 - Desktop uses a restrained sidebar; mobile uses a modal filters panel. Sorting defaults to controlled catalog order; only name and price sorts are exposed when data supports them.
 - Pagination is server-rendered, 24 products/page, crawl-safe; filtered query pages remain noindex until final SEO policy.

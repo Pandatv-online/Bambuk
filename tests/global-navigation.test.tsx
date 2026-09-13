@@ -18,6 +18,19 @@ describe("the shared site navigation", () => {
     }
 
     expect(header).toContain("Pyydä tarjous");
+    for (const shell of [header, footer]) {
+      expect(shell).toContain("Osaühing IKB");
+      expect(shell).toContain("+358 50 508 0808");
+      expect(shell).toContain("ma–pe 8.00–18.00");
+      expect(shell).not.toMatch(
+        /virallinen|valtuutettu|jakelija|jälleenmyyjä|distributor/i,
+      );
+      expect(shell).not.toContain("bambukogrindys.lt");
+    }
+    expect(header).toContain('href="tel:+358505080808"');
+    expect(footer).toContain('href="tel:+358505080808"');
+    expect(footer).toContain("Sovi käynti etukäteen puhelimitse");
+    expect(footer).not.toContain("mailto:");
     expect(breadcrumbs).toContain("Koti");
     expect(breadcrumbs).toContain("Asennus");
     expect(header).not.toMatch(/bambukogrindys\.lt|Ostoskori|Kirjaudu|EUR/);

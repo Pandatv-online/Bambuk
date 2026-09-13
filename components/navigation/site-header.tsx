@@ -14,9 +14,9 @@ export function SiteHeader({ appearance = "inner" }: SiteHeaderProps) {
   return (
     <header className={`site-header site-header--${appearance}`}>
       <Container className="site-header__inner">
-        <a className="site-header__brand" href="/fi">
+        <div className="site-header__brand">
           <BrandLockup />
-        </a>
+        </div>
         <DesktopNavigation items={navigation} />
         <Button className="site-header__quote" href="/fi#yhteys">
           Pyydä tarjous

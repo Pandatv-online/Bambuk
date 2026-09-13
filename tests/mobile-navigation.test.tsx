@@ -18,6 +18,27 @@ afterEach(() => {
 });
 
 describe("MobileNavigation", () => {
+  it("shows the confirmed company contact and phone-only visit path", async () => {
+    const user = userEvent.setup();
+    render(<MobileNavigation />);
+
+    await user.click(screen.getByRole("button", { name: "Avaa valikko" }));
+
+    expect(screen.getByText("Osaühing IKB")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "+358 50 508 0808" })).toHaveProperty(
+      "href",
+      "tel:+358505080808",
+    );
+    expect(screen.getByText("ma–pe 8.00–18.00")).toBeTruthy();
+    expect(
+      screen.getByText("Sovi käynti etukäteen puhelimitse"),
+    ).toBeTruthy();
+    expect(document.body.textContent).not.toMatch(
+      /virallinen|valtuutettu|jakelija|jälleenmyyjä|distributor/i,
+    );
+    expect(document.querySelector('a[href^="mailto:"]')).toBeNull();
+  });
+
   it("operates as a modal disclosure and restores focus on Escape", async () => {
     const user = userEvent.setup();
     render(<MobileNavigation />);

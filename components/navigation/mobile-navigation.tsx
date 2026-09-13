@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 
 import type { NavigationItem } from "@/data";
 import { navigation } from "@/data";
+import { siteConfig } from "@/lib/site-config";
 
 import { Button } from "../ui/button";
 
@@ -51,6 +52,7 @@ function MobileBranch({
 }
 
 export function MobileNavigation({ items = navigation }: MobileNavigationProps) {
+  const { company, contact } = siteConfig;
   const [isOpen, setIsOpen] = useState(false);
   const dialogId = useId();
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -160,6 +162,17 @@ export function MobileNavigation({ items = navigation }: MobileNavigationProps) 
                 ))}
               </ul>
             </nav>
+            <address>
+              <strong>{company.displayName}</strong>
+              {contact.phone && contact.phoneHref ? (
+                <p>
+                  <a href={contact.phoneHref}>{contact.phone}</a>
+                  <br />
+                  <span>{contact.hours}</span>
+                </p>
+              ) : null}
+              <p>{contact.visitWording}</p>
+            </address>
             <Button href="/fi#yhteys" onClick={close}>
               Pyydä tarjous
             </Button>

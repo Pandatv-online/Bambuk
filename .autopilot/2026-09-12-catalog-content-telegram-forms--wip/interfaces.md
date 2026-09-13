@@ -47,3 +47,10 @@ Primary test seams: `importReferenceCatalog`, `queryProducts`, product/content s
 - `ProductPricing = HiddenPricing | PublishedPricing`; the published arm requires string `sourceUrl` and `extractedAt`, while hidden provenance remains nullable. `CatalogSource.url/extractedAt` and `CatalogProduct.nameFi/nameSource/categoryId` remain nullable when source facts are missing; `brand` is null without an explicit source field.
 - Issues include `invalid-source-date`, `invalid-price-provenance`, `duplicate-normalized-slug`; a slug collision invalidates every participant deterministically.
 - Current generated snapshot: 108 traceable internal products, 66 active/quote-eligible, 42 report-only `notReady`, 294 local image files and 0 discovered product documents.
+
+## Из таска 02 — компания и оболочка
+
+- `siteConfig.company.registrationCountry: "EE" | null` and `servedMarkets: readonly ("FI" | "EE")[]` distinguish the Estonian operator from served markets.
+- `siteConfig.contact.phoneHref: tel:${string} | null` and `visitWording: string | null` are the shared public contact values.
+- `getReleaseReadiness(config?, environment?) -> ReleaseReadiness` keeps domain/address/IDs/email/privacy/form configuration as blockers; relationship wording is intentionally not required or public.
+- Shared header, mobile navigation and footer render Osaühing IKB, `+358 50 508 0808`, `ma–pe 8.00–18.00` and visit-by-phone wording from config.

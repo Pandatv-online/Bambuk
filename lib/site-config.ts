@@ -17,6 +17,8 @@ export type SiteConfig = Readonly<{
   company: Readonly<{
     displayName: string | null;
     legalName: string | null;
+    registrationCountry: "EE" | null;
+    servedMarkets: readonly ("FI" | "EE")[];
     businessId: string | null;
     vatId: string | null;
     address: string | null;
@@ -30,7 +32,9 @@ export type SiteConfig = Readonly<{
   contact: Readonly<{
     email: string | null;
     phone: string | null;
+    phoneHref: `tel:${string}` | null;
     hours: string | null;
+    visitWording: string | null;
   }>;
   legal: Readonly<{
     privacyNotice: string | null;
@@ -52,13 +56,11 @@ export type RequiredSiteConfigField =
   | "company.businessId"
   | "company.vatId"
   | "company.address"
-  | "manufacturer.displayName"
-  | "manufacturer.legalName"
-  | "manufacturer.relationshipWording"
   | "contact.email"
   | "contact.phone"
   | "contact.hours"
   | "legal.privacyNotice"
+  | "legal.deliveryTerms"
   | "formDestination";
 
 export type ReleaseReadiness = Readonly<{
@@ -84,8 +86,10 @@ export const siteConfig: SiteConfig = {
   locale: "fi",
   siteUrl: normalizePublicUrl(process.env.NEXT_PUBLIC_SITE_URL),
   company: {
-    displayName: null,
-    legalName: null,
+    displayName: "Osaühing IKB",
+    legalName: "Osaühing IKB",
+    registrationCountry: "EE",
+    servedMarkets: ["FI", "EE"],
     businessId: null,
     vatId: null,
     address: null,
@@ -98,8 +102,10 @@ export const siteConfig: SiteConfig = {
   },
   contact: {
     email: null,
-    phone: null,
-    hours: null,
+    phone: "+358 50 508 0808",
+    phoneHref: "tel:+358505080808",
+    hours: "ma–pe 8.00–18.00",
+    visitWording: "Sovi käynti etukäteen puhelimitse",
   },
   legal: {
     privacyNotice: null,
@@ -132,14 +138,11 @@ const releaseFieldReaders: Readonly<
   "company.businessId": (config) => config.company.businessId,
   "company.vatId": (config) => config.company.vatId,
   "company.address": (config) => config.company.address,
-  "manufacturer.displayName": (config) => config.manufacturer.displayName,
-  "manufacturer.legalName": (config) => config.manufacturer.legalName,
-  "manufacturer.relationshipWording": (config) =>
-    config.manufacturer.relationshipWording,
   "contact.email": (config) => config.contact.email,
   "contact.phone": (config) => config.contact.phone,
   "contact.hours": (config) => config.contact.hours,
   "legal.privacyNotice": (config) => config.legal.privacyNotice,
+  "legal.deliveryTerms": (config) => config.legal.deliveryTerms,
   formDestination: (config) => config.formDestination,
 };
 

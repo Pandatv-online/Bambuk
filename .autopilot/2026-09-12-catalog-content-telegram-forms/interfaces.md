@@ -64,3 +64,29 @@ Primary test seams: `importReferenceCatalog`, `queryProducts`, product/content s
 - `getCatalogCategoryPath(id, categories?)` and `getCatalogProductPath(product, categories?)` return a controlled local path or null.
 - `CatalogShell`, `CatalogFilters`, `CatalogProductCard` own the responsive listing UI; product detail rendering remains ticket 05.
 - `getCatalogAttributeLabel(facet, sourceValue) -> string | null`; unmapped source-locale values return null and are excluded from public facets.
+
+## Из таска 04 — Telegram-заявки
+
+- `parseInquiryPayload(payload, options?) -> InquiryValidationResult`, `contactInquirySchema`, `quoteInquirySchema` and `sampleInquirySchema` provide the shared validation seam.
+- `sendInquiry(inquiry) -> Promise<InquiryDeliveryResult>` is the sole public transport surface; Telegram credentials, formatter, timeout and transport constructor remain internal.
+- `POST /api/inquiries` accepts JSON/form-data and returns typed responses; it stops oversized streamed bodies early and keeps multipart boundaries intact.
+
+## Из таска 05 — страницы товаров
+
+- `resolveCatalogRoute(segments) -> ResolvedCatalogRoute | null` and `getCatalogRouteParams()` are the controlled catch-all route seam.
+- `CategoryDetailPage`, `ProductDetailPage` and `ProductGallery` render data-driven outcomes; the catch-all has `dynamicParams = false` and owns static params/metadata.
+
+## Из таска 06 — информационные страницы
+
+- `getPublishedInformationHub()`, `getPublishedInformationPages()` and route-keyed published slug/path selectors expose only visitor-safe published records.
+- `PublishedInformationPage.relatedCategoryLinks` contains visitor-safe category links; raw registries, source locators, audit and provenance/review fields stay internal.
+
+## Из таска 07 — галерея
+
+- `getGalleryPresentationItems(scene?)`, `getGalleryItemsByScene()` and `getGalleryOgImage()` are the public gallery seam; presentation records omit rights, source and product provenance.
+- Raw gallery records stay internal and carry `GallerySource.url: https://${string}` plus rights metadata for every local asset.
+
+## Из таска 08 — контактные формы
+
+- Public forms barrel exports only `ContactForm`, `QuoteForm` and `SampleRequestForm`; the low-level generic form remains internal.
+- Form variants use `POST /api/inquiries`, typed responses and shared `siteConfig` contact/company values; no UI code owns Telegram credentials or duplicated company facts.

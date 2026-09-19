@@ -22,7 +22,8 @@ export function createPageMetadata(
 ): Metadata {
   const metadataBase = getMetadataBase(config);
   const canonical = new URL(input.path, metadataBase);
-  const indexable = input.indexable ?? true;
+  // Review is the safe default: a route must opt in after its release inputs are ready.
+  const indexable = input.indexable ?? false;
   const images = input.image
     ? [
         {

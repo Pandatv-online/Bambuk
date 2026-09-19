@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { CategoryGrid } from "@/components/catalog";
-import { GalleryGrid } from "@/components/gallery";
+import { CatalogProductCard } from "@/components/catalog/listing";
+import { GalleryExperience } from "@/components/gallery";
 import { ResponsiveMedia } from "@/components/media";
 import {
   Button,
@@ -12,9 +12,24 @@ import {
   Notice,
   Section,
 } from "@/components/ui";
-import { categories, homepageContent } from "@/data";
+import { homepageContent } from "@/data";
+import { catalogCategories, getQuoteEligibleCatalogProducts } from "@/data/catalog";
+import { getPublishedInformationPages } from "@/data/content";
+import {
+  gallerySceneFilters,
+  getGalleryPresentationItems,
+} from "@/data/gallery";
+import { getCatalogCategoryPath } from "@/lib/catalog/query";
 import { createPageMetadata } from "@/lib/seo";
 import { getReleaseReadiness } from "@/lib/site-config";
+
+const homepageCategories = catalogCategories.flatMap((category) => {
+  if (category.parentId !== "0") return [];
+  const href = getCatalogCategoryPath(category.id);
+  return href ? [{ id: category.id, href, label: category.nameFi }] : [];
+});
+const homepageProducts = getQuoteEligibleCatalogProducts().slice(0, 3);
+const homepageGuides = getPublishedInformationPages().slice(0, 3);
 
 const homepageIsIndexable =
   homepageContent.status === "published" && getReleaseReadiness().ready;
@@ -78,7 +93,17 @@ export default function FinnishHomepage() {
             </Heading>
             <p>{homepageContent.categorySection.introduction}</p>
           </header>
-          <CategoryGrid categories={categories} />
+          <div className="homepage-catalog-grid">
+            {homepageCategories.map((category) => (
+              <a className="homepage-catalog-card" href={category.href} key={category.id}>
+                <span>{category.label}</span>
+                <small>Tutustu tuoteryhmään</small>
+              </a>
+            ))}
+          </div>
+          <Button href="/fi/tuotteet" variant="text">
+            Näytä kaikki tuotteet
+          </Button>
         </Container>
       </Section>
 
@@ -91,7 +116,13 @@ export default function FinnishHomepage() {
             </Heading>
             <p>{homepageContent.gallery.introduction}</p>
           </header>
-          <GalleryGrid items={homepageContent.gallery.items} />
+          <GalleryExperience
+            filters={gallerySceneFilters}
+            items={getGalleryPresentationItems()}
+          />
+          <Button href="/fi/galleria" variant="text">
+            Avaa koko galleria
+          </Button>
         </Container>
       </Section>
 
@@ -126,12 +157,17 @@ export default function FinnishHomepage() {
               {homepageContent.featuredProducts.heading}
             </Heading>
           </header>
-          <Notice className="home-featured__notice">
-            <p>{homepageContent.featuredProducts.pendingMessage}</p>
-            <Button href={homepageContent.primaryCta.href} variant="secondary">
-              {homepageContent.primaryCta.label}
-            </Button>
-          </Notice>
+          <p className="homepage-product-introduction">
+            {homepageContent.featuredProducts.pendingMessage}
+          </p>
+          <div className="homepage-product-grid">
+            {homepageProducts.map((product) => (
+              <CatalogProductCard key={product.id} product={product} />
+            ))}
+          </div>
+          <Button href="/fi/tuotteet" variant="text">
+            Selaa koko valikoimaa
+          </Button>
         </Container>
       </Section>
 
@@ -168,42 +204,38 @@ export default function FinnishHomepage() {
             </Heading>
           </header>
           <div className="guide-grid">
-            {homepageContent.guides.items.map((guide, index) => (
-              <article className="guide-card" key={guide.title}>
+            {homepageGuides.map((guide, index) => (
+              <article className="guide-card" key={guide.path}>
                 <span className="guide-card__number" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <Heading as="h3" size="compact">
                   {guide.title}
                 </Heading>
-                <p>{guide.body}</p>
-                {guide.link ? (
-                  <Button href={guide.link.href} variant="text">
-                    {guide.link.label}
-                  </Button>
-                ) : null}
+                <p>{guide.summary}</p>
+                <Button href={guide.path} variant="text">
+                  Lue opas
+                </Button>
               </article>
             ))}
           </div>
         </Container>
       </Section>
 
-      <div id="yritystiedot">
-        <div id="yhteys">
-          <CallToAction
-            title={homepageContent.finalCta.title}
-            action={{
-              label: homepageContent.finalCta.action.label,
-              disabled: true,
-            }}
-            secondaryAction={homepageContent.secondaryCta}
-          >
-            <p>{homepageContent.finalCta.body}</p>
-            <p className="home-final-cta__notice">
-              {homepageContent.developmentNotice}
-            </p>
-          </CallToAction>
-        </div>
+      <div id="yhteys">
+        <CallToAction
+          title={homepageContent.finalCta.title}
+          action={{
+            label: homepageContent.finalCta.action.label,
+            href: homepageContent.primaryCta.href,
+          }}
+          secondaryAction={homepageContent.secondaryCta}
+        >
+          <p>{homepageContent.finalCta.body}</p>
+          <p className="home-final-cta__notice">
+            {homepageContent.developmentNotice}
+          </p>
+        </CallToAction>
       </div>
     </main>
   );

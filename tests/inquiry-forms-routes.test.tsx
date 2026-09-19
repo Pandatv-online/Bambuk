@@ -1,0 +1,89 @@
+import { renderToStaticMarkup } from "react-dom/server";
+import { describe, expect, it } from "vitest";
+
+import * as forms from "@/components/forms";
+import ContactPage, {
+  metadata as contactMetadata,
+} from "@/app/fi/yhteystiedot/page";
+import QuotePage, {
+  metadata as quoteMetadata,
+} from "@/app/fi/pyyda-tarjous/page";
+import SampleRequestPage, {
+  metadata as sampleMetadata,
+} from "@/app/fi/tilaa-mallipala/page";
+import { siteConfig } from "@/lib/site-config";
+
+describe("inquiry form routes", () => {
+  it("renders the three Finnish routes with reusable server-post forms and release-safe metadata", async () => {
+    const companyName = siteConfig.company.legalName ?? siteConfig.company.displayName;
+    const contact = renderToStaticMarkup(<ContactPage />);
+    const quote = renderToStaticMarkup(
+      await QuotePage({
+        searchParams: Promise.resolve({
+          tuote: "47",
+          lahde: "/fi/tuotteet/sisalattiat/klassikko/testituote",
+          asennus: "true",
+        }),
+      }),
+    );
+    const sample = renderToStaticMarkup(
+      await SampleRequestPage({
+        searchParams: Promise.resolve({
+          tuote: "47",
+          lahde: "/fi/tuotteet/sisalattiat/klassikko/testituote",
+        }),
+      }),
+    );
+
+    for (const html of [contact, quote, sample]) {
+      expect(html.match(/<h1/g)).toHaveLength(1);
+      expect(html).toContain('action="/api/inquiries"');
+      expect(html).toContain('method="post"');
+      expect(html).toContain('name="startedAt"');
+      expect(html).toContain('name="idempotencyKey"');
+      expect(html).toContain('name="website"');
+      expect(html).toContain("Tietojen käyttö tässä vaiheessa");
+      expect(html).toContain("ei ole tuotantokäyttöön valmis");
+      expect(html).not.toContain("bambukogrindys.lt");
+    }
+
+    expect(contact).toContain(companyName);
+    expect(contact).toContain(`href="${siteConfig.contact.phoneHref}"`);
+    expect(contact).toContain("ma–pe 8.00–18.00");
+    expect(contact).toContain("Sovi käynti etukäteen puhelimitse");
+    expect(contact).not.toContain("mailto:");
+
+    expect(quote).toContain('value="47"');
+    expect(quote).toMatch(/name="inquiryType" checked="" value="installation"/u);
+    expect(quote).toContain('value="/fi/tuotteet/sisalattiat/klassikko/testituote"');
+    expect(sample).toContain('value="47"');
+    expect(sample).toContain("Emme pyydä osoitetta tässä vaiheessa");
+
+    for (const metadata of [contactMetadata, quoteMetadata, sampleMetadata]) {
+      expect(metadata.robots).toEqual({ index: false, follow: false });
+      expect(metadata.openGraph).toMatchObject({ locale: "fi_FI" });
+    }
+    expect(contactMetadata.title).toBe(companyName ? `Yhteystiedot | ${companyName}` : "Yhteystiedot");
+    expect(quoteMetadata.title).toBe(companyName ? `Pyydä tarjous | ${companyName}` : "Pyydä tarjous");
+    expect(sampleMetadata.title).toBe(companyName ? `Tilaa mallipala | ${companyName}` : "Tilaa mallipala");
+  });
+
+  it("exposes only the three typed form variants from the public forms barrel", () => {
+    expect(Object.keys(forms).sort()).toEqual([
+      "ContactForm",
+      "QuoteForm",
+      "SampleRequestForm",
+    ]);
+  });
+
+  it("does not use a supplied external source URL as visitor form context", async () => {
+    const html = renderToStaticMarkup(
+      await QuotePage({
+        searchParams: Promise.resolve({ lahde: "https://external.example/form" }),
+      }),
+    );
+
+    expect(html).toContain('name="sourceUrl" value="/fi/pyyda-tarjous"');
+    expect(html).not.toContain("external.example");
+  });
+});

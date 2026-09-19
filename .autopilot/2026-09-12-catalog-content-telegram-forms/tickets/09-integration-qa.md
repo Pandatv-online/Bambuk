@@ -24,3 +24,7 @@
 - [ ] Browser QA at 390/768/1200/1440 covers nav, catalog filters, product specs/gallery/lightbox and forms with no overflow/console errors
 - [ ] `npm test`, `npm run typecheck`, `npm run lint`, `npm run build` all pass
 - [ ] Implementation input ledger and import report match the shipped state and remaining blockers
+
+## Уточнение зоны (2026-09-19)
+
+Integration proved that `tests/foundation-route.test.ts` and `tests/content-registries.test.ts` still assert the retired static homepage and disabled quote path. They are added to this ticket solely to replace those obsolete assertions with independent coverage of the live controlled registries and functional routes; no product scope changes.

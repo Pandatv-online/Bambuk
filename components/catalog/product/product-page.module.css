@@ -1,0 +1,79 @@
+.page {
+  padding: clamp(2rem, 5vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+  background: var(--color-surface-page);
+}
+
+.breadcrumbs { margin-bottom: 1.5rem; font-size: .875rem; }
+.breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .4rem .7rem; margin: 0; padding: 0; list-style: none; }
+.breadcrumbs li:not(:last-child)::after { margin-left: .7rem; color: var(--color-text-brown); content: "/"; }
+.breadcrumbs a { color: var(--color-action-green); text-underline-offset: .2em; }
+
+.productLayout { display: grid; min-width: 0; gap: clamp(2rem, 5vw, 4rem); }
+.gallery { min-width: 0; }
+.galleryMain,
+.galleryPlaceholder { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border: .625rem solid white; border-radius: var(--radius-default); background: linear-gradient(135deg, rgb(128 101 69 / 12%), var(--color-surface-cream)); }
+.galleryMain img { object-fit: contain; }
+.thumbnails { display: grid; grid-template-columns: repeat(auto-fill, minmax(4.75rem, 1fr)); gap: .75rem; margin-top: .75rem; }
+.thumbnail { position: relative; min-height: 4.75rem; overflow: hidden; border: 2px solid white; border-radius: var(--radius-default); background: white; cursor: pointer; }
+.thumbnail[aria-pressed="true"] { border-color: var(--color-action-green); }
+.thumbnail img { object-fit: cover; }
+
+.productSummary { align-self: start; min-width: 0; }
+.categoryLabel { margin: 0 0 .5rem; color: var(--color-text-brown); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.sku { margin: -.75rem 0 1.5rem; color: var(--color-text-brown); }
+.sourceDate { margin: -1rem 0 1.5rem; color: var(--color-text-brown); font-size: .875rem; }
+.lead { font-size: 1.125rem; }
+.commercialSummary { margin-top: 1.5rem; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--color-border-default); border-radius: var(--radius-default); background: var(--color-surface-cream); }
+.price { display: grid; gap: .2rem; margin-bottom: 1.25rem; }
+.price strong { color: var(--color-text-strong); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 400; }
+.price span { font-size: .875rem; }
+.quotePrice { margin-top: 0; color: var(--color-text-strong); font-size: 1.25rem; }
+.commercialFacts { display: grid; gap: 0; margin: 0; }
+.commercialFacts > div { display: grid; grid-template-columns: minmax(6rem, 1fr) minmax(0, 2fr); gap: 1rem; padding: .75rem 0; border-top: 1px solid var(--color-border-default); }
+.commercialFacts dt { color: var(--color-text-brown); font-weight: 700; }
+.commercialFacts dd { display: grid; gap: .2rem; margin: 0; overflow-wrap: anywhere; }
+.commercialFacts dd span { font-size: .875rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+
+.detailSection { margin-top: clamp(3rem, 7vw, 5rem); }
+.categoryHeader { max-width: 48rem; }
+.categoryHeader p:last-child { margin-bottom: 0; }
+.childCategoryGrid,
+.productGrid { display: grid; gap: 1rem; }
+.childCategoryGrid > a { display: flex; min-height: 7rem; flex-direction: column; justify-content: flex-end; padding: 1.25rem; border: 1px solid rgb(128 101 69 / 22%); border-radius: var(--radius-default); background: linear-gradient(135deg, var(--color-surface-cream), var(--color-brand-beige)); color: var(--color-text-strong); text-decoration: none; }
+.childCategoryGrid > a:hover,
+.childCategoryGrid > a:focus-visible { border-color: var(--color-action-green); background: white; }
+.childCategoryGrid strong { font-size: 1.25rem; }
+.childCategoryGrid span { color: var(--color-text-brown); font-size: .875rem; }
+.productSectionHeading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.productSectionHeading p { color: var(--color-text-brown); }
+.emptyState { padding: clamp(2rem, 6vw, 4rem); border: 1px solid var(--color-border-default); border-radius: var(--radius-default); background: white; text-align: center; }
+.emptyState h3 { margin-top: 0; }
+.emptyState a { color: var(--color-action-green); font-weight: 700; }
+.specificationGroups { display: grid; gap: 1rem; }
+.specificationGroup { overflow: hidden; border: 1px solid var(--color-border-default); border-radius: var(--radius-default); background: white; }
+.specificationGroup h3 { margin: 0; padding: 1rem 1.25rem; background: var(--color-surface-cream); color: var(--color-text-strong); font-size: 1.125rem; }
+.specificationGroup dl { margin: 0; }
+.specificationGroup dl > div { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 2fr); gap: 1rem; padding: .875rem 1.25rem; border-top: 1px solid var(--color-border-soft); }
+.specificationGroup dt { font-weight: 700; }
+.specificationGroup dd { min-width: 0; margin: 0; overflow-wrap: anywhere; }
+.documentList { display: grid; gap: .75rem; padding-left: 1.25rem; }
+.documentList a { color: var(--color-action-green); font-weight: 700; }
+
+@media (min-width: 61.25rem) {
+  .productLayout { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .specificationGroups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .childCategoryGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .productGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 48rem) and (max-width: 61.24rem) {
+  .childCategoryGrid,
+  .productGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 32rem) {
+  .commercialFacts > div,
+  .specificationGroup dl > div { grid-template-columns: minmax(0, 1fr); gap: .25rem; }
+  .actions > * { width: 100%; }
+}

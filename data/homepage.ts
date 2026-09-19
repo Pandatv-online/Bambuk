@@ -3,21 +3,21 @@ import type { HomepageContent } from "./types";
 export const homepageContent: HomepageContent = {
   locale: "fi",
   status: "review",
-  title: "Tietoa bambulattioista ja bambuterasseista",
+  title: "Bambulattiat, bambuterassit ja muut bambutuotteet",
   metaDescription:
-    "Tutustu bambulattioiden, bambuterassien ja muiden bambutuotteiden suunniteltuihin tuoteryhmiin. Suomen valikoima ja palvelutiedot vahvistetaan ennen julkaisua.",
+    "Selaa bambulattioita, bambuterasseja ja muita bambutuotteita. Tuotekohtaiset tiedot, tarjous ja mallipyyntö ovat saatavilla tarkastustilassa.",
   primaryCta: {
     label: "Pyydä tarjous",
-    href: "/fi#yhteys",
+    href: "/fi/pyyda-tarjous",
   },
   secondaryCta: {
     label: "Tutustu tuotteisiin",
-    href: "/fi#tuoteryhmat",
+    href: "/fi/tuotteet",
   },
   hero: {
-    eyebrow: "Bambutuotteiden tuoteryhmät",
+    eyebrow: "Palvelemme Suomessa ja Virossa",
     summary:
-      "Tutustu suunniteltuihin tuoteryhmiin ja valinnan lähtökohtiin. Suomen valikoima ja palvelutiedot vahvistetaan ennen julkaisua.",
+      "Selaa aktiivista tuoteluetteloa, tarkista tuotekohtaiset tiedot ja pyydä kirjallinen tarjous tai mallipala.",
     image: {
       src: "/images/home/hero-natural.jpg",
       alt: "Puunsävyinen lattia valoisassa ruokailutilassa",
@@ -27,20 +27,20 @@ export const homepageContent: HomepageContent = {
   introduction: {
     heading: "Bambulattiat",
     body:
-      "Kun vertailet bambulattioita, aloita tilasta ja siitä, millaista ilmettä etsit. Tuotteen rakenne, väri, pinta, viimeistely ja mitat tarkistetaan aina tuotekohtaisista tiedoista. Sisätilojen lattiat, ulkotilojen terassilaudat, levyt, listat sekä asennus- ja hoitotuotteet muodostavat omat tuoteryhmänsä, eikä yhden ryhmän tietoja voi soveltaa toiseen. Tältä sivulta saat yleiskuvan suunnitellusta rakenteesta ja näet, mitä tietoja valinnassa kannattaa verrata. Suomen valikoima julkaistaan vasta, kun tuotteet, niiden tekniset tiedot ja kaupalliset ehdot on vahvistettu. Siihen asti voit tutustua tuoteryhmiin ja valmistella kohteesi lähtötiedot huolellisesti yhteydenottoa varten.",
-    link: { label: "Tutustu tuotteisiin", href: "/fi#tuoteryhmat" },
+      "Kun vertailet bambulattioita, aloita tilasta ja siitä, millaista ilmettä etsit. Tuotteen rakenne, väri, pinta, viimeistely ja mitat tarkistetaan aina tuotekohtaisista tiedoista. Sisätilojen lattiat, ulkotilojen terassilaudat, levyt, listat sekä asennus- ja hoitotuotteet muodostavat omat tuoteryhmänsä, eikä yhden ryhmän tietoja voi soveltaa toiseen.",
+    link: { label: "Tietoa bambusta", href: "/fi/tietoa-bambusta" },
   },
   categorySection: {
     eyebrow: "Tuotteet",
     heading: "Tuoteryhmät",
     introduction:
-      "Tutustu suunniteltuun tuoteryhmärakenteeseen. Suomen valikoima julkaistaan vasta hyväksyttyjen tuotetietojen perusteella.",
+      "Selaa tuoteryhmiä tai siirry koko valikoimaan. Jokainen tuotesivu näyttää vain kyseiseen tuotteeseen liitetyt tiedot.",
   },
   gallery: {
     eyebrow: "Kuvagalleria",
     heading: "Materiaaleja ja sisätiloja",
     introduction:
-      "Kuvat havainnollistavat erilaisia sisätiloja, lattiasävyjä ja pintojen ilmettä. Kuvien tuote- ja projektitiedot lisätään vasta vahvistettuina.",
+      "Kuvat havainnollistavat erilaisia sisätiloja, lattiasävyjä ja pintojen ilmettä. Kuvien tuote- ja projektitietoja ei ole päätelty.",
     items: [
       {
         id: "project-01",
@@ -140,13 +140,13 @@ export const homepageContent: HomepageContent = {
     eyebrow: "Tuotevalikoima",
     heading: "Tuotevalikoima",
     pendingMessage:
-      "Suomen tuotevalikoimaa ei ole vielä vahvistettu. Tuotteita ei julkaista ennen hyväksyttyjä tuotetietoja.",
+      "Tuotteet tulevat suoraan aktiivisesta tuoterekisteristä. Hinta, ALV-käsittely ja muut kaupalliset ehdot vahvistetaan kirjallisessa tarjouksessa.",
   },
   installation: {
-    eyebrow: "Asennuspalvelu",
+    eyebrow: "Asennuksen suunnittelu",
     heading: "Asennus osana kokonaisuutta",
     body:
-      "Tuotteen valinta ja asennuksen suunnittelu kuuluvat samaan asiakaspolkuun. Kysy tarjouksen yhteydessä myös asennuksesta.",
+      "Tuotteen valinta ja asennuksen suunnittelu kuuluvat samaan asiakaspolkuun. Kerro asennustoiveesta tarjouspyynnössä.",
     pendingMessage:
       "Palvelun sisältö, valmistelut, hinnoittelu ja palvelualue vahvistetaan ennen julkaisua.",
     image: {
@@ -154,7 +154,7 @@ export const homepageContent: HomepageContent = {
       alt: "Lattialaudan mittausta asennusta varten",
       rightsId: "reference-news-installation-17",
     },
-    action: { label: "Pyydä tarjous", href: "/fi#yhteys" },
+    action: { label: "Pyydä tarjous", href: "/fi/pyyda-tarjous?asennus=true" },
   },
   guides: {
     eyebrow: "Tietoa bambusta",
@@ -179,8 +179,9 @@ export const homepageContent: HomepageContent = {
   finalCta: {
     title: "Kerro meille kohteestasi",
     body:
-      "Tarjouskanava avataan, kun suomalaiset yhteystiedot ja lomakkeen vastaanottaja on vahvistettu.",
+      "Voit pyytää tarjouksen tuotteista tai asennustoiveesta. Hinta, ALV-käsittely ja palvelun tarkat ehdot vahvistetaan kirjallisessa tarjouksessa.",
     action: { label: "Pyydä tarjous", status: "pending" },
   },
-  developmentNotice: "Yritystiedot täydennetään ennen julkaisua.",
+  developmentNotice:
+    "Sivusto on tarkastustilassa: yrityksen tunnisteet, oikeudelliset tekstit ja palvelun tarkat ehdot täydennetään ennen julkaisua.",
 };

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import type { CatalogFacetOption, CatalogFacets, CatalogQuery } from "@/lib/catalog/query";
 
 import styles from "./catalog-listing.module.css";
@@ -105,7 +107,7 @@ export function CatalogFilters({
       </label>
       <div className={styles.filterActions}>
         <button type="submit">Näytä tuotteet</button>
-        <a href="/fi/tuotteet">Tyhjennä suodattimet</a>
+        <Link href="/fi/tuotteet">Tyhjennä suodattimet</Link>
       </div>
     </form>
   );

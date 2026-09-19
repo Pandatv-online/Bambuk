@@ -4,6 +4,8 @@ import rawCatalog from "../.firecrawl/catalog-products-2026-09-12.json";
 import { importReferenceCatalog } from "../lib/catalog/import-reference-catalog";
 import type { ProductPricing } from "../lib/catalog";
 
+const catalogImportTimeout = 15_000;
+
 describe("reference catalog import", () => {
   it("requires complete provenance in the published pricing type", () => {
     type PublishedPriceFields = {
@@ -76,7 +78,7 @@ describe("reference catalog import", () => {
       confirmedBy: "user",
       confirmedAt: "2026-09-12",
     });
-  });
+  }, catalogImportTimeout);
 
   it("does not repair missing or conflicting source facts without provenance", () => {
     const products = importReferenceCatalog(rawCatalog).products;

@@ -87,58 +87,39 @@ Work in the twelve stages defined in `docs/finland-site-architecture.md`. After 
 No implementation code existed when these rules were created. Preserve unrelated user changes in any future working tree.
 
 <!-- autopilot:start -->
-## Durable project memory (T1)
+## Durable project memory (T3)
 
-This repository implements the Finnish, quote-led distributor site for customers comparing bamboo flooring, decking, related products and installation. It is a Next.js 16.3.4 App Router application with React 19.3, strict TypeScript and Tailwind CSS 4. The Finnish distributor is the future seller/site operator; the manufacturer remains a separate entity. The current `/fi` homepage is a review-state foundation, not a launch-ready catalog or commerce site.
+### Overview
 
-### Commands and verified baseline
+This is a Finnish, quote-led site built with Next.js 16.3.4 App Router, React 19.3, TypeScript 5.9 strict and Tailwind 4.3. The configured operator is `Osaühing IKB`, registered in EE and serving FI/EE; manufacturer fields and relationship wording are null, so no relationship claim is rendered. The public implementation now covers `/fi`, catalog/listing and static catalog details, information guides, gallery/lightbox, contact/quote/sample pages, and `POST /api/inquiries`; `/` permanently redirects to `/fi`.
 
-Run `nvm use` first; `.nvmrc` pins Node 22.22.3.
+### Verified commands
 
-- `npm install` — install the npm-lockfile dependency set.
-- `npm run dev` — run the local Next.js server.
-- `npm test` — run Vitest; verified: 7 files, 11 tests passing.
-- `npm run typecheck` — run strict `tsc --noEmit`; verified passing.
-- `npm run lint` — run ESLint; verified passing.
-- `npm run build` — production build via webpack; verified passing.
+Node 22.22.3 is required by `.nvmrc` and `package.json` engines; do not assume `nvm` exists in a noninteractive shell. `npm test` (87 passed), `npm run typecheck`, `npm run lint`, and `npm run build` (webpack) have passed. Use `npm install` for the lockfile dependency set and `npm run dev` for local work.
 
-### Working tree map
+### Structure and public boundaries
 
-```text
-app/                    root redirect, Finnish layout, and composed `/fi` homepage
-components/ui/          reusable Button, CTA, layout, notice, and typography primitives
-components/navigation/  shared header/footer, desktop disclosures, mobile dialog, breadcrumbs
-components/catalog/     category and product cards/grids with pending and quote states
-components/media/, gallery/  local responsive media and gallery presenters
-data/                   typed navigation, homepage, category, and empty product registries
-lib/                    nullable site configuration, release readiness, and metadata helpers
-public/                 self-hosted font and registered local homepage images
-styles/                 global tokens, layout, responsive, focus, and reduced-motion CSS
-tests/                  Vitest seams for config, SEO, registries, route, presenters, and navigation
-scripts/                Chrome DevTools browser QA harness for `/fi`
-docs/                   governing audit/architecture/design/content and input provenance
-```
+- `data/catalog/catalog.generated.json` is the catalog snapshot; `data/catalog/index.ts` exports registries/selectors. `lib/catalog/import-reference-catalog.ts` is the normalization boundary; `lib/catalog/query.ts` owns query parsing, facets, filtering, sort, pagination and controlled paths.
+- `components/catalog/product/catalog-route.ts` resolves static catch-all category/product routes; `app/fi/tuotteet/[...segments]/page.tsx` has `dynamicParams = false`. Product/category presenters, cards and filters remain data-driven.
+- `data/content/pages.ts` keeps provenance-bearing authoring records private and exposes only published projections through `data/content`; `data/gallery/registry.ts` retains media source/rights records while `data/gallery` exposes safe gallery projections.
+- `lib/site-config.ts` owns `siteConfig` and `getReleaseReadiness`; `lib/seo.ts` owns `createPageMetadata`/`getMetadataBase`. The inquiry seam is `parseInquiryPayload`, typed schemas, `sendInquiry`, and `createInquiryPostHandler`; the forms barrel exposes only `ContactForm`, `QuoteForm`, and `SampleRequestForm`.
+- Key routes are `app/fi/tuotteet/page.tsx`, `app/fi/tietoa-bambusta/`, `app/fi/galleria/`, `app/fi/yhteystiedot/`, `app/fi/pyyda-tarjous/`, and `app/fi/tilaa-mallipala/`; shared navigation is generated from catalog/content data in `data/navigation.ts`.
 
-### Public boundaries to preserve
+### Conventions and gotchas
 
-- Configuration: `siteConfig`, `getReleaseReadiness(config?, environment?)`, and their exported types in `lib/site-config.ts`.
-- Content: `navigation`, `homepageContent`, `categories`, `products`, `getPublishedProducts()`, `createDefaultCommercialState()`, and exported models from `data/index.ts`.
-- SEO: `createPageMetadata(input, config?)` in `lib/seo.ts`; `/fi` composes data through this boundary.
-- UI barrels expose shared primitives, navigation, category/product presenters, responsive media, and gallery components. Keep facts and route registries outside JSX.
+- The catalog has 22 categories and 108 normalized products: 66 `active`/quote-eligible and 42 `notReady`; it has 294 local product images, no mapped documents, and explicit provenance/readiness issues. Do not bypass active selectors or derive facts from a slug or similar SKU.
+- Product cards/details presently render the record's published-price, in-stock, sample, delivery and warranty fields directly; 44 records have `pricing.status === "published"`. These are snapshot data, despite feature flags being false, so release requires commercial revalidation rather than a UI-only toggle.
+- Product URLs are derived only by `getCatalogCategoryPath`/`getCatalogProductPath`; filtering goes only through `parseCatalogQuery` and `queryProducts`. Keep raw source URLs, rights metadata and review fields out of visitor projections/HTML.
+- Guide and gallery status/metadata, catalog metadata and form metadata are noindex; `createPageMetadata` defaults to noindex. There are no sitemap, robots, structured-data, installation, about, privacy, search or error-route implementations yet.
+- All forms post to `/api/inquiries`; the API limits bodies, validates timing/honeypot/idempotency, rejects files, and uses process-local duplicate suppression. Telegram transport is server-only, timeout-bounded and must stay behind its adapter; outbound delivery is always mocked in tests.
 
-### Sharp edges and release guards
+### Environment and QA
 
-- Development readiness is deliberately permissive, but production readiness is false while required Finnish identity, contact, legal, domain, manufacturer and form inputs are null. The homepage is also `status: "review"`, so `/fi` emits `noindex, nofollow`.
-- `/` permanently redirects to `/fi`. Unbuilt journeys resolve to meaningful `/fi` anchors; pending categories are not links and the closing quote action is disabled because no form destination exists.
-- `categories` are all `pendingAssortment`; `products` is empty. Default commerce is `price: "quote"` plus `availability: "unknown"`; published price/availability requires sourced values and timestamps.
-- No organization, product, offer, review or rating JSON-LD exists. Do not turn reference-site snapshots, slugs, claims or Lithuanian business facts into live Finnish data.
-- Remote image patterns are empty. Visitor media is local and typed with a `rightsId`; `ResponsiveMedia` uses Next.js `preload`, not deprecated `priority`. The brand lockup and transparent favicon remain development placeholders.
-- ESLint 9.39.1 is pinned because the Next.js plugin fails under ESLint 10. `npm run build` intentionally uses webpack because Turbopack cannot bind its worker port in this environment.
-- `scripts/browser-qa.mjs` needs both the running site and a Chrome DevTools endpoint; it checks four viewports, local links/media, console errors and overflow, then writes screenshots under `/tmp`.
+Environment names only: `NEXT_PUBLIC_SITE_URL`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `CHROME_DEVTOOLS_URL`, `QA_SITE_URL`, `QA_VIEWPORTS`, `QA_SCREENSHOT_MODE`, and `QA_CDP_TIMEOUT_MS`. Never commit or print their values. `scripts/browser-qa.mjs` needs a running site plus Chrome DevTools, covers four viewports, catalog/gallery journeys and simulated form states, and writes captures under `/tmp`.
 
-### Autopilot handoff
+### Tests and handoff
 
-Continue incrementally from this existing skeleton; do not re-scaffold it. Before code/content/style/config/route/asset changes, read the five mandatory docs above, then inspect the current code and tests. The active catalog/content/forms run is tracked under `.autopilot/2026-09-12-catalog-content-telegram-forms--wip/`; the completed foundation run is archived under `.autopilot/2026-09-11-bambuk-finland-foundation-homepage/`. Working code is authoritative and prior run artifacts are historical. Preserve unrelated working-tree changes and re-run checks proportional to the edited surface.
+Vitest coverage is organized under `tests/` for site config/SEO/navigation, catalog import/query/routes/product galleries, content claims/routes, gallery data/interactions/routes, inquiries/API/transport/forms, and integration routes. Production readiness remains blocked until all required company, domain, contact, legal and form fields are configured; current pages intentionally stay non-indexable. Preserve existing uncommitted work (including `next-env.d.ts`), keep facts outside JSX, and rerun only the checks proportionate to an edited surface.
 <!-- autopilot:end -->
 
 <!-- BEGIN:nextjs-agent-rules -->

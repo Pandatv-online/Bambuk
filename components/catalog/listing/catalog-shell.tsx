@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { catalogCategories } from "@/data/catalog";
 import type { CatalogFacetOption, CatalogQuery, CatalogQueryResult } from "@/lib/catalog/query";
 import { createCatalogUrl, getCatalogCategoryPath } from "@/lib/catalog/query";
@@ -61,7 +63,7 @@ export function CatalogShell({
         <section aria-label="Aktiiviset suodattimet" className={styles.activeFilters}>
           <strong>Aktiiviset suodattimet</strong>
           <ul>{activeLabels.map((label) => <li key={label}>{label}</li>)}</ul>
-          <a href="/fi/tuotteet">Poista kaikki</a>
+          <Link href="/fi/tuotteet">Poista kaikki</Link>
         </section>
       ) : null}
 
@@ -80,7 +82,7 @@ export function CatalogShell({
             <div className={styles.emptyState}>
               <h3>Näillä suodattimilla ei löytynyt tuotteita</h3>
               <p>Kokeile väljempiä valintoja tai tyhjennä kaikki suodattimet.</p>
-              <a href="/fi/tuotteet">Tyhjennä suodattimet</a>
+              <Link href="/fi/tuotteet">Tyhjennä suodattimet</Link>
             </div>
           )}
           {result.totalPages > 1 ? (

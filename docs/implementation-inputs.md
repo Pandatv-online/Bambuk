@@ -1,6 +1,6 @@
 # Finnish implementation inputs
 
-Status: implementation register, last reviewed 2026-09-13. Nothing marked `missing` is approved for visitor-facing publication. Application values remain `null` or absent until the named owner supplies a verifiable source.
+Status: implementation register, last reviewed 2026-09-19. Nothing marked `missing` is approved for visitor-facing publication. Application values remain `null` or absent until the named owner supplies a verifiable source.
 
 | Input | Status | Owner / source required | Current placeholder behavior | Release impact |
 |---|---|---|---|---|
@@ -33,7 +33,7 @@ Status: implementation register, last reviewed 2026-09-13. Nothing marked `missi
 | Privacy, cookie and other Finnish legal text | Missing | Finnish legal/privacy owner | No legal assertion or consent UI | Blocks release/forms/analytics as applicable |
 | Telegram inquiry configuration and response process | Missing | Company sales/privacy/technical owners | Token/chat configuration stays outside public content; no submission may claim success while unconfigured | Blocks forms and release |
 | Image reuse rights, credits, product relations and alt text | Partially confirmed | Project brief authorizes reference-site materials; asset owner must still confirm any required credits and product/project relations | Homepage uses only the local assets registered below; captions avoid unverified product/project attribution | Blocks unregistered assets and product-specific attribution |
-| Finnish project/gallery assets and permissions | Missing | Distributor/project rights owner | Gallery records remain absent | Blocks gallery content only |
+| Finnish project/gallery assets and permissions | Partially confirmed | Distributor/project rights owner | The review-state gallery ships 8 nonempty local records: `reference-gallery-311`, `-312`, `-339`, `-147`, `-148`, `-149`, `-333` and `-330`; each has a local file, registered rights ID and visual-only Finnish alt text | Blocks new gallery assets, product/project attribution and any required credits until the rights owner confirms them |
 | Analytics vendors and consent decision | Missing | Finnish business/privacy owner | No analytics or trackers load | Does not block tracker-free release |
 
 ## Foundation controls
@@ -47,6 +47,21 @@ Status: implementation register, last reviewed 2026-09-13. Nothing marked `missi
 - The catalog currently contains 108 traceable internal products: 66 active/quote-eligible and 42 report-only `notReady`, backed by 294 local product images and 0 discovered product documents.
 - Active imported products are confirmed `inStock` and sample-eligible; delivery is included subject to written-offer applicability, and warranty duration is 5 years. Quantity, lead-time, sample cost, delivery geography/method, handling/visit terms and warranty scope/terms remain pending.
 - Valid source price snapshots remain provenance data rather than approved Finnish offers while VAT scope is unresolved. Offer, Review and organization structured data stay gated; Organization/LocalBusiness data also remains blocked until legal identifiers and address are confirmed.
+
+## Integrated review state
+
+- The review-state homepage, navigation and footer use the controlled catalog, information and gallery registries. Completed visitor paths are `/fi/tuotteet`, its generated category/product pages, `/fi/tietoa-bambusta` and its published pages, `/fi/galleria`, `/fi/yhteystiedot`, `/fi/pyyda-tarjous` and `/fi/tilaa-mallipala`.
+- Every completed commercial/content route uses the shared metadata boundary and remains `noindex, nofollow`. Metadata uses the local development origin only until `NEXT_PUBLIC_SITE_URL` is supplied; no sitemap, robots publication or `hreflang` is enabled in this review state.
+- No Organization, LocalBusiness, Offer, Review or AggregateRating structured data is emitted. Reference URLs, source records and asset provenance remain internal and are not rendered as visitor links.
+- The homepage renders root categories, a deterministic three-product catalog excerpt and all 8 nonempty review-state gallery records from the public gallery selector. They are local visual records with the registered `reference-gallery-*` rights IDs only; their captions and alt text make no product, customer or project attribution. The excerpt is not labelled as a recommendation, sale or offer; product price snapshots and commercial conditions retain their record-level wording.
+- Contact, quote and sample forms post to `/api/inquiries`. Without configured Telegram environment values they preserve the entered values and report typed temporary unavailability; no response-time promise is published.
+- Browser QA is configured for 390, 768, 1200 and 1440 px. It checks the shared navigation, catalog filters, a catalog-derived product page and specifications, gallery lightbox, and all three form routes. It requires a running site plus a Chrome DevTools endpoint and must be rerun before release.
+
+## Remaining gallery rights and release blockers
+
+- The eight shipped review records do not establish Finnish project ownership, product/SKU relation, customer permission, photographer credit or permission to add/replace imagery. Those facts remain unconfirmed and are intentionally absent from visitor copy.
+- The stated project-level reuse basis covers only the registered local review assets. Any new file, product-specific gallery placement or published credit requires confirmation from the asset and distributor/project rights owners.
+- Gallery review state does not lift the site-wide release blockers: legal identifiers/address/email/domain, privacy and delivery terms, manufacturer identity inputs, and configured Telegram inquiry transport remain unresolved. The gallery and all related routes therefore remain `noindex, nofollow`.
 
 ## Homepage image provenance
 

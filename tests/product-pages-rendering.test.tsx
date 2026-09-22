@@ -30,7 +30,7 @@ describe("product detail presenter", () => {
     expect(html).toContain("Varastossa");
     expect(html).toContain("Näyte saatavilla");
     expect(html).toContain("Toimitus sisältyy hintaan");
-    expect(html).toContain("Takuu 5 vuotta");
+    expect(html).toContain("Takuu 12 kuukautta");
     expect(html).toContain("Tiheys");
     expect(html).toContain('href="/fi/pyyda-tarjous?tuote=47');
     expect(html).toContain('href="/fi/tilaa-mallipala?tuote=47');

@@ -4,6 +4,7 @@ import {
   slugifyFinnish,
   translateProductName,
 } from "./labels";
+import { publishedWarranty } from "../../data/commercial";
 import type {
   CatalogCategory,
   CatalogDocument,
@@ -539,12 +540,7 @@ export const importReferenceCatalog = (raw: unknown): CatalogImportResult => {
         applicability: "pendingOfferConfirmation",
         noteFi: "Toimitusalue ja soveltaminen vahvistetaan tarjouksessa",
       },
-      warranty: {
-        durationYears: 5,
-        labelFi: "Takuu 5 vuotta",
-        scope: "pendingContract",
-        noteFi: "Takuun kohde ja ehdot vahvistetaan kirjallisessa tarjouksessa",
-      },
+      warranty: publishedWarranty,
       sample: {
         available: true,
         labelFi: "Näyte saatavilla",

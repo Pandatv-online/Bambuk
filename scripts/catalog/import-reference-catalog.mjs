@@ -192,7 +192,7 @@ Not-ready records remain only in the internal normalized catalog and report for 
 |---:|---|---|---|
 ${notReadyRows.length > 0 ? notReadyRows.join("\n") : "| — | — | — | — |"}
 
-Commercial confirmations are separate from the reference snapshot: every normalized product carries the user-confirmed in-stock and sample states, delivery included subject to offer applicability, and a five-year warranty subject to written scope and terms. VAT treatment remains an offer-stage confirmation.
+Commercial confirmations are separate from the reference snapshot: every normalized product carries the user-confirmed in-stock and sample states, delivery included subject to offer applicability, and a 12-month warranty subject to written scope and terms. VAT treatment remains an offer-stage confirmation.
 `;
 await writeFile(path.join(projectRoot, "docs/catalog-import-report.md"), report, "utf8");
 

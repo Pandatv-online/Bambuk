@@ -41,6 +41,7 @@ export type {
   CatalogProduct,
   CatalogSource,
   ProductPricing,
+  PublishedWarranty,
   ProductSpecification,
   SourcedValue,
 } from "../../lib/catalog";

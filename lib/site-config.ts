@@ -34,6 +34,7 @@ export type SiteConfig = Readonly<{
     phone: string | null;
     phoneHref: `tel:${string}` | null;
     hours: string | null;
+    visitLocationPublicationApproved: boolean;
     visitWording: string | null;
   }>;
   legal: Readonly<{
@@ -59,6 +60,7 @@ export type RequiredSiteConfigField =
   | "contact.email"
   | "contact.phone"
   | "contact.hours"
+  | "contact.visitLocationPublicationApproved"
   | "legal.privacyNotice"
   | "legal.deliveryTerms"
   | "formDestination";
@@ -86,13 +88,13 @@ export const siteConfig: SiteConfig = {
   locale: "fi",
   siteUrl: normalizePublicUrl(process.env.NEXT_PUBLIC_SITE_URL),
   company: {
-    displayName: "Osaühing IKB",
-    legalName: "Osaühing IKB",
+    displayName: companyRegistryRecord.displayName,
+    legalName: companyRegistryRecord.displayName,
     registrationCountry: "EE",
     servedMarkets: ["FI", "EE"],
-    businessId: null,
-    vatId: null,
-    address: null,
+    businessId: companyRegistryRecord.registryCode,
+    vatId: companyRegistryRecord.vatId,
+    address: companyRegistryRecord.registeredAddress,
   },
   manufacturer: {
     displayName: null,
@@ -105,6 +107,7 @@ export const siteConfig: SiteConfig = {
     phone: "+358 50 508 0808",
     phoneHref: "tel:+358505080808",
     hours: "ma–pe 8.00–18.00",
+    visitLocationPublicationApproved: false,
     visitWording: "Sovi käynti etukäteen puhelimitse",
   },
   legal: {
@@ -130,7 +133,7 @@ export const siteConfig: SiteConfig = {
 };
 
 const releaseFieldReaders: Readonly<
-  Record<RequiredSiteConfigField, (config: SiteConfig) => string | null>
+  Record<RequiredSiteConfigField, (config: SiteConfig) => string | boolean | null>
 > = {
   siteUrl: (config) => config.siteUrl,
   "company.displayName": (config) => config.company.displayName,
@@ -141,6 +144,8 @@ const releaseFieldReaders: Readonly<
   "contact.email": (config) => config.contact.email,
   "contact.phone": (config) => config.contact.phone,
   "contact.hours": (config) => config.contact.hours,
+  "contact.visitLocationPublicationApproved": (config) =>
+    config.contact.visitLocationPublicationApproved,
   "legal.privacyNotice": (config) => config.legal.privacyNotice,
   "legal.deliveryTerms": (config) => config.legal.deliveryTerms,
   formDestination: (config) => config.formDestination,
@@ -154,10 +159,13 @@ export function getReleaseReadiness(
   const unresolvedFields = (
     Object.entries(releaseFieldReaders) as [
       RequiredSiteConfigField,
-      (candidate: SiteConfig) => string | null,
+      (candidate: SiteConfig) => string | boolean | null,
     ][]
   )
-    .filter(([, read]) => !read(config)?.trim())
+    .filter(([, read]) => {
+      const value = read(config);
+      return typeof value === "string" ? !value.trim() : !value;
+    })
     .map(([field]) => field);
 
   return {
@@ -166,3 +174,4 @@ export function getReleaseReadiness(
     unresolvedFields,
   };
 }
+import { companyRegistryRecord } from "@/data/company";

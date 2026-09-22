@@ -48,8 +48,17 @@ describe("inquiry form routes", () => {
     }
 
     expect(contact).toContain(companyName);
+    expect(contact).toContain(
+      "Virossa rekisteröity Osaühing IKB palvelee asiakkaita Suomessa ja Virossa.",
+    );
     expect(contact).toContain(`href="${siteConfig.contact.phoneHref}"`);
     expect(contact).toContain("ma–pe 8.00–18.00");
+    expect(contact).toContain("Rekisterikoodi");
+    expect(contact).toContain("10161031");
+    expect(contact).toContain("EE100414305");
+    expect(contact).toContain("Mere pst 2, 40231 Sillamäe linn");
+    expect(contact).toContain("Rekisteröity osoite");
+    expect(contact).not.toContain("Näyttelytila");
     expect(contact).toContain("Sovi käynti etukäteen puhelimitse");
     expect(contact).not.toContain("mailto:");
 

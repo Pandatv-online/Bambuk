@@ -329,8 +329,8 @@ describe("reference catalog import", () => {
         noteFi: "Toimitusalue ja soveltaminen vahvistetaan tarjouksessa",
       },
       warranty: {
-        durationYears: 5,
-        labelFi: "Takuu 5 vuotta",
+        durationMonths: 12,
+        labelFi: "Takuu 12 kuukautta",
         noteFi: "Takuun kohde ja ehdot vahvistetaan kirjallisessa tarjouksessa",
       },
       sample: {

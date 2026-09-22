@@ -12,7 +12,23 @@ export type PageMetadataInput = Readonly<{
 
 export const DEVELOPMENT_SITE_URL = "http://localhost:3000";
 
-export function getMetadataBase(config: SiteConfig = siteConfig): URL {
+type MetadataEnvironment = "development" | "production";
+
+const metadataEnvironment = (): MetadataEnvironment =>
+  process.env.NODE_ENV === "production" ? "production" : "development";
+
+export function getMetadataBase(
+  config: SiteConfig = siteConfig,
+  environment: MetadataEnvironment = metadataEnvironment(),
+): URL {
+  if (environment === "production") {
+    const siteUrl = config.siteUrl ? new URL(config.siteUrl) : null;
+    if (!siteUrl || siteUrl.hostname === "localhost") {
+      throw new Error("production metadata requires NEXT_PUBLIC_SITE_URL");
+    }
+    return siteUrl;
+  }
+
   return new URL(config.siteUrl ?? DEVELOPMENT_SITE_URL);
 }
 

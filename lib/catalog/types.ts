@@ -74,6 +74,13 @@ export type CatalogDocument = Readonly<{
   applicability: readonly string[];
 }>;
 
+export type PublishedWarranty = Readonly<{
+  durationMonths: 12;
+  labelFi: "Takuu 12 kuukautta";
+  scope: "pendingContract";
+  noteFi: "Takuun kohde ja ehdot vahvistetaan kirjallisessa tarjouksessa";
+}>;
+
 export type CatalogProduct = Readonly<{
   id: string;
   status: "active" | "notReady";
@@ -108,12 +115,7 @@ export type CatalogProduct = Readonly<{
     applicability: "pendingOfferConfirmation";
     noteFi: "Toimitusalue ja soveltaminen vahvistetaan tarjouksessa";
   }>;
-  warranty: Readonly<{
-    durationYears: 5;
-    labelFi: "Takuu 5 vuotta";
-    scope: "pendingContract";
-    noteFi: "Takuun kohde ja ehdot vahvistetaan kirjallisessa tarjouksessa";
-  }>;
+  warranty: PublishedWarranty;
   sample: Readonly<{
     available: true;
     labelFi: "Näyte saatavilla";

@@ -12,6 +12,7 @@ type TelegramEnvironment = Readonly<{
 export type TelegramTransportOptions = Readonly<{
   env?: TelegramEnvironment;
   fetch?: typeof fetch;
+  now?: () => number;
   timeoutMs?: number;
 }>;
 
@@ -20,6 +21,7 @@ export function createTelegramInquiryTransport(
 ): InquiryTransport {
   const env = options.env ?? process.env;
   const fetchImpl = options.fetch ?? fetch;
+  const now = options.now ?? Date.now;
   const timeoutMs = options.timeoutMs ?? 8_000;
 
   return async (inquiry) => {
@@ -29,7 +31,7 @@ export function createTelegramInquiryTransport(
       return { ok: false, code: "temporarily_unavailable" };
     }
 
-    const message = formatInquiryMessage(inquiry);
+    const message = formatInquiryMessage(inquiry, now());
     if (message.length > TELEGRAM_MESSAGE_MAX_CHARACTERS) {
       return { ok: false, code: "delivery_failed" };
     }

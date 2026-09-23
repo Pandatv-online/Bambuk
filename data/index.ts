@@ -1,7 +1,9 @@
 export { categories } from "./categories";
 export { homepageContent } from "./homepage";
-export { navigation } from "./navigation";
+export { footerLegalNavigation, navigation } from "./navigation";
+export { getPrivacyNoticeByPath, privacyNotice } from "./privacy";
 export { createDefaultCommercialState, getPublishedProducts, products } from "./products";
+export type { PrivacyNotice, PrivacyNoticePath, PrivacyNoticeSection } from "./privacy";
 export type {
   Category,
   HomepageContent,

@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import type { InquiryApiResponse } from "@/lib/inquiries";
+import { privacyNotice } from "@/data/privacy";
 import { siteConfig } from "@/lib/site-config";
 
 import styles from "./inquiry-form.module.css";
@@ -558,7 +559,11 @@ function InquiryForm({
 
       <aside className={styles.dataUse}>
         <h2>Tietojen käyttö tässä vaiheessa</h2>
-        <p>Käytämme antamiasi tietoja vain tähän yhteydenottoon. Hyväksyttyä tietosuojaselostetta ei ole vielä julkaistu, joten lomake ei ole tuotantokäyttöön valmis.</p>
+        <p>
+          Käytämme antamiasi tietoja yhteydenottoon sekä tarjouksen,
+          näytepyynnön tai sovitun jatkotoimen käsittelyyn. {" "}
+          <a href={privacyNotice.path}>Lue tietosuojaseloste.</a>
+        </p>
       </aside>
 
       {state.kind === "error" && !Object.keys(fieldErrors).length ? (

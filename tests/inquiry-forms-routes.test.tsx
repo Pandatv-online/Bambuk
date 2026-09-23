@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import * as forms from "@/components/forms";
+import { SiteFooter } from "@/components/navigation";
 import ContactPage, {
   metadata as contactMetadata,
 } from "@/app/fi/yhteystiedot/page";
@@ -34,6 +35,7 @@ describe("inquiry form routes", () => {
         }),
       }),
     );
+    const footer = renderToStaticMarkup(<SiteFooter />);
 
     for (const html of [contact, quote, sample]) {
       expect(html.match(/<h1/g)).toHaveLength(1);
@@ -43,8 +45,10 @@ describe("inquiry form routes", () => {
       expect(html).toContain('name="idempotencyKey"');
       expect(html).toContain('name="website"');
       expect(html).toContain("Tietojen käyttö tässä vaiheessa");
-      expect(html).toContain("ei ole tuotantokäyttöön valmis");
+      expect(html).toContain('href="/fi/tietosuoja"');
+      expect(html).toContain("Lue tietosuojaseloste");
       expect(html).not.toContain("bambukogrindys.lt");
+      expect(html).not.toMatch(/TELEGRAM_(?:BOT_TOKEN|CHAT_ID)/u);
     }
 
     expect(contact).toContain(companyName);
@@ -67,6 +71,8 @@ describe("inquiry form routes", () => {
     expect(quote).toContain('value="/fi/tuotteet/sisalattiat/klassikko/testituote"');
     expect(sample).toContain('value="47"');
     expect(sample).toContain("Emme pyydä osoitetta tässä vaiheessa");
+    expect(footer).toContain('href="/fi/tietosuoja"');
+    expect(footer).toContain("Tietosuojaseloste");
 
     for (const metadata of [contactMetadata, quoteMetadata, sampleMetadata]) {
       expect(metadata.robots).toEqual({ index: false, follow: false });

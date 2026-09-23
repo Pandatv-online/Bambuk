@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
 import { createTelegramInquiryTransport } from "@/lib/inquiries/telegram";
+import { getInquiryDeletionDeadline } from "@/lib/inquiries/retention";
 
 describe("Telegram inquiry transport", () => {
   it("returns temporarily_unavailable without reading or exposing missing credentials", async () => {
@@ -75,6 +76,42 @@ describe("Telegram inquiry transport", () => {
     expect(body.text).toContain("Tarjous &amp; asennus");
     expect(body.text).not.toContain("<script>");
     expect(String(body.text).length).toBeLessThanOrEqual(4_096);
+  });
+
+  it("marks the operator's Telegram notification with its 12-month deletion deadline", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
+      Response.json({ ok: true, result: { message_id: 452 } }),
+    );
+    const transport = createTelegramInquiryTransport({
+      env: {
+        TELEGRAM_BOT_TOKEN: "test-token",
+        TELEGRAM_CHAT_ID: "test-chat",
+      },
+      fetch: fetchMock,
+      now: () => Date.UTC(2026, 8, 23, 10, 0, 0),
+    });
+
+    await transport({
+      type: "contact",
+      name: "Maija",
+      email: "maija@example.fi",
+      phone: null,
+      preferredContact: "email",
+      message: "Kysymys",
+      sourceUrl: "/fi/yhteystiedot",
+      idempotencyKey: "contact-12345678",
+      startedAt: 1_700_000_000_000,
+    });
+
+    const [, init] = fetchMock.mock.calls[0]!;
+    expect(String(init?.body)).toContain(
+      "Poistettava viimeistään:</b> 2027-09-23",
+    );
+  });
+
+  it("clamps a leap-day deadline to February's final day after twelve calendar months", () => {
+    expect(getInquiryDeletionDeadline(Date.UTC(2024, 1, 29, 23, 59))).toBe("2025-02-28");
+    expect(getInquiryDeletionDeadline(Date.UTC(2026, 0, 31, 23, 59))).toBe("2027-01-31");
   });
 
   it("returns delivery_failed when Telegram rejects or malforms the response", async () => {

@@ -2,225 +2,207 @@
 
 ## Задача
 
-Посетитель финского сайта пока видит только ознакомительную главную страницу: фактического ассортимента, фильтрации, карточек товаров, полезных информационных страниц и рабочих обращений нет. Osaühing IKB уже подтвердил обслуживание клиентов в Финляндии и Эстонии, телефон, часы, наличие товаров и образцов, привязку цен к исходному сайту, включённую доставку и пятилетнюю гарантию, но часть юридических и операционных границ ещё не передана.
+Посетитель финского сайта должен видеть достоверный каталог, иметь понятный
+способ запросить предложение или образец и знать, кто обрабатывает обращение.
+Теперь подтверждены домен, реестровые данные оператора, срок гарантии и срок
+хранения обращений. Сайт не должен раскрывать Telegram-credentials, приписывать
+компании отношения с производителем или превращать неполные коммерческие и
+юридические сведения в обещания.
 
 ## Решение
 
-Сайт получает полный data-driven каталог из текущей LT-ветки исходного сайта, естественные финские названия, локальные изображения, source-bound характеристики и цены-снапшоты. Посетитель сможет фильтровать каталог, открыть подробную страницу товара, посмотреть отдельную галерею и полезные source-based материалы, связаться с Osaühing IKB, запросить предложение или образец. Формы отправляются сервером в Telegram при настроенных env и честно сообщают о временной недоступности без credentials. Весь сайт остаётся review/noindex до домена, полных реквизитов и юридических текстов.
+Сохраняется data-driven каталог с локальной медиа-библиотекой, страницами
+товаров, фильтрами, галереей и запросами через Telegram. Публичным оператором
+становится Osaühing IKB с подтверждёнными реестровыми данными и доменом
+`bamboopro.fi`. Появляется финская страница политики конфиденциальности,
+доступная из всех форм и подвала: она описывает только реально собираемые
+данные, Telegram-получателя и удаление данных клиента через 12 месяцев.
+Гарантия в публичном интерфейсе указывается как 12 месяцев без выдуманных
+условий. До проверки юридического текста, почты оператора, реальной
+конфигурации безопасно заменённого Telegram-токена и развёртывания сайт
+остаётся review/noindex.
 
 ## Пользовательские истории
 
 | # | Метка | История | Приёмка |
 |---|---|---|---|
-| 1 | R01 | Как посетитель, я вижу Osaühing IKB как компанию сайта | Название одинаково в header/footer/contact/forms metadata; отсутствующие IDs не подменены |
-| 2 | R02 | Как клиент из Финляндии или Эстонии, я понимаю обслуживаемые рынки | Нейтральная финская формулировка на contact/about surfaces без утверждения о финском юрлице |
-| 3 | R03 | Как клиент, я вижу часы связи | `ma–pe 8.00–18.00` отображается единообразно |
-| 4 | R04 | Как клиент, я могу позвонить | Телефон отображён и имеет корректный `tel:` link |
-| 5 | R05 | Как владелец, я не публикую формулировку о дистрибьюторских отношениях | Ни UI, ни metadata/JSON-LD не содержат такого утверждения |
-| 6 | R06 | Как владелец, я могу позже добавить домен без переписывания routes | Origin берётся из env; до него страницы noindex и localhost не попадает в публичный sitemap |
-| 7 | R07 | Как покупатель, я просматриваю фактический ассортимент исходного каталога | Все обнаруженные текущие LT product IDs представлены один раз; отчёт сверяет количество и пропуски |
-| 8 | R07.1 | Как покупатель, я вижу честное пустое/ошибочное состояние импорта | Неполная запись не превращается в товар; ingest report перечисляет skipped/invalid records |
-| 9 | R08 | Как покупатель, я вижу характеристики именно выбранного товара | Specs — ordered typed label/value/unit с source URL/date; значения не переносятся между SKU |
-| 10 | R09 | Как покупатель, я открываю реальные документы товара | Каждый обнаруженный публичный документ сохранён локально с названием/source/applicability; нескачанный документ блокирует готовность затронутой записи и виден в ingest report |
-| 11 | R10 | Как покупатель, я вижу исходные изображения без внешних visitor-запросов | Assets сохранены локально, имеют alt/rightsId/source metadata и fallback |
-| 12 | R11 | Как покупатель, я вижу ту же числовую цену и единицу, что на исходном сайте | Amount/currency/basis совпадают со снапшотом 2026-09-12; VAT не выдумывается; дата источника видима |
-| 13 | R11.1 | Как покупатель, я не принимаю устаревшую цену за окончательную | Цена помечена датой проверки и подтверждается письменным предложением до заказа |
-| 14 | R12 | Как покупатель, я вижу товары в наличии | Активные импортированные товары показывают `Varastossa` без выдуманного количества |
-| 15 | R13 | Как покупатель, я могу запросить образец любого товара | CTA несёт product ID/name в sample form; отдельная sample-product запись не нужна |
-| 16 | R14 | Как посетитель, я могу договориться посмотреть образцы | Contact copy предлагает согласовать визит по телефону; адрес не показывается до подтверждения |
-| 17 | R15 | Как клиент монтажа, я не получаю выдуманных условий | Существующий teaser ведёт к installation-interest quote state; scope/area/methods/terms явно pending |
-| 18 | R16 | Как покупатель, я вижу, что доставка включена в стоимость | Факт показан рядом с commercial summary; применимость подтверждается в предложении |
-| 19 | R17 | Как покупатель, я вижу срок гарантии пять лет | Срок видим; объект, начало, исключения и процедура помечены как уточняемые до договора |
-| 20 | R18 | Как менеджер, я получаю валидные заявки в Telegram | Server adapter отправляет нормализованный текст только при configured token/chat ID |
-| 21 | R18.1 | Как посетитель, я получаю ясный результат отправки | Loading/success/field/server/unconfigured states доступны; double submit блокируется; значения сохраняются при ошибке |
-| 22 | R18.2 | Как владелец, я не раскрываю Telegram credentials | Env server-only, значения не попадают в bundle/logs/errors; `.env.example` содержит только имена |
-| 23 | R19 | Как покупатель, я просматриваю каталог по категориям и коллекциям | Hub + category pages используют единый tree и breadcrumbs |
-| 24 | R19.1 | Как покупатель, я фильтрую товары | URL query поддерживает category/collection/color/surface/finish/availability и сброс; недоступные facets не показываются |
-| 25 | R19.2 | Как пользователь мобильного устройства, я управляю фильтрами отдельно от списка | Доступный filters drawer/sheet, применённые значения и reset; desktop sidebar не просто сжат |
-| 26 | R19.3 | Как покупатель, я не попадаю в пустой тупик | Zero results объясняет состояние и предлагает сброс/контакт |
-| 27 | R20 | Как покупатель, я открываю стабильную финскую страницу товара | Route строится из typed record, имеет breadcrumbs, gallery, identity, price, availability, facts, specs, docs и CTAs |
-| 28 | R20.1 | Как пользователь клавиатуры, я управляю product gallery | Thumbnails/lightbox имеют focus, Escape, return-focus и reduced-motion behavior |
-| 29 | R20.2 | Как владелец, я добавляю/удаляю товар без JSX-правок | Route generation/selectors читают data records; UI не знает конкретные товары |
-| 30 | R21 | Как покупатель, я читаю полезные сведения для выбора | Hub и consolidated pages сохраняют только source-supported manufacturing, construction, surfaces, installation/care and FAQ material |
-| 31 | R21.1 | Как покупатель, я различаю сведения производителя и правила продавца | Source notes не превращаются в claims Osaühing IKB; противоречивые/непроверенные числа исключены |
-| 32 | R22 | Как посетитель, я открываю отдельную галерею | `/fi/galleria` показывает local rights-recorded imagery с фильтрами и keyboard lightbox |
-| 33 | R23 | Как клиент, я нахожу Osaühing IKB, телефон и часы | `/fi/yhteystiedot` содержит только подтверждённые контакты и честные missing fields |
-| 34 | R24 | Как клиент, я запрашиваю предложение | `/fi/pyyda-tarjous` валидирует contact/project/product/installation context и отправляет через общий transport |
-| 35 | R25 | Как клиент, я запрашиваю образец | `/fi/tilaa-mallipala` валидирует product/contact/visit-or-delivery context без выдуманных sample fees/terms |
-| 36 | R24.1 | Как посетитель с ошибкой формы, я не теряю введённое | Field errors привязаны к labels; server failure сохраняет values и допускает безопасный retry |
-| 37 | R27i | Как покупатель, я отличаю подтверждённое от уточняемого | VAT, warranty scope, delivery geography, return/legal terms явно не заявляются без данных |
-| 38 | R28i | Как владелец, я могу подключить Telegram конфигурацией | Достаточно server env; UI/forms не меняются при подключении |
-| 39 | R29i | Как посетитель, я не еду по выдуманному адресу | Visit action — только звонок/форма для согласования |
-| 40 | R30i | Как владелец, я не выпускаю сайт без реквизитов | Readiness перечисляет Business ID/VAT/address/email/legal/domain и удерживает noindex |
+| 1 | R01, G04 | Как посетитель, я вижу настоящего оператора сайта, чтобы понимать, с кем связываюсь | Публичны только Osaühing IKB, registry code `10161031`, VAT `EE100414305`, зарегистрированный адрес `Mere pst 2, 40231 Sillamäe linn`, телефон и часы; каждое реестровое поле имеет dated provenance. |
+| 2 | R02–R05 | Как клиент из Финляндии или Эстонии, я понимаю рынок и способ связи без ложного юридического или дистрибьюторского утверждения | Финский текст на contact-поверхностях говорит лишь о работе с клиентами EE/FI; в UI, metadata и JSON-LD нет `valtuutettu`, `jakelija`, `jälleenmyyjä` или подобного relationship claim. |
+| 3 | R03–R04 | Как клиент, я вижу часы `ma–pe 8.00–18.00` и могу позвонить | Часы единообразны, номер имеет корректную `tel:`-ссылку. |
+| 4 | R06, G01 | Как посетитель, я открываю канонический финский домен | Canonical/OG используют `https://bamboopro.fi`; localhost никогда не попадает в публичные metadata или sitemap. |
+| 5 | R06.1 | Как владелец, я не делаю review-сайт индексируемым по одному лишь домену | Indexability остаётся отрицательной, пока не закрыты все release blockers; production не получает fallback-домен. |
+| 6 | R07–R10 | Как покупатель, я просматриваю фактический ассортимент с характеристиками, документами и изображениями именно выбранного SKU | Каталог и карточка читают typed provenance-bound record; missing/invalid source facts не становятся товаром или характеристикой. |
+| 7 | R11–R16 | Как покупатель, я вижу ту же цену, наличие, образец и доставку, что обещал продавец | Для каждого активного импортированного товара сумма и единица повторяют source snapshot без конверсии; все такие товары показывают `Varastossa`, доступный запрос образца и `Toimitus sisältyy hintaan`, а VAT, география и условия остаются offer-stage уточнением. |
+| 8 | R17, G05 | Как покупатель, я вижу срок гарантии, не принимая неизвестные условия за обещание | На публичных коммерческих поверхностях и в данных нет «5 vuotta»; указывается только `Takuu 12 kuukautta`, а объект, начало, исключения и процедура отсылаются к письменному предложению/договору. |
+| 9 | R18, G02–G03 | Как владелец, я подключаю Telegram-заявки без попадания credentials в репозиторий или браузер | Нужны только server env `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`; пример содержит пустые значения, логи/ответы/bundle не содержат token, chat ID или тело заявки. |
+| 10 | R18.1 | Как посетитель, я понимаю результат отправки и не теряю введённое при ошибке | Loading, field, server, unconfigured и retry states доступны; двойная отправка блокируется, значения сохраняются при неуспехе. |
+| 11 | R19–R22 | Как покупатель, я нахожу и изучаю каталог, товар, информационные материалы и галерею на любом устройстве | Controlled routes, facets, zero-result/reset, keyboard gallery и responsive presentations используют общий registry и local rights-recorded media. |
+| 12 | R14, R23–R25 | Как клиент, я запрашиваю предложение, образец или согласовываю осмотр образцов | Общая валидируемая форма несёт только необходимый contact/product/project context; посетитель может договориться об осмотре по телефону, но registry address не выдаётся за место посещения без подтверждения. |
+| 13 | R24.1 | Как посетитель с неверным вводом или временным сбоем, я могу исправить и отправить заявку повторно | Ошибки привязаны к labels и первому ошибочному полю; данные не очищаются до успешной доставки. |
+| 14 | G06 | Как отправитель формы, я до отправки понимаю, кто и зачем обрабатывает мои данные | Каждая форма содержит видимую ссылку на `/fi/tietosuoja`; footer содержит ту же ссылку; страница имеет уникальные title, description, canonical и H1. |
+| 15 | G06.1 | Как отправитель формы, я знаю, какие сведения хранятся и как долго | Политика на естественном финском перечисляет реальные поля формы и технически созданный контекст обращения, цели, получателей, отсутствие маркетингового профилирования/автоматических решений, 12-месячный срок и способ запросить права. |
+| 16 | G06.2 | Как владелец, я исполняю объявленный срок хранения, включая рабочее уведомление Telegram | Приложение не создаёт собственную базу обращений; операторская процедура удаляет Telegram-уведомления и иные копии обращения по истечении 12 месяцев, а не обещает несуществующее автоматическое удаление. |
+| 17 | R27i–R30i | Как владелец, я вижу, что ещё нельзя выпускать | Release readiness показывает незакрытые email/visit-address, legal review, фактическую безопасную Telegram-конфигурацию и другие известные blockers; их значения не подменяются bracket-плейсхолдерами. |
+| 18 | R15 | Как клиент монтажа, я не получаю выдуманных условий | Installation route/CTA честно объясняет, что содержание, территория и условия согласуются в предложении, и ведёт к interest/quote path до передачи source-supported facts. |
 
-## Компания и контакт
+## Решения по реализации
 
-- Публичное имя: `Osaühing IKB`.
-- Роль: эстонская компания, обслуживающая клиентов в Финляндии и Эстонии. Слова `virallinen`, `valtuutettu`, `jakelija`, `jälleenmyyjä` и аналогичные relationship claims не публикуются.
-- Телефон: `+358 50 508 0808`; часы: `ma–pe 8.00–18.00` по локальному времени сайта.
-- Посещение возможно только как `Sovi käynti etukäteen puhelimitse`; местоположение не называется.
-- Business ID, VAT ID, юридический/визитный адрес и email остаются null и видны в release checklist, не в качестве bracket-плейсхолдеров посетителю.
+### Оператор и provenance
 
-## Источник каталога и импорт
+- Публичный оператор/контролёр данных: `Osaühing IKB`, registry code
+  `10161031`, VAT `EE100414305`, зарегистрированный адрес `Mere pst 2, 40231
+  Sillamäe linn`, телефон `+358 50 508 0808`, часы `ma–pe 8.00–18.00`.
+- Источник этих реестровых фактов — данная пользователем страница Teatmik;
+  проверка выполнена 2026-09-23. Страница Teatmik потребовала CAPTCHA, поэтому
+  совпадающая публичная registry-derived запись является только дополнительной
+  проверкой. В проекте хранится компактная датированная provenance-запись, а не
+  сырой scrape и не посторонние сведения о компании.
+- Сайт не называет адрес местом посещения/шоурумом и не говорит о relationship
+  с производителем. Неизвестные email и адрес посещения остаются null.
 
-- Канонический research source: текущая LT-ветка `https://www.bambukogrindys.lt/lt/katalogas`, extracted 2026-09-12.
-- Полнота определяется множеством уникальных `/lt/katalogas/product/{id}/...` из live map/crawl; ожидаемое audit-значение — 130, но ingest report записывает фактический current count.
-- Raw extraction хранится как внутреннее evidence; visitor не получает reference URL/link/network request.
-- Normalizer принимает только фактически обнаруженные поля. Missing остаётся null/empty, URL slug не становится характеристикой.
-- Финское имя — профессиональный перевод наблюдаемого имени. Официальные brand/model/collection tokens сохраняются; `bambuparketti` используется только при подтверждённой конструкции.
-- Каждая record содержит `source: { url, sourceId, extractedAt, locale }`, а media/document/spec — собственную provenance/applicability связь.
-- Import validator отклоняет duplicate IDs/slugs, invalid prices/units, remote visitor media and orphan category relations и пишет машинно-читаемый report.
+### Домен и выпуск
 
-## Product model
+- Public origin: `https://bamboopro.fi`. Конфигурация берёт его из
+  `NEXT_PUBLIC_SITE_URL`, с документированным пустым dev fallback, но без
+  production fallback на localhost.
+- Домен сам по себе не снимает review/noindex. В release checklist остаются:
+  email для прав субъекта данных, разрешение публиковать visit address, проверка
+  финского legal/privacy текста, подтверждение сроков/процедуры удаления,
+  заполненные пользователем заново выпущенные server-only Telegram credentials
+  и отдельное развёртывание/DNS решение.
+- Никакой deploy, DNS change, отправка Telegram-сообщений, организация/offer
+  JSON-LD или изменение статуса на indexable не входят в этот инкремент.
 
-```text
-Product = {
-  id, status, slugFi, sku?, nameFi, nameSource, summaryFi?, descriptionFi?,
-  categoryId, collectionId?, brand?,
-  attributes: { color?, surface?, finish?, dimensions?, package?, installation? },
-  specifications: { key, labelFi, sourceLabel, value, unit?, source }[],
-  pricing: { status: published, amount, currency: EUR, basis, vatDisplay: null|sourceText,
-             sourceUrl, extractedAt },
-  availability: { status: inStock, confirmedBy: user, confirmedAt: 2026-09-12 },
-  delivery: { included: true, applicability: pendingOfferConfirmation },
-  warranty: { durationYears: 5, scope: pendingContract },
-  sample: { available: true },
-  images: { src, altFi, order, rightsId, sourceUrl }[],
-  documents: { id, titleFi, sourceTitle, file?, sourceUrl, applicability }[],
-  relatedProductIds: string[],
-  source: { url, sourceId, extractedAt, locale: lt }
-}
-```
+### Каталог, коммерческие состояния и гарантия
 
-Product type remains flexible: floors, decking, skirting/stairs, panels, décor, installation accessories, adhesives and care products share the template but render only populated specification groups.
+- Существующая модель products остаётся единственным источником category,
+  product, filter, gallery, breadcrumbs и SEO route data. SKU-specific source
+  facts не копируются между товарами; raw LT URL не становится visitor link.
+- `Takuu 12 kuukautta` заменяет прежний срок в одном общем commercial boundary,
+  поэтому в карточке, странице товара, CTA context и поисковом тексте не может
+  остаться расходящееся «5 vuotta». Данные не расширяют scope гарантии.
+- Цена, наличие, образец и доставка сохраняют уже принятые source/offer guards.
+  Для всех active published records цена и единица равны source snapshot, каждый
+  показывает наличие и образец, а `Toimitus sisältyy hintaan` показывается как
+  подтверждённый общий факт. Это не создаёт ни налоговый режим, ни географию,
+  сроки или исключения доставки. Checkout, калькулятор, новые delivery/warranty
+  terms и installation coverage не создаются.
 
-## Pricing, stock, delivery, samples and warranty
+### Telegram delivery
 
-- Price amount and basis mirror the reference snapshot exactly and show `Tarkistettu 12.9.2026`.
-- No automatic currency/VAT conversion. Missing VAT wording renders `ALV-käsittely vahvistetaan tarjouksessa`, not an invented percentage.
-- `Varastossa` is user-confirmed for every imported active product; no quantity or lead time is shown.
-- `Näyte saatavilla` and `Pyydä näyte` appear for every product.
-- `Toimitus sisältyy hintaan` is shown with `Toimitusalue ja soveltaminen vahvistetaan tarjouksessa`.
-- `Takuu 5 vuotta` is shown with `Takuun kohde ja ehdot vahvistetaan kirjallisessa tarjouksessa`.
-- The site remains noindex/review while VAT basis, terms and company/legal data are unresolved.
+- Публичный контракт transport остаётся `sendInquiry(inquiry) -> result`, а
+  transport выбирается только на сервере. При отсутствующей/неполной
+  конфигурации возвращается typed temporarily-unavailable result без network
+  call и без ложного success.
+- В `.env.example` и setup-документации допускаются только имена:
+  `TELEGRAM_BOT_TOKEN=`, `TELEGRAM_CHAT_ID=` и
+  `NEXT_PUBLIC_SITE_URL=https://bamboopro.fi`. Пользователь самостоятельно
+  помещает новый токен и ID в неотслеживаемый `.env.local`; реальный token/ID
+  не записывается в тест, fixture, ticket, commit, dashboard, browser log или
+  документацию.
+- Проверки transport используют mock/dummy env и никогда не вызывают Telegram.
+  В production включение допускается только после ротации уже раскрытого токена
+  и ручной проверки владельцем. Реальная интеграция при этом полностью
+  реализована: после того как владелец сам задаст replacement values в
+  `.env.local`, server transport использует их для delivery; агент не подставляет
+  значение из переписки и не делает внешнюю тестовую отправку.
 
-## Routes and catalog UX
+### Политика конфиденциальности и жизненный цикл обращения
 
-- `/fi/tuotteet` — catalog hub, category overview, filter summary and paginated product grid.
-- `/fi/tuotteet/[...segments]` — category/collection or product resolution through controlled registries; canonical slugs come from data, never from raw LT slugs.
-- **D01 (ticket 03):** Next.js route ownership proved that category, collection and product outcomes must share one `[...segments]` owner. Ticket 03 exposes controlled paths and links; ticket 05 renders every nested outcome so two agents do not create competing route trees.
-- Filter query: `kategoria`, `mallisto`, `vari`, `pinta`, `viimeistely`, `saatavuus`, `sivu`. Multiple values within a facet use repeated params; invalid values are ignored and canonicalized.
-- Desktop uses a restrained sidebar; mobile uses a modal filters panel. Sorting defaults to controlled catalog order; only name and price sorts are exposed when data supports them.
-- Pagination is server-rendered, 24 products/page, crawl-safe; filtered query pages remain noindex until final SEO policy.
-- Product pages include gallery, identity, current source timestamp, commercial summary, key facts, flexible specs, documents, description and quote/sample CTAs. No calculator without exact package coverage.
+- Путь: `/fi/tietosuoja`, финский H1 `Tietosuojaseloste`. Это policy для
+  inquiry forms, а не общая выдуманная cookie/marketing policy.
+- Текст показывает контролёра и его доступные контакты, цели (ответ на
+  обращение, подготовка предложения/образца, дальнейшее выполнение
+  согласованного обращения), правовое основание, фактические категории данных,
+  получателей, срок, права, право жалобы и отсутствие автоматических решений.
+  Политика говорит, являются ли поля обязательными, и что произойдёт, если их не
+  предоставить.
+- Правовое основание формулируется ровно для сценария формы: действия по запросу
+  субъекта до заключения договора (GDPR Art. 6(1)(b)); отдельного marketing
+  consent не создаётся. Если фактическая форма/процесс потребует иную цель или
+  основание, текст и release checklist обновляются до включения функции.
+- Публикуются только категории, которые реально передаются: введённые клиентом
+  имя, выбранный канал связи и контактные данные, текст/детали запроса, выбранный
+  товар/образец/монтажный контекст и служебные поля, созданные формой для защиты
+  от повторной отправки. IP, cookies, analytics, адрес доставки, marketing и
+  special-category data не заявляются, если код их не собирает.
+- При enabled transport структурированное уведомление передаётся оператору через
+  Telegram Bot API. Policy описывает Telegram как получателя/поставщика сервиса
+  и не делает неподтверждённых утверждений о его регионах обработки или гарантиях
+  трансграничной передачи; такие сведения требуют legal review перед production.
+- Оператор хранит обращение и свои рабочие копии максимум 12 месяцев с момента
+  получения, затем удаляет, если более длительное хранение не требуется законом
+  или для установления, осуществления либо защиты правовых требований. Telegram
+  notification отмечается датой удаления и удаляется в рамках операторской
+  процедуры; приложение не притворяется, что управляет сроками хранения самого
+  поставщика.
+- Права доступа, исправления, удаления, ограничения, возражения и переносимости
+  описываются без обещания результата, противоречащего закону. Запросы доступны
+  по опубликованному телефону или почтовому адресу; право жалобы указывается
+  без выдуманных реквизитов надзорного органа. Это покрывает обязательные
+  категории GDPR Article 13; текст остаётся legal-review release blocker.
 
-## Information pages
+### Доступность, SEO и тесты
 
-Build one hub and useful consolidated routes rather than 555 thin copies:
-
-- `/fi/tietoa-bambusta` — hub.
-- `/fi/tietoa-bambusta/valmistus` — source-based manufacturing process.
-- `/fi/tietoa-bambusta/rakenne-varit-ja-pinnat` — construction, patterns, edges, colors and finishes.
-- `/fi/tietoa-bambusta/asennus-ja-hoito` — general source-based installation/care material with product-specific cautions and unresolved-number omissions.
-- `/fi/tietoa-bambusta/lattialammitys` — only statements whose exact source/applicability is retained; conflicting 26/27 °C limits are not published.
-- `/fi/tietoa-bambusta/ukk` — reviewed Finnish FAQ topics/answers, omitting unsupported environmental/certification claims and unresolved numbers.
-
-Each page has one H1, source-aware sections, related products/categories where explicit, metadata through the shared boundary, and no SEO filler.
-
-## Gallery
-
-- `/fi/galleria` reuses registered local homepage imagery and may add locally downloaded reference assets only with `rightsId`/source record.
-- Filters describe observable scene type only (`sisätila`, `terassi`, `materiaali`, `yksityiskohta`); no product/project/customer relation is inferred.
-- Accessible lightbox traps/returns focus, closes by Escape/backdrop/button, exposes alt/caption, prevents background scroll and respects reduced motion.
-
-## Forms and Telegram transport
-
-- Routes: `/fi/yhteystiedot`, `/fi/pyyda-tarjous`, `/fi/tilaa-mallipala`.
-- Shared server-validatable schemas and components; forms work without client-only validation.
-- Common fields: name, phone, email, preferred contact, message, hidden honeypot, form-start timestamp, source URL. At least phone or email is required.
-- Quote adds inquiry type, product IDs, approximate area/quantity, municipality/postcode, timing and installation interest.
-- Sample adds product ID and fulfillment preference (`toimitus` or `sovittu käynti`); address is not requested until sample/delivery policy and privacy text are approved.
-- API: `POST /api/inquiries`; JSON and form payloads normalize into a typed `Inquiry`.
-- Transport interface: `sendInquiry(inquiry) -> { ok, referenceId? }`. Telegram implementation uses server-only `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`, HTML-escaped text, bounded timeout and no credential/body logging.
-- Operational flow in this increment is deliberately one-way: one valid form submission becomes one structured Telegram message containing inquiry type, contact preference, product/project context and source URL; the responsible manager contacts the customer using the submitted phone/email. The bot does not invent customer replies, assignment, status or closure workflows.
-- If env is absent, API returns a typed `temporarily_unavailable` response and UI keeps values, shows phone fallback, and never claims success.
-- Server validation errors map to fields. Duplicate clicks are blocked client-side; a short idempotency key prevents immediate repeats per runtime where possible.
-- No attachments, persistence, in-bot status/assignment workflow, analytics, marketing consent or promised response time in this run.
-- A temporary plain-language data-use acknowledgement is displayed; absent approved privacy notice keeps production readiness false.
-
-## SEO and release state
-
-- All actual pages have Finnish title/description/canonical/OG and semantic headings.
-- All routes remain `noindex, nofollow` until final domain, company IDs/address/email, privacy/legal text, VAT/terms scope and Telegram configuration are supplied/reviewed.
-- No Organization/LocalBusiness JSON-LD until legal identifiers/address are confirmed. Product JSON-LD may describe factual product fields but omits `Offer` while VAT/legal scope is unresolved.
-- Sitemap/robots and indexable filter policy remain deferred by R26.
-- No reference-domain URL appears in visitor HTML; source URLs remain internal data/provenance only.
-
-## Responsive and accessibility behavior
-
-- Reuse the established warm/cream, condensed, photography-led system and shared shell.
-- Catalog: 1 column phone, 2 tablet, 3 desktop; sidebar becomes mobile sheet; active filters remain visible.
-- Product detail: stacked gallery/data on phone, split layout desktop; specification rows wrap labels/values without horizontal scroll.
-- Forms use persistent labels, autocomplete, error summary and focus-to-first-error; controls remain at least 44 px.
-- Gallery/lightbox and filter/modal interactions satisfy keyboard focus/return/Escape/backdrop/scroll-lock requirements.
+- Privacy link и form acknowledgement остаются keyboard-accessible, с видимым
+  focus и естественным финским текстом. Никакой обязательный consent checkbox не
+  добавляется, если он не нужен фактическому правовому основанию.
+- New privacy route использует shared metadata boundary, controlled navigation
+  и noindex policy. Не добавляются fake reviews, ratings или relationship
+  structured data.
+- Проверки охватывают company provenance/config and readiness, canonical origin,
+  privacy metadata/content/link from every form/footer, 12-month retention copy,
+  env name-only boundary, warranty replacement и отсутствие старого срока в
+  public content. Vitest isolation/pool config не меняется ради ложного green;
+  outbound Telegram остаётся mocked.
 
 ## Границы и швы
 
 | Модуль | Владеет | Выставляет | Прячет |
 |---|---|---|---|
-| `company-config` | Osaühing IKB facts, nullable legal fields, release readiness | `siteConfig`, `getReleaseReadiness()` | env/defaults and missing-field policy |
-| `catalog-source` | raw reference extraction and normalization | `importReferenceCatalog(raw) -> ImportResult` | source parsing, translation mapping and rejection report |
-| `catalog-data` | categories, collections, products and provenance | typed registries and selectors | storage layout and raw source records |
-| `catalog-query` | URL facets, sorting and pagination | `parseCatalogQuery()`, `queryProducts()` | normalization and facet counting |
-| `catalog-ui` | catalog/category/product presentation | CatalogShell, filters, cards, grids, product-detail presenters | responsive composition |
-| `content-data` | Finnish information-page and FAQ records | route-keyed published content selectors | source translation/provenance files |
-| `gallery-data-ui` | rights-recorded media and scene filters | gallery selectors and accessible lightbox | focus/scroll/modal state |
-| `inquiry-schema` | contact/quote/sample normalization and validation | typed schemas and field errors | coercion, honeypot and anti-repeat fields |
-| `inquiry-transport` | outbound Telegram delivery | `sendInquiry(inquiry)` | Telegram API, timeout, escaping and credentials |
-| `inquiry-ui` | forms and status states | reusable form variants | client submission state |
-| `routes-seo` | route registry, metadata and noindex policy | navigation/breadcrumbs/canonical metadata | route resolution and release gating |
+| `company-config` | подтверждённые поля Osaühing IKB, public origin и release readiness | `siteConfig`, `getReleaseReadiness(config?, environment?)` | env parsing, missing-field policy и provenance storage |
+| `commercial-content` | единый опубликованный срок гарантии и source-bound commercial copy | typed commercial state для cards/product/detail/CTA | место хранения и legacy text cleanup |
+| `privacy-content` | финский policy text, 12-month retention и form disclosure | route-keyed content/metadata selector | copy composition и legal-review gate |
+| `inquiry-schema` | реальные поля inquiry, validation и минимизация данных | typed schema/field errors | honeypot/anti-repeat normalisation |
+| `inquiry-transport` | server-only Telegram delivery result | `sendInquiry(inquiry) -> result` | credentials, escaping, timeout, provider network |
+| `routes-seo` | navigation, footer/form policy links и noindex metadata | route registry and `createPageMetadata` | route resolution/indexability detail |
+| `catalog-data-ui` | products, filters, product pages, info and gallery | typed selectors/presenters | import evidence, rendering layout and per-SKU provenance |
 
-Primary test seams: `importReferenceCatalog`, `queryProducts`, product/content selectors, `getReleaseReadiness`, inquiry schemas/transport adapter and rendered route outcomes. Tests mock outbound Telegram; they never send a real message.
-
-## Проверка
-
-- Import completeness report reconciles unique source product IDs, normalized records, skipped records, local images and document mappings.
-- Representative fixtures cover interior floor, decking, trim/stair, panel, décor, installation product and care product without sharing facts.
-- Catalog filters/query/pagination are unit-tested and browser-tested on phone/tablet/desktop.
-- Every generated product/category/info/gallery/contact/form route builds and has one H1, canonical/OG/noindex and valid links.
-- Forms test field errors, phone-or-email rule, honeypot, double submit, missing env, Telegram success/failure/timeout with mocked network.
-- Content scan rejects Lithuanian business details, relationship wording, bracket placeholders, visitor reference links, unsupported certifications/environmental claims and invented installation facts.
-- Browser QA checks navigation, filters, product gallery/spec table, lightbox and all form states at 390, 768, 1200 and 1440 px with zero overflow/console errors.
-- `npm test`, `npm run typecheck`, `npm run lint` and `npm run build` pass after each major ticket and finally.
+Primary test seams are the existing `siteConfig`/`getReleaseReadiness`,
+`createPageMetadata`, commercial state, inquiry schema/transport and rendered
+route outcomes. Tests mock any provider boundary and never hold a live secret.
 
 ## Вне рамок
 
 | Требование | Почему не сейчас |
 |---|---|
-| R26 — «Остальное позже когда будет информация» | Отдельная installation page с operational scope, search, About, sitemap/robots, legal pages, analytics, checkout, account, cart, multilingual routes and performance launch audit ждут данных/следующих этапов |
+| R15 — содержание, территорию и условия монтажа | Пользователь не передал scope, service area, methods или terms; остаётся только interest/quote path. |
+| R26 — «Остальное позже когда будет информация» | Checkout, cart, account, payment, calculator, analytics, marketing/newsletter, multilingual equivalents, cookies policy beyond actual processing, deployment and DNS — отдельный следующий этап. |
+| G01 — домен | Пользователь передал имя домена, но deploy и DNS не подразумеваются; canonical config готовится отдельно от этой внешней операции. |
 
 ## Открытые места
 
-- R06: final public domain; `NEXT_PUBLIC_SITE_URL` remains empty and release is noindex.
-- R15: installation content, methods, inclusions/exclusions, service area and terms; only inquiry interest/pending state is allowed.
-- R29i: visit/showroom address; visitor is directed to agree by phone.
-- R30i: Business ID, VAT ID, legal/visiting address, email, privacy/legal text.
-- Telegram credentials: `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` remain empty env names; integration is testable with mocked transport only.
-- Warranty scope/terms, delivery geography/exceptions and VAT treatment remain explicit offer-stage confirmations, not invented policy.
+| Требование | Что пока не публикуется/не включается | Что нужно для закрытия |
+|---|---|---|
+| R15 | Монтажные scope/география/методы/terms | Подтверждённые коммерческие и операционные условия. |
+| R29i | Адрес посещения/шоурума | Разрешение публиковать точный visit address и режим визитов. |
+| R30i | Email оператора/контакт для прав субъекта через email | Подтверждённый адрес для публикации. |
+| G02–G03 | Live Telegram delivery | Пользователь ротирует раскрытый token и сам задаёт новые значения `.env.local`; затем владелец проверяет delivery. |
+| G06 | Production legal/privacy release | Legal review of Finnish notice, actual Telegram transfer/retention procedure and current form fields. |
 
 ## Покрытие манифеста
 
 | Требование | Раздел спецификации |
 |---|---|
-| R01–R05 | Компания и контакт; истории 1–5 |
-| R06 | SEO and release state; Открытые места |
-| R07–R10 | Источник каталога и импорт; Product model; истории 7–11 |
-| R11–R17 | Pricing, stock, delivery, samples and warranty; истории 12–19 |
-| R18 | Forms and Telegram transport; истории 20–22 |
-| R19 | Routes and catalog UX; истории 23–26 |
-| R20 | Product model; Routes and catalog UX; истории 27–29 |
-| R21 | Information pages; истории 30–31 |
-| R22 | Gallery; история 32 |
-| R23–R25 | Company and contact; Forms and Telegram transport; истории 33–36 |
-| R26 | Вне рамок |
-| R27i–R30i | Commercial guardrails; SEO/release; Открытые места; истории 37–40 |
+| R01–R05, G04 | Истории 1–3; «Оператор и provenance» |
+| R06, G01 | Истории 4–5; «Домен и выпуск» |
+| R07–R10 | История 6; «Каталог, коммерческие состояния и гарантия» |
+| R11–R16, R27i | История 7; «Каталог, коммерческие состояния и гарантия» |
+| R17, G05 | История 8; «Каталог, коммерческие состояния и гарантия» |
+| R18, R28i, G02–G03 | Истории 9–10; «Telegram delivery» |
+| R19–R22 | История 11; «Доступность, SEO и тесты» |
+| R23–R25, R24.1 | Истории 12–13; «Политика конфиденциальности и жизненный цикл обращения» |
+| R15 | История 18; «Вне рамок», «Открытые места» |
+| R26 | «Вне рамок» |
+| R29i–R30i | История 17; «Открытые места» |
+| G06 | Истории 14–16; «Политика конфиденциальности и жизненный цикл обращения» |

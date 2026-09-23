@@ -1,6 +1,7 @@
 import type { NavigationItem } from "./types";
 import { catalogCategories } from "./catalog";
 import { getPublishedInformationPages } from "./content";
+import { privacyNotice } from "./privacy";
 import { getCatalogCategoryPath } from "@/lib/catalog/query";
 
 const productNavigation: readonly NavigationItem[] = catalogCategories.flatMap(
@@ -37,4 +38,12 @@ export const navigation: readonly NavigationItem[] = [
   },
   { id: "gallery", label: "Galleria", href: "/fi/galleria" },
   { id: "contact", label: "Yhteystiedot", href: "/fi/yhteystiedot" },
+];
+
+export const footerLegalNavigation: readonly NavigationItem[] = [
+  {
+    id: "privacy",
+    label: privacyNotice.title,
+    href: privacyNotice.path,
+  },
 ];

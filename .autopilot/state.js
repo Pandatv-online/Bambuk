@@ -1,7 +1,7 @@
 window.STATE =
 {
   "slug": "catalog-content-telegram-forms",
-  "dir": "2026-09-12-catalog-content-telegram-forms",
+  "dir": "2026-09-12-catalog-content-telegram-forms--wip",
   "title": "Bambuk Finland — katalogi, sisältösivut ja Telegram-lomakkeet",
   "mode": "semi",
   "depth": "normal",
@@ -11,21 +11,21 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-12T16:56:46+03:00",
-  "updatedAt": "2026-09-20T03:10:00+03:00",
-  "finishedAt": "2026-09-20T03:10:00+03:00",
+  "updatedAt": "2026-09-23T02:40:55+03:00",
+  "finishedAt": null,
   "stages": [
-    { "id": "preflight", "status": "done", "startedAt": "2026-09-12T16:56:46+03:00", "finishedAt": "2026-09-12T16:58:00+03:00", "note": "configured repository; previous run archived; existing next-env.d.ts change preserved" },
-    { "id": "manifest", "status": "done", "startedAt": "2026-09-12T16:58:00+03:00", "finishedAt": "2026-09-12T17:00:35+03:00" },
-    { "id": "briefing", "status": "skipped", "startedAt": "2026-09-12T17:00:35+03:00", "finishedAt": "2026-09-12T17:00:35+03:00", "note": "вопросов не потребовалось — пользователь прямо отложил недостающую информацию; безопасные placeholders определены" },
-    { "id": "spec", "status": "done", "startedAt": "2026-09-12T17:00:35+03:00", "finishedAt": "2026-09-12T17:12:00+03:00" },
-    { "id": "plan", "status": "done", "startedAt": "2026-09-12T17:12:00+03:00", "finishedAt": "2026-09-12T17:20:00+03:00", "note": "9 тасков, ярус T3, 5 волн" },
-    { "id": "build", "status": "done", "startedAt": "2026-09-12T17:20:00+03:00", "finishedAt": "2026-09-20T03:10:00+03:00", "note": "функциональность построена; безопасная финальная Vitest-acceptance заблокирована производительностью worker-ов среды" },
-    { "id": "review", "status": "done", "startedAt": "2026-09-12T23:42:00+03:00", "finishedAt": "2026-09-20T03:10:00+03:00", "note": "таски 03–09 приняты; unsafe QA-конфигурация ticket 11 отклонена и откатана" },
-    { "id": "final", "status": "done", "startedAt": "2026-09-20T03:02:00+03:00", "finishedAt": "2026-09-20T03:10:00+03:00", "note": "run завершён как incomplete: G4 не принят, потому что независимый runtime и финальная безопасная QA не прошли в этой среде" }
+    { "id": "preflight", "status": "done", "startedAt": "2026-09-23T01:36:02+03:00", "finishedAt": "2026-09-23T01:47:00+03:00", "note": "продолжение после получения домена, реквизитов, гарантийного срока, срока хранения данных и Telegram-настроек" },
+    { "id": "manifest", "status": "done", "startedAt": "2026-09-23T01:40:00+03:00", "finishedAt": "2026-09-23T01:47:00+03:00" },
+    { "id": "briefing", "status": "done", "startedAt": "2026-09-23T01:47:00+03:00", "finishedAt": "2026-09-23T01:47:00+03:00", "note": "вопросов не потребовалось: факты подтверждены брифом, а недостающие email/visit permission честно остаются release placeholders" },
+    { "id": "spec", "status": "done", "startedAt": "2026-09-23T01:47:00+03:00", "finishedAt": "2026-09-23T01:53:40+03:00", "note": "домен, registry provenance, гарантия 12 месяцев, безопасный Telegram setup и финская privacy policy специфицированы; независимая проверка закрыла шесть coverage gaps" },
+    { "id": "plan", "status": "done", "startedAt": "2026-09-23T01:53:40+03:00", "finishedAt": "2026-09-23T01:57:15+03:00", "note": "T1 continuation: two dense end-to-end tickets in two serial waves; ticket 12 establishes company/domain/commercial boundary, ticket 13 consumes it for privacy disclosure" },
+    { "id": "build", "status": "done", "startedAt": "2026-09-23T01:58:58+03:00", "finishedAt": "2026-09-23T14:27:50Z", "note": "ticket 13 accepted after disclosure and calendar-date repair" },
+    { "id": "review", "status": "done", "startedAt": "2026-09-23T02:14:34+03:00", "finishedAt": "2026-09-23T14:27:50Z", "note": "manifest/spec and craft re-review passed" },
+    { "id": "final", "status": "active", "startedAt": "2026-09-23T14:27:50Z" }
   ],
   "requirements": {
-    "total": 30, "done": 0, "inTicket": 25, "inSpec": 0,
-    "placeholder": 4, "deferred": 1, "dropped": 0
+    "total": 37, "done": 15, "inTicket": 15, "inSpec": 0,
+    "placeholder": 5, "deferred": 1, "dropped": 1
   },
   "tickets": [
     { "id": "01", "title": "Каталог как проверяемые данные", "requirements": ["R07", "R08", "R09", "R10", "R11", "R12", "R13", "R16", "R17", "R27i"], "blockedBy": [], "wave": 1, "zone": ["data/catalog/", "lib/catalog/", "scripts/catalog/", "public/images/products/", "public/documents/products/", "tests/catalog-import*", "docs/catalog-import-report.md"], "status": "done", "startedAt": "2026-09-12T17:23:00+03:00", "finishedAt": "2026-09-13T11:10:00+03:00", "retries": 2, "repairs": 2, "repairFindings": ["Unsourced reconciliation invented missing names/URLs/categories and false provenance", "Brand was inferred from coating tokens", "Required duplicate-slug/unit/orphan-category validation was absent", "Pricing provenance used checkedAt instead of extractedAt", "NotReady records entered the public quote-eligible selector", "Published price accepted missing source URL or fallback extraction date", "Normalized slug collision invalidated only the later record", "Published pricing public type allowed nullable provenance despite runtime invariant"], "handoffs": 1, "files": [".firecrawl/catalog-products-2026-09-12.json", "data/catalog/", "lib/catalog/", "scripts/catalog/", "public/images/products/", "tests/catalog-import.test.ts", "tests/catalog-import-registry.test.ts", "docs/catalog-import-report.md"], "tests": { "passed": 27, "failed": 0 }, "commit": "1e56166", "concerns": ["42 incomplete source records remain internal/report-only; 66 are active", "0 source documents were discovered"] },
@@ -39,9 +39,11 @@ window.STATE =
     { "id": "09", "title": "Интеграция, SEO и итоговая проверка", "requirements": ["R01-R25", "R27i-R30i"], "blockedBy": ["02", "03", "04", "05", "06", "07", "08"], "wave": 5, "zone": ["app/fi/page.tsx", "data/homepage.ts", "data/navigation.ts", "lib/seo.ts", "styles/globals.css", "tests/integration*", "tests/foundation-route.test.ts", "tests/content-registries.test.ts", "scripts/browser-qa.mjs", "docs/implementation-inputs.md"], "status": "done", "startedAt": "2026-09-19T14:47:35+03:00", "finishedAt": "2026-09-20T00:12:00+03:00", "retries": 0, "repairs": 2, "repairFindings": ["Integration made legacy static-homepage assertions contradict live controlled registries and functional quote routes", "Review found incomplete browser-form QA coverage, narrow content scan and stale gallery ledger"], "handoffs": 0, "tests": { "passed": 87, "failed": 0 } },
     { "id": "10", "title": "Стабильность финальной QA", "requirements": ["R01-R25", "R27i-R30i"], "blockedBy": ["09"], "wave": 6, "zone": ["tests/catalog-import.test.ts", "tests/inquiry-forms-interactions.test.tsx", "tests/gallery-interactions.test.tsx", "tests/integration-routes-seo.test.tsx", "tests/product-pages-gallery.test.tsx"], "status": "blocked", "startedAt": "2026-09-20T00:12:00+03:00", "finishedAt": "2026-09-20T02:01:00+03:00", "retries": 1, "repairs": 0, "handoffs": 0, "blocker": "Vitest default file isolation incurs cold worker startup and an internal worker-response timeout; a clean gallery run passes 3/3 with --no-isolate, so the required configuration boundary lies outside ticket 10." },
     { "id": "11", "title": "Переиспользование worker'ов Vitest", "requirements": ["R01-R25", "R27i-R30i"], "blockedBy": ["10"], "wave": 7, "zone": ["vitest.config.ts", "tests/catalog-import.test.ts", "tests/inquiry-forms-interactions.test.tsx", "tests/integration-routes-seo.test.tsx", "tests/gallery-interactions.test.tsx", "tests/product-pages-gallery.test.tsx"], "status": "blocked", "startedAt": "2026-09-20T02:02:00+03:00", "finishedAt": "2026-09-20T03:02:00+03:00", "retries": 0, "repairs": 2, "handoffs": 0, "repairFindings": ["Global isolate:false reuses module/mocker and jsdom state between files; existing cleanup is insufficient to prove independent suites.", "The documented vmThreads pool preserves per-file VM isolation but focused interaction tests still exceed their unchanged 15-second timeout under one reusable worker; baseline was restored."], "blocker": "No supported worker-reuse configuration simultaneously passed the focused suite and preserved file/module/DOM isolation in this constrained QA environment. No application or assertion defect was evidenced." }
+    ,{ "id": "12", "title": "Оператор, домен и единая коммерческая граница", "requirements": ["R01", "R02", "R06", "R11", "R12", "R13", "R14", "R16", "R17", "R18", "R27i", "R28i", "R30i", "G01", "G02", "G03", "G04", "G05"], "blockedBy": [], "wave": 8, "zone": ["lib/site-config.ts", "lib/seo.ts", "data/ company-commercial provenance", ".env.example", "docs/ implementation-inputs", "tests/site-config/seo/commercial"], "status": "done", "startedAt": "2026-09-23T01:58:58+03:00", "finishedAt": "2026-09-23T02:24:55+03:00", "retries": 0, "repairs": 1, "handoffs": 0, "repairFindings": ["Contact-facing UI omitted the explicit FI/EE served-market wording required by R02 and Story 2."], "tests": { "passed": 89, "failed": 0, "focused": 23, "typecheck": "passed", "lint": "passed" }, "commit": "6d661cb", "concerns": ["Env-example and metadata-origin regression checks could be strengthened; recorded for final triage."] }
+    ,{ "id": "13", "title": "Политика конфиденциальности и раскрытие в формах", "requirements": ["R18", "R23", "R24", "R25", "G02", "G03", "G06"], "blockedBy": ["12"], "wave": 9, "zone": ["app/fi/tietosuoja", "data/privacy.ts", "components/forms", "components/navigation/site-footer.tsx", "data/navigation.ts", "docs/inquiry-retention-procedure.md", "tests/privacy-policy.test.tsx", "tests/inquiry-forms-routes.test.tsx", "tests/inquiries-transport.test.ts"], "status": "done", "startedAt": "2026-09-23T02:24:55+03:00", "finishedAt": "2026-09-23T14:27:50Z", "retries": 0, "repairs": 1, "handoffs": 0, "repairFindings": ["Privacy notice omitted the form-open timing field used by anti-spam validation", "Calendar-month deadline overflowed on leap day"], "tests": { "focused": 11, "full": 93, "typecheck": "passed", "lint": "passed", "build": "passed with NEXT_PUBLIC_SITE_URL" } }
   ],
   "singlePass": null,
-  "tests": { "passed": 87, "failed": 0, "typecheck": "passed", "lint": "passed", "build": "passed", "at": "2026-09-20T00:12:00+03:00", "finalQa": "blocked: standard baseline suite was previously green, but no safe worker-reuse configuration completed the focused final-acceptance set in this constrained environment" },
+  "tests": { "passed": 93, "failed": 0, "typecheck": "passed", "lint": "passed", "build": "passed with NEXT_PUBLIC_SITE_URL=https://bamboopro.fi", "at": "2026-09-23T14:27:50Z", "finalQa": "browser acceptance pending; full isolated Vitest suite passed" },
   "debt": {
     "placeholders": ["R06 — финальный домен", "R15 — содержание, территория и условия монтажа", "R29i — адрес для визита", "R30i — Business ID/VAT/address/email/legal fields", "VAT scope, delivery geography and warranty terms"],
     "assumptions": ["Текущий live LT catalog snapshot от 2026-09-12 является рабочим источником до передачи master data"],
@@ -49,15 +51,17 @@ window.STATE =
   },
   "additions": [],
   "coverage": {
-    "findings": 4,
+    "findings": 14,
     "resolved": [
-      "Made every discovered public document locally downloadable or publication-blocking in the ingest report",
-      "Defined the Telegram inquiry workflow as one structured notification followed by manager contact",
-      "Confirmed missing address and installation scope are explicit user-authorized placeholders, not omitted requirements",
-      "Confirmed the remaining additions are requirement-bound depth decisions rather than unattached capabilities"
+      "R15: installation is now explicitly a fact-free quote path while scope, territory and conditions remain a named placeholder",
+      "G02/G03: secure configured delivery is implemented, but the user alone enters a rotated replacement credential and no live message is sent during work",
+      "R11: every active item repeats the source-snapshot amount and unit without conversion",
+      "R12/R13/R16: all active imported items explicitly show in-stock, sample and delivery-included states with only their unknown boundaries deferred",
+      "R14: viewing samples is possible by pre-arranged phone visit; the registered address is not misrepresented as a showroom",
+      "The remaining eight non-brief details are attached depth decisions: R06 indexing/release, G06 Article-13/retention, R18 security/failure states, R07–R10 provenance, R30 readiness and safe-QA protection"
     ],
-    "recheck": "pass_with_user_authorized_placeholders",
-    "note": "Повторная независимая проверка подтвердила Telegram-процесс и локальные документы; единственные неполные пункты — явно отложенные пользователем реквизиты, адрес и условия монтажа. Дополнительные решения привязаны к требованиям как необходимая глубина реализации."
+    "recheck": "pass_after_spec_revision_with_named_placeholders",
+    "note": "Независимый читатель видел только бриф и спецификацию. Он нашёл 2 непокрытых, 4 частично покрытых и 8 углубляющих решений; после доработки все пользовательские пункты либо реализуемо покрыты, либо остаются явно названными placeholders, которые нельзя заполнить без фактов."
   },
   "concerns": [
     "ticket 01 · scripts/catalog/import-reference-catalog.mjs:16 — generated artifact boundary relies on --noCheck/double cast rather than runtime validation",
@@ -72,6 +76,8 @@ window.STATE =
     ,"ticket 03 · app/fi/tuotteet/page.tsx:30 — breadcrumb is rebuilt outside the shared presenter"
     ,"ticket 03 · tests/catalog-routes.test.tsx:19 — mobile modal lifecycle lacks interaction coverage"
     ,"ticket 03 · tests/catalog-query.test.ts:43 — sort assertions do not independently cover every direction"
+    ,"ticket 12 · tests/site-config.test.ts:11 — env-example check does not reject extra or duplicate nonempty assignments"
+    ,"ticket 12 · tests/seo.test.ts:11 — metadata-origin check does not cover both null and localhost production inputs"
   ],
   "concernTriage": {
     "fixNow": [],
@@ -88,7 +94,7 @@ window.STATE =
       "Tickets 10–11: a safe Vitest configuration preserving file/module/DOM isolation could not complete the focused interaction set within existing test limits; unsafe isolate:false was reverted."
     ]
   },
-  "reviewers": { "manifestSpec": "/root/review_spec", "craft": "/root/review_craft", "ticket11": "/root/ticket11_reviewer" },
+  "reviewers": { "manifestSpec": "/root/ticket12_manifest_reviewer", "craft": "/root/ticket12_craft_reviewer", "ticket11": "/root/ticket11_reviewer" },
   "blind": {
     "gate": "G4",
     "verdict": "not_accepted",

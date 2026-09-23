@@ -1,4 +1,4 @@
-import { navigation } from "@/data";
+import { footerLegalNavigation, navigation } from "@/data";
 import { siteConfig } from "@/lib/site-config";
 
 import { Container } from "../ui/container";
@@ -41,6 +41,18 @@ export function SiteFooter() {
               ) : null}
             </div>
           ))}
+          {footerLegalNavigation.length ? (
+            <div className="site-footer__group">
+              <p className="site-footer__heading">Tietoa sivustosta</p>
+              <ul>
+                {footerLegalNavigation.map((item) => (
+                  <li key={item.id}>
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </nav>
       </Container>
     </footer>

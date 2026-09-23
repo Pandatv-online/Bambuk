@@ -1,4 +1,5 @@
 import type { Inquiry } from "./types";
+import { getInquiryDeletionDeadline } from "./retention";
 
 export const TELEGRAM_MESSAGE_MAX_CHARACTERS = 4_096;
 
@@ -16,7 +17,10 @@ const label = (value: string | number | boolean): string =>
 const line = (title: string, value: string | number | boolean | null): string | null =>
   value === null || value === "" ? null : `<b>${title}:</b> ${label(value)}`;
 
-export function formatInquiryMessage(inquiry: Inquiry): string {
+export function formatInquiryMessage(
+  inquiry: Inquiry,
+  receivedAt: number = Date.now(),
+): string {
   const title = inquiry.type === "contact"
     ? "Yhteydenotto"
     : inquiry.type === "quote"
@@ -52,6 +56,7 @@ export function formatInquiryMessage(inquiry: Inquiry): string {
     line("Viesti", inquiry.message),
     line("Lähdesivu", inquiry.sourceUrl),
     line("Lähetystunniste", inquiry.idempotencyKey),
+    line("Poistettava viimeistään", getInquiryDeletionDeadline(receivedAt)),
   );
   return lines.filter((item): item is string => item !== null).join("\n");
 }

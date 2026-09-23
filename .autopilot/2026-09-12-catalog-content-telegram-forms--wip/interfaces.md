@@ -4,89 +4,91 @@
 
 | Модуль | Владеет | Выставляет | Прячет |
 |---|---|---|---|
-| `company-config` | Osaühing IKB facts, nullable legal fields, release readiness | `siteConfig`, `getReleaseReadiness()` | env/defaults and missing-field policy |
-| `catalog-source` | raw reference extraction and normalization | `importReferenceCatalog(raw) -> ImportResult` | source parsing, translation mapping and rejection report |
-| `catalog-data` | categories, collections, products and provenance | typed registries and selectors | storage layout and raw source records |
-| `catalog-query` | URL facets, sorting and pagination | `parseCatalogQuery()`, `queryProducts()` | normalization and facet counting |
-| `catalog-ui` | catalog/category/product presentation | CatalogShell, filters, cards, grids, product-detail presenters | responsive composition |
-| `content-data` | Finnish information-page and FAQ records | route-keyed published content selectors | source translation/provenance files |
-| `gallery-data-ui` | rights-recorded media and scene filters | gallery selectors and accessible lightbox | focus/scroll/modal state |
-| `inquiry-schema` | contact/quote/sample normalization and validation | typed schemas and field errors | coercion, honeypot and anti-repeat fields |
-| `inquiry-transport` | outbound Telegram delivery | `sendInquiry(inquiry)` | Telegram API, timeout, escaping and credentials |
-| `inquiry-ui` | forms and status states | reusable form variants | client submission state |
-| `routes-seo` | route registry, metadata and noindex policy | navigation/breadcrumbs/canonical metadata | route resolution and release gating |
+| `company-config` | подтверждённые поля Osaühing IKB, public origin и release readiness | `siteConfig`, `getReleaseReadiness(config?, environment?)` | env parsing, missing-field policy и provenance storage |
+| `commercial-content` | единый опубликованный срок гарантии и source-bound commercial copy | typed commercial state для cards/product/detail/CTA | место хранения и legacy text cleanup |
+| `privacy-content` | финский policy text, 12-month retention и form disclosure | route-keyed content/metadata selector | copy composition и legal-review gate |
+| `inquiry-schema` | реальные поля inquiry, validation и минимизация данных | typed schema/field errors | honeypot/anti-repeat normalisation |
+| `inquiry-transport` | server-only Telegram delivery result | `sendInquiry(inquiry) -> result` | credentials, escaping, timeout, provider network |
+| `routes-seo` | navigation, footer/form policy links и noindex metadata | route registry and `createPageMetadata` | route resolution/indexability detail |
+| `catalog-data-ui` | products, filters, product pages, info and gallery | typed selectors/presenters | import evidence, rendering layout and per-SKU provenance |
 
-Primary test seams: `importReferenceCatalog`, `queryProducts`, product/content selectors, `getReleaseReadiness`, inquiry schemas/transport adapter and rendered route outcomes. Tests mock outbound Telegram; they never send a real message.
+Primary test seams are `siteConfig`/`getReleaseReadiness`,
+`createPageMetadata`, commercial state, inquiry schema/transport and rendered
+route outcomes. Tests mock any provider boundary and never hold a live secret.
 
 ## Правила проекта
 
-- Next.js 16 App Router, React 19, TypeScript 5.9 strict, Tailwind CSS 4. Server Components by default.
-- Use Node `22.22.3` from `.nvmrc`. Commands: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`.
-- Read `AGENTS.md` and all five mandatory docs before editing. Use exact Finnish wording from the content map where available.
-- Product data never lives in JSX. Missing values remain absent/null and must not be invented or copied between SKUs.
-- Reference URLs, Lithuanian company details and remote reference-site requests must not appear in visitor HTML.
-- Local assets need `rightsId`, source URL and applicability. Every discovered public product document is downloaded or the affected record is marked not ready.
-- Osaühing IKB is an Estonian company serving Finland and Estonia. Publish no distributor/manufacturer relationship claim.
-- Confirmed public facts: phone `+358 50 508 0808`, `ma–pe 8.00–18.00`, all imported active products in stock, samples available, delivery included subject to offer applicability, warranty 5 years subject to written terms.
-- Domain, company IDs, address, email, privacy/legal text, VAT scope, installation scope/area/terms and Telegram credentials remain explicit missing inputs.
-- Never request, store or print Telegram secret values. `.env.example` contains names only; tests always mock outbound network.
-- Do not install a dependency. If a required dependency is missing, return `BLOCKED` with the exact need.
-- Preserve unrelated user changes, especially the pre-existing `next-env.d.ts` modification.
+- Next.js 16 App Router, React 19, strict TypeScript and Tailwind CSS 4. Use
+  Node `22.22.3` from `.nvmrc`.
+- Before editing application code, content, styles, configuration, routes or
+  assets, read `AGENTS.md` and all five governing documents in full:
+  `docs/reference-site-audit.md`, `docs/finland-site-architecture.md`,
+  `docs/design-system.md`, `docs/component-inventory.md` and
+  `docs/content-map.md`. Read the relevant guide under `node_modules/next/dist/docs/`
+  before using a Next.js API or convention.
+- Commands: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`.
+  Preserve the baseline Vitest isolation/pool configuration. Narrow focused
+  tests are acceptable evidence when the known environment worker blocker
+  recurs; never use `isolate: false` as a workaround.
+- Product data remains outside JSX. Missing facts stay null/absent; provenance
+  is product-specific. Reference URLs, raw extracts, Lithuanian business data
+  and remote source requests never enter visitor HTML.
+- Osaühing IKB is the public Estonian site operator for FI/EE customers. Do not
+  claim distributor/manufacturer relationships. Confirmed facts are registry
+  code `10161031`, VAT `EE100414305`, registered address `Mere pst 2, 40231
+  Sillamäe linn`, phone `+358 50 508 0808`, hours `ma–pe 8.00–18.00`, domain
+  `https://bamboopro.fi`, 12-month warranty, active-stock/sample status and
+  delivery included subject to its existing offer guard.
+- The registered address is not a showroom or visit address. Email, visit
+  permission, installation scope/area/terms, warranty scope and VAT/delivery
+  boundaries remain explicit placeholders.
+- Telegram values are secret operational configuration. Do not ask for, print,
+  store, commit, test with, or send the redacted token/chat ID. `.env.example`
+  contains names only. The user puts freshly rotated values in ignored
+  `.env.local`; tests mock all outbound provider traffic.
+- Privacy text must accurately reflect the final form schema, state that the
+  operator deletes inquiry data and operational copies after 12 months, and
+  remain release-review-gated until the Telegram transfer and legal text are
+  verified. Do not invent analytics, cookies, IP collection, marketing or a
+  provider-region claim.
+- No deploy, DNS change, live Telegram message, dependency installation or
+  changes outside the assigned ticket zone. A missing dependency returns
+  `BLOCKED` with the exact need. Preserve unrelated working-tree changes.
 
-## Ownership discipline
+## Existing public seams retained
 
-- Edit only the ticket zone. If a necessary file belongs to another ticket, report it rather than editing across the boundary.
-- Do not edit `.autopilot/state.js`, the manifest, interfaces or dashboard; only the orchestrator owns those.
-- Do not commit. Return changed files, checks, requirement coverage and concerns in at most 25 lines.
+- `siteConfig`, `getReleaseReadiness(config?, environment?)` and exported types
+  remain the only company/release boundary.
+- `createPageMetadata(input, config?)` remains the metadata boundary.
+- `sendInquiry(inquiry) -> Promise<InquiryDeliveryResult>` remains the only
+  outbound inquiry transport boundary.
+- `parseInquiryPayload(payload, options?)` and the three public form presenters
+  remain the inquiry validation/UI boundary.
+- Catalog route, query and selector seams stay unchanged unless an acceptance
+  criterion proves a commercial-content change needs them.
 
-## Из таска 01 — каталог
+## Из таска 12 — оператор, домен и коммерческая граница
 
-- `importReferenceCatalog(raw): CatalogImportResult` — единственная точка normalizer/validation для raw Firecrawl snapshot; missing source fields stay nullable and invalid relations are rejected.
-- `catalogCategories`, `catalogProducts`, `catalogImportReport` — generated typed registries and reconciliation report.
-- `getCatalogCategoryById(id)`, `getCatalogProductById(id)`, `getReadyCatalogProducts()`, `getQuoteEligibleCatalogProducts()` — public selectors; quote-eligible returns active records only and nobody may bypass it with raw filtering.
-- `ProductPricing = HiddenPricing | PublishedPricing`; the published arm requires string `sourceUrl` and `extractedAt`, while hidden provenance remains nullable. `CatalogSource.url/extractedAt` and `CatalogProduct.nameFi/nameSource/categoryId` remain nullable when source facts are missing; `brand` is null without an explicit source field.
-- Issues include `invalid-source-date`, `invalid-price-provenance`, `duplicate-normalized-slug`; a slug collision invalidates every participant deterministically.
-- Current generated snapshot: 108 traceable internal products, 66 active/quote-eligible, 42 report-only `notReady`, 294 local image files and 0 discovered product documents.
+- `siteConfig` сохраняет единую публичную идентичность Osaühing IKB, включая
+  registry/VAT/registered-address provenance, а `getReleaseReadiness(config?,
+  environment?)` удерживает нераскрытые email, visit permission, privacy review
+  и live Telegram setup как blockers.
+- `getMetadataBase(config?, environment?) -> URL` — единственная metadata-origin
+  boundary; configured public origin is `https://bamboopro.fi`, production never
+  falls back to localhost.
+- `PublishedWarranty` является единым typed commercial value для 12-month
+  wording; presentation does not own a second warranty duration.
+- Server env names remain `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`; values
+  are never part of data/config/test public interfaces.
 
-## Из таска 02 — компания и оболочка
+## Из таска 13 — политика и раскрытие в формах
 
-- `siteConfig.company.registrationCountry: "EE" | null` and `servedMarkets: readonly ("FI" | "EE")[]` distinguish the Estonian operator from served markets.
-- `siteConfig.contact.phoneHref: tel:${string} | null` and `visitWording: string | null` are the shared public contact values.
-- `getReleaseReadiness(config?, environment?) -> ReleaseReadiness` keeps domain/address/IDs/email/privacy/form configuration as blockers; relationship wording is intentionally not required or public.
-- Shared header, mobile navigation and footer render Osaühing IKB, `+358 50 508 0808`, `ma–pe 8.00–18.00` and visit-by-phone wording from config.
-
-## Из таска 03 — каталог и фильтры
-
-- `parseCatalogQuery(searchParams, source?) -> ParsedCatalogQuery` normalizes known repeated facets, sort and page values.
-- `queryProducts(query, source?) -> CatalogQueryResult` is the only public filtering/sorting/pagination seam and defaults to the 66 active quote-eligible records.
-- `getCatalogFacets(source?) -> CatalogFacets` derives available filters from the provided active source.
-- `createCatalogUrl(query, patch?) -> /fi/tuotteet${string}` preserves/canonicalizes URL state.
-- `getCatalogCategoryPath(id, categories?)` and `getCatalogProductPath(product, categories?)` return a controlled local path or null.
-- `CatalogShell`, `CatalogFilters`, `CatalogProductCard` own the responsive listing UI; product detail rendering remains ticket 05.
-- `getCatalogAttributeLabel(facet, sourceValue) -> string | null`; unmapped source-locale values return null and are excluded from public facets.
-
-## Из таска 04 — Telegram-заявки
-
-- `parseInquiryPayload(payload, options?) -> InquiryValidationResult`, `contactInquirySchema`, `quoteInquirySchema` and `sampleInquirySchema` provide the shared validation seam.
-- `sendInquiry(inquiry) -> Promise<InquiryDeliveryResult>` is the sole public transport surface; Telegram credentials, formatter, timeout and transport constructor remain internal.
-- `POST /api/inquiries` accepts JSON/form-data and returns typed responses; it stops oversized streamed bodies early and keeps multipart boundaries intact.
-
-## Из таска 05 — страницы товаров
-
-- `resolveCatalogRoute(segments) -> ResolvedCatalogRoute | null` and `getCatalogRouteParams()` are the controlled catch-all route seam.
-- `CategoryDetailPage`, `ProductDetailPage` and `ProductGallery` render data-driven outcomes; the catch-all has `dynamicParams = false` and owns static params/metadata.
-
-## Из таска 06 — информационные страницы
-
-- `getPublishedInformationHub()`, `getPublishedInformationPages()` and route-keyed published slug/path selectors expose only visitor-safe published records.
-- `PublishedInformationPage.relatedCategoryLinks` contains visitor-safe category links; raw registries, source locators, audit and provenance/review fields stay internal.
-
-## Из таска 07 — галерея
-
-- `getGalleryPresentationItems(scene?)`, `getGalleryItemsByScene()` and `getGalleryOgImage()` are the public gallery seam; presentation records omit rights, source and product provenance.
-- Raw gallery records stay internal and carry `GallerySource.url: https://${string}` plus rights metadata for every local asset.
-
-## Из таска 08 — контактные формы
-
-- Public forms barrel exports only `ContactForm`, `QuoteForm` and `SampleRequestForm`; the low-level generic form remains internal.
-- Form variants use `POST /api/inquiries`, typed responses and shared `siteConfig` contact/company values; no UI code owns Telegram credentials or duplicated company facts.
+- `privacyNotice` и `getPrivacyNoticeByPath(path: LocalPath)` — единственный
+  route-keyed source финского privacy copy, schema-aligned categories and the
+  explicit 12-month operator-retention boundary.
+- `footerLegalNavigation` владеет visitor-facing legal link; public forms reuse
+  the same controlled `/fi/tietosuoja` route rather than hard-code a second
+  policy URL.
+- `sendInquiry(inquiry)` stays unchanged. Internal `TelegramTransportOptions`
+  accepts optional `now?: () => number` solely to format a manual deletion
+  deadline in the operator notification; no persistence/deletion API is exposed.

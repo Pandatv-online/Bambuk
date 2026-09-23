@@ -91,35 +91,36 @@ No implementation code existed when these rules were created. Preserve unrelated
 
 ### Overview
 
-This is a Finnish, quote-led site built with Next.js 16.3.4 App Router, React 19.3, TypeScript 5.9 strict and Tailwind 4.3. The configured operator is `Osaühing IKB`, registered in EE and serving FI/EE; manufacturer fields and relationship wording are null, so no relationship claim is rendered. The public implementation now covers `/fi`, catalog/listing and static catalog details, information guides, gallery/lightbox, contact/quote/sample pages, and `POST /api/inquiries`; `/` permanently redirects to `/fi`.
+Finnish, quote-led site on Next.js 16.3.4 App Router, React 19.3, strict TypeScript 5.9 and Tailwind 4.3. `Osaühing IKB` is the configured Estonian operator serving FI/EE; manufacturer identity and relationship wording remain null. `/` permanently redirects to `/fi`. The implemented visitor routes cover the homepage, catalog and static product details, information guides, gallery/lightbox, contact/quote/sample forms and `/fi/tietosuoja`; inquiries go to `POST /api/inquiries`.
 
-### Verified commands
+### Commands and environment
 
-Node 22.22.3 is required by `.nvmrc` and `package.json` engines; do not assume `nvm` exists in a noninteractive shell. `npm test` (87 passed), `npm run typecheck`, `npm run lint`, and `npm run build` (webpack) have passed. Use `npm install` for the lockfile dependency set and `npm run dev` for local work.
+Node 22.22.3 is pinned in `.nvmrc` and constrained by `package.json`; do not assume `nvm` exists in a noninteractive shell. Verified: `npm test` (93/93), `npm run typecheck`, `npm run lint`, and `npm run build` with `NEXT_PUBLIC_SITE_URL` set to the public origin. `npm run build` uses webpack and fails without `NEXT_PUBLIC_SITE_URL` because `getMetadataBase` rejects an absent or localhost production origin. `npm run dev` is the local development script.
+
+Environment names only: `NEXT_PUBLIC_SITE_URL` supplies canonical/metadata origin; `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` enable server-side delivery; `CHROME_DEVTOOLS_URL`, `QA_SITE_URL`, `QA_VIEWPORTS`, `QA_SCREENSHOT_MODE`, and `QA_CDP_TIMEOUT_MS` configure browser QA. Do not print or commit secret values. `scripts/browser-qa.mjs` needs a running site and Chrome DevTools, exercises four viewports and writes captures under `/tmp`.
 
 ### Structure and public boundaries
 
 - `data/catalog/catalog.generated.json` is the catalog snapshot; `data/catalog/index.ts` exports registries/selectors. `lib/catalog/import-reference-catalog.ts` is the normalization boundary; `lib/catalog/query.ts` owns query parsing, facets, filtering, sort, pagination and controlled paths.
 - `components/catalog/product/catalog-route.ts` resolves static catch-all category/product routes; `app/fi/tuotteet/[...segments]/page.tsx` has `dynamicParams = false`. Product/category presenters, cards and filters remain data-driven.
 - `data/content/pages.ts` keeps provenance-bearing authoring records private and exposes only published projections through `data/content`; `data/gallery/registry.ts` retains media source/rights records while `data/gallery` exposes safe gallery projections.
-- `lib/site-config.ts` owns `siteConfig` and `getReleaseReadiness`; `lib/seo.ts` owns `createPageMetadata`/`getMetadataBase`. The inquiry seam is `parseInquiryPayload`, typed schemas, `sendInquiry`, and `createInquiryPostHandler`; the forms barrel exposes only `ContactForm`, `QuoteForm`, and `SampleRequestForm`.
-- Key routes are `app/fi/tuotteet/page.tsx`, `app/fi/tietoa-bambusta/`, `app/fi/galleria/`, `app/fi/yhteystiedot/`, `app/fi/pyyda-tarjous/`, and `app/fi/tilaa-mallipala/`; shared navigation is generated from catalog/content data in `data/navigation.ts`.
+- `data/company.ts` holds registry provenance; `data/commercial.ts` supplies the single published 12-month warranty value. `lib/site-config.ts` owns `siteConfig` and `getReleaseReadiness`; `lib/seo.ts` owns `createPageMetadata` and `getMetadataBase`.
+- `data/privacy.ts` owns `privacyNotice` and `getPrivacyNoticeByPath`; `app/fi/tietosuoja/page.tsx` renders its noindex policy. `data/navigation.ts` exports `footerLegalNavigation`, and all three forms link to the same controlled policy path.
+- `parseInquiryPayload` and typed schemas validate the three forms; `createInquiryPostHandler` handles the API, and `sendInquiry` is the only outbound transport boundary. `lib/inquiries/retention.ts` owns the 12-month deadline calculation used by `lib/inquiries/message.ts`. `components/forms/index.ts` exposes `ContactForm`, `QuoteForm`, and `SampleRequestForm`.
+- Key routes live under `app/fi/tuotteet/`, `app/fi/tietoa-bambusta/`, `app/fi/galleria/`, `app/fi/yhteystiedot/`, `app/fi/pyyda-tarjous/`, and `app/fi/tilaa-mallipala/`; shared navigation is generated from catalog/content data in `data/navigation.ts`.
 
 ### Conventions and gotchas
 
 - The catalog has 22 categories and 108 normalized products: 66 `active`/quote-eligible and 42 `notReady`; it has 294 local product images, no mapped documents, and explicit provenance/readiness issues. Do not bypass active selectors or derive facts from a slug or similar SKU.
-- Product cards/details presently render the record's published-price, in-stock, sample, delivery and warranty fields directly; 44 records have `pricing.status === "published"`. These are snapshot data, despite feature flags being false, so release requires commercial revalidation rather than a UI-only toggle.
+- Product cards/details render record-level published price, stock, sample, delivery and warranty fields; 44 records have `pricing.status === "published"`. These are snapshot data despite disabled feature flags, so commercial facts need revalidation before release.
 - Product URLs are derived only by `getCatalogCategoryPath`/`getCatalogProductPath`; filtering goes only through `parseCatalogQuery` and `queryProducts`. Keep raw source URLs, rights metadata and review fields out of visitor projections/HTML.
-- Guide and gallery status/metadata, catalog metadata and form metadata are noindex; `createPageMetadata` defaults to noindex. There are no sitemap, robots, structured-data, installation, about, privacy, search or error-route implementations yet.
-- All forms post to `/api/inquiries`; the API limits bodies, validates timing/honeypot/idempotency, rejects files, and uses process-local duplicate suppression. Telegram transport is server-only, timeout-bounded and must stay behind its adapter; outbound delivery is always mocked in tests.
-
-### Environment and QA
-
-Environment names only: `NEXT_PUBLIC_SITE_URL`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `CHROME_DEVTOOLS_URL`, `QA_SITE_URL`, `QA_VIEWPORTS`, `QA_SCREENSHOT_MODE`, and `QA_CDP_TIMEOUT_MS`. Never commit or print their values. `scripts/browser-qa.mjs` needs a running site plus Chrome DevTools, covers four viewports, catalog/gallery journeys and simulated form states, and writes captures under `/tmp`.
+- `createPageMetadata` defaults to noindex; catalog, guide, gallery, form and privacy routes remain noindex. Homepage indexing also depends on `getReleaseReadiness`. Sitemap, robots, structured data, dedicated installation/about/search and error routes are not implemented.
+- The API limits bodies, validates timing/honeypot/idempotency, rejects files and suppresses duplicates in process memory. Telegram transport is server-only and timeout-bounded; tests mock outbound delivery.
+- Privacy copy matches the form schema and states operator retention of inquiries and working copies for 12 months. Telegram notifications include a calculated deletion deadline. `docs/inquiry-retention-procedure.md` describes manual monthly deletion; the app has no inquiry database or automatic Telegram/provider deletion. Legal review and Telegram transfer details remain release blockers.
 
 ### Tests and handoff
 
-Vitest coverage is organized under `tests/` for site config/SEO/navigation, catalog import/query/routes/product galleries, content claims/routes, gallery data/interactions/routes, inquiries/API/transport/forms, and integration routes. Production readiness remains blocked until all required company, domain, contact, legal and form fields are configured; current pages intentionally stay non-indexable. Preserve existing uncommitted work (including `next-env.d.ts`), keep facts outside JSX, and rerun only the checks proportionate to an edited surface.
+Vitest coverage under `tests/` spans config/SEO/navigation, catalog import/query/routes, content/gallery, privacy, inquiries/API/transport/forms and integration routes. `getReleaseReadiness` still reports missing email, visit approval, privacy review, delivery terms and form destination for production; the configured public origin alone does not make pages indexable. Preserve unrelated working-tree changes, including `next-env.d.ts` and `.firecrawl/` research files.
 <!-- autopilot:end -->
 
 <!-- BEGIN:nextjs-agent-rules -->

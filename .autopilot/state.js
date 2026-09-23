@@ -1,7 +1,7 @@
 window.STATE =
 {
   "slug": "catalog-content-telegram-forms",
-  "dir": "2026-09-12-catalog-content-telegram-forms--wip",
+  "dir": "2026-09-12-catalog-content-telegram-forms",
   "title": "Bambuk Finland — katalogi, sisältösivut ja Telegram-lomakkeet",
   "mode": "semi",
   "depth": "normal",
@@ -11,8 +11,8 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "/Users/roman/.agents/skills/autopilot",
   "startedAt": "2026-09-12T16:56:46+03:00",
-  "updatedAt": "2026-09-23T02:40:55+03:00",
-  "finishedAt": null,
+  "updatedAt": "2026-09-23T14:34:27Z",
+  "finishedAt": "2026-09-23T14:34:27Z",
   "stages": [
     { "id": "preflight", "status": "done", "startedAt": "2026-09-23T01:36:02+03:00", "finishedAt": "2026-09-23T01:47:00+03:00", "note": "продолжение после получения домена, реквизитов, гарантийного срока, срока хранения данных и Telegram-настроек" },
     { "id": "manifest", "status": "done", "startedAt": "2026-09-23T01:40:00+03:00", "finishedAt": "2026-09-23T01:47:00+03:00" },
@@ -21,7 +21,7 @@ window.STATE =
     { "id": "plan", "status": "done", "startedAt": "2026-09-23T01:53:40+03:00", "finishedAt": "2026-09-23T01:57:15+03:00", "note": "T1 continuation: two dense end-to-end tickets in two serial waves; ticket 12 establishes company/domain/commercial boundary, ticket 13 consumes it for privacy disclosure" },
     { "id": "build", "status": "done", "startedAt": "2026-09-23T01:58:58+03:00", "finishedAt": "2026-09-23T14:27:50Z", "note": "ticket 13 accepted after disclosure and calendar-date repair" },
     { "id": "review", "status": "done", "startedAt": "2026-09-23T02:14:34+03:00", "finishedAt": "2026-09-23T14:27:50Z", "note": "manifest/spec and craft re-review passed" },
-    { "id": "final", "status": "active", "startedAt": "2026-09-23T14:27:50Z" }
+    { "id": "final", "status": "done", "startedAt": "2026-09-23T14:27:50Z", "finishedAt": "2026-09-23T14:34:27Z", "note": "independent HTTP acceptance completed; partial brief coverage and release blockers reported" }
   ],
   "requirements": {
     "total": 37, "done": 15, "inTicket": 15, "inSpec": 0,
@@ -45,7 +45,7 @@ window.STATE =
   "singlePass": null,
   "tests": { "passed": 93, "failed": 0, "typecheck": "passed", "lint": "passed", "build": "passed with NEXT_PUBLIC_SITE_URL=https://bamboopro.fi", "at": "2026-09-23T14:27:50Z", "finalQa": "browser acceptance pending; full isolated Vitest suite passed" },
   "debt": {
-    "placeholders": ["R06 — финальный домен", "R15 — содержание, территория и условия монтажа", "R29i — адрес для визита", "R30i — Business ID/VAT/address/email/legal fields", "VAT scope, delivery geography and warranty terms"],
+    "placeholders": ["R15 — содержание, территория и условия монтажа", "R29i — адрес для визита", "R30i — email and legal review", "VAT scope, delivery geography and warranty terms", "R07–R10 — 42 incomplete catalog records and no discovered documents"],
     "assumptions": ["Текущий live LT catalog snapshot от 2026-09-12 является рабочим источником до передачи master data"],
     "emptyEnv": ["NEXT_PUBLIC_SITE_URL", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]
   },
@@ -82,27 +82,26 @@ window.STATE =
   "concernTriage": {
     "fixNow": [],
     "report": [
-      "Final browser acceptance could not be repeated because localhost/CDP access and production compilation stalled in this environment; the first independent Chrome scenario did exercise catalog, product, filters, gallery and a disabled-unconfigured form path.",
+      "Independent HTTP acceptance passed for homepage, catalog, product, guide, gallery, forms and privacy after local bind escalation; interactive browser QA and live Telegram delivery were not exercised.",
       "Several non-blocking review findings remain as future hardening: product resolver/category identity, gallery modal interaction coverage, form hydration/error/focus edges, and a few narrow route/filter assertions.",
-      "Catalog ingest still has 42 non-ready source records, zero discovered source documents, and image verification is only a non-zero-byte check."
+      "Catalog ingest still has 42 non-ready source records, zero discovered source documents, and image verification is only a non-zero-byte check.",
+      "The privacy-policy test is coupled to exact wording in the internal retention procedure; the behavior and public contract were covered by focused tests."
     ],
     "drop": [
       "Minor footer copy duplication, internal breadcrumb composition, and stylistic review observations do not justify a release hold.",
       "The suspected unreachable import issue was not reproduced as a visitor-facing defect."
     ],
-    "blocked": [
-      "Tickets 10–11: a safe Vitest configuration preserving file/module/DOM isolation could not complete the focused interaction set within existing test limits; unsafe isolate:false was reverted."
-    ]
+    "blocked": []
   },
   "reviewers": { "manifestSpec": "/root/ticket12_manifest_reviewer", "craft": "/root/ticket12_craft_reviewer", "ticket11": "/root/ticket11_reviewer" },
   "blind": {
     "gate": "G4",
-    "verdict": "not_accepted",
-    "runtime": "Independent acceptance could not complete a live /fi scenario: dev-server binding/compilation was blocked or stalled in this environment; browser QA also lacked a Chrome DevTools endpoint.",
-    "implemented": "The independent checker found Osaühing IKB shell facts, 22 categories/108 imported products (66 active), catalog/product/info/gallery/contact routes and Telegram-backed form routes.",
-    "partial": "Commercial/legal facts, source-document coverage, complete image coverage, price coverage, installation scope and Telegram delivery credentials remain incomplete or intentionally gated.",
-    "drift": ["Manifest in-ticket rows cannot be treated as fully accepted while the live scenario and final safe QA remain unverified."],
-    "commands": ["npm run dev -- --hostname 127.0.0.1", "node scripts/browser-qa.mjs", "npm test"],
-    "status": "incomplete"
+    "verdict": "accepted_with_open_requirements",
+    "runtime": "Production build passed with NEXT_PUBLIC_SITE_URL; direct next start served /fi, catalog, product, guide, gallery, three forms and privacy with HTTP 200, / with 308 and unknown path with 404. Live Telegram and interactive browser journeys were not exercised.",
+    "implemented": "Independent checker confirmed Osaühing IKB FI/EE identity, contact facts, no distributor claim, controlled catalog/filter/product/info/gallery/form routes, Teatmik facts and privacy page.",
+    "partial": "42 of 108 products remain notReady, zero source documents were found, 27 of 66 active products show price, installation scope/area are absent, live Telegram is unconfigured, and actual 12-month deletion requires operator execution.",
+    "drift": ["R06 marked done but production use of bamboopro.fi was not verified; configuration only was verified.", "R11–R13 and R16 marked done but the independent checker found incomplete assortment/price coverage and unconfirmed commercial boundaries.", "G06 marked done as draft policy, while independent legal review and actual deletion remain unverified."],
+    "commands": ["npm test: 93/93 passed", "npm run typecheck: passed", "npm run lint: passed", "NEXT_PUBLIC_SITE_URL=https://bamboopro.fi npm run build: passed", "NEXT_PUBLIC_SITE_URL=https://bamboopro.fi ./node_modules/.bin/next start --hostname 127.0.0.1 --port 3100: Ready after local bind approval", "HTTP smoke: expected 200/308/404 outcomes passed"],
+    "status": "completed_with_gaps"
   }
 }

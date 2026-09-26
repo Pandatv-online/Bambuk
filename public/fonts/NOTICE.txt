@@ -1,0 +1,4 @@
+Open Sans Condensed, Light 300 and Bold 700 (Latin and Latin Extended WOFF2 subsets)
+Copyright © 2010–2011 Google Corporation. Designed by Steve Matteson.
+Source: https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap
+License: Apache License, Version 2.0 (see APACHE-2.0.txt).

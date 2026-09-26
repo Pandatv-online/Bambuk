@@ -13,7 +13,7 @@ Every relevant page should make these roles understandable:
 | Role | Owns / supplies | How the site presents it |
 |---|---|---|
 | Manufacturer / original brand | Product brand, approved product facts, technical documents, manufacturer warranties/certifications where applicable | Named as manufacturer/brand, linked to factual product content, never shown as the Finnish contracting company unless legally true |
-| `[OUR COMPANY NAME]` | Finnish sales relationship, offers, invoicing, local contact, delivery terms and customer service | Site owner and Finnish distributor in header context, About, Contact, footer, forms, legal metadata |
+| `[OUR COMPANY NAME]` | Finnish sales relationship, offers, invoicing, local contact, delivery terms and customer service | Site owner and Finnish distributor identified in Contact, footer, forms, and legal metadata; the header mark does not display the operator name |
 | Finnish installation service | Survey, quotation, service scope, areas and installation delivery | A first-class service under `[OUR COMPANY NAME]` or its disclosed installation partner, once confirmed |
 
 Required launch placeholders:
@@ -159,7 +159,7 @@ Recommended top-level order:
 6. Yhteystiedot
 7. `Pyydä tarjous` primary action
 
-Search and locale controls remain utilities. The logo/lockup includes or sits beside a concise distributor descriptor. The deep product hierarchy lives under Tuotteet; information leaf pages live under Tietoa bambusta.
+Search and locale controls remain utilities. The header shows the BAMBU mark without the operator name; Contact and footer identify the Finnish site operator. The deep product hierarchy lives under Tuotteet; information leaf pages live under Tietoa bambusta.
 
 ### Mobile
 
@@ -201,7 +201,7 @@ CTA context must travel into the form: product ID, collection/category, desired 
 
 Order follows the reference homepage, with purposeful Finland adaptations:
 
-1. **Header** — brand ecosystem, Finnish distributor identity, navigation, search, quote CTA.
+1. **Header** — BAMBU mark, navigation, search, quote CTA; operator identity remains accessible through Contact and footer.
 2. **Hero** — approved interior/terrace photograph, natural Finnish proposition, `Tutustu tuotteisiin` and `Pyydä tarjous`.
 3. **About bamboo flooring** — concise factual introduction and link to information hub.
 4. **Main product categories** — reference-style image card grid in the approved Finnish assortment order.
@@ -391,4 +391,3 @@ No implementation stage starts until the preceding content/data dependencies are
 11. Final domain and analytics/consent choices.
 
 These are content and operating inputs, not reasons to alter the approved component/data architecture.
-

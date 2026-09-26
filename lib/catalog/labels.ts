@@ -70,6 +70,8 @@ const exactProductNames: Readonly<Record<string, string>> = {
     "Massiivibambulattia – karbonisoitu sävy, Treffert UV-lakka",
   "Bambuko terasinės grindys - dassoXTR' R137 - Espresso spalva":
     "Bambuterassilauta – dassoXTR' R137, Espresso-sävy",
+  "Bambuko terasinės grindys - dassoCTECH' V137- Coffee spalva":
+    "Bambuterassilauta – dassoCTECH' V137, Coffee-sävy",
   "Vertikalaus / šoninio presavimo bambuko plokštė - 3 sluoksniai - Natūrali spalva":
     "Sivupuristettu bambulevy – 3-kerroksinen, luonnollinen sävy",
   "Bambuko masyvo grindjuostė - Natūrali spalva - UV Treffert Lakas":

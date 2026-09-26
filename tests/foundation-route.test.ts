@@ -9,13 +9,24 @@ import { homepageContent } from "../data/homepage";
 describe("Finnish homepage", () => {
   it("renders the approved section order and an honest quotation path", () => {
     const html = renderToStaticMarkup(FinnishHomepage());
-    const featuredProducts = getQuoteEligibleCatalogProducts().slice(0, 3);
+    const featuredProducts = getQuoteEligibleCatalogProducts().slice(0, 5);
     const galleryItems = getGalleryPresentationItems();
 
     expect(html).toContain(homepageContent.title);
     expect(html.match(/<h1/g)).toHaveLength(1);
     expect(html).toContain('href="/fi/pyyda-tarjous"');
     expect(html).toContain('href="/fi/tuotteet"');
+    for (const id of ["2", "21", "5", "3", "7", "6", "26"]) {
+      expect(html).toContain(
+        encodeURIComponent(`/images/categories/catalog_${id}_1s150.jpg`),
+      );
+    }
+    const categorySection = html.slice(
+      html.indexOf('id="tuoteryhmat"'),
+      html.indexOf('id="galleria"'),
+    );
+    expect(categorySection.match(/homepage-catalog-card__media/g)).toHaveLength(7);
+    expect(categorySection).not.toContain('data-nimg="fill"');
     for (const product of featuredProducts) {
       expect(html).toContain(`data-product-id="${product.id}"`);
     }

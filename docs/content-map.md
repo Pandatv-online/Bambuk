@@ -29,7 +29,7 @@ Status: content plan for approval before implementation. No Lithuanian business 
 | Installation | Finnish service summary, areas/status, image and CTA | Service scope pending | Installation / quote |
 | Technical guides | Three evergreen guide cards | Manufacturer technical source + Finnish editing | Guide pages |
 | Final CTA | Quote/contact expectation and response channel | Distributor operations pending | Quote/contact |
-| Footer | Finnish legal/contact, product/info/service links, relationship statement | Business/legal data pending | Relevant routes |
+| Footer | Finnish legal/contact, product/info/service links, relationship statement, `verzo.pro` design/development credit | Business/legal data pending; credit supplied by project owner | Relevant routes |
 
 Recommended hero direction, not final copy:
 
@@ -260,4 +260,3 @@ Never expose language controls that lead to partial, machine-translated, duplica
 - Forms have real destinations, privacy copy and tested success/error paths.
 - Finnish copy is human-reviewed; `bambuparketti` and sustainability language are used precisely.
 - SEO metadata is unique and structured data contains no invented offers/reviews.
-

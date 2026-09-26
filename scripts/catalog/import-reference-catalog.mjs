@@ -34,12 +34,28 @@ execFileSync(
 );
 
 const require = createRequire(import.meta.url);
-const { importReferenceCatalog } = require(
+const { applySupplementalMedia, applySupplementalProductEvidence, importReferenceCatalog } = require(
   path.join(temporaryBuild, "lib/catalog/import-reference-catalog.js"),
 );
 const rawPath = path.join(projectRoot, ".firecrawl/catalog-products-2026-09-12.json");
 const raw = JSON.parse(await readFile(rawPath, "utf8"));
-const result = importReferenceCatalog(raw);
+const supplementalPath = path.join(projectRoot, "data/catalog/supplemental-media-2026-09-23.json");
+const supplemental = JSON.parse(await readFile(supplementalPath, "utf8"));
+const productEvidencePath = path.join(projectRoot, "data/catalog/supplemental-products-2026-09-23.json");
+const productEvidence = JSON.parse(await readFile(productEvidencePath, "utf8"));
+const installationEvidencePath = path.join(projectRoot, "data/catalog/supplemental-installation-products-2026-09-25.json");
+const installationEvidence = JSON.parse(await readFile(installationEvidencePath, "utf8"));
+const correctedCategoryIds = supplemental.products.filter((correction) => {
+  const original = raw.data.products.find((product) => String(product.sourceId) === correction.sourceId);
+  const lastCategoryUrl = original?.categoryBreadcrumb?.at(-1)?.url ?? "";
+  return !lastCategoryUrl.includes(`/category/${correction.categoryId}/`);
+}).map((correction) => correction.sourceId);
+const result = importReferenceCatalog(
+  applySupplementalProductEvidence(
+    applySupplementalProductEvidence(applySupplementalMedia(raw, supplemental), productEvidence),
+    installationEvidence,
+  ),
+);
 
 const dataDirectory = path.join(projectRoot, "data/catalog");
 await mkdir(dataDirectory, { recursive: true });
@@ -60,6 +76,17 @@ const documents = [
       .map((document) => [document.file, document]),
   ).values(),
 ];
+const categoryImages = supplemental.categories.map((category) => {
+  const url = new URL(category.imageUrl);
+  const filename = url.pathname.split("/").at(-1);
+  if (
+    url.protocol !== "https:" || url.hostname !== "www.bambukogrindys.lt" ||
+    !filename?.match(new RegExp(`^catalog_${category.sourceId}_[a-zA-Z0-9_-]+\\.(?:jpe?g|png)$`, "u"))
+  ) {
+    throw new Error(`Invalid category image source for ${category.sourceId}`);
+  }
+  return { sourceUrl: category.imageUrl, src: `/images/categories/${filename}` };
+});
 
 const download = async (sourceUrl, visitorPath, expectedType) => {
   const target = path.join(projectRoot, "public", visitorPath.slice(1));
@@ -101,9 +128,13 @@ const runPool = async (items, worker) => {
 };
 
 let imageResults = [];
+let categoryImageResults = [];
 let documentResults = [];
 if (downloadAssets) {
   imageResults = await runPool(images, (image) =>
+    download(image.sourceUrl, image.src, "image/"),
+  );
+  categoryImageResults = await runPool(categoryImages, (image) =>
     download(image.sourceUrl, image.src, "image/"),
   );
   documentResults = await runPool(documents, (document) =>
@@ -123,6 +154,9 @@ const verifiedLocalImages = (
 ).filter(Boolean).length;
 const verifiedLocalDocuments = (
   await Promise.all(documents.map((document) => localFileExists(document.file)))
+).filter(Boolean).length;
+const verifiedLocalCategoryImages = (
+  await Promise.all(categoryImages.map((image) => localFileExists(image.src)))
 ).filter(Boolean).length;
 const finalizedResult = {
   ...result,
@@ -176,11 +210,18 @@ The 2026-09-11 URL audit found 130 unique LT product URLs. The current structure
 | Unique source images | ${result.report.uniqueSourceImages} |
 | Local image mappings | ${result.report.mappedLocalImages} |
 | Local image files verified | ${verifiedLocalImages} |
+| Supplemental category images verified | ${verifiedLocalCategoryImages} |
 | Source documents | ${result.report.sourceDocuments} |
 | Local document mappings | ${result.report.mappedLocalDocuments} |
 | Local document files verified | ${verifiedLocalDocuments} |
 
 ## Readiness and omissions
+
+The 2026-09-12 extraction is preserved unchanged. Product media missing from it was supplemented with source-linked captures dated ${supplemental.extractedAt}: ${supplemental.products.filter((product) => product.images.length > 0).length} products gained local images, and ${supplemental.categories.length} category thumbnails were recovered. Live category/detail evidence also corrected the assignments of source products ${correctedCategoryIds.join(", ")}. Source product 178 still has no observed image, so its placeholder remains. Supplemental sources and applicable IDs are recorded in \`data/catalog/supplemental-media-2026-09-23.json\`.
+
+The live LT terrace-board category dated ${productEvidence.extractedAt} supplied source-linked titles, canonical product links, and category membership for ${productEvidence.products.length} existing product IDs. The corresponding Finnish listings are quote-only until Finnish commercial data is approved; the LT prices remain in the untouched raw extraction and are not published for these products. Evidence is recorded in \`data/catalog/supplemental-products-2026-09-23.json\`.
+
+The LT installation-product pages checked on ${installationEvidence.extractedAt} restored products 187 and 559 to the Finnish quote catalog. Product 187 has two source-linked local images. The image shown on the source page for the 11 kg WAKOL product depicts a 2.5 kg canister, so product 559 uses a manufacturer image from the official WAKOL PU 280 page showing an 11.0 kg canister. Evidence is recorded in \`data/catalog/supplemental-installation-products-2026-09-25.json\`.
 
 Missing fields remain null and make their record not ready; they are never reconstructed from slugs, neighboring records or conflicting captures. Duplicate IDs are skipped. A price is publishable only with complete amount/currency/basis plus a valid product source URL and raw extraction date. Invalid prices, provenance, specification units, media, documents and relations are omitted and reported. The extraction exposed no product documents, so no document file was inferred from unrelated pages.
 
@@ -203,6 +244,8 @@ console.log(
     images: images.length,
     documents: documents.length,
     downloadedImages: imageResults.filter((value) => value === "downloaded").length,
+    downloadedCategoryImages: categoryImageResults.filter((value) => value === "downloaded").length,
+    verifiedCategoryImages: verifiedLocalCategoryImages,
     existingImages: imageResults.filter((value) => value === "existing").length,
     downloadedDocuments: documentResults.filter((value) => value === "downloaded").length,
     existingDocuments: documentResults.filter((value) => value === "existing").length,

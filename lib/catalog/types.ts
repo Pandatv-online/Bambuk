@@ -37,9 +37,9 @@ export type ProductPricing =
       currency: null;
       basis: null;
       vatDisplay: null;
-      checkedAt: "2026-09-12";
-      checkedLabelFi: "Tarkistettu 12.9.2026";
-      vatConfirmationFi: "ALV-käsittely vahvistetaan tarjouksessa";
+      checkedAt: "2026-09-12" | null;
+      checkedLabelFi: "Tarkistettu 12.9.2026" | null;
+      vatConfirmationFi: "ALV-käsittely vahvistetaan tarjouksessa" | "Hinta vahvistetaan tarjouksessa";
       sourceUrl: string | null;
       extractedAt: string | null;
     }>

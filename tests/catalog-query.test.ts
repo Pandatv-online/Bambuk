@@ -62,7 +62,7 @@ describe("catalog query boundary", () => {
     ]);
   });
 
-  it("queries only the 66 quote-eligible records with stable server pagination", () => {
+  it("queries only the 84 quote-eligible records with stable server pagination", () => {
     const allProducts = queryProducts(parseCatalogQuery({}).query);
     const lastPage = queryProducts(parseCatalogQuery({ sivu: "99" }).query);
     const floors = queryProducts(
@@ -72,12 +72,13 @@ describe("catalog query boundary", () => {
       parseCatalogQuery({ jarjestys: "hinta" }).query,
     );
 
-    expect(allProducts.totalItems).toBe(66);
-    expect(allProducts.totalPages).toBe(3);
+    expect(allProducts.totalItems).toBe(84);
+    expect(allProducts.totalPages).toBe(4);
     expect(allProducts.items).toHaveLength(24);
-    expect(lastPage.page).toBe(3);
-    expect(lastPage.items).toHaveLength(18);
-    expect(floors.totalItems).toBe(20);
+    expect(lastPage.page).toBe(4);
+    expect(lastPage.items).toHaveLength(12);
+    expect(floors.totalItems).toBe(21);
+    expect(floors.items.some((product) => product.id === "615")).toBe(true);
     expect(floors.items.every((product) => product.collectionId !== null)).toBe(true);
     expect(prices.items[0]?.pricing).toMatchObject({
       status: "published",

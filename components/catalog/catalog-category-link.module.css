@@ -1,0 +1,38 @@
+.card {
+  display: flex;
+  min-height: 7rem;
+  overflow: hidden;
+  border: 1px solid rgb(128 101 69 / 22%);
+  border-radius: var(--radius-default);
+  background: linear-gradient(135deg, var(--color-surface-cream), var(--color-brand-beige));
+  color: var(--color-text-strong);
+  text-decoration: none;
+}
+
+.card:hover,
+.card:focus-visible { border-color: var(--color-action-green); background: white; }
+
+.media {
+  flex: 0 0 9.375rem;
+  align-self: stretch;
+  min-height: 7rem;
+  background: white;
+}
+
+.media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: .25rem;
+  padding: 1.25rem;
+}
+
+.text strong { color: var(--color-text-strong); font-size: 1.25rem; }
+.text > span { color: var(--color-text-brown); font-size: .875rem; }
+
+@media (max-width: 32rem) {
+  .media { flex-basis: 7rem; }
+}

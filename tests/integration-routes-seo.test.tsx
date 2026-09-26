@@ -237,11 +237,11 @@ describe("integration routes and SEO", () => {
       "utf8",
     );
 
-    expect(galleryItems).toHaveLength(8);
+    expect(galleryItems).toHaveLength(66);
     expect(galleryItems.every(({ src, alt, rightsId }) =>
       src.startsWith("/images/") && alt.length > 0 && rightsId.startsWith("reference-gallery-"),
     )).toBe(true);
-    expect(implementationInputs).toContain("8 nonempty local records");
+    expect(implementationInputs).toContain("8 interior records and 58 terrace records");
     expect(implementationInputs).toContain("Remaining gallery rights and release blockers");
   });
 });

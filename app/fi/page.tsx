@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { CatalogProductCard } from "@/components/catalog/listing";
 import { GalleryExperience } from "@/components/gallery";
@@ -13,11 +14,15 @@ import {
   Section,
 } from "@/components/ui";
 import { homepageContent } from "@/data";
-import { catalogCategories, getQuoteEligibleCatalogProducts } from "@/data/catalog";
+import {
+  catalogCategories,
+  getCatalogCategoryMedia,
+  getQuoteEligibleCatalogProducts,
+} from "@/data/catalog";
 import { getPublishedInformationPages } from "@/data/content";
 import {
   gallerySceneFilters,
-  getGalleryPresentationItems,
+  getHomepageGalleryPresentationItems,
 } from "@/data/gallery";
 import { getCatalogCategoryPath } from "@/lib/catalog/query";
 import { createPageMetadata } from "@/lib/seo";
@@ -26,9 +31,14 @@ import { getReleaseReadiness } from "@/lib/site-config";
 const homepageCategories = catalogCategories.flatMap((category) => {
   if (category.parentId !== "0") return [];
   const href = getCatalogCategoryPath(category.id);
-  return href ? [{ id: category.id, href, label: category.nameFi }] : [];
+  return href ? [{
+    id: category.id,
+    href,
+    label: category.nameFi,
+    media: getCatalogCategoryMedia(category),
+  }] : [];
 });
-const homepageProducts = getQuoteEligibleCatalogProducts().slice(0, 3);
+const homepageProducts = getQuoteEligibleCatalogProducts().slice(0, 5);
 const homepageGuides = getPublishedInformationPages().slice(0, 3);
 
 const homepageIsIndexable =
@@ -96,8 +106,29 @@ export default function FinnishHomepage() {
           <div className="homepage-catalog-grid">
             {homepageCategories.map((category) => (
               <a className="homepage-catalog-card" href={category.href} key={category.id}>
-                <span>{category.label}</span>
-                <small>Tutustu tuoteryhmään</small>
+                {category.media ? (
+                  <div className="homepage-catalog-card__media">
+                    <Image
+                      alt=""
+                      width={800}
+                      height={450}
+                      sizes="(min-width: 61.25rem) 25vw, (min-width: 48rem) 50vw, 100vw"
+                      src={category.media.src}
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        height: "auto",
+                        maxHeight: "180px",
+                        aspectRatio: "16 / 9",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                ) : null}
+                <div className="homepage-catalog-card__content">
+                  <strong style={{ display: "block" }}>{category.label}</strong>
+                  <small style={{ display: "block" }}>Tutustu tuoteryhmään</small>
+                </div>
               </a>
             ))}
           </div>
@@ -118,7 +149,7 @@ export default function FinnishHomepage() {
           </header>
           <GalleryExperience
             filters={gallerySceneFilters}
-            items={getGalleryPresentationItems()}
+            items={getHomepageGalleryPresentationItems()}
           />
           <Button href="/fi/galleria" variant="text">
             Avaa koko galleria

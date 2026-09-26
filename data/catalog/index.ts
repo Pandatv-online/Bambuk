@@ -1,4 +1,6 @@
 import generatedCatalog from "./catalog.generated.json";
+export { getCatalogCategoryMedia } from "./category-media";
+export type { CatalogCategoryMedia } from "./category-media";
 import type {
   CatalogCategory,
   CatalogImportReport,

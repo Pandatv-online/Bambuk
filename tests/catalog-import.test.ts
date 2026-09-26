@@ -1,12 +1,70 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
 import rawCatalog from "../.firecrawl/catalog-products-2026-09-12.json";
-import { importReferenceCatalog } from "../lib/catalog/import-reference-catalog";
+import supplementalMedia from "../data/catalog/supplemental-media-2026-09-23.json";
+import terraceEvidence from "../data/catalog/supplemental-products-2026-09-23.json";
+import installationEvidence from "../data/catalog/supplemental-installation-products-2026-09-25.json";
+import {
+  applySupplementalMedia,
+  applySupplementalProductEvidence,
+  importReferenceCatalog,
+} from "../lib/catalog/import-reference-catalog";
 import type { ProductPricing } from "../lib/catalog";
 
 const catalogImportTimeout = 15_000;
 
 describe("reference catalog import", () => {
+  it("restores the two installation products without publishing Lithuanian prices", () => {
+    const base = applySupplementalProductEvidence(
+      applySupplementalMedia(rawCatalog, supplementalMedia),
+      terraceEvidence,
+    );
+    const result = importReferenceCatalog(
+      applySupplementalProductEvidence(base, installationEvidence),
+    );
+    const products = result.products.filter((product) => ["187", "559"].includes(product.id));
+
+    expect(products).toHaveLength(2);
+    expect(products.every((product) =>
+      product.status === "active" &&
+      product.categoryId === "6" &&
+      product.pricing.status === "hidden" &&
+      product.source.extractedAt === "2026-09-25",
+    )).toBe(true);
+    expect(products.find((product) => product.id === "187")?.images).toHaveLength(2);
+    expect(products.find((product) => product.id === "559")?.images).toMatchObject([{
+      src: "/images/products/product_559_1.png",
+      rightsId: "wakol-official-product-559",
+      applicableProductIds: ["559"],
+    }]);
+
+    const forged = structuredClone(installationEvidence);
+    forged.products[0]!.images[0]!.url = "https://www.bambukogrindys.lt/uploads/e_catalog/product_559_1.jpg";
+    expect(() => applySupplementalProductEvidence(base, forged)).toThrow(/Image evidence does not belong/u);
+  });
+
+  it("restores only source-linked terrace records while withholding LT prices", () => {
+    const base = applySupplementalMedia(rawCatalog, supplementalMedia);
+    const supplemented = applySupplementalProductEvidence(base, terraceEvidence);
+    const result = importReferenceCatalog(supplemented);
+    const terraceIds = new Set(terraceEvidence.products.map((item) => item.sourceId));
+    const terrace = result.products.filter((product) => product.categoryId === "32");
+
+    expect(terrace).toHaveLength(17);
+    expect(new Set(terrace.map((product) => product.id))).toEqual(terraceIds);
+    expect(terrace.every((product) =>
+      product.status === "active" &&
+      product.images.length > 0 &&
+      product.pricing.status === "hidden" &&
+      product.source.extractedAt === "2026-09-23",
+    )).toBe(true);
+    expect(rawCatalog.data.products.find((product) => String(product.sourceId) === "461")?.name).toBe("");
+
+    const forged = structuredClone(terraceEvidence);
+    forged.products[0]!.sourceUrl = "https://www.bambukogrindys.lt/lt/katalogas/product/999/false/32/";
+    expect(() => applySupplementalProductEvidence(base, forged)).toThrow(/Invalid supplemental evidence/u);
+  });
+
   it("requires complete provenance in the published pricing type", () => {
     type PublishedPriceFields = {
       status: "published";

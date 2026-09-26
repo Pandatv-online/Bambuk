@@ -313,7 +313,7 @@ export async function runBrowserQa() {
           .map((url) => url.hash.slice(1));
         const externalUrls = [...anchors, ...document.querySelectorAll('img[src]')]
           .map((node) => node.href || node.currentSrc || node.src)
-          .filter((value) => value && !value.startsWith(location.origin) && !value.startsWith('data:'));
+          .filter((value) => value && /^https?:/u.test(value) && !value.startsWith(location.origin));
         const isVisible = (selector) => {
           const element = document.querySelector(selector);
           if (!element) return false;
@@ -393,11 +393,12 @@ export async function runBrowserQa() {
       }
       const dialog = document.querySelector('dialog#catalog-filter-dialog');
       const dialogOpened = mobileFiltersVisible ? dialog?.open === true : true;
+      const visibleFilterForm = [...document.querySelectorAll('form[action="/fi/tuotteet"]')].some(visible);
       if (dialog?.open) document.querySelector('[aria-label="Sulje suodattimet"]')?.click();
       return {
         mobileFiltersVisible,
         dialogOpened,
-        visibleFilterForm: [...document.querySelectorAll('form[action="/fi/tuotteet"]')].some(visible),
+        visibleFilterForm,
         productPath: document.querySelector('article[data-product-id] a[href]')?.getAttribute('href') ?? null,
       };
     })()`);

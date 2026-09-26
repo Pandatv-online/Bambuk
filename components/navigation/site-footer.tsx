@@ -55,6 +55,9 @@ export function SiteFooter() {
           ) : null}
         </nav>
       </Container>
+      <Container className="site-footer__credit">
+        Sivuston suunnittelu ja toteutus: <a href="https://verzo.pro/">verzo.pro</a>
+      </Container>
     </footer>
   );
 }

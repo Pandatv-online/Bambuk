@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 
 import { GalleryExperience } from "@/components/gallery";
 import {
@@ -14,20 +14,21 @@ const galleryInteractionTimeout = 15_000;
 
 const presentationItems = getGalleryPresentationItems();
 
+afterEach(cleanup);
+
 describe("gallery experience", () => {
-  it("filters scenes and gives a clear empty result", async () => {
+  it("shows terrace album photos when Terassit is selected", async () => {
     const user = userEvent.setup();
     render(
       <GalleryExperience filters={gallerySceneFilters} items={presentationItems} />,
     );
 
-    expect(screen.getAllByRole("button", { name: /Avaa kuva:/u })).toHaveLength(8);
+    expect(screen.getAllByRole("button", { name: /Avaa kuva:/u })).toHaveLength(66);
     await user.click(screen.getByRole("button", { name: "Terassit" }));
 
-    expect(screen.queryAllByRole("button", { name: /Avaa kuva:/u })).toHaveLength(0);
-    expect(screen.getByRole("status").textContent).toContain(
-      "Tässä ryhmässä ei ole vielä vahvistettuja kuvia.",
-    );
+    expect(screen.getAllByRole("button", { name: /Avaa kuva:/u })).toHaveLength(58);
+    expect(screen.getByText("58 kuvaa")).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Avaa kuva: Terassi vesialtaan vieressä" })).toBeTruthy();
   }, galleryInteractionTimeout);
 
   it("navigates, traps focus, closes and restores the page", async () => {

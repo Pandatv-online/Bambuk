@@ -1,0 +1,28 @@
+{
+  "extractedAt": "2026-09-25",
+  "source": "https://www.bambukogrindys.lt/lt/katalogas/category/6/grindu-klojimo-priemones/",
+  "note": "Product pages confirm category membership. The reference-site image for WAKOL 11 kg depicts a 2.5 kg canister, so the image comes from the official WAKOL PU 280 page, which confirms 11.0 kg and shows an 11.0 kg canister. Finnish price and availability remain subject to quotation.",
+  "products": [
+    {
+      "sourceId": "187",
+      "categoryId": "6",
+      "sourceUrl": "https://www.bambukogrindys.lt/lt/katalogas/product/187/adesiver-2k-premium-epoksidiniai-poliuretaniniai-klijai-grindims-12-5-kg/",
+      "nameSource": "Adesiver 2K Premium epoksidiniai poliuretaniniai klijai grindims 12,5 kg",
+      "commercialPublication": "quoteOnly",
+      "images": [
+        { "url": "https://www.bambukogrindys.lt/uploads/e_catalog/product_187_1.jpg" },
+        { "url": "https://www.bambukogrindys.lt/uploads/e_catalog/product_187_2.jpg" }
+      ]
+    },
+    {
+      "sourceId": "559",
+      "categoryId": "6",
+      "sourceUrl": "https://www.bambukogrindys.lt/lt/katalogas/product/559/wakol-pu-280-hidroizoliacinis-poliuretaninis-gruntas-11-kg/",
+      "nameSource": "Wakol PU 280 hidroizoliacinis poliuretaninis gruntas 11 kg",
+      "commercialPublication": "quoteOnly",
+      "images": [
+        { "url": "https://www.wakol.com/ix_pim_assets/image/PU_280_360x430px_Web_Spiegelung__16791.png" }
+      ]
+    }
+  ]
+}

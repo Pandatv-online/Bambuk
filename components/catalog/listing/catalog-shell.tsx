@@ -2,8 +2,9 @@ import Link from "next/link";
 
 import { catalogCategories } from "@/data/catalog";
 import type { CatalogFacetOption, CatalogQuery, CatalogQueryResult } from "@/lib/catalog/query";
-import { createCatalogUrl, getCatalogCategoryPath } from "@/lib/catalog/query";
+import { createCatalogUrl } from "@/lib/catalog/query";
 
+import { CatalogCategoryCard } from "../catalog-category-link";
 import { CatalogFilterDialog } from "./catalog-filter-dialog";
 import { CatalogFilters } from "./catalog-filters";
 import styles from "./catalog-listing.module.css";
@@ -35,16 +36,16 @@ export function CatalogShell({
         <h2 id="catalog-categories-title">Tuoteryhmät</h2>
         <div className={styles.categoryGrid}>
           {rootCategories.map((category) => {
-            const href = getCatalogCategoryPath(category.id);
             const count = result.facets.categories.find(
               (option) => option.value === category.slugFi,
             )?.count;
-            return href ? (
-              <a className={styles.categoryCard} href={href} key={category.id}>
-                <strong>{category.nameFi}</strong>
-                {count ? <span>{count} tuotetta</span> : <span>Tutustu tuoteryhmään</span>}
-              </a>
-            ) : null;
+            return (
+              <CatalogCategoryCard
+                category={category}
+                key={category.id}
+                subtitle={count ? `${count} tuotetta` : "Tutustu tuoteryhmään"}
+              />
+            );
           })}
         </div>
       </section>
@@ -68,9 +69,6 @@ export function CatalogShell({
       ) : null}
 
       <div className={styles.catalogLayout}>
-        <aside aria-label="Tuotesuodattimet" className={styles.filterSidebar}>
-          <CatalogFilters facets={result.facets} query={query} />
-        </aside>
         <div className={styles.results}>
           {result.totalItems ? (
             <div className={styles.productGrid}>

@@ -7,7 +7,7 @@ Status: architecture specification derived from the reference site. Component na
 | Component | Reference behavior | Finnish adaptation / data needs |
 |---|---|---|
 | `SiteHeader` | Fixed translucent desktop header; warm inner-page state | Manufacturer/distributor relationship, primary quote CTA, no account/cart until enabled |
-| `BrandLockup` | Single logo | Finnish distributor name/logo plus unambiguous “authorized distributor in Finland” relationship text |
+| `BrandLockup` | Single logo | BAMBU mark without operator name in the header; footer and contact identify the site operator separately; use distributor relationship wording only when approved |
 | `DesktopNavigation` | Three-level hover dropdowns | Data-driven accessible disclosure menus, current-page state |
 | `MobileHeader` | 60 px logo, cart/settings/menu icons | Menu + locale + quote/contact; commerce icon feature-gated |
 | `MobileNavigationDrawer` | Near-full-screen drawer, dim backdrop, expanded hierarchy, embedded search | Collapsible nested groups, focus trap, escape/overlay close |
@@ -147,4 +147,3 @@ Forms must work without client-only validation, include accessible errors and cl
 - Optional fields disappear cleanly; absence renders an inquiry CTA, not fabricated fallback text.
 - All interactive components meet keyboard, focus, label, error, and reduced-motion requirements.
 - Component variants are explicit and small; do not create a one-off component for each product category.
-

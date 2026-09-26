@@ -9,8 +9,9 @@ describe("Finnish gallery route", () => {
 
     expect(html.match(/<h1/g)).toHaveLength(1);
     expect(html).toContain("Galleria");
-    expect(html).toContain("8 kuvaa");
+    expect(html).toContain("66 kuvaa");
     expect(html).toContain("%2Fimages%2Fhome%2Fproject-01.jpg");
+    expect(html).toContain("%2Fimages%2Fgallery%2Fterraces%2Fgal-6-587.webp");
     expect(html).not.toContain("/uploads/it0003/");
     expect(html).not.toContain("bambukogrindys.lt");
     expect(html).not.toMatch(/asiakkaan|projekti:\s|tuote:\s/iu);

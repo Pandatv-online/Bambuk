@@ -41,7 +41,7 @@ Recommended semantic mapping:
 
 ### Family
 
-Observed global family: **Open Sans Condensed**, with 300, italic, and 700 weights loaded from Google Fonts. The stylesheet contains older Arial declarations, but a final global override makes Open Sans Condensed the actual site voice.
+Observed global family: **Open Sans Condensed**, with 300, italic, and 700 weights loaded from Google Fonts. The stylesheet contains older Arial declarations, but a final global override makes Open Sans Condensed the actual site voice. The Finnish implementation self-hosts the original 300 and 700 upright WOFF2 faces for Latin and Latin Extended text. All site text inherits this family, with a generic sans-serif fallback while the local files load.
 
 Recommended implementation:
 
@@ -73,7 +73,7 @@ Avoid forcing uppercase on long Finnish paragraphs. Preserve uppercase for short
 - Reference section/layer padding starts around 30 px. Preserve its moderate whitespace but allow 64–96 px around homepage editorial sections on large screens when screenshots show comparable optical space.
 - Desktop grids use percentage widths and gutters. Normalize with CSS Grid while matching:
   - Category cards: two columns, approximately 49% each.
-  - Product cards: three columns, approximately 32% each.
+- Product cards: three columns, approximately 32% each, on the reference. On 2026-09-24 the user requested denser Finnish catalog rows: four columns from 980 px and five from 1200 px. The Finnish hub uses a filter dialog at desktop widths so the cards retain readable width.
   - Gallery: four columns, approximately 24% each.
   - News/guides: three columns, approximately 31.3% each.
 
@@ -116,6 +116,7 @@ Green link color is observed. Underline body-content links by default; navigatio
 ## 7. Images
 
 - Photography is the dominant visual material: bamboo grain, room interiors, terraces, products on neutral backgrounds, and completed projects.
+- The Finnish page background uses the reference's pale bamboo image `st_110.jpg` behind translucent section surfaces. The footer uses its bamboo image `st_134.png`, stored locally as an optimized WebP copy to reduce transfer size. Both source URLs are on `www.bambukogrindys.lt/uploads/skin/` and were inspected on 2026-09-24.
 - Hero: full-bleed landscape image, approximately 1920-wide source behavior; mobile crop retains the focal product/interior.
 - Category card image: about 180 px tall on desktop in the current catalog.
 - Product card: about 200 px card height with a roughly 160 px image area in legacy CSS. The Finnish site may use a consistent 4:3 media box to avoid title/image collisions while retaining the compact density.
@@ -128,9 +129,10 @@ Green link color is observed. Underline body-content links by default; navigatio
 
 - Desktop header height: about 100 px; mobile header: about 60 px.
 - Logo reference footprint: approximately 230 × 101 px desktop. The Finnish distributor mark and manufacturer relationship must fit without implying they are the same company.
+- The user-directed Finnish mark reads **BAMBU** with a bamboo shoot integrated into the final letter and **LATTIA · TERASSI** beneath it. The dot separates two product areas; it is not a break inside a Finnish compound word. The favicon uses the shoot alone at small sizes. The header omits the operator name beside the mark; the footer and contact page identify Osaühing IKB separately.
 - Desktop menu: condensed uppercase brown labels; active/hover item becomes green with white text; cream dropdowns; up to three levels.
 - Mobile: fixed header, dim backdrop, near-full-width drawer, search within navigation, settings panel for locale. Replace the reference’s always-expanded deep tree with accessible collapsible groups.
-- Footer: visually dense warm/beige area. Use clear columns for products, information, service, company/legal, and contact. Do not reproduce stale CMS links.
+- Footer: visually dense warm/beige area. Use clear columns for products, information, service, company/legal, and contact. Place the Finnish design/development credit at the right edge beneath the columns, with a bold action-green link to `https://verzo.pro/` for legibility over the bamboo background. Do not reproduce stale CMS links.
 
 ## 9. Responsive behavior
 
@@ -153,7 +155,6 @@ Recommended normalized breakpoints for Tailwind may use `sm/md/lg/xl`, but visua
 
 - Side-by-side desktop comparison preserves header proportions, warm palette, condensed display typography, catalog density, image-led section rhythm, and green CTA language.
 - Side-by-side mobile comparison preserves fixed compact header and drawer behavior while improving nesting/accessibility.
-- Distributor identity is visible in header or immediate hero context and explicit in footer/contact/about.
+- The header shows the BAMBU mark without the operator name; the site operator is explicit in footer and contact content.
 - Product pages retain technical depth and related/sample/install actions.
 - No unverified badge, certification, review score, sustainability icon, price, availability, or warranty appears as decoration.
-

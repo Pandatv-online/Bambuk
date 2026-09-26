@@ -11,9 +11,14 @@ describe("Finnish catalog hub", () => {
 
     expect(html.match(/<h1/g)).toHaveLength(1);
     expect(html).toContain("Kaikki tuotteet");
-    expect(html).toContain("66 tuotetta");
+    expect(html).toContain("84 tuotetta");
     expect(html.match(/data-product-id=/g)).toHaveLength(24);
     expect(html).toContain('href="/fi/tuotteet/sisalattiat"');
+    for (const id of ["2", "21", "5", "3", "7", "6", "26"]) {
+      expect(html).toContain(
+        encodeURIComponent(`/images/categories/catalog_${id}_1s150.jpg`),
+      );
+    }
     expect(html).toContain("Varastossa");
     expect(html).toContain("Näyte saatavilla");
     expect(html).toContain('aria-haspopup="dialog"');

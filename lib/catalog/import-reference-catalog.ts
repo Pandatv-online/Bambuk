@@ -26,6 +26,8 @@ const PRODUCT_ASSET_HOSTS = new Set([
   "bambukogrindys.lt",
   "www.bambukogrindys.lt",
 ]);
+const WAKOL_559_OFFICIAL_IMAGE =
+  "https://www.wakol.com/ix_pim_assets/image/PU_280_360x430px_Web_Spiegelung__16791.png";
 const PRICE_BASES: Readonly<Record<string, string>> = {
   "€/m²": "€/m²",
   "€/vnt": "€/kpl",
@@ -128,6 +130,152 @@ const getCategoryId = (product: UnknownRecord): number | null => {
   return match ? Number(match[1]) : null;
 };
 
+/** Merge newer, product-specific media evidence without changing the original extraction. */
+export function applySupplementalMedia(raw: unknown, supplement: unknown): unknown {
+  if (!isRecord(raw) || !isRecord(raw.data) || !isRecord(supplement)) {
+    throw new Error("Catalog media evidence must contain catalog and supplement records.");
+  }
+  if (!asIsoDate(supplement.extractedAt) || !canonicalUrl(asString(supplement.source) ?? "")) {
+    throw new Error("Catalog media evidence requires a dated approved source.");
+  }
+
+  const copy = structuredClone(raw) as UnknownRecord;
+  const data = copy.data as UnknownRecord;
+  const categories = new Map(
+    asArray(data.categories)
+      .filter(isRecord)
+      .map((category) => [sourceIdOf(category.sourceId), category] as const),
+  );
+  const products = new Map(
+    asArray(data.products)
+      .filter(isRecord)
+      .map((product) => [sourceIdOf(product.sourceId), product] as const),
+  );
+  const seen = new Set<string>();
+
+  for (const correction of asArray(supplement.products)) {
+    if (!isRecord(correction)) throw new Error("Invalid supplemental product record.");
+    const id = sourceIdOf(correction.sourceId);
+    const categoryId = sourceIdOf(correction.categoryId);
+    const product = id ? products.get(id) : null;
+    const category = categoryId ? categories.get(categoryId) : null;
+    const evidenceUrl = asString(correction.evidenceUrl);
+    const sourceUrl = asString(correction.sourceUrl);
+    if (
+      !id || seen.has(id) || !product || !category || !evidenceUrl ||
+      !canonicalUrl(evidenceUrl) ||
+      (sourceUrl && (!canonicalUrl(sourceUrl) ||
+        !new URL(sourceUrl).pathname.includes(`/product/${id}/`)))
+    ) {
+      throw new Error(`Invalid supplemental evidence for product ${id ?? "unknown"}.`);
+    }
+    seen.add(id);
+
+    const images = asArray(correction.images);
+    if (images.length > 0) {
+      if (asArray(product.images).length > 0) {
+        throw new Error(`Supplemental evidence would replace existing images for ${id}.`);
+      }
+      product.images = images.map((image) => {
+        const url = isRecord(image) ? asString(image.url) : null;
+        const officialWakolImage = id === "559" && url === WAKOL_559_OFFICIAL_IMAGE;
+        const normalized = url ? (officialWakolImage ? url : canonicalUrl(url)) : null;
+        if (!normalized || (!officialWakolImage &&
+          !new URL(normalized).pathname.match(new RegExp(`/product_${id}_[1-9]\\d*\\.(?:jpe?g|png|webp)$`, "u")))) {
+          throw new Error(`Image evidence does not belong to product ${id}.`);
+        }
+        return officialWakolImage
+          ? {
+              url: normalized,
+              localFilename: "product_559_1.png",
+              rightsId: "wakol-official-product-559",
+              caption: null,
+            }
+          : { url: normalized, caption: null };
+      });
+    }
+
+    if (getCategoryId(product) !== Number(categoryId)) {
+      const breadcrumbs: Array<{ name: string; url: string }> = [];
+      const visited = new Set<string>();
+      let current: UnknownRecord | undefined = category;
+      while (current) {
+        const currentId = sourceIdOf(current.sourceId);
+        const parentId = sourceIdOf(current.parentId);
+        if (!currentId || visited.has(currentId)) {
+          throw new Error(`Invalid supplemental category ancestry for ${id}.`);
+        }
+        visited.add(currentId);
+        if (currentId !== "0") {
+          const name = asString(current.name);
+          const url = asString(current.url);
+          if (!name || !url || !canonicalUrl(url)) {
+            throw new Error(`Invalid supplemental category source for ${id}.`);
+          }
+          breadcrumbs.unshift({ name, url });
+        }
+        current = parentId ? categories.get(parentId) : undefined;
+      }
+      product.categoryBreadcrumb = breadcrumbs;
+    }
+  }
+  return copy;
+}
+
+/** Restore product evidence while withholding unapproved Finnish commercial data. */
+export function applySupplementalProductEvidence(raw: unknown, supplement: unknown): unknown {
+  if (!isRecord(supplement)) throw new Error("Invalid product evidence supplement.");
+  const extractedAt = asIsoDate(supplement.extractedAt);
+  const source = asString(supplement.source);
+  const categoryMatch = source && canonicalUrl(source)
+    ? new URL(source).pathname.match(/^\/lt\/katalogas\/category\/(32|6)\/[^/]+\/$/u)
+    : null;
+  if (!extractedAt || !categoryMatch) {
+    throw new Error("Product evidence requires a dated approved category source.");
+  }
+  const corrections = asArray(supplement.products);
+  if (corrections.length === 0) throw new Error("Product evidence is empty.");
+  const corrected = applySupplementalMedia(raw, {
+    extractedAt,
+    source,
+    products: corrections.map((candidate) => {
+      if (!isRecord(candidate)) throw new Error("Invalid product evidence record.");
+      return {
+        sourceId: candidate.sourceId,
+        categoryId: candidate.categoryId,
+        sourceUrl: candidate.sourceUrl,
+        evidenceUrl: source,
+        images: candidate.images ?? [],
+      };
+    }),
+  }) as UnknownRecord;
+  const data = corrected.data as UnknownRecord;
+  const products = new Map(
+    asArray(data.products).filter(isRecord).map((product) => [sourceIdOf(product.sourceId), product]),
+  );
+  for (const candidate of corrections) {
+    if (!isRecord(candidate)) throw new Error("Invalid product evidence record.");
+    const id = sourceIdOf(candidate.sourceId);
+    const categoryId = sourceIdOf(candidate.categoryId);
+    const title = asString(candidate.nameSource);
+    const url = asString(candidate.sourceUrl);
+    const product = id ? products.get(id) : null;
+    if (
+      !id || !product || categoryId !== categoryMatch[1] || !title || !url ||
+      candidate.commercialPublication !== "quoteOnly" ||
+      !canonicalUrl(url) ||
+      !new URL(url).pathname.match(new RegExp(`^/lt/katalogas/product/${id}/[^/]+/(?:${categoryId}/)?$`, "u"))
+    ) {
+      throw new Error(`Invalid live category evidence for product ${id ?? "unknown"}.`);
+    }
+    product.name = title;
+    product.sourceUrl = url;
+    product.evidenceExtractedAt = extractedAt;
+    product.commercialPublication = "quoteOnly";
+  }
+  return corrected;
+}
+
 const createPricing = (
   product: UnknownRecord,
   sourceUrl: string | null,
@@ -135,6 +283,20 @@ const createPricing = (
   extractedAt: string | null,
   issues: CatalogImportIssue[],
 ): ProductPricing => {
+  if (product.commercialPublication === "quoteOnly") {
+    return {
+      status: "hidden",
+      amount: null,
+      currency: null,
+      basis: null,
+      vatDisplay: null,
+      checkedAt: null,
+      checkedLabelFi: null,
+      vatConfirmationFi: "Hinta vahvistetaan tarjouksessa",
+      sourceUrl,
+      extractedAt,
+    };
+  }
   const amount = asNumber(product.priceAmount);
   const currency = asString(product.currency);
   const sourceBasis = asString(product.priceBasis);
@@ -261,8 +423,13 @@ const normalizeImages = (
   for (const candidate of asArray(product.images)) {
     if (!isRecord(candidate)) continue;
     const sourceValue = asString(candidate.url);
-    const sourceUrl = sourceValue ? canonicalUrl(sourceValue) : null;
-    const filename = sourceUrl ? assetFilename(sourceUrl) : null;
+    const officialWakolImage = sourceId === "559" && sourceValue === WAKOL_559_OFFICIAL_IMAGE;
+    const sourceUrl = sourceValue
+      ? (officialWakolImage ? sourceValue : canonicalUrl(sourceValue))
+      : null;
+    const filename = officialWakolImage
+      ? "product_559_1.png"
+      : sourceUrl ? assetFilename(sourceUrl) : null;
     if (!sourceUrl || !filename || !/\.(?:avif|jpe?g|png|webp)$/iu.test(filename)) {
       issues.push({
         code: "invalid-image",
@@ -277,7 +444,9 @@ const normalizeImages = (
       src: `/images/products/${filename}`,
       altFi: nameFi ? `${nameFi}, kuva ${images.length + 1}` : `Tuotekuva ${images.length + 1}`,
       order: images.length + 1,
-      rightsId: `manufacturer-reference-product-${sourceId}`,
+      rightsId: officialWakolImage
+        ? "wakol-official-product-559"
+        : `manufacturer-reference-product-${sourceId}`,
       sourceUrl,
       applicableProductIds: [sourceId],
     });
@@ -470,7 +639,7 @@ export const importReferenceCatalog = (raw: unknown): CatalogImportResult => {
       });
     }
 
-    const source = createSource(sourceUrl, sourceId, extractedAt);
+    const source = createSource(sourceUrl, sourceId, asIsoDate(candidate.evidenceExtractedAt) ?? extractedAt);
     const nameFi = nameSource ? translateProductName(nameSource) : null;
     const normalizedSlug = slugifyFinnish(nameFi ?? `tuote-${sourceId}`);
     const specifications = normalizeSpecifications(candidate, source, issues);

@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { catalogCategories } from "@/data/catalog";
-import type { CatalogProduct } from "@/lib/catalog/types";
+import type { CatalogProduct, ProductSpecification } from "@/lib/catalog/types";
 import { getCatalogProductPath } from "@/lib/catalog/query";
 
 import styles from "./catalog-listing.module.css";
@@ -15,6 +15,10 @@ export function CatalogProductCard({ product }: Readonly<{ product: CatalogProdu
   const href = getCatalogProductPath(product);
   const image = [...product.images].sort((left, right) => left.order - right.order)[0];
   const category = catalogCategories.find((item) => item.id === product.categoryId);
+  const dimensions = ["Pituus", "Leveys", "Paksuus"]
+    .map((label) => product.specifications.find((specification) => specification.labelFi === label))
+    .filter((specification): specification is ProductSpecification =>
+      specification !== undefined && /^\d+(?:[.,/]\d+)*\s*mm$/u.test(specification.value));
 
   return (
     <article className={styles.productCard} data-product-id={product.id}>
@@ -30,6 +34,16 @@ export function CatalogProductCard({ product }: Readonly<{ product: CatalogProdu
           <h3>{product.nameFi}</h3>
         </div>
       )}
+      {dimensions.length > 0 ? (
+        <dl className={styles.productDimensions}>
+          {dimensions.map((dimension) => (
+            <div key={dimension.key}>
+              <dt>{dimension.labelFi}:</dt>
+              <dd>{dimension.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
       <div className={styles.commercialFacts}>
         {product.pricing.status === "published" ? (
           <p className={styles.price}>
@@ -39,9 +53,7 @@ export function CatalogProductCard({ product }: Readonly<{ product: CatalogProdu
             <small>{product.pricing.checkedLabelFi}</small>
             <small>{product.pricing.vatDisplay ?? product.pricing.vatConfirmationFi}</small>
           </p>
-        ) : (
-          <p className={styles.price}><strong>Pyydä tarjous</strong></p>
-        )}
+        ) : null}
         <ul className={styles.statusList}>
           <li>Varastossa</li>
           <li>{product.sample.labelFi}</li>
@@ -68,7 +80,7 @@ function ProductMedia({
   }
   return (
     <div className={styles.productMedia}>
-      <Image alt={image.altFi} fill sizes="(min-width: 61.25rem) 19rem, (min-width: 48rem) 45vw, 100vw" src={image.src} />
+      <Image alt={image.altFi} fill sizes="(min-width: 75rem) 14rem, (min-width: 61.25rem) 24vw, (min-width: 48rem) 45vw, 100vw" src={image.src} />
     </div>
   );
 }

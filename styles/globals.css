@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("/fonts/open-sans-condensed-300-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("/fonts/open-sans-condensed-300-latin-ext.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("/fonts/open-sans-condensed-700-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("/fonts/open-sans-condensed-700-latin-ext.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 @theme {
   --color-brand-green: #7ab157;
   --color-brand-green-link: #79bb59;
@@ -13,8 +49,8 @@
   --color-border-default: #dedede;
   --color-border-soft: #eaeaea;
   --color-border-control: #cccccc;
-  --font-sans: var(--font-open-sans), "Arial Narrow", Arial, sans-serif;
-  --font-display: "Arial Narrow", var(--font-open-sans), Arial, sans-serif;
+  --font-sans: "Open Sans Condensed", sans-serif;
+  --font-display: "Open Sans Condensed", sans-serif;
   --breakpoint-sm: 27.5rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 61.25rem;
@@ -39,6 +75,7 @@
   --space-24: 6rem;
   --surface-header-hero: rgb(250 240 230 / 80%);
   --surface-header-inner: rgb(216 198 171 / 90%);
+  --surface-page-wash: rgb(250 246 241 / 46%);
 }
 
 * {
@@ -54,18 +91,14 @@ html {
 body {
   margin: 0;
   min-width: 20rem;
-  font-family: var(--font-open-sans), "Arial Narrow", Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-body,
-button,
-a,
-input,
-select,
-textarea {
-  font-family: var(--font-open-sans), "Arial Narrow", Arial, sans-serif;
+  background: var(--color-surface-page) url("/images/backgrounds/reference-bamboo-page.jpg") no-repeat right top fixed;
+  background-size: cover;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button,
@@ -74,6 +107,13 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
 }
 
 :focus-visible {
@@ -116,15 +156,15 @@ a {
 }
 
 .section--page {
-  background: var(--color-surface-page);
+  background: var(--surface-page-wash);
 }
 
 .section--cream {
-  background: var(--color-surface-cream);
+  background: rgb(250 240 230 / 66%);
 }
 
 .section--white {
-  background: white;
+  background: rgb(255 255 255 / 76%);
 }
 
 .section--green {
@@ -136,7 +176,6 @@ a {
   margin-block: 0 var(--space-6);
   color: var(--color-text-strong);
   font-family: var(--font-display);
-  font-stretch: 75%;
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.12;
@@ -159,14 +198,13 @@ a {
 
 .heading--compact {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .eyebrow {
   margin: 0 0 var(--space-4);
   color: var(--color-text-brown);
   font-family: var(--font-display);
-  font-stretch: 75%;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -181,7 +219,8 @@ a {
   padding: var(--space-2) var(--space-6);
   border: 1px solid var(--color-action-green);
   border-radius: var(--radius-action);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 300;
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
@@ -289,25 +328,48 @@ a {
 
 .brand-lockup {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
   font-family: var(--font-display);
-  font-stretch: 75%;
   line-height: 1;
-  text-transform: uppercase;
 }
 
-.brand-lockup__name {
+.brand-lockup__logo {
+  display: block;
+  flex: none;
+  width: 9.5rem;
+  line-height: 0;
+}
+
+.brand-lockup__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brand-lockup__business {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--color-text-brown);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.brand-lockup__business strong {
   color: var(--color-text-strong);
-  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
 }
 
-.brand-lockup__descriptor {
-  margin-top: 0.25rem;
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
+.site-header .brand-lockup__business {
+  display: none;
+}
+
+@media (min-width: 75rem) {
+  .site-header .brand-lockup__business {
+    display: inline-flex;
+  }
 }
 
 .site-header__quote {
@@ -340,13 +402,8 @@ a {
     padding-inline: var(--space-3);
   }
 
-  .brand-lockup__name {
-    font-size: 0.875rem;
-    letter-spacing: 0.01em;
-  }
-
-  .brand-lockup__descriptor {
-    font-size: 0.5rem;
+  .site-header .brand-lockup__logo {
+    width: 7.75rem;
   }
 }
 
@@ -411,7 +468,6 @@ a {
   margin: 0;
   color: var(--color-text-brown);
   font-family: var(--font-display);
-  font-stretch: 75%;
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -453,7 +509,6 @@ a {
   align-items: center;
   color: var(--color-text-brown);
   font-family: var(--font-display);
-  font-stretch: 75%;
   font-size: 1.125rem;
   text-decoration: none;
 }
@@ -465,10 +520,17 @@ a {
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-2);
   margin: 0;
   padding: var(--space-4) 0;
   list-style: none;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
 }
 
 .breadcrumbs li:not(:last-child)::after {
@@ -488,7 +550,13 @@ a {
 .site-footer {
   padding-block: var(--space-12);
   border-top: 1px solid rgb(128 101 69 / 24%);
-  background: var(--color-brand-beige);
+  background-color: #f4eadb;
+  background-image:
+    linear-gradient(90deg, rgb(244 234 219 / 48%), rgb(244 234 219 / 88%) 46%, rgb(244 234 219 / 94%)),
+    url("/images/backgrounds/reference-bamboo-footer.webp");
+  background-position: center, left center;
+  background-repeat: no-repeat;
+  background-size: cover, auto 100%;
   color: var(--color-text-brown);
 }
 
@@ -501,6 +569,20 @@ a {
 .site-footer__identity p {
   max-width: 24rem;
   margin-block: var(--space-6) 0;
+}
+
+.site-footer__credit {
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgb(128 101 69 / 24%);
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.site-footer__credit a {
+  color: var(--color-action-green);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
 }
 
 .site-footer__identity a,
@@ -521,7 +603,6 @@ a {
   margin-bottom: var(--space-2);
   color: var(--color-text-strong);
   font-family: var(--font-display);
-  font-stretch: 75%;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -608,7 +689,7 @@ a {
 .category-card__name {
   color: var(--color-text-strong);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .category-card__status {
@@ -655,6 +736,7 @@ a.category-card__link:focus-visible .category-card__status {
   margin-block: var(--space-2) 0;
   color: var(--color-text-strong);
   font-size: 1.125rem;
+  font-weight: 300;
   line-height: 1.3;
 }
 
@@ -822,34 +904,46 @@ a.category-card__link:focus-visible .category-card__status {
 
 .homepage-catalog-card {
   display: flex;
-  min-height: 9rem;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: var(--space-6);
-  border: 0.5rem solid white;
+  overflow: hidden;
+  border: 0.35rem solid white;
   border-radius: var(--radius-editorial);
-  background:
-    linear-gradient(145deg, rgb(250 240 230 / 95%), rgb(229 203 166 / 88%)),
-    var(--color-surface-cream);
+  background: var(--color-surface-cream);
   color: var(--color-text-strong);
   text-decoration: none;
 }
 
-.homepage-catalog-card:hover,
-.homepage-catalog-card:focus-visible {
+.homepage-catalog-card__media {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.homepage-catalog-card__media img { width: 100%; object-fit: cover; }
+
+.homepage-catalog-card__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: var(--space-4);
+  background: rgb(255 251 245 / 88%);
+}
+
+.homepage-catalog-card:hover .homepage-catalog-card__content,
+.homepage-catalog-card:focus-visible .homepage-catalog-card__content {
   background: var(--color-action-green);
   color: white;
 }
 
-.homepage-catalog-card span {
+.homepage-catalog-card__content > strong {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 300;
   line-height: 1.15;
 }
 
-.homepage-catalog-card small {
-  margin-top: var(--space-2);
+.homepage-catalog-card__content small {
+  margin-top: var(--space-1);
 }
 
 .homepage-product-introduction {
@@ -965,6 +1059,12 @@ a.category-card__link:focus-visible .category-card__status {
   }
 }
 
+@media (max-width: 47.99rem) {
+  :root {
+    --surface-page-wash: rgb(250 246 241 / 78%);
+  }
+}
+
 @media (min-width: 48rem) {
   .call-to-action__inner {
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1015,20 +1115,27 @@ a.category-card__link:focus-visible .category-card__status {
   }
 
   .product-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .homepage-catalog-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .homepage-product-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .decision-grid,
   .guide-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 75rem) {
+  .homepage-product-grid,
+  .product-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -1062,12 +1169,8 @@ a.category-card__link:focus-visible .category-card__status {
     backdrop-filter: blur(10px);
   }
 
-  .brand-lockup__name {
-    font-size: 1.45rem;
-  }
-
-  .brand-lockup__descriptor {
-    font-size: 0.6875rem;
+  .site-header .brand-lockup__logo {
+    width: 10.75rem;
   }
 
   .desktop-navigation {
@@ -1096,9 +1199,8 @@ a.category-card__link:focus-visible .category-card__status {
     border-radius: var(--radius-default);
     color: var(--color-text-brown);
     font-family: var(--font-display);
-    font-stretch: 75%;
     font-size: clamp(0.8rem, 0.95vw, 1.0625rem);
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1.1;
     text-decoration: none;
     text-transform: uppercase;

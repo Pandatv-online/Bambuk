@@ -19,9 +19,9 @@ export const homepageContent: HomepageContent = {
     summary:
       "Selaa aktiivista tuoteluetteloa, tarkista tuotekohtaiset tiedot ja pyydä kirjallinen tarjous tai mallipala.",
     image: {
-      src: "/images/home/hero-natural.jpg",
-      alt: "Puunsävyinen lattia valoisassa ruokailutilassa",
-      rightsId: "reference-home-slide-18",
+      src: "/images/home/hero-terrace.jpg",
+      alt: "Terassi vehreässä puutarhassa, puu kasvaa terassin keskellä",
+      rightsId: "reference-home-slide-47",
     },
   },
   introduction: {
@@ -38,9 +38,9 @@ export const homepageContent: HomepageContent = {
   },
   gallery: {
     eyebrow: "Kuvagalleria",
-    heading: "Materiaaleja ja sisätiloja",
+    heading: "Sisätiloja ja terasseja",
     introduction:
-      "Kuvat havainnollistavat erilaisia sisätiloja, lattiasävyjä ja pintojen ilmettä. Kuvien tuote- ja projektitietoja ei ole päätelty.",
+      "Kuvat havainnollistavat sisätiloja, lattiasävyjä, pintojen ilmettä ja terasseja. Kuvien tuote- ja projektitietoja ei ole päätelty.",
     items: [
       {
         id: "project-01",

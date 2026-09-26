@@ -17,12 +17,23 @@ export type {
 export const galleryPage: GalleryPageContent = {
   status: "review",
   title: "Galleria",
-  metaTitle: "Galleria – bambulattiat sisätiloissa",
+  metaTitle: "Galleria – sisätilat ja terassit",
   metaDescription:
-    "Tutustu paikallisesti tallennettuihin kuviin lattioista, materiaaleista ja sisätiloista. Kuvien tuote- ja projektisuhteita ei ole päätelty.",
+    "Tutustu paikallisesti tallennettuihin kuviin sisätiloista, lattioista ja terasseista. Kuvien tuote- ja projektisuhteita ei ole päätelty.",
   introduction:
-    "Kuvat havainnollistavat lattiasävyjä, pintoja ja erilaisia sisätiloja. Tuote-, asiakas- ja projektitiedot lisätään vain vahvistettuina.",
+    "Kuvat havainnollistavat lattiasävyjä, pintoja, sisätiloja ja terasseja. Tuote-, asiakas- ja projektitiedot lisätään vain vahvistettuina.",
 };
+
+const homepageGalleryIds = new Set([
+  "gallery-311",
+  "gallery-312",
+  "gallery-339",
+  "gallery-147",
+  "gallery-6-587",
+  "gallery-6-123",
+  "gallery-6-607",
+  "gallery-6-641",
+]);
 
 export const gallerySceneFilters: readonly GallerySceneFilter[] = [
   { id: "kaikki", label: "Kaikki kuvat" },
@@ -52,6 +63,10 @@ export function getGalleryPresentationItems(
       scenes,
     }),
   );
+}
+
+export function getHomepageGalleryPresentationItems(): readonly GalleryPresentationItem[] {
+  return getGalleryPresentationItems().filter((item) => homepageGalleryIds.has(item.id));
 }
 
 export function getGalleryOgImage(): GalleryPresentationItem["src"] | undefined {

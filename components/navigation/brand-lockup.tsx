@@ -1,22 +1,30 @@
+import Image from "next/image";
+
 import { siteConfig } from "@/lib/site-config";
 
-export function BrandLockup() {
+export function BrandLockup({
+  showCompanyName = true,
+}: Readonly<{ showCompanyName?: boolean }>) {
   const { company, contact } = siteConfig;
-  const accessibleLabel = [company.displayName, contact.phone, contact.hours]
-    .filter(Boolean)
-    .join(", ");
 
   return (
-    <span className="brand-lockup" aria-label={accessibleLabel}>
-      <a className="brand-lockup__name" href="/fi">
-        {company.displayName}
+    <span className="brand-lockup">
+      <a className="brand-lockup__logo" href="/fi">
+        <Image
+          src="/brand/bambu-logo.svg"
+          alt="Bambu — lattia ja terassi"
+          width={230}
+          height={96}
+          unoptimized
+        />
       </a>
-      {contact.phone && contact.phoneHref ? (
-        <a className="brand-lockup__descriptor" href={contact.phoneHref}>
-          {contact.phone}
-        </a>
-      ) : null}
-      <span className="brand-lockup__descriptor">{contact.hours}</span>
+      <span className="brand-lockup__business">
+        {showCompanyName ? <strong>{company.displayName}</strong> : null}
+        {contact.phone && contact.phoneHref ? (
+          <a href={contact.phoneHref}>{contact.phone}</a>
+        ) : null}
+        <span>{contact.hours}</span>
+      </span>
     </span>
   );
 }

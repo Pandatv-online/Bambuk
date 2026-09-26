@@ -1,4 +1,5 @@
 import type { GalleryRecord, GallerySource } from "./types";
+import { terraceGalleryItems } from "./terrace-album";
 
 const source = (path: `/uploads/it0003/${string}`): GallerySource => ({
   url: `https://www.bambukogrindys.lt${path}`,
@@ -102,4 +103,5 @@ export const galleryItems: readonly GalleryRecord[] = [
     scenes: ["sisatila"],
     productIds: [],
   },
+  ...terraceGalleryItems,
 ];

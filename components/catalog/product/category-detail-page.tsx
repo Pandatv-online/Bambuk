@@ -1,8 +1,8 @@
 import Link from "next/link";
 
+import { CatalogCategoryCard } from "@/components/catalog/catalog-category-link";
 import { CatalogProductCard } from "@/components/catalog/listing";
 import { Container, Heading } from "@/components/ui";
-import { getCatalogCategoryPath } from "@/lib/catalog/query";
 
 import type { CatalogCategoryRoute } from "./catalog-route";
 import styles from "./product-page.module.css";
@@ -46,15 +46,13 @@ export function CategoryDetailPage({
               Tuoteryhmät ja mallistot
             </Heading>
             <div className={styles.childCategoryGrid}>
-              {route.childCategories.map((category) => {
-                const href = getCatalogCategoryPath(category.id);
-                return href ? (
-                  <a href={href} key={category.id}>
-                    <strong>{category.nameFi}</strong>
-                    <span>Katso tuotteet</span>
-                  </a>
-                ) : null;
-              })}
+              {route.childCategories.map((category) => (
+                <CatalogCategoryCard
+                  category={category}
+                  key={category.id}
+                  subtitle="Katso tuotteet"
+                />
+              ))}
             </div>
           </section>
         ) : null}

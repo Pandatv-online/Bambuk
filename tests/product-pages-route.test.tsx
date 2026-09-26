@@ -26,6 +26,67 @@ describe("Finnish catalog catch-all page", () => {
     expect(collection).toContain("6 tuotetta");
   });
 
+  it("renders the original décor category thumbnails and six pictured products", async () => {
+    const html = renderToStaticMarkup(
+      await FinnishCatalogCatchAllPage(pageProps(["bambusisustus"])),
+    );
+
+    expect(html).toContain("Bambusisustus");
+    expect(html).toContain("6 tuotetta");
+    expect(html.match(/data-product-id=/g)).toHaveLength(6);
+    for (const id of ["47", "59", "48"]) {
+      expect(html).toContain(
+        encodeURIComponent(`/images/categories/catalog_${id}_1s150.jpg`),
+      );
+    }
+    for (const id of ["180", "185", "322", "325", "326", "327"]) {
+      expect(html).toContain(`data-product-id="${id}"`);
+      expect(html).toContain(`product_${id}_1.jpg`);
+    }
+    expect(html).not.toContain('data-product-id="258"');
+    expect(html).not.toContain('data-product-id="615"');
+    expect(html).not.toContain("bambukogrindys.lt");
+  });
+
+  it("renders all 17 observed terrace products with local images and quote pricing", async () => {
+    const html = renderToStaticMarkup(
+      await FinnishCatalogCatchAllPage(pageProps(["ulkotuotteet", "terassilaudat"])),
+    );
+
+    expect(html).toContain("Bambuterassilaudat");
+    expect(html).toContain("17 tuotetta");
+    expect(html.match(/data-product-id=/g)).toHaveLength(17);
+    for (const id of ["443", "463", "461", "464", "462", "465", "466", "467", "469", "468", "735", "471", "470", "540", "541", "567", "568"]) {
+      expect(html).toContain(`data-product-id="${id}"`);
+      expect(html).toContain(`product_${id}_1.jpg`);
+    }
+    expect(html).toContain("Pyydä tarjous");
+    expect(html).not.toContain("76,90");
+    expect(html).not.toContain("bambukogrindys.lt");
+  });
+
+  it("shows sourced dimensions on product cards and both installation products without LT prices", async () => {
+    const terrace = renderToStaticMarkup(
+      await FinnishCatalogCatchAllPage(pageProps(["ulkotuotteet", "terassilaudat"])),
+    );
+    const installation = renderToStaticMarkup(
+      await FinnishCatalogCatchAllPage(pageProps(["lattian-asennustuotteet"])),
+    );
+
+    expect(terrace).toContain("Pituus:");
+    expect(terrace).toContain("Leveys:");
+    expect(terrace).toContain("Paksuus:");
+    expect(terrace).toContain("1850 mm");
+    expect(installation).toContain("3 tuotetta");
+    for (const id of ["187", "559"]) {
+      expect(installation).toContain(`data-product-id="${id}"`);
+    }
+    expect(installation).toContain("product_187_1.jpg");
+    expect(installation).toContain("product_559_1.png");
+    expect(installation).not.toContain("280,00");
+    expect(installation).not.toContain("90,00");
+  });
+
   it("publishes all controlled params and returns notFound for an unknown route", async () => {
     expect(generateStaticParams()).toEqual(getCatalogRouteParams());
     await expect(

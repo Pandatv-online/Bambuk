@@ -14,26 +14,32 @@ The 2026-09-11 URL audit found 130 unique LT product URLs. The current structure
 | Unique source product IDs | 108 |
 | Normalized products | 108 |
 | Skipped products | 0 |
-| Not-ready products | 42 |
+| Not-ready products | 24 |
 | Source categories | 22 |
 | Normalized categories | 22 |
 | Skipped categories | 0 |
-| Source image references | 356 |
-| Unique source images | 294 |
-| Local image mappings | 294 |
-| Local image files verified | 294 |
+| Source image references | 417 |
+| Unique source images | 354 |
+| Local image mappings | 355 |
+| Local image files verified | 355 |
+| Supplemental category images verified | 21 |
 | Source documents | 0 |
 | Local document mappings | 0 |
 | Local document files verified | 0 |
 
 ## Readiness and omissions
 
+The 2026-09-12 extraction is preserved unchanged. Product media missing from it was supplemented with source-linked captures dated 2026-09-23: 38 products gained local images, and 21 category thumbnails were recovered. Live category/detail evidence also corrected the assignments of source products 258, 452, 694, 615. Source product 178 still has no observed image, so its placeholder remains. Supplemental sources and applicable IDs are recorded in `data/catalog/supplemental-media-2026-09-23.json`.
+
+The live LT terrace-board category dated 2026-09-23 supplied source-linked titles, canonical product links, and category membership for 17 existing product IDs. The corresponding Finnish listings are quote-only until Finnish commercial data is approved; the LT prices remain in the untouched raw extraction and are not published for these products. Evidence is recorded in `data/catalog/supplemental-products-2026-09-23.json`.
+
+The LT installation-product pages checked on 2026-09-25 restored products 187 and 559 to the Finnish quote catalog. Product 187 has two source-linked local images. The image shown on the source page for the 11 kg WAKOL product depicts a 2.5 kg canister, so product 559 uses a manufacturer image from the official WAKOL PU 280 page showing an 11.0 kg canister. Evidence is recorded in `data/catalog/supplemental-installation-products-2026-09-25.json`.
+
 Missing fields remain null and make their record not ready; they are never reconstructed from slugs, neighboring records or conflicting captures. Duplicate IDs are skipped. A price is publishable only with complete amount/currency/basis plus a valid product source URL and raw extraction date. Invalid prices, provenance, specification units, media, documents and relations are omitted and reported. The extraction exposed no product documents, so no document file was inferred from unrelated pages.
 
 - `duplicate-normalized-slug`: 4
-- `invalid-price`: 14
 - `invalid-price-provenance`: 7
-- `missing-name`: 35
+- `missing-name`: 20
 - `missing-source-url`: 7
 
 Not-ready records remain only in the internal normalized catalog and report for traceability. Public ready and quote-eligible selectors exclude them; their source IDs preserve internal lookup and provenance.
@@ -42,20 +48,8 @@ Not-ready records remain only in the internal normalized catalog and report for 
 |---:|---|---|---|
 | 173 | Sivupuristettu bambulevy – 3-kerroksinen, luonnollinen sävy | `duplicate-normalized-slug` | hidden |
 | 174 | Sivupuristettu bambulevy – 3-kerroksinen, karbonisoitu sävy | `duplicate-normalized-slug` | hidden |
-| 187 | Adesiver 2K Premium -epoksipolyuretaanilattialiima, 12,5 kg | `invalid-price` | hidden |
 | 200 | — (missing in source) | `missing-name`, `missing-source-url`, `invalid-price-provenance` | hidden |
 | 209 | — (missing in source) | `missing-name` | published |
-| 461 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 462 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 463 | Bambuterassilauta – dassoXTR' V137, Espresso-sävy | `invalid-price` | hidden |
-| 464 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 465 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 466 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 467 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 468 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 469 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 470 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
-| 471 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
 | 473 | — (missing in source) | `missing-name` | published |
 | 475 | — (missing in source) | `missing-name` | published |
 | 476 | — (missing in source) | `missing-name` | published |
@@ -64,11 +58,6 @@ Not-ready records remain only in the internal normalized catalog and report for 
 | 500 | — (missing in source) | `missing-name`, `missing-source-url`, `invalid-price-provenance` | hidden |
 | 536 | — (missing in source) | `missing-name` | published |
 | 538 | — (missing in source) | `missing-name` | published |
-| 540 | — (missing in source) | `missing-name` | published |
-| 541 | — (missing in source) | `missing-name` | published |
-| 559 | WAKOL PU 280 -vedeneristävä polyuretaanipohjuste, 11 kg | `invalid-price` | hidden |
-| 567 | — (missing in source) | `missing-name` | published |
-| 568 | — (missing in source) | `missing-name` | published |
 | 569 | — (missing in source) | `missing-name` | published |
 | 581 | — (missing in source) | `missing-name` | published |
 | 583 | — (missing in source) | `missing-name` | published |
@@ -79,7 +68,6 @@ Not-ready records remain only in the internal normalized catalog and report for 
 | 710 | — (missing in source) | `missing-name`, `missing-source-url`, `invalid-price-provenance` | hidden |
 | 716 | — (missing in source) | `missing-name` | published |
 | 717 | — (missing in source) | `missing-name` | published |
-| 735 | — (missing in source) | `missing-name`, `invalid-price` | hidden |
 | 743 | — (missing in source) | `missing-name`, `missing-source-url`, `invalid-price-provenance` | hidden |
 | 789 | — (missing in source) | `missing-name`, `missing-source-url`, `invalid-price-provenance` | hidden |
 

@@ -10,12 +10,10 @@ import {
   getGalleryPresentationItems,
 } from "@/data/gallery";
 import { createPageMetadata } from "@/lib/seo";
-import { getReleaseReadiness } from "@/lib/site-config";
 
 import styles from "./page.module.css";
 
-const galleryIsIndexable =
-  galleryPage.status === "published" && getReleaseReadiness().ready;
+const galleryIsIndexable = galleryPage.status === "published";
 
 export const metadata: Metadata = createPageMetadata({
   title: galleryPage.metaTitle,

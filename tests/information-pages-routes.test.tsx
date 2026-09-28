@@ -11,7 +11,7 @@ import InformationPage, {
 import { getPublishedInformationPages } from "@/data/content";
 
 describe("Finnish information routes", () => {
-  it("renders six source-aware routes with one H1 and unique noindex metadata", async () => {
+  it("renders six source-aware routes with one H1 and unique indexable metadata", async () => {
     const hubHtml = renderToStaticMarkup(<InformationHubPage />);
     const pages = getPublishedInformationPages();
     const params = generateStaticParams();
@@ -20,7 +20,7 @@ describe("Finnish information routes", () => {
     expect(hubHtml.match(/<h1/g)).toHaveLength(1);
     expect(hubHtml.match(/class="[^\"]*information-card/g)).toHaveLength(5);
     expect(params).toEqual(pages.map(({ slug }) => ({ slug })));
-    expect(hubMetadata.robots).toEqual({ index: false, follow: false });
+    expect(hubMetadata.robots).toEqual({ index: true, follow: true });
 
     for (const page of pages) {
       const routeParams = Promise.resolve({ slug: page.slug });
@@ -33,7 +33,7 @@ describe("Finnish information routes", () => {
       expect(html).toContain("Soveltuvuus:");
       expect(html).toContain("Lähdepohja");
       expect(html).not.toContain("bambukogrindys.lt");
-      expect(metadata.robots).toEqual({ index: false, follow: false });
+      expect(metadata.robots).toEqual({ index: true, follow: true });
       expect(metadata.alternates?.canonical?.toString()).toContain(page.path);
       expect(titles.has(metadata.title)).toBe(false);
       titles.add(metadata.title);

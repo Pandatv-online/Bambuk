@@ -57,10 +57,8 @@ export type RequiredSiteConfigField =
   | "company.businessId"
   | "company.vatId"
   | "company.address"
-  | "contact.email"
   | "contact.phone"
   | "contact.hours"
-  | "contact.visitLocationPublicationApproved"
   | "legal.privacyNotice"
   | "legal.deliveryTerms"
   | "formDestination";
@@ -108,18 +106,18 @@ export const siteConfig: SiteConfig = {
     phoneHref: "tel:+358505080808",
     hours: "ma–pe 8.00–18.00",
     visitLocationPublicationApproved: false,
-    visitWording: "Sovi käynti etukäteen puhelimitse",
+    visitWording: "Emme ota vastaan kävijöitä. Näytteitä voidaan lähettää postitse, ja niitä on ajoittain esillä messuilla.",
   },
   legal: {
     privacyNotice: null,
     cookieNotice: null,
-    deliveryTerms: null,
+    deliveryTerms: "Toimitus sovitaan tilauskohtaisesti.",
   },
   service: {
     installationScope: null,
     serviceArea: null,
   },
-  formDestination: null,
+  formDestination: "Telegram",
   featureFlags: {
     account: false,
     availability: false,
@@ -141,11 +139,8 @@ const releaseFieldReaders: Readonly<
   "company.businessId": (config) => config.company.businessId,
   "company.vatId": (config) => config.company.vatId,
   "company.address": (config) => config.company.address,
-  "contact.email": (config) => config.contact.email,
   "contact.phone": (config) => config.contact.phone,
   "contact.hours": (config) => config.contact.hours,
-  "contact.visitLocationPublicationApproved": (config) =>
-    config.contact.visitLocationPublicationApproved,
   "legal.privacyNotice": (config) => config.legal.privacyNotice,
   "legal.deliveryTerms": (config) => config.legal.deliveryTerms,
   formDestination: (config) => config.formDestination,

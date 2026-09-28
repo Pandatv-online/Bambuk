@@ -29,7 +29,7 @@ describe("getReleaseReadiness", () => {
       phoneHref: "tel:+358505080808",
       hours: "ma–pe 8.00–18.00",
       visitLocationPublicationApproved: false,
-      visitWording: "Sovi käynti etukäteen puhelimitse",
+      visitWording: "Emme ota vastaan kävijöitä. Näytteitä voidaan lähettää postitse, ja niitä on ajoittain esillä messuilla.",
     });
   });
 
@@ -41,13 +41,9 @@ describe("getReleaseReadiness", () => {
     expect(production.ready).toBe(false);
     expect(production.unresolvedFields).not.toContain("company.address");
     expect(production.unresolvedFields).not.toContain("company.vatId");
-    expect(production.unresolvedFields).toContain("contact.email");
-    expect(production.unresolvedFields).toContain(
-      "contact.visitLocationPublicationApproved",
-    );
     expect(production.unresolvedFields).toContain("legal.privacyNotice");
-    expect(production.unresolvedFields).toContain("legal.deliveryTerms");
-    expect(production.unresolvedFields).toContain("formDestination");
+    expect(production.unresolvedFields).not.toContain("legal.deliveryTerms");
+    expect(production.unresolvedFields).not.toContain("formDestination");
     expect(production.unresolvedFields).toContain("siteUrl");
     expect(production.unresolvedFields).not.toContain(
       "manufacturer.relationshipWording",

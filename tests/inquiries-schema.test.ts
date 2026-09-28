@@ -61,7 +61,7 @@ describe("inquiry schemas", () => {
     sample.set("sourceUrl", "/fi/tilaa-mallipala");
     sample.set("idempotencyKey", "sample-87654321");
     sample.set("productId", "53");
-    sample.set("fulfillmentPreference", "sovittu käynti");
+    sample.set("fulfillmentPreference", "toimitus");
 
     expect(
       parseInquiryPayload({
@@ -73,7 +73,7 @@ describe("inquiry schemas", () => {
       data: {
         type: "sample",
         productId: "53",
-        fulfillmentPreference: "sovittu-kaynti",
+        fulfillmentPreference: "toimitus",
       },
     });
 

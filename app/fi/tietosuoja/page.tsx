@@ -23,7 +23,7 @@ export const metadata: Metadata = createPageMetadata({
     : registeredPrivacyNotice.title,
   description: registeredPrivacyNotice.metaDescription,
   path: registeredPrivacyNotice.path,
-  indexable: false,
+  indexable: true,
 });
 
 export default function PrivacyPolicyPage() {

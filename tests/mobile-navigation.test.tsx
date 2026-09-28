@@ -31,7 +31,7 @@ describe("MobileNavigation", () => {
     );
     expect(screen.getByText("ma–pe 8.00–18.00")).toBeTruthy();
     expect(
-      screen.getByText("Sovi käynti etukäteen puhelimitse"),
+      screen.getByText(/Emme ota vastaan kävijöitä/u),
     ).toBeTruthy();
     expect(document.body.textContent).not.toMatch(
       /virallinen|valtuutettu|jakelija|jälleenmyyjä|distributor/i,

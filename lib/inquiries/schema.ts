@@ -288,19 +288,13 @@ export function parseInquiryPayload(
   const productId = text(raw.productId, 120);
   if (!productId) addError(errors, "productId", "Valitse tuote.");
   const fulfillmentInput = text(raw.fulfillmentPreference, 30);
-  const fulfillmentPreference = fulfillmentInput === "sovittu käynti"
-    ? "sovittu-kaynti"
-    : fulfillmentInput;
-  if (
-    fulfillmentPreference !== "toimitus" &&
-    fulfillmentPreference !== "sovittu-kaynti"
-  ) {
+  const fulfillmentPreference = fulfillmentInput;
+  if (fulfillmentPreference !== "toimitus") {
     addError(errors, "fulfillmentPreference", "Valitse näytteen toimitustapa.");
   }
   return finish(
     errors,
-    productId &&
-      (fulfillmentPreference === "toimitus" || fulfillmentPreference === "sovittu-kaynti")
+    productId && fulfillmentPreference === "toimitus"
       ? { ...common, type, productId, fulfillmentPreference }
       : null,
   );

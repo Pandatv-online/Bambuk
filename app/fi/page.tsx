@@ -26,7 +26,6 @@ import {
 } from "@/data/gallery";
 import { getCatalogCategoryPath } from "@/lib/catalog/query";
 import { createPageMetadata } from "@/lib/seo";
-import { getReleaseReadiness } from "@/lib/site-config";
 
 const homepageCategories = catalogCategories.flatMap((category) => {
   if (category.parentId !== "0") return [];
@@ -41,8 +40,7 @@ const homepageCategories = catalogCategories.flatMap((category) => {
 const homepageProducts = getQuoteEligibleCatalogProducts().slice(0, 5);
 const homepageGuides = getPublishedInformationPages().slice(0, 3);
 
-const homepageIsIndexable =
-  homepageContent.status === "published" && getReleaseReadiness().ready;
+const homepageIsIndexable = homepageContent.status === "published";
 export const metadata: Metadata = createPageMetadata({
   title: homepageContent.title,
   description: homepageContent.metaDescription,

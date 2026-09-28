@@ -32,7 +32,7 @@ export type SampleInquiry = InquiryCommon &
   Readonly<{
     type: "sample";
     productId: string;
-    fulfillmentPreference: "toimitus" | "sovittu-kaynti";
+    fulfillmentPreference: "toimitus";
   }>;
 
 export type Inquiry = ContactInquiry | QuoteInquiry | SampleInquiry;

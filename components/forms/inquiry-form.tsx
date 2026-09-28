@@ -393,8 +393,7 @@ function SampleFields({
       >
         <legend>Näytteen toimitustapa <span aria-hidden="true">*</span></legend>
         <div className={styles.choices}>
-          <label><input defaultChecked name="fulfillmentPreference" type="radio" value="toimitus" /> Toimitus</label>
-          <label><input name="fulfillmentPreference" type="radio" value="sovittu käynti" /> Sovittu käynti</label>
+          <label><input defaultChecked name="fulfillmentPreference" type="radio" value="toimitus" /> Postitus</label>
         </div>
         <FieldError errors={errors} field="fulfillmentPreference" formId={formId} />
       </fieldset>

@@ -52,7 +52,7 @@ describe("Finnish homepage", () => {
     expect([...positions].sort((left, right) => left - right)).toEqual(positions);
   });
 
-  it("exports canonical, Open Graph and readiness-derived noindex metadata", () => {
+  it("exports canonical, Open Graph and indexable metadata", () => {
     expect(metadata.alternates?.canonical?.toString()).toBe(
       "http://localhost:3000/fi",
     );
@@ -60,7 +60,7 @@ describe("Finnish homepage", () => {
       locale: "fi_FI",
       url: "http://localhost:3000/fi",
     });
-    expect(metadata.robots).toEqual({ index: false, follow: false });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
   });
 
   it("renders source-backed commercial data without unsupported trust claims", () => {

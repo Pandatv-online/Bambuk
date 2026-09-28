@@ -1,10 +1,11 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
-import FinnishCatalogPage, { metadata } from "@/app/fi/tuotteet/page";
+import FinnishCatalogPage, { generateMetadata } from "@/app/fi/tuotteet/page";
 
 describe("Finnish catalog hub", () => {
   it("renders the controlled category registry and first 24 quote-eligible products", async () => {
+    const metadata = await generateMetadata({ searchParams: Promise.resolve({}) });
     const html = renderToStaticMarkup(
       await FinnishCatalogPage({ searchParams: Promise.resolve({}) }),
     );
@@ -28,7 +29,7 @@ describe("Finnish catalog hub", () => {
     expect(html).not.toContain("bambukogrindys.lt");
     expect(metadata.title).toBe("Tuotteet | Osaühing IKB");
     expect(JSON.stringify(metadata)).not.toContain("Bambuk Finland");
-    expect(metadata.robots).toEqual({ index: false, follow: false });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
   });
 
   it("renders active filters, retained pagination and a useful zero-result reset", async () => {
@@ -60,5 +61,13 @@ describe("Finnish catalog hub", () => {
     expect(empty).toContain("Näillä suodattimilla ei löytynyt tuotteita");
     expect(empty).toContain('href="/fi/tuotteet"');
     expect(empty).not.toMatch(/data-product-id=/);
+  });
+
+  it("keeps filtered and unknown query URLs out of the index", async () => {
+    for (const searchParams of [{ sivu: "2" }, { kategoria: "sisalattiat" }, { tracking: "x" }]) {
+      const metadata = await generateMetadata({ searchParams: Promise.resolve(searchParams) });
+      expect(metadata.robots).toEqual({ index: false, follow: false });
+      expect(metadata.alternates?.canonical?.toString()).toBe("http://localhost:3000/fi/tuotteet");
+    }
   });
 });

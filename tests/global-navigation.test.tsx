@@ -30,7 +30,7 @@ describe("the shared site navigation", () => {
     expect(footer).toContain("Osaühing IKB");
     expect(header).toContain('href="tel:+358505080808"');
     expect(footer).toContain('href="tel:+358505080808"');
-    expect(footer).toContain("Sovi käynti etukäteen puhelimitse");
+    expect(footer).toContain("Emme ota vastaan kävijöitä");
     expect(footer).toContain("Sivuston suunnittelu ja toteutus:");
     expect(footer).toContain('<a href="https://verzo.pro/">verzo.pro</a>');
     expect(footer).not.toContain("mailto:");

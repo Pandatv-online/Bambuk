@@ -92,7 +92,7 @@ export const privacyNotice = {
         },
         {
           type: "paragraph",
-          text: "Rekisterinpitäjä ei määritä tällä sivulla Telegramin omaa säilytysaikaa, käsittelyaluetta tai mahdollisia tiedonsiirron suojatoimia. Ne tarkistetaan ennen tuotantokäyttöä.",
+          text: "Telegramin oma säilytysaika, käsittelyalue ja mahdolliset tiedonsiirron suojatoimet määräytyvät palveluntarjoajan käytäntöjen mukaan. Rekisterinpitäjä poistaa omat ilmoituskopionsa erillisen säilytysmenettelyn mukaisesti.",
         },
       ],
     },
@@ -131,10 +131,6 @@ export const privacyNotice = {
         {
           type: "paragraph",
           text: "Lomakkeella annettuja tietoja ei käytetä markkinointiin. Käsittelyyn ei liity profilointia eikä automaattista päätöksentekoa.",
-        },
-        {
-          type: "paragraph",
-          text: "Seloste on julkaistu tarkistettavaksi. Riippumaton oikeudellinen arvio ja Telegram-palveluun liittyvien tiedonsiirtotietojen varmistaminen ovat yhä tuotantokäytön julkaisuehtoja.",
         },
       ],
     },

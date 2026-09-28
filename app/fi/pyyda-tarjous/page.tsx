@@ -21,7 +21,7 @@ export const metadata: Metadata = createPageMetadata({
     ? `Pyydä kirjallinen tarjous tuotteista tai asennuksesta ${companyName}:ltä.`
     : "Pyydä kirjallinen tarjous tuotteista tai asennuksesta.",
   path: "/fi/pyyda-tarjous",
-  indexable: false,
+  indexable: true,
 });
 
 const first = (value: string | readonly string[] | undefined): string | null =>

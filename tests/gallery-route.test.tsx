@@ -17,7 +17,7 @@ describe("Finnish gallery route", () => {
     expect(html).not.toMatch(/asiakkaan|projekti:\s|tuote:\s/iu);
   });
 
-  it("exports canonical, Open Graph and release-safe noindex metadata", () => {
+  it("exports canonical, Open Graph and indexable metadata", () => {
     expect(metadata.alternates?.canonical?.toString()).toBe(
       "http://localhost:3000/fi/galleria",
     );
@@ -25,6 +25,6 @@ describe("Finnish gallery route", () => {
       locale: "fi_FI",
       url: "http://localhost:3000/fi/galleria",
     });
-    expect(metadata.robots).toEqual({ index: false, follow: false });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
   });
 });

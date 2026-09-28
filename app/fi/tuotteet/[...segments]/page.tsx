@@ -46,7 +46,7 @@ export async function generateMetadata({
     description,
     path: route.path,
     image,
-    indexable: false,
+    indexable: true,
   });
 }
 

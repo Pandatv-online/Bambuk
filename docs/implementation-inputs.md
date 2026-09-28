@@ -1,6 +1,16 @@
 # Finnish implementation inputs
 
-Status: implementation register, last reviewed 2026-09-23. Nothing marked `missing` is approved for visitor-facing publication. Application values remain `null` or absent until the named owner supplies a verifiable source.
+Status: implementation register, originally reviewed 2026-09-23. The table below is a historical snapshot; the 2026-09-28 owner decisions immediately below supersede its contact, sample, delivery, form and indexing rows. Remaining missing manufacturer facts and image permissions are still not supplied.
+
+## Owner decisions, 2026-09-28
+
+- The corporate email will be added later. The published contact channels are the telephone and working inquiry forms.
+- Visitors are not received at the registered address. Samples can be mailed; they may occasionally be shown at trade fairs. The visitor-facing invitation to arrange a visit was removed.
+- Delivery is arranged for each order; a fixed delivery price, area or schedule is not claimed.
+- The owner reports that the inquiry flow has been checked and works. Telegram delivery credentials are configured in the Cloudflare worker; the public config records the destination type, never the secret values.
+- The owner approved indexing the entire current site. Published route metadata and sitemap now include the home, 22 category routes, active product routes, published information pages, gallery, contact, quote, sample and privacy pages. Catalog filter/search URLs remain `noindex`; `notReady` products remain excluded. Adding a new active product to the catalog requires a build and deployment before search engines can discover its page.
+- The reported Samsung Chrome screenshot error was transient. The site has no screenshot prohibition or screen-capture policy to remove. Native screenshots now work for the owner.
+- The owner did not provide a separate confirmation of terrace-gallery production image rights or the manufacturer identity. Those provenance records remain open and should be resolved independently of crawl metadata.
 
 | Input | Status | Owner / source required | Current placeholder behavior | Release impact |
 |---|---|---|---|---|

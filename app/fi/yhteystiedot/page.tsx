@@ -16,10 +16,10 @@ const formatServedMarkets = (markets: readonly ("FI" | "EE")[]): string =>
 export const metadata: Metadata = createPageMetadata({
   title: companyName ? `Yhteystiedot | ${companyName}` : "Yhteystiedot",
   description: companyName
-    ? `Ota yhteyttä ${companyName}:hen tai sovi näytteiden katselusta puhelimitse.`
-    : "Ota yhteyttä tai sovi näytteiden katselusta puhelimitse.",
+    ? `Ota yhteyttä ${companyName}:hen ja kysy tuotteista, toimituksesta tai postitettavista näytteistä.`
+    : "Ota yhteyttä ja kysy tuotteista, toimituksesta tai postitettavista näytteistä.",
   path: "/fi/yhteystiedot",
-  indexable: false,
+  indexable: true,
 });
 
 // The anti-spam start timestamp must be fresh even when JavaScript is unavailable.
@@ -50,7 +50,7 @@ export default function ContactPage() {
             {company.address ? <div><dt>Rekisteröity osoite</dt><dd>{company.address}</dd></div> : null}
             {contact.phone && contact.phoneHref ? <div><dt>Puhelin</dt><dd><a href={contact.phoneHref}>{contact.phone}</a></dd></div> : null}
             {contact.hours ? <div><dt>Yhteydenottoajat</dt><dd>{contact.hours}</dd></div> : null}
-            {contact.visitWording ? <div><dt>Näytteiden katselu</dt><dd>{contact.visitWording}</dd></div> : null}
+            {contact.visitWording ? <div><dt>Asiointi ja näytteet</dt><dd>{contact.visitWording}</dd></div> : null}
           </dl>
         </Container>
       </Section>

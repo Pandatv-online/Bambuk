@@ -13,7 +13,7 @@ export const metadata: Metadata = createPageMetadata({
   title: informationHub.title,
   description: informationHub.metaDescription,
   path: informationHub.path,
-  indexable: false,
+  indexable: true,
 });
 
 export default function InformationHubPage() {

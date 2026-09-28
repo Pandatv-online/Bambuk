@@ -46,7 +46,7 @@ describe("privacy policy route", () => {
     expect(privacyMetadata.alternates?.canonical?.toString()).toBe(
       "http://localhost:3000/fi/tietosuoja",
     );
-    expect(privacyMetadata.robots).toEqual({ index: false, follow: false });
+    expect(privacyMetadata.robots).toEqual({ index: true, follow: true });
   });
 
   it("records an operator-only retention procedure without claiming provider deletion", () => {

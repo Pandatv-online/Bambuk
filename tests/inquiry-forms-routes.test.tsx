@@ -63,7 +63,7 @@ describe("inquiry form routes", () => {
     expect(contact).toContain("Mere pst 2, 40231 Sillamäe linn");
     expect(contact).toContain("Rekisteröity osoite");
     expect(contact).not.toContain("Näyttelytila");
-    expect(contact).toContain("Sovi käynti etukäteen puhelimitse");
+    expect(contact).toContain("Emme ota vastaan kävijöitä");
     expect(contact).not.toContain("mailto:");
 
     expect(quote).toContain('value="47"');
@@ -75,7 +75,7 @@ describe("inquiry form routes", () => {
     expect(footer).toContain("Tietosuojaseloste");
 
     for (const metadata of [contactMetadata, quoteMetadata, sampleMetadata]) {
-      expect(metadata.robots).toEqual({ index: false, follow: false });
+      expect(metadata.robots).toEqual({ index: true, follow: true });
       expect(metadata.openGraph).toMatchObject({ locale: "fi_FI" });
     }
     expect(contactMetadata.title).toBe(companyName ? `Yhteystiedot | ${companyName}` : "Yhteystiedot");

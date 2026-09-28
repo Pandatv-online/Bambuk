@@ -94,7 +94,7 @@ describe("Finnish catalog catch-all page", () => {
     ).rejects.toThrow(/NEXT_HTTP_ERROR_FALLBACK;404/u);
   });
 
-  it("builds canonical Open Graph noindex metadata for a product without an Offer", async () => {
+  it("builds canonical Open Graph indexable metadata for a product without an Offer", async () => {
     const segments = [
       "sisalattiat",
       "klassikko",
@@ -112,7 +112,7 @@ describe("Finnish catalog catch-all page", () => {
       type: "website",
       url: `http://localhost:3000/fi/tuotteet/${segments.join("/")}`,
     });
-    expect(metadata.robots).toEqual({ index: false, follow: false });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
     expect(serialized).not.toContain("Offer");
     expect(serialized).not.toContain("bambukogrindys.lt");
   });

@@ -14,7 +14,7 @@ import SampleRequestPage, { metadata as sampleMetadata } from "@/app/fi/tilaa-ma
 import FinnishCatalogCatchAllPage, {
   generateMetadata as generateCatalogMetadata,
 } from "@/app/fi/tuotteet/[...segments]/page";
-import FinnishCatalogPage, { metadata as catalogMetadata } from "@/app/fi/tuotteet/page";
+import FinnishCatalogPage, { generateMetadata as generateCatalogHubMetadata } from "@/app/fi/tuotteet/page";
 import ContactPage, { metadata as contactMetadata } from "@/app/fi/yhteystiedot/page";
 import { getQuoteEligibleCatalogProducts } from "@/data/catalog";
 import { getCatalogRouteParams } from "@/components/catalog/product";
@@ -94,7 +94,7 @@ describe("integration routes and SEO", () => {
     });
 
     expect(omittedIndexability.robots).toEqual({ index: false, follow: false });
-    expect(homepageMetadata.robots).toEqual({ index: false, follow: false });
+    expect(homepageMetadata.robots).toEqual({ index: true, follow: true });
     expect(homepageMetadata.alternates?.canonical?.toString()).toBe(
       "http://localhost:3000/fi",
     );
@@ -155,6 +155,7 @@ describe("integration routes and SEO", () => {
   });
 
   it("renders and scans every shipped Finnish route against the review-state visitor contract", async () => {
+    const catalogMetadata = await generateCatalogHubMetadata({ searchParams: Promise.resolve({}) });
     const routes = [
       {
         path: "/fi",
@@ -224,9 +225,9 @@ describe("integration routes and SEO", () => {
       for (const value of visitorUrlValues(html)) {
         expect(value, `${path} exposes non-local visitor URL ${value}`).toSatisfy(isLocalVisitorUrl);
       }
-      expect(metadata.robots, `${path} must remain review-state noindex`).toEqual({
-        index: false,
-        follow: false,
+      expect(metadata.robots, `${path} must be indexable`).toEqual({
+        index: true,
+        follow: true,
       });
     }
   }, fullRouteScanTimeout);

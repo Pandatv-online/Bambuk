@@ -20,7 +20,7 @@ export const metadata: Metadata = createPageMetadata({
     ? `Pyydä mallipalaa ja sovi toimitustavasta ${companyName}:n kanssa.`
     : "Pyydä mallipalaa ja sovi toimitustavasta.",
   path: "/fi/tilaa-mallipala",
-  indexable: false,
+  indexable: true,
 });
 
 const first = (value: string | readonly string[] | undefined): string | null =>
@@ -42,7 +42,7 @@ export default async function SampleRequestPage({
             <a href="/fi">Koti</a> <span aria-hidden="true">/</span> <span aria-current="page">Tilaa mallipala</span>
           </nav>
           <Heading as="h1" size="display">Tilaa mallipala</Heading>
-          <p className={styles.introduction}>Valitse tuote ja toivottu toimitustapa. Näytteen toimitus ja mahdolliset ehdot vahvistetaan ennen lähetystä.</p>
+          <p className={styles.introduction}>Valitse tuote ja pyydä mallipalaa postitse. Toimitus ja mahdolliset ehdot vahvistetaan ennen lähetystä.</p>
         </Container>
       </Section>
       <Section tone="page">

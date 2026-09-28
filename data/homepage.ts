@@ -2,10 +2,10 @@ import type { HomepageContent } from "./types";
 
 export const homepageContent: HomepageContent = {
   locale: "fi",
-  status: "review",
+  status: "published",
   title: "Bambulattiat, bambuterassit ja muut bambutuotteet",
   metaDescription:
-    "Selaa bambulattioita, bambuterasseja ja muita bambutuotteita. Tuotekohtaiset tiedot, tarjous ja mallipyyntö ovat saatavilla tarkastustilassa.",
+    "Selaa bambulattioita, bambuterasseja ja muita bambutuotteita. Tutustu tuotetietoihin ja pyydä tarjous tai mallipala.",
   primaryCta: {
     label: "Pyydä tarjous",
     href: "/fi/pyyda-tarjous",
@@ -148,7 +148,7 @@ export const homepageContent: HomepageContent = {
     body:
       "Tuotteen valinta ja asennuksen suunnittelu kuuluvat samaan asiakaspolkuun. Kerro asennustoiveesta tarjouspyynnössä.",
     pendingMessage:
-      "Palvelun sisältö, valmistelut, hinnoittelu ja palvelualue vahvistetaan ennen julkaisua.",
+      "Asennuksen sisältö, aikataulu ja hinta sovitaan kirjallisessa tarjouksessa.",
     image: {
       src: "/images/home/installation.jpg",
       alt: "Lattialaudan mittausta asennusta varten",
@@ -183,5 +183,5 @@ export const homepageContent: HomepageContent = {
     action: { label: "Pyydä tarjous", status: "pending" },
   },
   developmentNotice:
-    "Sivusto on tarkastustilassa: yrityksen tunnisteet, oikeudelliset tekstit ja palvelun tarkat ehdot täydennetään ennen julkaisua.",
+    "Toimitus ja muut tilauskohtaiset ehdot sovitaan ennen tilauksen vahvistamista.",
 };

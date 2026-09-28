@@ -15,7 +15,7 @@ export type {
 } from "./types";
 
 export const galleryPage: GalleryPageContent = {
-  status: "review",
+  status: "published",
   title: "Galleria",
   metaTitle: "Galleria – sisätilat ja terassit",
   metaDescription:

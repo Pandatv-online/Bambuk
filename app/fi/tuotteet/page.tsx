@@ -12,14 +12,19 @@ import {
 
 import styles from "@/components/catalog/listing/catalog-listing.module.css";
 
-export const metadata: Metadata = createPageMetadata({
-  title: siteConfig.company.displayName
-    ? `Tuotteet | ${siteConfig.company.displayName}`
-    : "Tuotteet",
-  description: "Tutustu Suomen valikoiman bambulattioihin, bambulevyihin, sisustustuotteisiin sekä lattian asennus- ja hoitotuotteisiin.",
-  path: "/fi/tuotteet",
-  indexable: false,
-});
+export async function generateMetadata({
+  searchParams,
+}: Readonly<{ searchParams: Promise<CatalogSearchParams> }>): Promise<Metadata> {
+  const parsed = parseCatalogQuery(await searchParams);
+  return createPageMetadata({
+    title: siteConfig.company.displayName
+      ? `Tuotteet | ${siteConfig.company.displayName}`
+      : "Tuotteet",
+    description: "Tutustu Suomen valikoiman bambulattioihin, bambulevyihin, sisustustuotteisiin sekä lattian asennus- ja hoitotuotteisiin.",
+    path: "/fi/tuotteet",
+    indexable: parsed.canonicalSearchParams === "" && parsed.ignoredParameters.length === 0,
+  });
+}
 
 export default async function FinnishCatalogPage({
   searchParams,

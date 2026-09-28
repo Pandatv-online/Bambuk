@@ -15,9 +15,7 @@ const formatServedMarkets = (markets: readonly ("FI" | "EE")[]): string =>
 
 export const metadata: Metadata = createPageMetadata({
   title: companyName ? `Yhteystiedot | ${companyName}` : "Yhteystiedot",
-  description: companyName
-    ? `Ota yhteyttä ${companyName}:hen ja kysy tuotteista, toimituksesta tai postitettavista näytteistä.`
-    : "Ota yhteyttä ja kysy tuotteista, toimituksesta tai postitettavista näytteistä.",
+  description: "Kysy tuotteista, postitettavista näytteistä ja mahdollisesta kohdekäynnistä työn arviointia varten.",
   path: "/fi/yhteystiedot",
   indexable: true,
 });

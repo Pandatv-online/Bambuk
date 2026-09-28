@@ -5,7 +5,7 @@ Status: implementation register, originally reviewed 2026-09-23. The table below
 ## Owner decisions, 2026-09-28
 
 - The corporate email will be added later. The published contact channels are the telephone and working inquiry forms.
-- Visitors are not received at the registered address. Samples can be mailed; they may occasionally be shown at trade fairs. The visitor-facing invitation to arrange a visit was removed.
+- Visitors are not received at the registered address. By the owner's 2026-09-28 clarification, staff can arrange a visit to the customer's site to assess work and show samples. Samples can also be mailed or occasionally shown at trade fairs. The sample form distinguishes postal delivery from a site visit, and neither route promises an unscheduled visit.
 - Delivery is arranged for each order; a fixed delivery price, area or schedule is not claimed.
 - The owner reports that the inquiry flow has been checked and works. Telegram delivery credentials are configured in the Cloudflare worker; the public config records the destination type, never the secret values.
 - The owner approved indexing the entire current site. Published route metadata and sitemap now include the home, 22 category routes, active product routes, published information pages, gallery, contact, quote, sample and privacy pages. Catalog filter/search URLs remain `noindex`; `notReady` products remain excluded. Adding a new active product to the catalog requires a build and deployment before search engines can discover its page.

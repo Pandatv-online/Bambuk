@@ -46,9 +46,12 @@ export function formatInquiryMessage(
       line("Asennus kiinnostaa", inquiry.installationInterest),
     );
   } else if (inquiry.type === "sample") {
+    const fulfillmentLabel = inquiry.fulfillmentPreference === "sovittu-kaynti"
+      ? "Kohdekäynti (sovitaan erikseen)"
+      : "Postitus";
     lines.push(
       line("Tuotetunniste", inquiry.productId),
-      line("Näytteen toimitustapa", inquiry.fulfillmentPreference),
+      line("Näytteen toimitus tai esittely", fulfillmentLabel),
     );
   }
 

@@ -77,6 +77,12 @@ describe("inquiry schemas", () => {
       },
     });
 
+    sample.set("fulfillmentPreference", "sovittu käynti");
+    expect(parseInquiryPayload({ ...Object.fromEntries(sample), type: "sample" }, { now: startedAt + 5_000 })).toMatchObject({
+      success: true,
+      data: { fulfillmentPreference: "sovittu-kaynti" },
+    });
+
     sample.set("type", "sample");
     sample.set("attachment", new File(["private"], "plan.txt"));
     expect(parseInquiryPayload(sample, { now: startedAt + 5_000 })).toMatchObject({

@@ -29,7 +29,7 @@ describe("getReleaseReadiness", () => {
       phoneHref: "tel:+358505080808",
       hours: "ma–pe 8.00–18.00",
       visitLocationPublicationApproved: false,
-      visitWording: "Emme ota vastaan kävijöitä. Näytteitä voidaan lähettää postitse, ja niitä on ajoittain esillä messuilla.",
+      visitWording: "Emme ota vastaan kävijöitä rekisteröidyssä osoitteessa. Kohdekäynnistä työn arviointia ja näytteiden esittelyä varten voidaan sopia erikseen. Näytteitä voidaan myös postittaa, ja niitä on ajoittain esillä messuilla.",
     });
   });
 

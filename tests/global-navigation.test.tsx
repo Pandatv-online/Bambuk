@@ -31,6 +31,7 @@ describe("the shared site navigation", () => {
     expect(header).toContain('href="tel:+358505080808"');
     expect(footer).toContain('href="tel:+358505080808"');
     expect(footer).toContain("Emme ota vastaan kävijöitä");
+    expect(footer).toContain("Kohdekäynnistä työn arviointia ja näytteiden esittelyä varten");
     expect(footer).toContain("Sivuston suunnittelu ja toteutus:");
     expect(footer).toContain('<a href="https://verzo.pro/">verzo.pro</a>');
     expect(footer).not.toContain("mailto:");

@@ -16,9 +16,7 @@ const companyName = siteConfig.company.legalName ?? siteConfig.company.displayNa
 
 export const metadata: Metadata = createPageMetadata({
   title: companyName ? `Tilaa mallipala | ${companyName}` : "Tilaa mallipala",
-  description: companyName
-    ? `Pyydä mallipalaa ja sovi toimitustavasta ${companyName}:n kanssa.`
-    : "Pyydä mallipalaa ja sovi toimitustavasta.",
+  description: "Pyydä mallipalaa postitse tai kysy näytteiden esittelystä kohteessa. Käynnistä sovitaan erikseen.",
   path: "/fi/tilaa-mallipala",
   indexable: true,
 });
@@ -42,7 +40,7 @@ export default async function SampleRequestPage({
             <a href="/fi">Koti</a> <span aria-hidden="true">/</span> <span aria-current="page">Tilaa mallipala</span>
           </nav>
           <Heading as="h1" size="display">Tilaa mallipala</Heading>
-          <p className={styles.introduction}>Valitse tuote ja pyydä mallipalaa postitse. Toimitus ja mahdolliset ehdot vahvistetaan ennen lähetystä.</p>
+          <p className={styles.introduction}>Valitse tuote ja pyydä mallipalaa postitse tai kysy näytteiden esittelystä kohteessa. Lähetys tai kohdekäynti ja mahdolliset ehdot sovitaan erikseen.</p>
         </Container>
       </Section>
       <Section tone="page">

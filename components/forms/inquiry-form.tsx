@@ -59,7 +59,7 @@ const fieldLabels: Readonly<Record<string, string>> = {
   timing: "Toivottu ajankohta",
   installationInterest: "Asennus",
   productId: "Tuotetunniste",
-  fulfillmentPreference: "Näytteen toimitustapa",
+  fulfillmentPreference: "Näytteen toimitus tai esittely",
 };
 
 const errorTarget: Readonly<Record<string, string>> = {
@@ -391,13 +391,14 @@ function SampleFields({
         aria-invalid={Boolean(errors.fulfillmentPreference?.length)}
         className={styles.choiceFieldset}
       >
-        <legend>Näytteen toimitustapa <span aria-hidden="true">*</span></legend>
+        <legend>Näytteen toimitus tai esittely <span aria-hidden="true">*</span></legend>
         <div className={styles.choices}>
           <label><input defaultChecked name="fulfillmentPreference" type="radio" value="toimitus" /> Postitus</label>
+          <label><input name="fulfillmentPreference" type="radio" value="sovittu käynti" /> Kohdekäynti (sovitaan erikseen)</label>
         </div>
         <FieldError errors={errors} field="fulfillmentPreference" formId={formId} />
       </fieldset>
-      <p className={styles.help}>Emme pyydä osoitetta tässä vaiheessa. Toimitustapa ja mahdolliset ehdot vahvistetaan ennen lähetystä.</p>
+      <p className={styles.help}>Emme pyydä osoitetta tässä vaiheessa. Lähetys tai kohdekäynti ja mahdolliset ehdot sovitaan erikseen.</p>
     </fieldset>
   );
 }

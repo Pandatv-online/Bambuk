@@ -33,6 +33,7 @@ describe("MobileNavigation", () => {
     expect(
       screen.getByText(/Emme ota vastaan kävijöitä/u),
     ).toBeTruthy();
+    expect(document.body.textContent).toContain("Kohdekäynnistä työn arviointia");
     expect(document.body.textContent).not.toMatch(
       /virallinen|valtuutettu|jakelija|jälleenmyyjä|distributor/i,
     );

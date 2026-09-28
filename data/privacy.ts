@@ -66,7 +66,7 @@ export const privacyNotice = {
         { type: "list", items: dataCategories },
         {
           type: "paragraph",
-          text: "Kaikissa lomakkeissa nimi, vähintään yksi yhteystieto sekä toivottu yhteydenottotapa ovat pakollisia. Yhteydenottolomakkeessa myös viesti on pakollinen. Tarjouspyynnössä valitaan pyynnön aihe ja näytepyynnössä tuote sekä toivottu toimitustapa. Jos pakollisia tietoja ei anneta, pyyntöä ei voida lähettää tai käsitellä.",
+          text: "Kaikissa lomakkeissa nimi, vähintään yksi yhteystieto sekä toivottu yhteydenottotapa ovat pakollisia. Yhteydenottolomakkeessa myös viesti on pakollinen. Tarjouspyynnössä valitaan pyynnön aihe ja näytepyynnössä tuote sekä toivottu näytteen toimitus- tai esittelytapa. Jos pakollisia tietoja ei anneta, pyyntöä ei voida lähettää tai käsitellä.",
         },
         {
           type: "paragraph",

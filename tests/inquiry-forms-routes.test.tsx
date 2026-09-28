@@ -71,6 +71,8 @@ describe("inquiry form routes", () => {
     expect(quote).toContain('value="/fi/tuotteet/sisalattiat/klassikko/testituote"');
     expect(sample).toContain('value="47"');
     expect(sample).toContain("Emme pyydä osoitetta tässä vaiheessa");
+    expect(sample).toContain("Kohdekäynti (sovitaan erikseen)");
+    expect(sample).toContain('value="sovittu käynti"');
     expect(footer).toContain('href="/fi/tietosuoja"');
     expect(footer).toContain("Tietosuojaseloste");
 

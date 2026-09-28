@@ -2,8 +2,28 @@ import { describe, expect, it, vi } from "vitest";
 
 import { createTelegramInquiryTransport } from "@/lib/inquiries/telegram";
 import { getInquiryDeletionDeadline } from "@/lib/inquiries/retention";
+import { formatInquiryMessage } from "@/lib/inquiries/message";
 
 describe("Telegram inquiry transport", () => {
+  it("labels an agreed visit as a customer-site visit", () => {
+    const message = formatInquiryMessage({
+      type: "sample",
+      name: "Liisa",
+      email: "liisa@example.fi",
+      phone: null,
+      preferredContact: "email",
+      message: null,
+      sourceUrl: "/fi/tilaa-mallipala",
+      idempotencyKey: "sample-12345678",
+      startedAt: 1_700_000_000_000,
+      productId: "53",
+      fulfillmentPreference: "sovittu-kaynti",
+    }, Date.UTC(2026, 8, 28));
+
+    expect(message).toContain("Kohdekäynti (sovitaan erikseen)");
+    expect(message).not.toContain("sovittu-kaynti");
+  });
+
   it("returns temporarily_unavailable without reading or exposing missing credentials", async () => {
     const fetchMock = vi.fn<typeof fetch>();
     const transport = createTelegramInquiryTransport({
